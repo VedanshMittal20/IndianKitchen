@@ -10,7 +10,7 @@ const themes = [
     name: "Pondicherry Street",
     subtitle: "Indo-French Nostalgia",
     desc: "A romantic blend of French colonial architecture and vibrant Indian street culture. Mustard walls, wrought-iron balconies, and the delicate scent of coastal spices.",
-    image: "/images/slide_5.png",
+    image: "/images/theme_pondicherry.png",
     location: "Colombo",
   },
   {
@@ -18,7 +18,7 @@ const themes = [
     name: "Kerala Houseboat",
     subtitle: "Serene Backwater Dining",
     desc: "Step aboard our handcrafted kettuvallam. Wood-panelled interiors, gentle ambient water sounds, and the fiery, coconut-rich flavors of Malabar.",
-    image: "/images/slide_6.png",
+    image: "/images/theme_kerala.png",
     location: "Kandy",
   },
   {

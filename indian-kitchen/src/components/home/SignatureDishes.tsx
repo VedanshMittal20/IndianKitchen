@@ -9,14 +9,14 @@ const signatureMenu = [
     name: "Bamboo Biryani",
     desc: "Tribal recipe cooked inside bamboo over charcoal, infused with earthy sweetness.",
     price: "LKR 1,950",
-    image: "/images/slide_2.png",
+    image: "/images/bamboo_biryani.png",
     tag: "Signature",
   },
   {
     name: "Tender Coconut Prawn Curry",
     desc: "Malabar coastal flavours infused with fresh coconut milk and curry leaves.",
     price: "LKR 2,500",
-    image: "/images/slide_3.png",
+    image: "/images/banana_leaf.png",
     tag: "Seafood",
   },
   {
