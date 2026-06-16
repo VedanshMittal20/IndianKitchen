@@ -79,17 +79,6 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 flex-1 items-center py-8 lg:py-12">
           {/* Copy */}
           <div className="lg:col-span-6 xl:col-span-5">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 bg-sage/20 backdrop-blur-md px-4 py-2 mb-6 rounded-full"
-            >
-              <span className="w-2 h-2 rounded-full bg-signal animate-signal-glow" />
-              <span className="text-[9px] tracking-[0.28em] uppercase text-signal font-semibold">
-                Theme Dining · Colombo & Kandy
-              </span>
-            </motion.div>
 
             <h1 className="heading-presentation-lg heading-presentation-light mb-5">
               <div className="overflow-hidden pb-2">
