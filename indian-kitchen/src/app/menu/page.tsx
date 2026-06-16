@@ -140,15 +140,6 @@ export default function MenuPage() {
                       <span className="font-sans text-sm font-bold tracking-wide text-wood whitespace-nowrap">
                         {item.price}
                       </span>
-                      <a
-                        href={`https://wa.me/94117112334?text=I'd%20like%20to%20order:%20${item.name}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="w-8 h-8 rounded-full border border-wood/30 flex items-center justify-center text-forest hover:bg-forest hover:text-cream transition-colors"
-                        aria-label={`Order ${item.name}`}
-                      >
-                        +
-                      </a>
                     </div>
                   </motion.div>
                 ))}

@@ -34,10 +34,7 @@ export default function HomeSignaturePreview() {
 
   return (
     <section className="relative overflow-hidden bg-void">
-      <div className="absolute inset-0 opacity-20">
-        <Image src="/images/slide_7.png" alt="" fill className="object-cover object-top" />
-      </div>
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gold/10 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-void via-void to-sage/5 pointer-events-none" />
 
       <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">

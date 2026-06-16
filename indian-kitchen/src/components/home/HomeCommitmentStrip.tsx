@@ -10,9 +10,6 @@ export default function HomeCommitmentStrip() {
 
   return (
     <section className="relative bg-sage overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <Image src="/images/slide_5.png" alt="" fill className="object-cover object-right" />
-      </div>
       <div className="absolute top-0 left-0 right-0 h-px bg-gold/40" />
 
       <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-16 py-10 md:py-14">

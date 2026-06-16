@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import QRWidget from "@/components/QRWidget";
+import CursorGlow from "@/components/ui/CursorGlow";
 
 const inter = Inter({
   variable: "--font-body",
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${cormorant.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans overflow-x-hidden bg-paper">
         <Navigation />
+        <CursorGlow />
         <main className="flex-grow">{children}</main>
         <Footer />
         <WhatsAppWidget />

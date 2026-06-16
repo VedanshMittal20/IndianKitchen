@@ -47,8 +47,8 @@ export default function OurCommitment() {
               className="relative h-[50vh] md:h-[55vh] overflow-hidden border border-sage/10"
             >
               <Image
-                src="/images/slide_5.png"
-                alt="Indian spices and authentic ingredients"
+                src="/images/real_interior.jpeg"
+                alt="Indian Kitchen Interior"
                 fill
                 className="object-cover object-right img-warm"
                 sizes="55vw"
