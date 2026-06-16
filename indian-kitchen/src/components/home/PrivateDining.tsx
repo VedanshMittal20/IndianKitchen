@@ -22,7 +22,7 @@ export default function PrivateDining() {
             className="absolute inset-0 w-full h-full"
           >
             <Image
-              src="/images/slide_11.png"
+              src="/images/real_waiter.jpeg"
               alt="Private Dining at Indian Kitchen"
               fill
               className="object-cover img-warm"

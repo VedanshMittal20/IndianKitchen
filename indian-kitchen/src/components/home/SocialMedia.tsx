@@ -26,12 +26,12 @@ const socialLinks = [
 ];
 
 const instagramGrid = [
-  { src: "/images/slide_1.png", likes: "1.2K", comments: "45" },
-  { src: "/images/slide_2.png", likes: "890", comments: "32" },
-  { src: "/images/slide_3.png", likes: "2.1K", comments: "112" },
-  { src: "/images/slide_4.png", likes: "1.5K", comments: "89" },
-  { src: "/images/slide_5.png", likes: "3.4K", comments: "210" },
-  { src: "/images/slide_6.png", likes: "950", comments: "41" },
+  { src: "/images/real_copper_pot.jpeg", likes: "1.2K", comments: "45" },
+  { src: "/images/real_banana_leaf.jpeg", likes: "890", comments: "32" },
+  { src: "/images/real_bamboo_biryani.jpeg", likes: "2.1K", comments: "112" },
+  { src: "/images/real_interior.jpeg", likes: "1.5K", comments: "89" },
+  { src: "/images/real_storefront.jpeg", likes: "3.4K", comments: "210" },
+  { src: "/images/real_waiter.jpeg", likes: "950", comments: "41" },
 ];
 
 export default function SocialMedia() {

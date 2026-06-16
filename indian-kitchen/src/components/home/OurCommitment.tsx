@@ -80,7 +80,7 @@ export default function OurCommitment() {
               <div className="relative w-full aspect-[4/5] bg-cream-dark p-4">
                 <div className="relative w-full h-full overflow-hidden">
                   <Image
-                    src="/images/copper_pot.png"
+                    src="/images/real_copper_pot.jpeg"
                     alt="Authentic Copper Pot Biryani"
                     fill
                     className="object-cover img-warm hover:scale-105 transition-transform duration-[2s] ease-out"

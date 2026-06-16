@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import QRWidget from "@/components/QRWidget";
 
 const inter = Inter({
   variable: "--font-body",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         <WhatsAppWidget />
+        <QRWidget />
       </body>
     </html>
   );

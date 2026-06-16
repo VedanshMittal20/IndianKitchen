@@ -10,7 +10,7 @@ const themes = [
     name: "Pondicherry Street",
     subtitle: "Indo-French Nostalgia",
     desc: "A romantic blend of French colonial architecture and vibrant Indian street culture. Mustard walls, wrought-iron balconies, and the delicate scent of coastal spices.",
-    image: "/images/theme_pondicherry.png",
+    image: "/images/real_storefront.jpeg",
     location: "Colombo",
   },
   {
@@ -18,7 +18,7 @@ const themes = [
     name: "Kerala Houseboat",
     subtitle: "Serene Backwater Dining",
     desc: "Step aboard our handcrafted kettuvallam. Wood-panelled interiors, gentle ambient water sounds, and the fiery, coconut-rich flavors of Malabar.",
-    image: "/images/theme_kerala.png",
+    image: "/images/real_interior.jpeg",
     location: "Kandy",
   },
   {
@@ -26,7 +26,7 @@ const themes = [
     name: "The Sherlock",
     subtitle: "Mystery Dining Experience",
     desc: "A Victorian study meets Indian masala. Solve puzzles between courses, discover hidden clues in your menu, and unravel a story that plays out across your table.",
-    image: "/images/slide_7.png",
+    image: "/images/theme_kerala.png",
     location: "Colombo",
   },
 ];
