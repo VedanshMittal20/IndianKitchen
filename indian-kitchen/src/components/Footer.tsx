@@ -42,10 +42,10 @@ export default function Footer() {
               </h4>
               <p className="text-sm text-cream font-medium mb-2">Pondicherry Street</p>
               <p className="text-xs text-cream/50 mb-4 leading-relaxed">
-                123 Galle Road,<br />Kollupitiya, Colombo 03
+                357 R.A. De Mel Mawatha,<br />Kollupitiya, Colombo 03
               </p>
               <p className="text-[10px] uppercase tracking-wider text-cream/70 mb-1">Hours</p>
-              <p className="text-xs text-cream/50">Mon-Thu: 11AM - 11PM<br />Fri-Sun: 11AM - 3AM</p>
+              <p className="text-xs text-cream/50">Mon-Thu: 12:30PM - 11:30PM<br />Fri-Sun: 12:30PM - 3:00AM</p>
             </div>
             <div>
               <h4 className="font-sans text-[9px] tracking-[0.3em] uppercase text-gold mb-5 pipe-item">
@@ -53,7 +53,7 @@ export default function Footer() {
               </h4>
               <p className="text-sm text-cream font-medium mb-2">Kerala Houseboat</p>
               <p className="text-xs text-cream/50 mb-4 leading-relaxed">
-                45 Lake Round,<br />Kandy
+                25/8 Sangaraja Mawatha,<br />Hillwood College Rd, Kandy
               </p>
               <p className="text-[10px] uppercase tracking-wider text-cream/70 mb-1">Hours</p>
               <p className="text-xs text-cream/50">Mon-Sun: 10AM - 10PM</p>
