@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  /* ── PRIMARY BRAND COLORS ── */
+  --color-crimson:        #4A0E0E;   
+  --color-void:           #0F0805;   
+  --color-gold:           #C8872A;   
+  --color-gold-light:     #E6AB50;   
+  --color-terracotta:     #BF5E3B;   
+
+  /* ── SECONDARY / NEUTRAL COLORS ── */
+  --color-sage:           #4A6741;   
+  --color-sage-light:     #8BA05E;   
+  --color-cream:          #F5EDD6;   
+  --color-cream-dark:     #E8DFC4;   
+  --color-parchment:      #FAF5E9;   
+
+  /* ── TEXT ── */
+  --color-text-light:     #F5EDD6;   
+  --color-text-dark:      #1A0D00;   
+  --color-text-muted:     #A0896E;   
+
+  /* ── UTILITY ── */
+  --color-border:         rgba(200,135,42,0.25);  
+  --color-overlay:        rgba(15,8,5,0.72);      
+}
+
+@theme inline {
+  --color-crimson: var(--color-crimson);
+  --color-void: var(--color-void);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-terracotta: var(--color-terracotta);
+  --color-sage: var(--color-sage);
+  --color-sage-light: var(--color-sage-light);
+  --color-cream: var(--color-cream);
+  --color-cream-dark: var(--color-cream-dark);
+  --color-parchment: var(--color-parchment);
+  --color-text-light: var(--color-text-light);
+  --color-text-dark: var(--color-text-dark);
+  --color-text-muted: var(--color-text-muted);
+  --color-border-gold: var(--color-border);
+  --color-overlay-dark: var(--color-overlay);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+
+  --animate-marquee: marquee 30s linear infinite;
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Hide scrollbar for horizontal scroll sections */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Pulse ring animation for QR code */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
