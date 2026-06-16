@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Flame } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { name: "The Experience", href: "/#experience" },
-  { name: "Our Themes", href: "/#themes" },
+  { name: "Themes", href: "/#themes" },
   { name: "The Menu", href: "/menu" },
-  { name: "Reservations", href: "/#reservations" },
   { name: "Franchise", href: "/franchise" },
   { name: "Blog", href: "/blog" },
   { name: "Careers", href: "/careers" },
@@ -20,109 +19,128 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-700 ease-out ${
         isScrolled
-          ? "bg-void/90 backdrop-blur-md py-3 shadow-lg border-b border-border-gold"
-          : "bg-transparent py-5"
+          ? "bg-cream/95 backdrop-blur-xl py-4 border-b border-wood"
+          : "bg-transparent py-6"
       }`}
     >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div className="mx-auto px-8 md:px-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <Flame className="w-6 h-6 text-gold group-hover:text-terracotta transition-colors" />
-          <span className="font-display text-2xl tracking-wide font-semibold text-cream">
+        <Link href="/" className="group flex flex-col">
+          <span className={`font-display text-2xl md:text-3xl tracking-[0.1em] uppercase transition-colors duration-500 ${isScrolled ? 'text-forest' : 'text-cream'}`}>
             Indian Kitchen
+          </span>
+          <span className={`font-sans text-[8px] tracking-[0.3em] uppercase transition-colors duration-500 ${isScrolled ? 'text-forest/60' : 'text-cream/80'}`}>
+            Art & Saveur
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-cream/80 hover:text-gold transition-colors tracking-wide"
+              className={`link-underline text-[11px] font-sans font-medium tracking-[0.2em] uppercase transition-colors duration-300 ${
+                isScrolled ? "text-text-dark hover:text-forest" : "text-cream/90 hover:text-yellow"
+              }`}
             >
               {link.name}
             </Link>
           ))}
-        </nav>
-
-        {/* CTA Button */}
-        <div className="hidden lg:block">
+          <div className={`w-px h-4 mx-2 ${isScrolled ? "bg-forest/20" : "bg-cream/30"}`} />
           <Link
             href="/#reservations"
-            className="px-6 py-2.5 bg-terracotta text-cream text-sm font-medium border border-gold hover:bg-gold hover:text-void transition-all duration-300"
+            className={`text-[11px] font-sans font-medium tracking-[0.2em] uppercase transition-colors duration-300 flex items-center gap-2 ${
+              isScrolled ? "text-forest hover:text-yellow" : "text-yellow hover:text-cream"
+            }`}
           >
-            Reserve a Table
+            Reserve Your Table
+            <span className={`inline-block w-4 h-px ${isScrolled ? "bg-forest" : "bg-yellow"}`} />
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-cream p-2"
+          className={`lg:hidden p-2 transition-colors ${isScrolled ? "text-forest" : "text-cream hover:text-yellow"}`}
           onClick={() => setMobileMenuOpen(true)}
           aria-label="Open menu"
         >
-          <Menu className="w-6 h-6" />
+          <Menu className="w-6 h-6" strokeWidth={1.5} />
         </button>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* ─── Mobile Drawer ─── */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[60] bg-void flex flex-col"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-[60] bg-cream flex flex-col"
           >
-            <div className="flex items-center justify-between p-6 border-b border-border-gold">
-              <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                <Flame className="w-6 h-6 text-gold" />
-                <span className="font-display text-2xl text-cream">Indian Kitchen</span>
+            {/* Header */}
+            <div className="flex items-center justify-between px-8 py-6 border-b border-wood">
+              <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                <span className="font-display text-2xl tracking-[0.1em] uppercase text-forest">
+                  Indian Kitchen
+                </span>
               </Link>
               <button
-                className="text-cream p-2"
+                className="text-forest hover:text-yellow p-2 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
                 aria-label="Close menu"
               >
-                <X className="w-6 h-6" />
+                <X className="w-6 h-6" strokeWidth={1.5} />
               </button>
             </div>
-            
-            <div className="flex-1 overflow-y-auto py-10 px-6 flex flex-col gap-6">
-              {navLinks.map((link) => (
-                <Link
+
+            {/* Links */}
+            <div className="flex-1 flex flex-col justify-center px-8 gap-2">
+              {navLinks.map((link, i) => (
+                <motion.div
                   key={link.name}
-                  href={link.href}
-                  className="text-2xl font-display text-cream hover:text-gold transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + i * 0.06, duration: 0.5 }}
                 >
-                  {link.name}
-                </Link>
+                  <Link
+                    href={link.href}
+                    className="block py-2 font-display text-4xl md:text-5xl text-forest/80 hover:text-forest transition-colors duration-300"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
-              
-              <div className="mt-8">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                className="mt-8 pt-8 border-t border-wood"
+              >
                 <Link
                   href="/#reservations"
-                  className="block w-full text-center px-6 py-4 bg-terracotta text-cream text-lg font-medium border border-gold"
+                  className="inline-block px-8 py-4 bg-forest text-cream text-sm tracking-[0.2em] uppercase hover:bg-yellow hover:text-forest transition-all duration-500"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Reserve a Table
+                  Reserve Your Table
                 </Link>
-              </div>
+              </motion.div>
+            </div>
+
+            {/* Bottom info */}
+            <div className="px-8 pb-8 text-[11px] text-forest/50 tracking-[0.15em] uppercase">
+              Colombo, Sri Lanka · +94 117 112 334
             </div>
           </motion.div>
         )}

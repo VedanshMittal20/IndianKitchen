@@ -63,7 +63,7 @@ export default function MenuPage() {
 
   return (
     <>
-      <main className="min-h-screen bg-gradient-to-b from-crimson to-void text-cream pt-32 pb-24">
+      <main className="min-h-screen bg-cream text-text-dark pt-32 pb-24">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -71,25 +71,25 @@ export default function MenuPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-gold mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-forest mb-6">
               A Culinary Passport Through India
             </h1>
-            <p className="text-cream/80 max-w-2xl mx-auto text-lg font-light">
+            <p className="text-text-muted max-w-2xl mx-auto text-lg font-light">
               Explore our diverse menu featuring regional specialties, street food favorites, and reimagined classics.
             </p>
           </motion.div>
 
           {/* Sticky Category Filter */}
-          <div className="sticky top-20 z-40 bg-void/80 backdrop-blur-md py-4 mb-12 border-b border-gold/20 -mx-6 px-6 md:mx-0 md:px-0">
+          <div className="sticky top-20 z-40 bg-cream/95 backdrop-blur-md py-4 mb-12 border-b border-wood -mx-6 px-6 md:mx-0 md:px-0">
             <div className="flex overflow-x-auto gap-4 md:justify-center hide-scrollbar">
               {menuData.map((cat) => (
                 <button
                   key={cat.category}
                   onClick={() => setActiveCategory(cat.category)}
                   className={`whitespace-nowrap px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                    activeCategory === cat.category
-                      ? "bg-gold text-void"
-                      : "bg-cream/10 text-cream hover:bg-cream/20"
+                      activeCategory === cat.category
+                        ? "bg-forest text-cream"
+                        : "bg-forest/5 text-forest hover:bg-forest/10"
                   }`}
                 >
                   {cat.category}
@@ -110,11 +110,11 @@ export default function MenuPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className="flex justify-between items-start border-b border-gold/10 pb-6 group"
+                    className="flex justify-between items-start border-b border-wood/20 pb-6 group"
                   >
                     <div className="flex-1 pr-6">
                       <div className="flex items-center gap-3 mb-2">
-                        <h3 className="font-display text-xl md:text-2xl text-cream group-hover:text-gold transition-colors">
+                        <h3 className="font-display text-xl md:text-2xl text-forest group-hover:text-yellow transition-colors">
                           {item.name}
                         </h3>
                         {item.tags.map(tag => (
@@ -137,14 +137,14 @@ export default function MenuPage() {
                     </div>
                     
                     <div className="flex flex-col items-end gap-3 shrink-0">
-                      <span className="font-medium text-gold whitespace-nowrap">
+                      <span className="font-sans text-sm font-medium text-forest whitespace-nowrap">
                         {item.price}
                       </span>
                       <a
                         href={`https://wa.me/94117112334?text=I'd%20like%20to%20order:%20${item.name}`}
                         target="_blank"
                         rel="noreferrer"
-                        className="w-8 h-8 rounded-full border border-gold/40 flex items-center justify-center text-gold hover:bg-gold hover:text-void transition-colors"
+                        className="w-8 h-8 rounded-full border border-wood/30 flex items-center justify-center text-forest hover:bg-forest hover:text-cream transition-colors"
                         aria-label={`Order ${item.name}`}
                       >
                         +
@@ -155,8 +155,8 @@ export default function MenuPage() {
             </AnimatePresence>
           </div>
 
-          <div className="mt-20 pt-8 border-t border-gold/20 text-center">
-            <p className="text-cream/60 text-sm italic">
+          <div className="mt-20 pt-8 border-t border-wood text-center">
+            <p className="text-text-muted text-sm italic">
               Full menu is updated regularly. Prices may vary by outlet. For the most current menu, scan the QR code or visit us in-store.
             </p>
           </div>

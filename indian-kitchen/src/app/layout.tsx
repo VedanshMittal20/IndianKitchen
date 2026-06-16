@@ -8,6 +8,7 @@ import WhatsAppWidget from "@/components/WhatsAppWidget";
 const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
 });
 
 const cormorant = Cormorant_Garamond({
@@ -18,8 +19,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Indian Kitchen | Theme Dining in Sri Lanka",
-  description: "Experience India's culinary soul through immersive theme dining at Indian Kitchen. Pondicherry Street, Kerala Houseboat, and Sherlock Mystery Dining.",
+  title: "Indian Kitchen | Immersive Theme Dining — Colombo, Sri Lanka",
+  description:
+    "Experience India's culinary soul through immersive theme dining. Pondicherry Street, Kerala Houseboat, and Sherlock Mystery Dining in Colombo.",
 };
 
 export default function RootLayout({
@@ -29,11 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-parchment text-text-dark font-sans overflow-x-hidden">
+      <body className="min-h-full flex flex-col font-sans overflow-x-hidden">
         <Navigation />
-        <main className="flex-grow">
-          {children}
-        </main>
+        <main className="flex-grow">{children}</main>
         <Footer />
         <WhatsAppWidget />
       </body>

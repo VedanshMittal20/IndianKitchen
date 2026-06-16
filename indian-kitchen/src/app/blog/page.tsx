@@ -7,7 +7,7 @@ import { blogPosts } from "@/data/blogPosts";
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-parchment pt-32 pb-24">
+    <main className="min-h-screen bg-cream text-text-dark pt-32 pb-24">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -18,8 +18,8 @@ export default function BlogPage() {
           <p className="text-gold font-sans tracking-[0.2em] uppercase text-sm mb-4">
             From the Spice Trail
           </p>
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-crimson mb-6">
-            Dispatches from the Spice Trail
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-forest mb-6">
+            Tales from the Kitchen
           </h1>
           <p className="text-text-muted max-w-2xl mx-auto text-lg font-light">
             Stories, recipes, and behind-the-scenes from the world of Indian Kitchen.
@@ -33,25 +33,25 @@ export default function BlogPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="group bg-white border border-border-gold rounded-sm overflow-hidden shadow-[0_4px_20px_rgba(200,135,42,0.06)] hover:shadow-[0_8px_30px_rgba(200,135,42,0.15)] hover:-translate-y-1 transition-all duration-300"
+              className="group bg-white border border-forest/10 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
             >
               <Link href={`/blog/${post.slug}`} className="block">
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-64 md:h-72 overflow-hidden bg-parchment">
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700 sepia-[0.1] saturate-[1.1]"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-void/40 to-transparent" />
-                  <span className="absolute top-4 left-4 bg-gold text-void text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-sm">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <span className="absolute top-4 right-4 bg-cream/90 backdrop-blur-md text-forest px-3 py-1 text-xs font-medium rounded-full uppercase tracking-wider">
                     {post.tag}
                   </span>
                 </div>
 
                 <div className="p-6">
-                  <h2 className="font-display text-xl md:text-2xl text-crimson mb-3 group-hover:text-terracotta transition-colors line-clamp-2">
+                  <h2 className="font-display text-xl md:text-2xl text-forest mb-3 group-hover:text-gold transition-colors line-clamp-2">
                     {post.title}
                   </h2>
                   <p className="text-text-muted text-sm leading-relaxed mb-4 line-clamp-2">
@@ -61,8 +61,8 @@ export default function BlogPage() {
                     <span>{post.date}</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <div className="mt-4 pt-4 border-t border-border-gold">
-                    <span className="text-sm font-medium text-terracotta group-hover:text-gold transition-colors uppercase tracking-wider">
+                  <div className="mt-4 pt-4 border-t border-forest/10">
+                    <span className="text-sm font-medium text-forest group-hover:text-gold transition-colors uppercase tracking-wider">
                       Read the Full Story &rarr;
                     </span>
                   </div>

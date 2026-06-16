@@ -1,134 +1,113 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 
-const sideDishes = [
+const signatureMenu = [
   {
-    name: "Puff Parotta",
-    desc: "Flaky, layered, and unforgettable. A staple of Tamil Nadu street food, perfected.",
-    image: "/images/slide_8.png", // fallback placeholder
+    name: "Bamboo Biryani",
+    desc: "Tribal recipe cooked inside bamboo over charcoal, infused with earthy sweetness.",
+    price: "LKR 1,950",
+    image: "/images/slide_2.png",
+    tag: "Signature",
   },
   {
     name: "Tender Coconut Prawn Curry",
-    desc: "Malabar coastal flavours in every spoonful.",
-    image: "/images/slide_9.png", // fallback placeholder
+    desc: "Malabar coastal flavours infused with fresh coconut milk and curry leaves.",
+    price: "LKR 2,500",
+    image: "/images/slide_3.png",
+    tag: "Seafood",
   },
   {
-    name: "Jigarthanda",
-    desc: "The coolant of Madurai. A dessert drink unlike any other.",
-    image: "/images/slide_10.png", // fallback placeholder
+    name: "Pineapple Butter Chicken",
+    desc: "A tropical twist on the classic. Slow-roasted tomatoes with subtle pineapple zest.",
+    price: "LKR 2,100",
+    image: "/images/slide_4.png",
+    tag: "Popular",
   },
   {
-    name: "Ilaneer Cake",
-    desc: "Tender coconut reimagined as dessert art.",
-    image: "/images/slide_11.png", // fallback placeholder
+    name: "Kadai Paneer",
+    desc: "Cottage cheese wok-tossed with bell peppers and freshly ground whole spices.",
+    price: "LKR 1,976",
+    image: "/images/slide_8.png",
+    tag: "Vegetarian",
   },
 ];
 
 export default function SignatureDishes() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section className="py-24 bg-parchment" id="signature-dishes">
-      <div className="container mx-auto px-6 md:px-12">
+    <section className="bg-cream-dark py-32 md:py-48" id="menu">
+      <div className="container mx-auto px-8 md:px-16">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
+          transition={{ duration: 1 }}
+          className="flex flex-col lg:flex-row justify-between gap-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-crimson mb-6">
-            The Dishes That Started It All
-          </h2>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          
-          {/* Hero Dish - Left Side (Spans 7 cols on desktop) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-7 relative h-[500px] lg:h-auto min-h-[600px] group overflow-hidden rounded-sm cursor-pointer shadow-lg"
-          >
-            <Image
-              src="/images/slide_7.png" // Replace with actual bamboo biryani image
-              alt="Bamboo Biryani"
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105 sepia-[0.1] saturate-[1.15]"
-              sizes="(max-width: 1024px) 100vw, 60vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-void/90 via-void/30 to-transparent mix-blend-multiply" />
-            
-            <div className="absolute bottom-0 left-0 p-8 w-full">
-              <h3 className="font-display text-4xl md:text-5xl text-gold mb-3">
-                Bamboo Biryani
-              </h3>
-              <p className="text-cream text-lg md:text-xl font-light italic">
-                &ldquo;Where Tradition Meets Fire.&rdquo;
+          {/* Left: Title */}
+          <div className="w-full lg:w-1/3">
+            <div className="sticky top-32">
+              <span className="text-[10px] tracking-[0.3em] uppercase text-wood font-medium block mb-4">
+                La Carte
+              </span>
+              <h2 className="font-display text-[clamp(3rem,6vw,5rem)] leading-[0.9] text-forest mb-8">
+                Les Plats<br />
+                <span className="italic">Signature</span>
+              </h2>
+              <p className="text-text-muted font-light mb-8 max-w-sm">
+                Authentic regional recipes prepared without shortcuts. Every spice ground fresh, every marinade crafted by hand.
               </p>
+              <button className="text-[10px] tracking-[0.2em] uppercase text-yellow hover:text-forest transition-colors link-underline pb-1 font-medium">
+                View Full Menu
+              </button>
             </div>
-          </motion.div>
+          </div>
 
-          {/* 4 Smaller Dishes - Right Side (Spans 5 cols on desktop) */}
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
-            {sideDishes.map((dish, index) => (
+          {/* Right: Menu Items */}
+          <div className="w-full lg:w-3/5 flex flex-col gap-12">
+            {signatureMenu.map((item, index) => (
               <motion.div
-                key={index}
+                key={item.name}
                 initial={{ opacity: 0, x: 20 }}
-                animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="flex flex-row items-center gap-6 bg-cream-dark p-4 rounded-sm hover:shadow-[0_4px_20px_rgba(200,135,42,0.15)] hover:-translate-y-1 transition-all duration-300"
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group border-b border-wood pb-8 flex flex-col md:flex-row gap-6 md:items-center justify-between"
               >
-                <div className="relative w-24 h-24 flex-shrink-0 overflow-hidden rounded-sm">
-                  <Image
-                    src={dish.image}
-                    alt={dish.name}
-                    fill
-                    className="object-cover sepia-[0.1] saturate-[1.15]"
-                    sizes="96px"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-display text-xl text-crimson mb-1 font-semibold">
-                    {dish.name}
-                  </h4>
-                  <p className="text-text-muted text-sm leading-snug">
-                    {dish.desc}
+                <div className="flex-1 pr-0 md:pr-8">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="font-display text-2xl md:text-3xl text-forest group-hover:text-yellow transition-colors">
+                      {item.name}
+                    </h3>
+                  </div>
+                  <p className="text-text-muted font-light text-sm md:text-base leading-relaxed mb-4">
+                    {item.desc}
                   </p>
+                  <div className="flex items-center gap-4">
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-wood border border-wood/30 px-2 py-1">
+                      {item.tag}
+                    </span>
+                    <span className="font-sans text-sm font-medium text-forest">
+                      {item.price}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="w-full md:w-32 h-40 md:h-24 relative overflow-hidden shrink-0 mt-4 md:mt-0">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover img-warm group-hover:scale-110 transition-transform duration-700"
+                  />
                 </div>
               </motion.div>
             ))}
           </div>
-
-        </div>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 flex flex-col sm:flex-row items-center gap-6"
-        >
-          <Link
-            href="/#menu-qr"
-            className="px-8 py-3 bg-terracotta text-cream text-sm font-medium border border-terracotta hover:bg-transparent hover:text-terracotta hover:border-terracotta transition-colors"
-          >
-            Scan to Order
-          </Link>
-          <Link
-            href="/menu"
-            className="px-8 py-3 bg-transparent text-crimson border border-crimson text-sm font-medium hover:bg-crimson hover:text-cream transition-colors"
-          >
-            View Full Menu
-          </Link>
         </motion.div>
       </div>
     </section>

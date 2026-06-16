@@ -2,68 +2,89 @@
 
 :root {
   /* ── PRIMARY BRAND COLORS ── */
-  --color-crimson:        #4A0E0E;   
-  --color-void:           #0F0805;   
-  --color-gold:           #C8872A;   
-  --color-gold-light:     #E6AB50;   
-  --color-terracotta:     #BF5E3B;   
+  --color-forest:         #0B5345;
+  --color-yellow:         #FFD700;
+  --color-wood:           #8B4513;
 
-  /* ── SECONDARY / NEUTRAL COLORS ── */
-  --color-sage:           #4A6741;   
-  --color-sage-light:     #8BA05E;   
-  --color-cream:          #F5EDD6;   
-  --color-cream-dark:     #E8DFC4;   
-  --color-parchment:      #FAF5E9;   
+  /* ── BACKGROUNDS ── */
+  --color-cream:          #FBF8F1;
+  --color-cream-dark:     #F2EBDC;
+  --color-parchment:      #F5F0E6;
 
   /* ── TEXT ── */
-  --color-text-light:     #F5EDD6;   
-  --color-text-dark:      #1A0D00;   
-  --color-text-muted:     #A0896E;   
+  --color-text-dark:      #1A1A1A;
+  --color-text-light:     #FBF8F1;
+  --color-text-muted:     #5C5549;
 
   /* ── UTILITY ── */
-  --color-border:         rgba(200,135,42,0.25);  
-  --color-overlay:        rgba(15,8,5,0.72);      
+  --color-border:         rgba(139, 69, 19, 0.15); /* wood tone border */
+  --color-overlay:        rgba(11, 83, 69, 0.85); /* forest green overlay */
 }
 
 @theme inline {
-  --color-crimson: var(--color-crimson);
-  --color-void: var(--color-void);
-  --color-gold: var(--color-gold);
-  --color-gold-light: var(--color-gold-light);
-  --color-terracotta: var(--color-terracotta);
-  --color-sage: var(--color-sage);
-  --color-sage-light: var(--color-sage-light);
+  --color-forest: var(--color-forest);
+  --color-yellow: var(--color-yellow);
+  --color-wood: var(--color-wood);
   --color-cream: var(--color-cream);
   --color-cream-dark: var(--color-cream-dark);
   --color-parchment: var(--color-parchment);
   --color-text-light: var(--color-text-light);
   --color-text-dark: var(--color-text-dark);
   --color-text-muted: var(--color-text-muted);
-  --color-border-gold: var(--color-border);
-  --color-overlay-dark: var(--color-overlay);
+  --color-border-wood: var(--color-border);
+  --color-overlay-forest: var(--color-overlay);
 
   --font-display: var(--font-display);
   --font-sans: var(--font-body);
 
-  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee: marquee 40s linear infinite;
   @keyframes marquee {
     0% { transform: translateX(0%); }
     100% { transform: translateX(-50%); }
   }
 }
 
+/* ─── BASE ─── */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(11, 83, 69, 0.2);
+  color: var(--color-forest);
+}
+
 body {
-  background-color: var(--color-parchment);
+  background-color: var(--color-cream);
   color: var(--color-text-dark);
   font-family: var(--font-body);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
-/* Hide scrollbar for horizontal scroll sections */
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 69, 19, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 69, 19, 0.5);
+}
+
+/* ─── UTILITIES ─── */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -72,14 +93,68 @@ h1, h2, h3, h4, h5, h6 {
   scrollbar-width: none;
 }
 
-/* Pulse ring animation for QR code */
+.text-outline {
+  -webkit-text-stroke: 1px var(--color-forest);
+  color: transparent;
+}
+
+/* ─── DIVIDER ─── */
+.wood-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 69, 19, 0.3), transparent);
+}
+.forest-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(11, 83, 69, 0.3), transparent);
+}
+
+/* ─── IMAGE WARMTH FILTER ─── */
+.img-warm {
+  filter: sepia(0.05) saturate(1.1) brightness(0.95);
+}
+
+/* ─── ANIMATIONS ─── */
 @keyframes pulse-ring {
   0% {
     transform: scale(1);
-    opacity: 0.5;
+    opacity: 0.4;
   }
   100% {
-    transform: scale(1.15);
+    transform: scale(1.2);
     opacity: 0;
   }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes reveal-up {
+  from {
+    clip-path: inset(100% 0 0 0);
+    transform: translateY(20px);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
+  }
+}
+
+/* ─── LINK HOVER UNDERLINE ─── */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-forest);
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.link-underline:hover::after {
+  width: 100%;
 }

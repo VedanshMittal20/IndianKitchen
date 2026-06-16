@@ -6,40 +6,40 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    rating: 5,
-    text: "Bamboo Biryani is unlike anything I've ever had. The whole place feels like you've teleported to Pondicherry.",
     author: "Rohan M.",
     location: "Colombo",
+    rating: 5,
+    quote: "The Bamboo Biryani is theatre on a plate. The earthy aroma when they split the bamboo open at the table... unforgettable.",
   },
   {
-    rating: 5,
-    text: "We booked for our anniversary and were completely blown away. The Kerala Houseboat setting is surreal \u2014 like being on a real backwater.",
     author: "Priya & Dinesh",
-    location: "",
+    location: "Kandy",
+    rating: 5,
+    quote: "Celebrated our anniversary at the Kerala Houseboat theme. The attention to detail makes you forget you're in a restaurant.",
   },
   {
-    rating: 4,
-    text: "The live kitchen stations and late-night service are unmatched in Colombo. Best Indian food I've had outside India.",
     author: "Giulio C.",
-    location: "",
-  },
-  {
-    rating: 5,
-    text: "I'm a vegetarian and the Kadai Paneer and Missi Roti here are simply outstanding. Will be back every week.",
-    author: "Ananya R.",
-    location: "",
-  },
-  {
-    rating: 5,
-    text: "The Sherlock dining experience is absolutely wild. We solved a mystery while eating Butter Chicken at 1 AM. Peak Colombo.",
-    author: "Marcus T.",
-    location: "",
-  },
-  {
+    location: "Tourist",
     rating: 4,
-    text: "Family-friendly, authentic, and incredibly atmospheric. The kind of place you bring every visitor to Sri Lanka.",
+    quote: "Best Indian food I've had outside of India. The Butter Chicken is rich without being heavy. Incredible ambience.",
+  },
+  {
+    author: "Ananya R.",
+    location: "Colombo",
+    rating: 5,
+    quote: "Finally, a place that treats vegetarian food with respect. The Kadai Paneer is phenomenal. Our new family favourite.",
+  },
+  {
+    author: "Marcus T.",
+    location: "Colombo",
+    rating: 5,
+    quote: "Went for the Sherlock mystery dining at 1 AM. Solving puzzles between courses while eating perfect garlic naan? Brilliant concept.",
+  },
+  {
     author: "Hana S.",
-    location: "",
+    location: "Kandy",
+    rating: 4,
+    quote: "Very atmospheric. The staff are so knowledgeable about the regions the food comes from. Great for special occasions.",
   },
 ];
 
@@ -47,55 +47,65 @@ export default function Testimonials() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section className="py-24 bg-void border-t border-border-gold text-cream overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12">
+    <section className="py-32 md:py-48 bg-forest text-cream border-t border-wood">
+      <div className="container mx-auto px-8 md:px-16">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 1 }}
+          className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8"
         >
-          <p className="text-gold font-sans tracking-[0.2em] uppercase text-sm mb-4">
-            Guest Experiences
-          </p>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-gold mb-6">
-            The Reviews Are Just the Beginning
-          </h2>
+          <div>
+            <div className="flex items-center gap-4 mb-6">
+              <span className="text-[10px] tracking-[0.3em] uppercase text-yellow font-medium">
+                Guest Experiences
+              </span>
+              <div className="w-12 h-px bg-yellow" />
+            </div>
+            <h2 className="font-display text-[clamp(3rem,6vw,5rem)] leading-[0.9] text-cream">
+              The Reviews Are<br />
+              <span className="italic text-yellow">Just the Beginning</span>
+            </h2>
+          </div>
+          <div className="flex gap-2">
+            <button className="w-12 h-12 border border-wood/30 flex items-center justify-center hover:bg-yellow hover:text-forest transition-colors text-yellow" aria-label="Previous">
+              &larr;
+            </button>
+            <button className="w-12 h-12 border border-wood/30 flex items-center justify-center hover:bg-yellow hover:text-forest transition-colors text-yellow" aria-label="Next">
+              &rarr;
+            </button>
+          </div>
         </motion.div>
 
-        {/* CSS Scroll Snap Carousel */}
-        <div className="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory hide-scrollbar">
-          {testimonials.map((t, idx) => (
+        {/* Carousel */}
+        <div className="flex overflow-x-auto gap-8 pb-12 hide-scrollbar snap-x snap-mandatory">
+          {testimonials.map((t, index) => (
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
-              className="min-w-[85vw] sm:min-w-[400px] snap-center bg-cream-dark/5 p-8 border border-gold/20 rounded-sm flex flex-col justify-between"
+              key={index}
+              initial={{ opacity: 0, x: 50 }}
+              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+              className="min-w-[85vw] md:min-w-[400px] flex-shrink-0 snap-center bg-cream/5 border border-wood/20 p-10 hover:bg-cream/10 transition-colors duration-500"
             >
-              <div>
-                <div className="flex gap-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-5 h-5 ${i < t.rating ? "fill-gold text-gold" : "text-gold/20"}`}
-                    />
-                  ))}
-                </div>
-                <p className="text-cream text-lg md:text-xl font-light italic leading-relaxed mb-8">
-                  &ldquo;{t.text}&rdquo;
-                </p>
+              <div className="flex mb-8">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`w-4 h-4 ${i < t.rating ? "text-yellow fill-yellow" : "text-wood/30"}`}
+                  />
+                ))}
               </div>
-              <div>
-                <span className="block font-medium text-gold uppercase tracking-wider text-sm">
+              <p className="font-display italic text-2xl text-cream/90 leading-relaxed mb-10 min-h-[120px]">
+                "{t.quote}"
+              </p>
+              <div className="border-t border-wood/30 pt-6">
+                <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-yellow mb-1">
                   {t.author}
-                </span>
-                {t.location && (
-                  <span className="text-text-muted text-xs uppercase tracking-wide">
-                    {t.location}
-                  </span>
-                )}
+                </p>
+                <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-cream/40">
+                  {t.location}
+                </p>
               </div>
             </motion.div>
           ))}
