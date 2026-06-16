@@ -4,7 +4,6 @@ import BrandMark from "@/components/ui/BrandMark";
 export default function Footer() {
   return (
     <footer className="bg-void text-cream pt-20 pb-10 border-t border-gold/20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-20 mix-blend-overlay pointer-events-none" />
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-sage/5 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">

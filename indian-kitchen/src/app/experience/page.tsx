@@ -12,7 +12,7 @@ export default function AboutPage() {
         label="About Us"
         title="A Tale of Spice & Time"
         subtitle="Where every meal tells a story."
-        image="/images/luxury_indian_kitchen_hero_1781595277163.png"
+        image="/images/hero_main.png"
       />
 
       {/* About Indian Kitchen & Origin Story */}
