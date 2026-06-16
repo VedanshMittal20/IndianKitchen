@@ -18,7 +18,7 @@ const themes = [
     name: "Kerala Houseboat",
     subtitle: "Serene Backwater Dining",
     desc: "Step aboard our handcrafted kettuvallam. Wood-panelled interiors, gentle ambient water sounds, and the fiery, coconut-rich flavors of Malabar.",
-    image: "/images/real_interior.jpeg",
+    image: "/images/theme_kerala.png",
     location: "Kandy",
   },
   {
@@ -26,7 +26,7 @@ const themes = [
     name: "The Sherlock",
     subtitle: "Mystery Dining Experience",
     desc: "A Victorian study meets Indian masala. Solve puzzles between courses, discover hidden clues in your menu, and unravel a story that plays out across your table.",
-    image: "/images/theme_kerala.png",
+    image: "/images/real_interior.jpeg",
     location: "Colombo",
   },
 ];
