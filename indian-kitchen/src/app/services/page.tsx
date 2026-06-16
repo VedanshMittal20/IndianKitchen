@@ -71,7 +71,7 @@ export default function ServicesPage() {
               className="lg:col-span-6 relative h-[600px] rounded-[32px] overflow-hidden border border-sage/10 shadow-xl"
             >
               <Image
-                src="/images/extracted/page6_img1.png"
+                src="/images/extracted/page6_img1.jpeg"
                 alt="Our Services"
                 fill
                 className="object-cover img-warm"
