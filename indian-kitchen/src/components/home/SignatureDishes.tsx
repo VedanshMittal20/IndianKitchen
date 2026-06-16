@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Link from "next/link";
+import PipeList from "@/components/ui/PipeList";
 
 const signatureMenu = [
   {
@@ -39,76 +41,69 @@ export default function SignatureDishes() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section className="bg-cream-dark py-32 md:py-48" id="menu">
-      <div className="container mx-auto px-8 md:px-16">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 1 }}
-          className="flex flex-col lg:flex-row justify-between gap-16"
-        >
-          {/* Left: Title */}
-          <div className="w-full lg:w-1/3">
-            <div className="sticky top-32">
-              <span className="text-[10px] tracking-[0.3em] uppercase text-wood font-medium block mb-4">
-                La Carte
-              </span>
-              <h2 className="font-display text-[clamp(3rem,6vw,5rem)] leading-[0.9] text-forest mb-8">
-                Les Plats<br />
-                <span className="italic">Signature</span>
-              </h2>
-              <p className="text-text-muted font-light mb-8 max-w-sm">
-                Authentic regional recipes prepared without shortcuts. Every spice ground fresh, every marinade crafted by hand.
-              </p>
-              <button className="text-[10px] tracking-[0.2em] uppercase text-yellow hover:text-forest transition-colors link-underline pb-1 font-medium">
-                View Full Menu
-              </button>
-            </div>
-          </div>
+    <section className="section-padding bg-paper" id="menu">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
+          <motion.div ref={ref} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}}>
+            <p className="text-[9px] tracking-[0.3em] uppercase text-sage font-semibold mb-3 pipe-item">
+              La Carte
+            </p>
+            <h2 className="heading-presentation mb-5">
+              Signature
+              <br />
+              Dishes
+            </h2>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.1 }}
+            className="text-text-muted font-light leading-relaxed text-sm uppercase tracking-wide lg:pt-6"
+          >
+            Our menu celebrates India&apos;s rich culinary heritage with authentic recipes passed
+            down through generations.
+          </motion.p>
+        </div>
 
-          {/* Right: Menu Items */}
-          <div className="w-full lg:w-3/5 flex flex-col gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-7 space-y-6">
             {signatureMenu.map((item, index) => (
               <motion.div
                 key={item.name}
-                initial={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, x: 16 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group border-b border-wood pb-8 flex flex-col md:flex-row gap-6 md:items-center justify-between"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="flex gap-5 border-b border-gold/20 pb-5 group"
               >
-                <div className="flex-1 pr-0 md:pr-8">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="font-display text-2xl md:text-3xl text-forest group-hover:text-yellow transition-colors">
-                      {item.name}
-                    </h3>
-                  </div>
-                  <p className="text-text-muted font-light text-sm md:text-base leading-relaxed mb-4">
-                    {item.desc}
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <span className="text-[10px] tracking-[0.2em] uppercase text-wood border border-wood/30 px-2 py-1">
-                      {item.tag}
-                    </span>
-                    <span className="font-sans text-sm font-medium text-forest">
-                      {item.price}
-                    </span>
-                  </div>
+                <div className="relative w-20 h-20 shrink-0 overflow-hidden gold-frame">
+                  <Image src={item.image} alt={item.name} fill className="object-cover img-warm" />
                 </div>
-
-                <div className="w-full md:w-32 h-40 md:h-24 relative overflow-hidden shrink-0 mt-4 md:mt-0">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover img-warm group-hover:scale-110 transition-transform duration-700"
-                  />
+                <div>
+                  <h3 className="font-display text-xl uppercase tracking-wide text-sage mb-1 group-hover:text-gold transition-colors">
+                    {item.name}
+                  </h3>
+                  <p className="text-text-muted text-sm font-light mb-1">{item.desc}</p>
+                  <span className="text-[10px] tracking-[0.15em] uppercase font-semibold text-terracotta">
+                    {item.price}
+                  </span>
                 </div>
               </motion.div>
             ))}
           </div>
-        </motion.div>
+          <div className="lg:col-span-5">
+            <h3 className="font-display text-xl uppercase tracking-wide text-sage mb-4">
+              Must-Try Favorites
+            </h3>
+            <PipeList items={signatureMenu.map((i) => i.name)} />
+            <Link
+              href="/menu"
+              className="inline-block mt-8 text-[10px] tracking-[0.2em] uppercase text-terracotta hover:text-gold transition-colors link-underline pb-1"
+            >
+              View Full Menu →
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

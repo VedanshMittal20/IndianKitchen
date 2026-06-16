@@ -20,9 +20,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Indian Kitchen | Immersive Theme Dining — Colombo, Sri Lanka",
+  title: "Indian Kitchen | Immersive Theme Dining — Colombo & Kandy",
   description:
-    "Experience India's culinary soul through immersive theme dining. Pondicherry Street, Kerala Houseboat, and Sherlock Mystery Dining in Colombo.",
+    "Authentic Indian cuisine inside three themed worlds. Reserve your table at Pondicherry Street, Kerala Houseboat, or Sherlock Mystery Dining.",
 };
 
 export default function RootLayout({
@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans overflow-x-hidden">
+      <body className="min-h-full flex flex-col font-sans overflow-x-hidden bg-paper">
         <Navigation />
         <main className="flex-grow">{children}</main>
         <Footer />

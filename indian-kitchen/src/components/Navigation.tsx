@@ -5,14 +5,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import BrandMark from "@/components/ui/BrandMark";
 
 const navLinks = [
-  { name: "The Experience", href: "/#experience" },
-  { name: "Themes", href: "/#themes" },
-  { name: "The Menu", href: "/menu" },
-  { name: "Franchise", href: "/franchise" },
+  { name: "Experience", href: "/experience" },
+  { name: "Themes", href: "/themes" },
+  { name: "Menu", href: "/menu" },
+  { name: "Reservations", href: "/reservations" },
   { name: "Blog", href: "/blog" },
   { name: "Careers", href: "/careers" },
+  { name: "Franchise", href: "/franchise" },
 ];
 
 export default function Navigation() {
@@ -21,63 +23,70 @@ export default function Navigation() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 60);
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isDarkHero = pathname === "/";
-  const scrolledStyle = isScrolled || !isDarkHero;
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  const isHome = pathname === "/";
+  const onDarkHero = isHome && !isScrolled;
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-700 ease-out ${
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-cream/95 backdrop-blur-xl py-4 border-b border-wood"
-          : !isDarkHero 
-            ? "bg-cream py-6"
-            : "bg-transparent py-6"
+          ? "bg-parchment/95 backdrop-blur-xl py-3 border-b border-sage/15 shadow-sm"
+          : onDarkHero
+            ? "bg-gradient-to-b from-void/80 to-transparent py-5"
+            : "bg-paper py-5 border-b border-sage/10"
       }`}
     >
-      <div className="mx-auto px-8 md:px-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="group flex flex-col">
-          <span className={`font-display text-2xl md:text-3xl tracking-[0.1em] uppercase transition-colors duration-500 ${scrolledStyle ? 'text-forest' : 'text-cream'}`}>
-            Indian Kitchen
-          </span>
-          <span className={`font-sans text-[8px] tracking-[0.3em] uppercase transition-colors duration-500 ${scrolledStyle ? 'text-forest/60' : 'text-cream/80'}`}>
-            Art & Saveur
-          </span>
+      <div className="mx-auto px-6 md:px-12 lg:px-16 flex items-center justify-between">
+        <Link href="/">
+          <BrandMark variant={onDarkHero ? "light" : "green"} size="md" />
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`link-underline text-[11px] font-sans font-medium tracking-[0.2em] uppercase transition-colors duration-300 ${
-                scrolledStyle ? "text-text-dark hover:text-forest" : "text-cream/90 hover:text-yellow"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <div className={`w-px h-4 mx-2 ${scrolledStyle ? "bg-forest/20" : "bg-cream/30"}`} />
+        <div className="hidden xl:flex items-center gap-7">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`link-underline text-[10px] font-sans font-medium tracking-[0.16em] uppercase transition-colors ${
+                  isActive
+                    ? onDarkHero
+                      ? "text-gold"
+                      : "text-sage"
+                    : onDarkHero
+                      ? "text-cream/80 hover:text-gold"
+                      : "text-text-muted hover:text-sage"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+          <div className={`w-px h-4 mx-1 ${onDarkHero ? "bg-cream/20" : "bg-sage/20"}`} />
           <Link
-            href="/#reservations"
-            className={`text-[11px] font-sans font-medium tracking-[0.2em] uppercase transition-colors duration-300 flex items-center gap-2 ${
-              scrolledStyle ? "text-forest font-bold hover:text-wood" : "text-yellow hover:text-cream"
+            href="/reservations"
+            className={`text-[10px] font-sans font-semibold tracking-[0.16em] uppercase transition-colors ${
+              onDarkHero ? "text-gold hover:text-cream" : "text-terracotta hover:text-gold"
             }`}
           >
-            Reserve Your Table
-            <span className={`inline-block w-4 h-px ${scrolledStyle ? "bg-forest" : "bg-yellow"}`} />
+            Book a Table →
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
         <button
-          className={`lg:hidden p-2 transition-colors ${scrolledStyle ? "text-forest" : "text-cream hover:text-yellow"}`}
+          className={`xl:hidden p-2 transition-colors ${
+            onDarkHero ? "text-cream hover:text-gold" : "text-sage hover:text-gold"
+          }`}
           onClick={() => setMobileMenuOpen(true)}
           aria-label="Open menu"
         >
@@ -85,25 +94,19 @@ export default function Navigation() {
         </button>
       </div>
 
-      {/* ─── Mobile Drawer ─── */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[60] bg-cream flex flex-col"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.35 }}
+            className="fixed inset-0 z-[60] bg-void flex flex-col"
           >
-            {/* Header */}
-            <div className="flex items-center justify-between px-8 py-6 border-b border-wood">
-              <Link href="/" onClick={() => setMobileMenuOpen(false)}>
-                <span className="font-display text-2xl tracking-[0.1em] uppercase text-forest">
-                  Indian Kitchen
-                </span>
-              </Link>
+            <div className="flex items-center justify-between px-6 py-5 border-b border-gold/20">
+              <BrandMark variant="light" size="md" />
               <button
-                className="text-forest hover:text-yellow p-2 transition-colors"
+                className="text-cream hover:text-gold p-2"
                 onClick={() => setMobileMenuOpen(false)}
                 aria-label="Close menu"
               >
@@ -111,43 +114,34 @@ export default function Navigation() {
               </button>
             </div>
 
-            {/* Links */}
-            <div className="flex-1 flex flex-col justify-center px-8 gap-2">
+            <div className="flex-1 flex flex-col justify-center px-6 gap-1">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.name}
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + i * 0.06, duration: 0.5 }}
+                  transition={{ delay: 0.05 + i * 0.04 }}
                 >
                   <Link
                     href={link.href}
-                    className="block py-2 font-display text-4xl md:text-5xl text-forest/80 hover:text-forest transition-colors duration-300"
-                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block py-3 font-display text-3xl uppercase tracking-wide transition-colors ${
+                      pathname === link.href ? "text-gold" : "text-cream/70 hover:text-cream"
+                    }`}
                   >
                     {link.name}
                   </Link>
                 </motion.div>
               ))}
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-                className="mt-8 pt-8 border-t border-wood"
+                transition={{ delay: 0.4 }}
+                className="mt-6 pt-6 border-t border-gold/20"
               >
-                <Link
-                  href="/#reservations"
-                  className="inline-block px-8 py-4 bg-forest text-cream text-sm tracking-[0.2em] uppercase hover:bg-yellow hover:text-forest transition-all duration-500"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Reserve Your Table
+                <Link href="/reservations" className="btn-primary w-full text-center bg-gold text-void">
+                  Book a Table
                 </Link>
               </motion.div>
-            </div>
-
-            {/* Bottom info */}
-            <div className="px-8 pb-8 text-[11px] text-forest/50 tracking-[0.15em] uppercase">
-              Colombo, Sri Lanka · +94 117 112 334
             </div>
           </motion.div>
         )}

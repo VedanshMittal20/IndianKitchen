@@ -4,62 +4,72 @@ import { motion } from "framer-motion";
 import { QRCodeSVG } from "qrcode.react";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
-import { Utensils } from "lucide-react";
+import Image from "next/image";
 
 export default function MenuQRSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
-    <section className="py-24 bg-wood text-cream relative overflow-hidden">
-      {/* Background texture/overlay */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 pointer-events-none" />
-      
-      <div className="container mx-auto px-8 md:px-16 relative z-10">
+    <section className="relative bg-cream overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-sage to-terracotta" />
+
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-16">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 1 }}
-          className="flex flex-col md:flex-row items-center justify-between gap-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-5xl mx-auto"
         >
-          <div className="w-full md:w-1/2 flex flex-col gap-6">
-            <div className="w-12 h-px bg-yellow" />
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-cream leading-tight">
-              A Culinary<br />Passport
-            </h2>
-            <p className="text-cream/80 text-lg font-light leading-relaxed max-w-md">
-              Scan to explore our full menu. From the streets of Madurai to the tandoors of Punjab, discover the authentic flavours that define our immersive worlds.
+          <div>
+            <p className="text-[9px] tracking-[0.3em] uppercase text-sage font-semibold mb-3 pipe-item">
+              Digital Menu
             </p>
-            <div className="mt-4">
-              <Link
-                href="/menu"
-                className="inline-flex items-center gap-3 bg-forest text-cream px-8 py-4 font-sans text-[11px] tracking-[0.2em] uppercase hover:bg-yellow hover:text-forest transition-colors"
-              >
-                <Utensils className="w-4 h-4" />
-                View Digital Menu
+            <h2 className="heading-presentation text-void mb-5">Scan &amp; Explore</h2>
+            <p className="text-text-muted font-light leading-relaxed mb-6 text-sm max-w-sm">
+              A culinary passport through India — from Madurai street food to Punjab tandoor, one
+              scan away.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/menu" className="btn-primary">
+                View Full Menu
+              </Link>
+              <Link href="/reservations" className="btn-outline-dark">
+                Dine In
               </Link>
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-            <div className="relative group">
-              {/* Pulsing ring behind QR */}
-              <div className="absolute inset-0 bg-yellow/20 rounded-sm animate-[pulse-ring_3s_ease-out_infinite]" />
-              
-              <div className="relative bg-cream p-6 rounded-sm shadow-2xl border border-yellow/20 transform group-hover:scale-105 transition-transform duration-500">
+          <div className="flex justify-center lg:justify-end relative">
+            <div className="relative">
+              <div
+                className="absolute -right-6 top-1/2 -translate-y-1/2 hidden lg:flex items-center"
+                style={{ writingMode: "vertical-rl" }}
+              >
+                <span className="stencil-text text-[10px] text-void tracking-[0.45em]">Scan Me</span>
+              </div>
+              <div className="relative p-4 border-[3px] border-void rounded-lg bg-parchment shadow-2xl gold-frame">
+                <div className="absolute -top-3 -left-3 bg-gold text-void text-[8px] tracking-[0.2em] uppercase px-2 py-1 font-bold">
+                  Menu
+                </div>
                 <QRCodeSVG
                   value="https://indiankitchen.lk/menu"
-                  size={180}
-                  bgColor="#FBF8F1"
-                  fgColor="#0B5345"
+                  size={160}
+                  bgColor="#FAF5E9"
+                  fgColor="#0F0805"
                   level="Q"
                   includeMargin={false}
                 />
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="w-12 h-12 bg-cream rounded-full flex items-center justify-center shadow-lg">
-                    <span className="font-display text-xl text-forest font-bold">IK</span>
-                  </div>
-                </div>
+              </div>
+              {/* Decorative food thumb */}
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 overflow-hidden border-2 border-gold shadow-lg hidden md:block relative">
+                <Image
+                  src="/images/real_bamboo_biryani.jpeg"
+                  alt=""
+                  fill
+                  className="object-cover img-warm"
+                  sizes="80px"
+                />
               </div>
             </div>
           </div>

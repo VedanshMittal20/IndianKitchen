@@ -4,182 +4,251 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight, MapPin } from "lucide-react";
 
-const themes = ["Pondicherry Street", "Kerala Houseboat", "Sherlock Mystery"];
+const themes = [
+  { name: "Pondicherry Street", location: "Colombo", color: "bg-terracotta" },
+  { name: "Kerala Houseboat", location: "Kandy", color: "bg-sage" },
+  { name: "Sherlock Mystery", location: "Colombo", color: "bg-crimson" },
+];
+
+const stats = [
+  { value: "2019", label: "Founded" },
+  { value: "3", label: "Themed Worlds" },
+  { value: "26K+", label: "Instagram Family" },
+  { value: "3 AM", label: "Fri & Sat" },
+];
 
 export default function HeroSection() {
-  const [currentTheme, setCurrentTheme] = useState(0);
-  const [isMounted, setIsMounted] = useState(false);
+  const [themeIdx, setThemeIdx] = useState(0);
 
   useEffect(() => {
-    setIsMounted(true);
-    const themeInterval = setInterval(() => {
-      setCurrentTheme((prev) => (prev + 1) % themes.length);
-    }, 3500);
-
-    return () => {
-      clearInterval(themeInterval);
-    };
+    const t = setInterval(() => setThemeIdx((i) => (i + 1) % themes.length), 3200);
+    return () => clearInterval(t);
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-forest">
-      {/* ─── Background Image ─── */}
-      <div className="absolute inset-0 z-0 overflow-hidden bg-forest">
-        <motion.div
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute inset-0 w-full h-full"
-        >
-          <Image
-            src="/images/hero_main.png"
-            alt="Luxury Indian Kitchen Interior"
-            fill
-            className="object-cover img-warm"
-            priority
-            sizes="100vw"
-          />
-        </motion.div>
-        
-        {/* Deep, rich forest overlay */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-forest/70 via-forest/30 to-forest/95" />
-        {/* Subtle dark vignette */}
-        <div className="absolute inset-0 z-10 bg-black/30" />
+    <section className="relative min-h-[92vh] overflow-hidden bg-void">
+      {/* Layered backgrounds */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/real_interior.jpeg"
+          alt=""
+          fill
+          className="object-cover img-warm opacity-60"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-void via-void/85 to-sage/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-crimson/20" />
+        {/* Gold accent streak */}
+        <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-gold via-gold-light to-terracotta opacity-90" />
       </div>
 
-      {/* ─── Floating Particles ─── */}
-      <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
-        {isMounted && [...Array(15)].map((_, i) => (
+      {/* Floating spice orbs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full"
+            className="absolute rounded-full blur-3xl"
             style={{
-              width: Math.random() * 3 + 1 + "px",
-              height: Math.random() * 3 + 1 + "px",
-              background: `rgba(255, 215, 0, ${Math.random() * 0.4 + 0.1})`, // Vibrant Yellow particles
-              left: Math.random() * 100 + "%",
-              top: Math.random() * 100 + "%",
+              width: 120 + i * 40,
+              height: 120 + i * 40,
+              background:
+                i % 3 === 0
+                  ? "rgba(200, 135, 42, 0.12)"
+                  : i % 3 === 1
+                    ? "rgba(74, 103, 65, 0.15)"
+                    : "rgba(191, 94, 59, 0.1)",
+              left: `${10 + i * 15}%`,
+              top: `${20 + (i % 3) * 25}%`,
             }}
-            animate={{
-              y: [0, -(Math.random() * 200 + 100)],
-              x: [0, (Math.random() - 0.5) * 60],
-              opacity: [0, 0.8, 0],
-            }}
-            transition={{
-              duration: Math.random() * 12 + 8,
-              repeat: Infinity,
-              ease: "linear",
-              delay: Math.random() * 5,
-            }}
+            animate={{ y: [0, -20, 0], opacity: [0.4, 0.7, 0.4] }}
+            transition={{ duration: 6 + i, repeat: Infinity, ease: "easeInOut" }}
           />
         ))}
       </div>
 
-      {/* ─── Content ─── */}
-      <div className="relative z-10 h-full flex flex-col">
-        {/* Main title area - positioned like Art & Saveur with massive text at bottom */}
-        <div className="flex-1 flex items-end pb-8 md:pb-16 px-8 md:px-16">
-          <div className="w-full">
-            {/* Oversized heading */}
-            <div className="overflow-hidden mb-2">
-              <motion.h1
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3 }}
-                className="font-display text-[clamp(4rem,14vw,13rem)] leading-[0.8] tracking-[-0.02em] text-cream"
-              >
-                Indian
-              </motion.h1>
-            </div>
-            <div className="overflow-hidden mb-12">
-              <motion.h1
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.5 }}
-                className="font-display text-[clamp(4rem,14vw,13rem)] leading-[0.8] tracking-[-0.02em] text-cream"
-              >
-                Kitchen
-              </motion.h1>
-            </div>
+      <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-16 pt-28 pb-0 min-h-[92vh] flex flex-col">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 flex-1 items-center py-8 lg:py-12">
+          {/* Copy */}
+          <div className="lg:col-span-6 xl:col-span-5">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 bg-signal/15 border border-signal/30 px-3 py-1.5 mb-6"
+            >
+              <span className="w-2 h-2 rounded-full bg-signal animate-signal-glow" />
+              <span className="text-[9px] tracking-[0.28em] uppercase text-signal font-semibold">
+                Theme Dining · Colombo & Kandy
+              </span>
+            </motion.div>
 
-            {/* Bottom row: Info block + Theme rotation */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-              {/* Left: tagline block */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1 }}
-                className="flex flex-col gap-4"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-px bg-yellow" />
-                  <span className="text-[10px] font-sans font-medium text-yellow tracking-[0.3em] uppercase">
-                    Est. 2019 — Colombo
-                  </span>
-                </div>
-                <p className="text-cream text-sm md:text-base max-w-md leading-relaxed font-light">
-                  Where gastronomy transcends into artistry.
-                  An immersive journey through taste, texture, and time.
-                </p>
-                <Link
-                  href="/#themes"
-                  className="group inline-flex items-center gap-3 text-[11px] font-sans font-medium text-yellow tracking-[0.25em] uppercase mt-2 w-fit"
+            <motion.h1
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className="heading-presentation-lg heading-presentation-light mb-5"
+            >
+              Where Every
+              <br />
+              <span className="text-gold italic font-light normal-case tracking-normal">
+                Meal
+              </span>{" "}
+              Tells
+              <br />A Story
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="text-cream/80 font-light leading-relaxed max-w-lg mb-8 text-base md:text-lg border-l-2 border-gold pl-5"
+            >
+              Immersive theme dining — Pondicherry Street, Kerala Houseboat, and Sherlock
+              Mystery — serving India&apos;s soul on every plate in Colombo.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.45 }}
+              className="flex flex-wrap gap-3 mb-8"
+            >
+              <Link href="/reservations" className="btn-primary">
+                Reserve a Table
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href="/menu" className="btn-outline">
+                View Menu
+              </Link>
+            </motion.div>
+
+            {/* Live theme ticker */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="flex items-center gap-4"
+            >
+              <span className="text-[9px] tracking-[0.25em] uppercase text-cream/40 shrink-0">
+                Now Experiencing
+              </span>
+              <div className="h-px flex-1 bg-cream/10" />
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={themeIdx}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  className="text-[11px] tracking-[0.15em] uppercase text-gold font-display italic shrink-0"
                 >
-                  Discover
-                  <motion.span
-                    className="inline-block"
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    →
-                  </motion.span>
-                </Link>
-              </motion.div>
+                  {themes[themeIdx].name}
+                </motion.span>
+              </AnimatePresence>
+            </motion.div>
+          </div>
 
-              {/* Right: rotating theme name */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-                className="text-right"
-              >
-                <div className="text-[10px] font-sans text-cream/60 tracking-[0.3em] uppercase mb-2">
-                  Now Experiencing
+          {/* Visual collage */}
+          <div className="lg:col-span-6 xl:col-span-7 relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9, delay: 0.2 }}
+              className="grid grid-cols-12 grid-rows-6 gap-2 md:gap-3 h-[340px] md:h-[440px] lg:h-[480px]"
+            >
+              <div className="col-span-7 row-span-4 relative overflow-hidden gold-frame">
+                <Image
+                  src="/images/real_storefront.jpeg"
+                  alt="Indian Kitchen storefront"
+                  fill
+                  className="object-cover img-warm animate-ken-burns"
+                  sizes="40vw"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-void/60 to-transparent" />
+                <div className="absolute bottom-3 left-3 bg-gold text-void text-[8px] tracking-[0.2em] uppercase px-2 py-1 font-bold">
+                  Flagship · Colombo
                 </div>
-                <div className="h-[2.5rem] md:h-[3rem] overflow-hidden flex flex-col justify-end">
-                  <AnimatePresence mode="popLayout">
-                    <motion.div
-                      key={currentTheme}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.6 }}
-                      className="font-display text-2xl md:text-3xl text-yellow italic"
-                    >
-                      {themes[currentTheme]}
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-              </motion.div>
-            </div>
+              </div>
+              <div className="col-span-5 row-span-3 relative overflow-hidden gold-frame">
+                <Image
+                  src="/images/real_bamboo_biryani.jpeg"
+                  alt="Bamboo Biryani"
+                  fill
+                  className="object-cover img-warm"
+                  sizes="25vw"
+                />
+                <div className="absolute inset-0 bg-sage/20 mix-blend-multiply" />
+              </div>
+              <div className="col-span-5 row-span-3 relative overflow-hidden gold-frame bg-crimson">
+                <Image
+                  src="/images/real_copper_pot.jpeg"
+                  alt="Copper pot biryani"
+                  fill
+                  className="object-cover img-warm opacity-90"
+                  sizes="25vw"
+                />
+              </div>
+              <div className="col-span-7 row-span-2 relative overflow-hidden gold-frame">
+                <Image
+                  src="/images/real_waiter.jpeg"
+                  alt="Immersive dining service"
+                  fill
+                  className="object-cover img-warm"
+                  sizes="35vw"
+                />
+                <div className="absolute inset-0 bg-terracotta/25 mix-blend-multiply" />
+              </div>
+            </motion.div>
+
+            {/* Floating location chip */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.8 }}
+              className="absolute -bottom-2 -left-2 md:-left-6 bg-cream text-void px-4 py-3 shadow-xl flex items-center gap-2 border-l-4 border-sage"
+            >
+              <MapPin className="w-4 h-4 text-sage shrink-0" />
+              <div>
+                <p className="text-[8px] tracking-[0.2em] uppercase text-sage font-semibold">
+                  Open Daily
+                </p>
+                <p className="text-xs font-medium">357 R.A. De Mel Mawatha</p>
+              </div>
+            </motion.div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Stats ribbon */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.7 }}
+          className="grid grid-cols-2 md:grid-cols-4 border-t border-cream/10 mt-auto"
         >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-2"
-          >
-            <span className="text-[9px] tracking-[0.3em] uppercase text-cream/50">Scroll</span>
-            <div className="w-px h-8 bg-gradient-to-b from-yellow to-transparent" />
-          </motion.div>
+          {stats.map((stat, i) => (
+            <div
+              key={stat.label}
+              className={`py-5 px-4 md:px-6 text-center md:text-left border-cream/10 ${
+                i < stats.length - 1 ? "md:border-r" : ""
+              } ${i % 2 === 0 ? "border-r md:border-r" : ""} border-b md:border-b-0`}
+              style={{
+                background:
+                  i === 0
+                    ? "rgba(74, 103, 65, 0.25)"
+                    : i === 1
+                      ? "rgba(200, 135, 42, 0.15)"
+                      : i === 2
+                        ? "rgba(191, 94, 59, 0.15)"
+                        : "rgba(74, 14, 14, 0.2)",
+              }}
+            >
+              <div className="font-display text-2xl md:text-3xl text-gold mb-0.5">{stat.value}</div>
+              <div className="text-[8px] tracking-[0.25em] uppercase text-cream/50">{stat.label}</div>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>
