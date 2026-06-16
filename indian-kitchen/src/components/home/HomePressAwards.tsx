@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 const awards = [
   { year: "2025", title: "Best Theme Restaurant", org: "Colombo Culinary Awards" },
   { year: "2024", title: "Excellence in Authentic Cuisine", org: "Taste of Asia" },
-  { year: "2023", title: "Most Innovative Dining Experience", org: "Hospitality Weekly" },
+  { year: "2023", title: "Global Icon Award", org: "Global Economic Forum" },
   { year: "2022", title: "Top 10 Emerging Brands", org: "Global Dining Guide" },
 ];
 

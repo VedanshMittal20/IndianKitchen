@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSearchParams } from "next/navigation";
 import * as z from "zod";
+import PageHero from "@/components/ui/PageHero";
 
 const jobListings = [
   {
@@ -112,29 +113,12 @@ ${data.whyUs}`;
 
   return (
     <main className="min-h-screen bg-paper text-text-dark">
-      {/* Hero */}
-      <section className="relative pt-28 pb-12 md:pt-32 md:pb-16 bg-paper border-b border-sage/10 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.1] bg-cover bg-center"
-          style={{ backgroundImage: "url(/images/slide_6.png)" }}
-        />
-        <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-16 text-center max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="text-sage text-[10px] tracking-[0.25em] uppercase mb-4 pipe-item inline-block">
-              Careers
-            </p>
-            <h1 className="heading-presentation mb-4">Join the World-Builders</h1>
-            <p className="text-text-muted font-light leading-relaxed text-base md:text-lg">
-              We don&apos;t hire waitstaff. We hire storytellers. Every person — from kitchen to
-              floor — plays a character in an immersive world.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        label="Join Our Village"
+        title="Join the World-Builders"
+        subtitle="We don't hire waitstaff. We hire storytellers. Every person — from kitchen to floor — plays a character in an immersive world."
+        image="/images/real_waiter.jpeg"
+      />
 
       <div className="container mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-16">
         {/* Job Listings */}

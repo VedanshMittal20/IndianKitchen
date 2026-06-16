@@ -20,7 +20,7 @@ export default function HomeFounderNote() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-6 order-2 lg:order-1"
           >
-            <SectionLabel className="mb-5">Founder&apos;s Note</SectionLabel>
+            <SectionLabel className="mb-5">A Tale of Spice & Time</SectionLabel>
             
             <h2 className="heading-presentation mb-8 text-forest">
               Building Experiences<br/>Through Passion
@@ -33,7 +33,7 @@ export default function HomeFounderNote() {
             </p>
 
             <p className="text-text-muted text-base md:text-lg leading-relaxed mb-8 font-light">
-              His expertise spans brand conceptualization, operations management, revenue optimization, and international expansion. Vincent&apos;s vision extends beyond restaurants, to create a complete ecosystem of authentic Indian culinary experiences worldwide.
+              His expertise spans brand conceptualization, operations management, revenue optimization, and international expansion. Recently honored with the "Global Icon Award" at the 2023 Global Economic Forum, Vincent&apos;s vision extends beyond restaurants to create a complete ecosystem of authentic Indian culinary experiences worldwide.
             </p>
 
             <div className="bg-sage/5 border-l-2 border-sage p-6">
@@ -54,7 +54,7 @@ export default function HomeFounderNote() {
           >
             <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] overflow-hidden border border-sage/15 shadow-xl">
               <Image 
-                src="/images/real_waiter.jpeg" 
+                src="/images/extracted/page15_img2.png" 
                 alt="Vincent Renold" 
                 fill 
                 className="object-cover img-warm"

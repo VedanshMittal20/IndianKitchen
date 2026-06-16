@@ -112,7 +112,7 @@ export default function FranchisePage() {
               className="relative h-[600px] rounded-sm overflow-hidden shadow-2xl"
             >
               <Image
-                src="/images/slide_10.png" // Placeholder image
+                src="/images/real_storefront.jpeg"
                 alt="Indian Kitchen Franchise"
                 fill
                 className="object-cover sepia-[0.1] saturate-[1.1]"

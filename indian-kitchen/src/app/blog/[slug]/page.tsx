@@ -132,7 +132,7 @@ export default async function BlogPostPage({
                       src={related.image}
                       alt={related.title}
                       fill
-                      className="object-cover img-warm group-hover:scale-105 transition-transform duration-700"
+                      className="object-cover img-warm group-hover:scale-105 transition-transform duration-700 will-change-transform"
                     />
                   </div>
                   <div className="p-5">

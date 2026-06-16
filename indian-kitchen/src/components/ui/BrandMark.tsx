@@ -14,9 +14,9 @@ export default function BrandMark({ variant = "green", size = "md", className }:
   };
 
   const sizes = {
-    sm: { title: "text-[8px] tracking-[0.25em]", sub: "text-[6px] tracking-[0.3em]", bar: "h-8 w-px" },
-    md: { title: "text-[9px] tracking-[0.28em]", sub: "text-[7px] tracking-[0.32em]", bar: "h-10 w-px" },
-    lg: { title: "text-[10px] tracking-[0.3em]", sub: "text-[8px] tracking-[0.35em]", bar: "h-12 w-px" },
+    sm: { title: "text-[8px] tracking-[0.25em]", sub: "text-[6px] tracking-[0.3em]", bar: "h-8 w-[1.5px]" },
+    md: { title: "text-[9px] tracking-[0.28em]", sub: "text-[7px] tracking-[0.32em]", bar: "h-10 w-[1.5px]" },
+    lg: { title: "text-[10px] tracking-[0.3em]", sub: "text-[8px] tracking-[0.35em]", bar: "h-12 w-[2px]" },
   };
 
   const c = colors[variant];
@@ -24,12 +24,12 @@ export default function BrandMark({ variant = "green", size = "md", className }:
 
   return (
     <div className={cn("flex items-center gap-3", className)}>
-      <div className={cn(s.bar, c.bar)} />
+      <div className={cn("rounded-full", s.bar, c.bar)} />
       <div className="flex flex-col leading-tight">
-        <span className={cn("font-sans font-semibold uppercase", s.title, c.title)}>
+        <span className={cn("font-sans font-bold uppercase", s.title, c.title)}>
           Indian Kitchen
         </span>
-        <span className={cn("font-sans font-medium uppercase", s.sub, c.sub)}>
+        <span className={cn("font-sans font-medium uppercase mt-0.5", s.sub, c.sub)}>
           Theme Dining
         </span>
       </div>

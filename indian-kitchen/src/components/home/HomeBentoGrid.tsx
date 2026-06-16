@@ -8,7 +8,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const tiles = [
   {
-    title: "Our Story",
+    title: "The Genesis",
     desc: "Born in 2019 — we transform dining into experiential journeys.",
     href: "/experience",
     image: "/images/slide_2.png",
@@ -81,8 +81,8 @@ export default function HomeBentoGrid() {
               key={tile.href}
               initial={{ opacity: 0, scale: 0.97 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.06 }}
-              className={tile.span}
+              transition={{ type: "spring", stiffness: 260, damping: 20, delay: index * 0.06 }}
+              className={`${tile.span} will-change-transform`}
             >
               <Link
                 href={tile.href}
@@ -92,7 +92,7 @@ export default function HomeBentoGrid() {
                   src={tile.image}
                   alt={tile.title}
                   fill
-                  className={`object-cover img-warm transition-transform duration-700 group-hover:scale-105 ${
+                  className={`object-cover img-warm transition-transform duration-700 group-hover:scale-105 will-change-transform ${
                     tile.span.includes("row-span-2") ? "object-top" : ""
                   }`}
                   sizes="(max-width: 768px) 100vw, 25vw"

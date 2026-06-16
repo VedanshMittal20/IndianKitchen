@@ -18,10 +18,10 @@ export default function FindUs() {
           className="text-center mb-10"
         >
           <span className="text-[10px] tracking-[0.3em] uppercase text-terracotta font-medium block mb-3">
-            Location
+            Find Us
           </span>
           <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-tight text-espresso">
-            Visit Us in Colombo
+            Our Themed Sanctuaries
           </h2>
         </motion.div>
 
@@ -56,15 +56,23 @@ export default function FindUs() {
                 <div className="w-9 h-9 rounded-full border border-terracotta/25 flex items-center justify-center shrink-0 group-hover:bg-espresso group-hover:text-cream transition-colors text-terracotta">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <div>
-                  <h4 className="font-sans text-[9px] tracking-[0.2em] uppercase text-terracotta mb-1">
-                    Pondicherry Street Outlet
-                  </h4>
-                  <p className="font-display text-lg text-espresso">
-                    357 R.A. De Mel Mawatha,
-                    <br />
-                    Colombo 03, Sri Lanka
-                  </p>
+                <div className="flex flex-col gap-4">
+                  <div>
+                    <h4 className="font-sans text-[9px] tracking-[0.2em] uppercase text-terracotta mb-1">
+                      Colombo Outlet
+                    </h4>
+                    <p className="font-display text-lg text-espresso leading-snug">
+                      357 R.A. De Mel Mawatha,<br />Kollupitiya, Colombo 03
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-sans text-[9px] tracking-[0.2em] uppercase text-terracotta mb-1">
+                      Kandy Outlet
+                    </h4>
+                    <p className="font-display text-lg text-espresso leading-snug">
+                      25/8 Sangaraja Mawatha,<br />Hillwood College Rd, Kandy
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -74,14 +82,22 @@ export default function FindUs() {
                 </div>
                 <div>
                   <h4 className="font-sans text-[9px] tracking-[0.2em] uppercase text-terracotta mb-1">
-                    Reservations
+                    Reservations & Inquiries
                   </h4>
-                  <a
-                    href="tel:+94117112334"
-                    className="font-display text-lg text-espresso hover:text-saffron transition-colors"
-                  >
-                    +94 117 112 334
-                  </a>
+                  <div className="flex flex-col">
+                    <a
+                      href="tel:+94778191396"
+                      className="font-display text-lg text-espresso hover:text-saffron transition-colors"
+                    >
+                      +94 778 191 396
+                    </a>
+                    <a
+                      href="mailto:kitchenindian1@gmail.com"
+                      className="font-light text-sm text-espresso hover:text-saffron transition-colors"
+                    >
+                      kitchenindian1@gmail.com
+                    </a>
+                  </div>
                 </div>
               </div>
 

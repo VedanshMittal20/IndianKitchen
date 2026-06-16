@@ -4,34 +4,20 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/data/blogPosts";
+import PageHero from "@/components/ui/PageHero";
 
 export default function BlogPage() {
   const featured = blogPosts[0];
   const rest = blogPosts.slice(1);
 
   return (
-    <main className="min-h-screen bg-paper text-text-dark">
-      {/* Hero */}
-      <section className="relative pt-28 pb-12 md:pt-32 md:pb-16 overflow-hidden bg-paper border-b border-sage/10">
-        <div className="absolute inset-0 opacity-[0.12]">
-          <Image src="/images/slide_7.png" alt="" fill className="object-cover object-top" />
-        </div>
-        <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-16 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="text-sage font-sans tracking-[0.25em] uppercase text-[10px] mb-4 pipe-item inline-block">
-              From the Spice Trail
-            </p>
-            <h1 className="heading-presentation mb-4">Tales from the Kitchen</h1>
-            <p className="text-text-muted max-w-2xl mx-auto text-base md:text-lg font-light">
-              Stories, recipes, and behind-the-scenes from the world of Indian Kitchen.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <main className="min-h-screen bg-cream text-espresso">
+      <PageHero
+        label="From the Spice Trail"
+        title="Tales from the Kitchen"
+        subtitle="Stories, recipes, and behind-the-scenes from the world of Indian Kitchen."
+        image="/images/real_interior.jpeg"
+      />
 
       <div className="container mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-16">
         {/* Featured post */}
@@ -42,13 +28,13 @@ export default function BlogPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-12 md:mb-16"
           >
-            <Link href={`/blog/${featured.slug}`} className="group grid grid-cols-1 lg:grid-cols-2 gap-0 border border-terracotta/15 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-500">
-              <div className="relative h-64 lg:h-auto min-h-[280px] overflow-hidden bg-parchment">
+            <Link href={`/blog/${featured.slug}`} className="group grid grid-cols-1 lg:grid-cols-2 gap-0 border border-terracotta/20 bg-parchment overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-500">
+              <div className="relative h-64 lg:h-auto min-h-[280px] overflow-hidden bg-cream">
                 <Image
                   src={featured.image}
                   alt={featured.title}
                   fill
-                  className="object-cover img-warm transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover img-warm transition-transform duration-700 group-hover:scale-105 will-change-transform"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
@@ -81,20 +67,21 @@ export default function BlogPage() {
             <motion.article
               key={post.slug}
               initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 + index * 0.08 }}
-              className="group bg-white border border-terracotta/12 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-400"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
+              className="group bg-parchment border border-terracotta/20 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-400"
             >
               <Link href={`/blog/${post.slug}`} className="block h-full">
-                <div className="relative h-52 overflow-hidden bg-parchment">
+                <div className="relative h-52 overflow-hidden bg-cream">
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
-                    className="object-cover img-warm group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover img-warm group-hover:scale-105 transition-transform duration-700 will-change-transform"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <span className="absolute top-3 right-3 bg-cream/90 backdrop-blur-sm text-espresso px-2.5 py-1 text-[9px] font-medium uppercase tracking-wider">
+                  <span className="absolute top-3 right-3 bg-cream text-espresso px-2.5 py-1 text-[9px] font-medium uppercase tracking-wider shadow-sm">
                     {post.tag}
                   </span>
                 </div>

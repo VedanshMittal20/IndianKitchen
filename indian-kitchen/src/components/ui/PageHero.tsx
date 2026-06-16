@@ -39,7 +39,7 @@ export default function PageHero({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ type: "spring", stiffness: 200, damping: 30, delay: 0.1 }}
           >
             <SectionLabel light className="mb-5">{label}</SectionLabel>
             <h1 className="heading-presentation mb-4">{title}</h1>

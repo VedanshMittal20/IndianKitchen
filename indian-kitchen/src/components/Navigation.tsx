@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import BrandMark from "@/components/ui/BrandMark";
 
+// Shortened nav links for the sleek floating pill design
 const navLinks = [
   { name: "Experience", href: "/experience" },
   { name: "Themes", href: "/themes" },
@@ -14,12 +15,12 @@ const navLinks = [
   { name: "Reservations", href: "/reservations" },
   { name: "Blog", href: "/blog" },
   { name: "Careers", href: "/careers" },
-  { name: "Franchise", href: "/franchise" },
 ];
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -39,86 +40,116 @@ export default function Navigation() {
   }, []);
 
   useEffect(() => {
-    // Avoid synchronous state updates during render phase
     const timer = setTimeout(() => {
       setMobileMenuOpen(false);
     }, 0);
     return () => clearTimeout(timer);
   }, [pathname]);
 
-  const darkHeroRoutes = ["/", "/themes", "/reservations", "/contact", "/experience"];
-  const isDarkHeroRoute = darkHeroRoutes.includes(pathname);
+  const darkHeroRoutes = ["/", "/themes", "/reservations", "/contact", "/experience", "/menu", "/blog", "/franchise", "/careers"];
+  const isDarkHeroRoute = darkHeroRoutes.includes(pathname) || pathname.startsWith("/blog/");
   const onDarkHero = isDarkHeroRoute && !isScrolled;
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-parchment/95 backdrop-blur-md py-3 border-b border-sage/15 shadow-sm"
-          : onDarkHero
-            ? "bg-gradient-to-b from-void/80 to-transparent py-5"
-            : "bg-paper py-5 border-b border-sage/10"
-      }`}
-    >
-      <div className="mx-auto px-6 md:px-12 lg:px-16 flex items-center justify-between">
-        <Link href="/">
-          <BrandMark variant={onDarkHero ? "light" : "green"} size="md" />
-        </Link>
+    <>
+      <header
+        className={`fixed z-50 transition-all duration-500 hidden xl:flex justify-center w-full top-6 pointer-events-none`}
+      >
+        {/* The Floating Pill */}
+        <div 
+          className={`pointer-events-auto flex items-center gap-2 px-3 py-2.5 rounded-full transition-colors duration-500 shadow-2xl backdrop-blur-xl border ${
+            onDarkHero
+              ? "bg-void/40 border-cream/10 shadow-black/50"
+              : "bg-paper/75 border-sage/15 shadow-sage/10"
+          }`}
+          onMouseLeave={() => setHoveredLink(null)}
+        >
+          {/* Logo Section */}
+          <Link href="/" className="px-3 py-1 mr-2 relative z-10 flex items-center">
+            <BrandMark variant={onDarkHero ? "light" : "green"} size="sm" />
+          </Link>
 
-        <div className="hidden xl:flex items-center gap-7">
+          {/* Nav Links */}
           {navLinks.map((link) => {
             const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
+            const isHovered = hoveredLink === link.name;
+            const activeOrHovered = isActive || isHovered;
+
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`link-underline text-[10px] font-sans font-medium tracking-[0.16em] uppercase transition-colors ${
-                  isActive
+                onMouseEnter={() => setHoveredLink(link.name)}
+                className={`relative px-4 py-2 text-[10px] font-sans font-medium tracking-[0.16em] uppercase rounded-full transition-colors duration-300 ${
+                  activeOrHovered
                     ? onDarkHero
-                      ? "text-gold"
-                      : "text-sage"
+                      ? "text-void"
+                      : "text-cream"
                     : onDarkHero
-                      ? "text-cream/80 hover:text-gold"
-                      : "text-text-muted hover:text-sage"
+                      ? "text-cream/80 hover:text-cream"
+                      : "text-text-muted hover:text-forest"
                 }`}
               >
-                {link.name}
+                {/* Sliding Background Pill */}
+                {activeOrHovered && (
+                  <motion.div
+                    layoutId="nav-pill"
+                    className={`absolute inset-0 rounded-full z-0 ${
+                      onDarkHero ? "bg-cream" : "bg-forest"
+                    }`}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 30,
+                    }}
+                  />
+                )}
+                <span className="relative z-10">{link.name}</span>
               </Link>
             );
           })}
-          <div className={`w-px h-4 mx-1 ${onDarkHero ? "bg-cream/20" : "bg-sage/20"}`} />
-          <Link
-            href="/reservations"
-            className={`text-[10px] font-sans font-semibold tracking-[0.16em] uppercase transition-colors ${
-              onDarkHero ? "text-gold hover:text-cream" : "text-terracotta hover:text-gold"
-            }`}
-          >
-            Book a Table →
-          </Link>
         </div>
+      </header>
 
-        <button
-          className={`xl:hidden p-2 transition-colors ${
-            onDarkHero ? "text-cream hover:text-gold" : "text-sage hover:text-gold"
-          }`}
-          onClick={() => setMobileMenuOpen(true)}
-          aria-label="Open menu"
-        >
-          <Menu className="w-6 h-6" strokeWidth={1.5} />
-        </button>
-      </div>
+      {/* Mobile Header (Standard style, since a pill doesn't fit mobile well) */}
+      <header
+        className={`xl:hidden fixed top-0 w-full z-50 transition-all duration-500 ${
+          isScrolled
+            ? "bg-parchment/95 backdrop-blur-md py-3 border-b border-sage/15 shadow-sm"
+            : onDarkHero
+              ? "bg-gradient-to-b from-void/80 to-transparent py-4"
+              : "bg-paper py-4 border-b border-sage/10"
+        }`}
+      >
+        <div className="px-6 md:px-12 flex items-center justify-between">
+          <Link href="/">
+            <BrandMark variant={onDarkHero ? "light" : "green"} size="sm" />
+          </Link>
 
+          <button
+            className={`p-2 transition-colors ${
+              onDarkHero ? "text-cream hover:text-gold" : "text-sage hover:text-gold"
+            }`}
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu className="w-6 h-6" strokeWidth={1.5} />
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.35 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="fixed inset-0 z-[60] bg-void flex flex-col"
           >
             <div className="flex items-center justify-between px-6 py-5 border-b border-gold/20">
-              <BrandMark variant="light" size="md" />
+              <BrandMark variant="light" size="sm" />
               <button
                 className="text-cream hover:text-gold p-2"
                 onClick={() => setMobileMenuOpen(false)}
@@ -128,13 +159,13 @@ export default function Navigation() {
               </button>
             </div>
 
-            <div className="flex-1 flex flex-col justify-center px-6 gap-1">
+            <div className="flex-1 flex flex-col justify-center px-6 gap-2">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.name}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 + i * 0.04 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.05, type: "spring", stiffness: 300, damping: 25 }}
                 >
                   <Link
                     href={link.href}
@@ -146,20 +177,10 @@ export default function Navigation() {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
-                className="mt-6 pt-6 border-t border-gold/20"
-              >
-                <Link href="/reservations" className="btn-primary w-full text-center bg-gold text-void">
-                  Book a Table
-                </Link>
-              </motion.div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
