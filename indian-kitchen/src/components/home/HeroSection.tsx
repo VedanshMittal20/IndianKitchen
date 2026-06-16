@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, MapPin } from "lucide-react";
@@ -21,6 +21,8 @@ const stats = [
 
 export default function HeroSection() {
   const [themeIdx, setThemeIdx] = useState(0);
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   useEffect(() => {
     const t = setInterval(() => setThemeIdx((i) => (i + 1) % themes.length), 3200);
@@ -30,7 +32,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[92vh] overflow-hidden bg-void">
       {/* Layered backgrounds */}
-      <div className="absolute inset-0">
+      <motion.div style={{ y, willChange: "transform" }} className="absolute inset-0">
         <Image
           src="/images/real_interior.jpeg"
           alt=""
@@ -43,7 +45,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-crimson/20" />
         {/* Gold accent streak */}
         <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-gold via-gold-light to-terracotta opacity-90" />
-      </div>
+      </motion.div>
 
       {/* Floating spice orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -85,20 +87,38 @@ export default function HeroSection() {
               </span>
             </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="heading-presentation-lg heading-presentation-light mb-5"
-            >
-              Where Every
-              <br />
-              <span className="text-gold italic font-light normal-case tracking-normal">
-                Meal
-              </span>{" "}
-              Tells
-              <br />A Story
-            </motion.h1>
+            <h1 className="heading-presentation-lg heading-presentation-light mb-5">
+              <div className="overflow-hidden pb-2">
+                <motion.div
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  Where Every
+                </motion.div>
+              </div>
+              <div className="overflow-hidden pb-2">
+                <motion.div
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <span className="text-gold italic font-light normal-case tracking-normal">
+                    Meal
+                  </span>{" "}
+                  Tells
+                </motion.div>
+              </div>
+              <div className="overflow-hidden pb-2">
+                <motion.div
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  A Story
+                </motion.div>
+              </div>
+            </h1>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}

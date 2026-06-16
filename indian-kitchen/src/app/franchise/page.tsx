@@ -91,7 +91,7 @@ export default function FranchisePage() {
                 <span className="text-yellow">Build a Legacy.</span>
               </h1>
               <p className="text-text-muted text-lg leading-relaxed mb-8">
-                Indian Kitchen is a brand built for scale. Since 2020, we've proven that immersive theme dining drives loyalty, repeat visits, and viral word-of-mouth. We're now expanding our model globally. If you have the vision, we have the blueprint.
+               At Indian Kitchen, we don&apos;t just serve food; we serve experiences. Our theme dining concepts—from the bustling streets of Pondicherry to the tranquil backwaters of Kerala—offer a unique value proposition that goes beyond traditional dining. We&apos;re looking for passionate partners to expand this legacy globally. If you have the vision, we have the blueprint.
               </p>
 
               <div className="space-y-4">

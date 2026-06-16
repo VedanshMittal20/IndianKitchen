@@ -22,6 +22,7 @@ export default function Marquee() {
         className="flex whitespace-nowrap"
         animate={{ x: ["0%", "-50%"] }}
         transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+        style={{ willChange: "transform" }}
       >
         {[0, 1, 2, 3].map((i) => (
           <span

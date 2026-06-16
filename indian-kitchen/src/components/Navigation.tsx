@@ -23,24 +23,38 @@ export default function Navigation() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handleScroll);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 40);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    setMobileMenuOpen(false);
+    // Avoid synchronous state updates during render phase
+    const timer = setTimeout(() => {
+      setMobileMenuOpen(false);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
-  const isHome = pathname === "/";
-  const onDarkHero = isHome && !isScrolled;
+  const darkHeroRoutes = ["/", "/themes", "/reservations", "/contact", "/experience"];
+  const isDarkHeroRoute = darkHeroRoutes.includes(pathname);
+  const onDarkHero = isDarkHeroRoute && !isScrolled;
 
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-parchment/95 backdrop-blur-xl py-3 border-b border-sage/15 shadow-sm"
+          ? "bg-parchment/95 backdrop-blur-md py-3 border-b border-sage/15 shadow-sm"
           : onDarkHero
             ? "bg-gradient-to-b from-void/80 to-transparent py-5"
             : "bg-paper py-5 border-b border-sage/10"

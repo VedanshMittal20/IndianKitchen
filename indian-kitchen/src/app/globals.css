@@ -158,16 +158,22 @@ nextjs-portal { display: none !important; }
 }
 
 @keyframes signal-glow {
-  0%, 100% { opacity: 0.75; filter: drop-shadow(0 0 6px rgba(76, 175, 80, 0.5)); }
-  50% { opacity: 1; filter: drop-shadow(0 0 18px rgba(76, 175, 80, 0.95)); }
+  0%, 100% { opacity: 0.75; box-shadow: 0 0 6px rgba(76, 175, 80, 0.5); }
+  50% { opacity: 1; box-shadow: 0 0 18px rgba(76, 175, 80, 0.95); }
 }
 
 @keyframes ken-burns {
   0% { transform: scale(1); }
   100% { transform: scale(1.08); }
 }
-.animate-ken-burns { animation: ken-burns 20s ease-in-out infinite alternate; }
-.animate-signal-glow { animation: signal-glow 2.5s ease-in-out infinite; }
+.animate-ken-burns { 
+  animation: ken-burns 25s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate; 
+  will-change: transform; 
+}
+.animate-signal-glow { 
+  animation: signal-glow 2.5s ease-in-out infinite; 
+  will-change: opacity, box-shadow; 
+}
 
 @keyframes shimmer-slide {
   0% { transform: translateX(-100%); }

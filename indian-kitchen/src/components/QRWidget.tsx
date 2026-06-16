@@ -11,7 +11,7 @@ export default function QRWidget() {
   const [scanned, setScanned] = useState(false);
   const router = useRouter();
 
-  const handleScan = (result: any) => {
+  const handleScan = (result: unknown) => {
     // The library may return an array of results or a single string depending on version
     const text = Array.isArray(result) ? result[0]?.rawValue : result;
     
