@@ -89,7 +89,7 @@ export default function MenuPage() {
                   className={`whitespace-nowrap px-6 py-2 rounded-full text-sm font-medium transition-all ${
                       activeCategory === cat.category
                         ? "bg-forest text-cream"
-                        : "bg-forest/5 text-forest hover:bg-forest/10"
+                        : "border border-wood/30 text-forest hover:bg-forest hover:text-cream"
                   }`}
                 >
                   {cat.category}
@@ -120,11 +120,11 @@ export default function MenuPage() {
                         {item.tags.map(tag => (
                           <span
                             key={tag}
-                            className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-sm border ${
-                              tag === "VEG" ? "border-green-500/50 text-green-400" :
-                              tag === "NON-VEG" ? "border-red-500/50 text-red-400" :
-                              tag === "VEGAN" ? "border-green-600/50 text-green-500" :
-                              "border-orange-500/50 text-orange-400"
+                            className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-sm border font-medium ${
+                              tag === "VEG" ? "border-forest/50 text-forest" :
+                              tag === "NON-VEG" ? "border-wood/50 text-wood" :
+                              tag === "VEGAN" ? "border-forest/50 text-forest" :
+                              "border-wood/50 text-wood"
                             }`}
                           >
                             {tag}
@@ -137,7 +137,7 @@ export default function MenuPage() {
                     </div>
                     
                     <div className="flex flex-col items-end gap-3 shrink-0">
-                      <span className="font-sans text-sm font-medium text-forest whitespace-nowrap">
+                      <span className="font-sans text-sm font-bold tracking-wide text-wood whitespace-nowrap">
                         {item.price}
                       </span>
                       <a

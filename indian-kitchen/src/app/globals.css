@@ -110,7 +110,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ─── IMAGE WARMTH FILTER ─── */
 .img-warm {
-  filter: sepia(0.05) saturate(1.1) brightness(0.95);
+  filter: sepia(0.15) contrast(1.05) brightness(1.05) saturate(1.1);
+}
+
+/* Hide Next.js dev indicator */
+nextjs-portal {
+  display: none !important;
 }
 
 /* ─── ANIMATIONS ─── */
