@@ -86,7 +86,7 @@ export default function HomeBentoGrid() {
             >
               <Link
                 href={tile.href}
-                className="group relative block w-full h-full min-h-[180px] overflow-hidden gold-frame"
+                className="group relative block w-full h-full min-h-[180px] overflow-hidden rounded-[32px] border border-terracotta/15 shadow-sm"
               >
                 <Image
                   src={tile.image}

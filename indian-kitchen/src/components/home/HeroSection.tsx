@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, MapPin } from "lucide-react";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 const themes = [
   { name: "Pondicherry Street", location: "Colombo", color: "bg-terracotta" },
@@ -71,6 +72,9 @@ export default function HeroSection() {
         ))}
       </div>
 
+      {/* Subtle luxury glow behind text */}
+      <div className="absolute left-0 top-1/3 -translate-y-1/2 w-[800px] h-[800px] bg-gold/15 blur-[140px] rounded-full pointer-events-none z-0" />
+
       <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-16 pt-28 pb-0 min-h-[92vh] flex flex-col">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 flex-1 items-center py-8 lg:py-12">
           {/* Copy */}
@@ -79,7 +83,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 bg-signal/15 border border-signal/30 px-3 py-1.5 mb-6"
+              className="inline-flex items-center gap-2 bg-sage/20 backdrop-blur-md px-4 py-2 mb-6 rounded-full"
             >
               <span className="w-2 h-2 rounded-full bg-signal animate-signal-glow" />
               <span className="text-[9px] tracking-[0.28em] uppercase text-signal font-semibold">
@@ -136,13 +140,17 @@ export default function HeroSection() {
               transition={{ duration: 0.7, delay: 0.45 }}
               className="flex flex-wrap gap-3 mb-8"
             >
-              <Link href="/reservations" className="btn-primary">
-                Reserve a Table
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link href="/menu" className="btn-outline">
-                View Menu
-              </Link>
+              <MagneticButton>
+                <Link href="/reservations" className="btn-primary">
+                  Reserve a Table
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </MagneticButton>
+              <MagneticButton>
+                <Link href="/menu" className="btn-outline">
+                  View Menu
+                </Link>
+              </MagneticButton>
             </motion.div>
 
             {/* Live theme ticker */}

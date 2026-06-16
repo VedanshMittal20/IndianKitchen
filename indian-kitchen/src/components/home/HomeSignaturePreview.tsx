@@ -71,7 +71,7 @@ export default function HomeSignaturePreview() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-                className="group relative bg-crimson/30 border border-gold/20 overflow-hidden gold-frame"
+                className="group relative bg-crimson/30 border border-gold/20 overflow-hidden rounded-[32px]"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image

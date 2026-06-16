@@ -79,7 +79,7 @@ export default function ThemesShowcase() {
               }`}
             >
               <div
-                className={`lg:col-span-7 relative h-[38vh] md:h-[46vh] overflow-hidden border border-sage/10 ${
+                className={`lg:col-span-7 relative h-[38vh] md:h-[46vh] overflow-hidden rounded-[32px] border border-sage/10 ${
                   index % 2 === 1 ? "lg:order-2" : ""
                 }`}
               >

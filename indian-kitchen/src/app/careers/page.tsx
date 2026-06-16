@@ -130,11 +130,12 @@ ${data.whyUs}`;
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {jobListings.map((job, index) => (
               <motion.div
-                key={job.title}
+                key={index}
                 initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="bg-white p-6 md:p-7 border border-terracotta/12 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white p-8 md:p-10 border border-terracotta/15 hover:border-terracotta/40 transition-colors shadow-sm rounded-3xl"
               >
                 <span className="text-[9px] tracking-[0.2em] uppercase text-terracotta mb-2 block">
                   {job.location}

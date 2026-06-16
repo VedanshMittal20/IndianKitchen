@@ -57,7 +57,7 @@ export default function Testimonials() {
             </p>
             <h2 className="heading-presentation text-void">Loved by Our Guests</h2>
           </div>
-          <div className="flex items-center gap-2 bg-gold/15 border border-gold/30 px-4 py-2">
+          <div className="flex items-center gap-2 bg-gold/15 border border-gold/30 px-4 py-2 rounded-full">
             <Star className="w-4 h-4 text-gold fill-gold" />
             <span className="text-[10px] tracking-[0.15em] uppercase text-void font-semibold">
               4.0★ on UberEats · 800+ Reviews
@@ -72,7 +72,7 @@ export default function Testimonials() {
               initial={{ opacity: 0, x: 28 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.08 + index * 0.08 }}
-              className="min-w-[78vw] md:min-w-[300px] flex-shrink-0 snap-center bg-cream border border-gold/25 p-6 gold-frame relative overflow-hidden"
+              className="min-w-[78vw] md:min-w-[300px] flex-shrink-0 snap-center bg-cream border border-gold/25 p-6 rounded-[32px] relative overflow-hidden shadow-sm"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-sage via-gold to-terracotta" />
               <div className="flex mb-4 pl-2">

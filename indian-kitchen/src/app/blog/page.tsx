@@ -28,7 +28,7 @@ export default function BlogPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-12 md:mb-16"
           >
-            <Link href={`/blog/${featured.slug}`} className="group grid grid-cols-1 lg:grid-cols-2 gap-0 border border-terracotta/20 bg-parchment overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-500">
+            <Link href={`/blog/${featured.slug}`} className="group grid grid-cols-1 lg:grid-cols-2 gap-0 border border-terracotta/20 bg-parchment overflow-hidden rounded-[32px] shadow-sm hover:shadow-lg transition-shadow duration-500">
               <div className="relative h-64 lg:h-auto min-h-[280px] overflow-hidden bg-cream">
                 <Image
                   src={featured.image}
@@ -70,7 +70,7 @@ export default function BlogPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "50px" }}
               transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-              className="group bg-parchment border border-terracotta/20 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-400"
+              className="group bg-parchment border border-terracotta/20 overflow-hidden rounded-3xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-400"
             >
               <Link href={`/blog/${post.slug}`} className="block h-full">
                 <div className="relative h-52 overflow-hidden bg-cream">

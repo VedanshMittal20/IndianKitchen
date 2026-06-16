@@ -52,7 +52,7 @@ export default function HomeFounderNote() {
             transition={{ duration: 1, delay: 0.2 }}
             className="lg:col-span-6 order-1 lg:order-2"
           >
-            <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] overflow-hidden border border-sage/15 shadow-xl">
+            <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] overflow-hidden rounded-[32px] border border-sage/15 shadow-xl">
               <Image 
                 src="/images/extracted/page15_img2.png" 
                 alt="Vincent Renold" 
