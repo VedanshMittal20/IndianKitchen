@@ -70,44 +70,34 @@ export default function Navigation() {
           </Link>
 
           {/* Nav Links */}
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
-            const isHovered = hoveredLink === link.name;
-            const activeOrHovered = isActive || isHovered;
-
-            return (
-              <Link
-                key={link.name}
-                href={link.href}
-                onMouseEnter={() => setHoveredLink(link.name)}
-                className={`relative px-4 py-2 text-[10px] font-sans font-medium tracking-[0.16em] uppercase rounded-full transition-colors duration-300 ${
-                  activeOrHovered
-                    ? onDarkHero
-                      ? "text-void"
-                      : "text-cream"
-                    : onDarkHero
-                      ? "text-cream/80 hover:text-cream"
-                      : "text-text-muted hover:text-forest"
-                }`}
-              >
-                {/* Sliding Background Pill */}
-                {activeOrHovered && (
-                  <motion.div
-                    layoutId="nav-pill"
-                    className={`absolute inset-0 rounded-full z-0 ${
-                      onDarkHero ? "bg-cream" : "bg-forest"
-                    }`}
-                    transition={{
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 30,
-                    }}
-                  />
-                )}
-                <span className="relative z-10">{link.name}</span>
-              </Link>
-            );
-          })}
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className={`relative px-4 py-2 text-[10px] tracking-[0.15em] font-medium uppercase transition-colors duration-300 ${
+                link.name === "Reservations"
+                  ? "bg-gold text-void rounded-full hover:bg-gold-light"
+                  : onDarkHero
+                    ? "text-cream hover:text-gold"
+                    : "text-text-dark/80 hover:text-forest"
+              }`}
+              onMouseEnter={() => setHoveredLink(link.name)}
+              onMouseLeave={() => setHoveredLink(null)}
+            >
+              {link.name}
+              {hoveredLink === link.name && link.name !== "Reservations" && (
+                <motion.div
+                  layoutId="nav-indicator"
+                  className={`absolute bottom-1 left-4 right-4 h-px ${
+                    onDarkHero ? "bg-gold" : "bg-forest"
+                  }`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                />
+              )}
+            </Link>
+          ))}
         </div>
       </header>
 
@@ -135,6 +125,21 @@ export default function Navigation() {
           >
             <Menu className="w-6 h-6" strokeWidth={1.5} />
           </button>
+        </div>
+        {/* Mobile Sticky Booking Bar */}
+        <div className="fixed bottom-0 left-0 w-full z-[100] xl:hidden">
+          <div className="bg-sage/95 backdrop-blur-md border-t border-sage-light/20 p-3 flex justify-between items-center shadow-2xl">
+            <div className="flex flex-col">
+              <span className="text-[10px] tracking-widest uppercase text-cream/70">Reserve</span>
+              <span className="text-sm font-display text-cream">Your Table</span>
+            </div>
+            <Link 
+              href="/reservations" 
+              className="bg-gold hover:bg-gold-light text-void font-semibold text-xs tracking-wider uppercase px-6 py-3 rounded-full transition-colors"
+            >
+              Book Now
+            </Link>
+          </div>
         </div>
       </header>
 

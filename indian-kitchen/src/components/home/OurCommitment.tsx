@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import PipeList from "@/components/ui/PipeList";
+import LightboxImage from "@/components/ui/LightboxImage";
 
 export default function OurCommitment() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -44,13 +45,12 @@ export default function OurCommitment() {
               initial={{ opacity: 0, x: 20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="relative h-[50vh] md:h-[55vh] overflow-hidden border border-sage/10"
+              className="relative h-[50vh] md:h-[55vh] w-full overflow-hidden border border-sage/10 rounded-2xl"
             >
-              <Image
+              <LightboxImage
                 src="/images/real_interior.jpeg"
                 alt="Indian Kitchen Interior"
-                fill
-                className="object-cover object-right img-warm"
+                className="w-full h-full"
                 sizes="55vw"
               />
             </motion.div>
@@ -58,13 +58,12 @@ export default function OurCommitment() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="absolute -bottom-6 -left-4 md:-left-8 w-40 md:w-48 aspect-square overflow-hidden border-4 border-parchment shadow-xl"
+              className="absolute -bottom-6 -left-4 md:-left-8 w-40 md:w-48 aspect-square overflow-hidden border-4 border-parchment shadow-xl rounded-2xl"
             >
-              <Image
+              <LightboxImage
                 src="/images/real_copper_pot.jpeg"
                 alt="Copper pot biryani"
-                fill
-                className="object-cover img-warm"
+                className="w-full h-full"
                 sizes="200px"
               />
             </motion.div>

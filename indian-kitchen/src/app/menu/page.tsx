@@ -60,6 +60,12 @@ const menuData = [
 
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState(menuData[0].category);
+  const [showVegOnly, setShowVegOnly] = useState(false);
+
+  const activeCategoryData = menuData.find((c) => c.category === activeCategory);
+  const filteredItems = activeCategoryData?.items.filter(item => 
+    showVegOnly ? (item.tags.includes("VEG") || item.tags.includes("VEGAN")) : true
+  ) || [];
 
   return (
     <>
@@ -79,14 +85,14 @@ export default function MenuPage() {
             </p>
           </motion.div>
 
-          {/* Sticky Category Filter */}
-          <div className="sticky top-20 z-40 bg-cream/95 backdrop-blur-md py-4 mb-12 border-b border-wood -mx-6 px-6 md:mx-0 md:px-0">
-            <div className="flex overflow-x-auto gap-4 md:justify-center hide-scrollbar">
+          {/* Sticky Category & Dietary Filter */}
+          <div className="sticky top-20 z-40 bg-cream/95 backdrop-blur-md py-4 mb-12 border-b border-wood -mx-6 px-6 md:mx-0 md:px-0 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex overflow-x-auto gap-3 hide-scrollbar w-full md:w-auto pb-2 md:pb-0">
               {menuData.map((cat) => (
                 <button
                   key={cat.category}
                   onClick={() => setActiveCategory(cat.category)}
-                  className={`whitespace-nowrap px-6 py-2 rounded-full text-sm font-medium transition-all ${
+                  className={`whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all ${
                       activeCategory === cat.category
                         ? "bg-forest text-cream"
                         : "border border-wood/30 text-forest hover:bg-forest hover:text-cream"
@@ -96,14 +102,27 @@ export default function MenuPage() {
                 </button>
               ))}
             </div>
+            
+            {/* Dietary Toggle */}
+            <button
+              onClick={() => setShowVegOnly(!showVegOnly)}
+              className={`flex shrink-0 items-center gap-2 px-4 py-2 rounded-full border transition-colors ${
+                showVegOnly 
+                  ? "bg-sage/20 border-forest text-forest" 
+                  : "border-wood/30 text-text-muted hover:border-forest hover:text-forest"
+              }`}
+            >
+              <div className={`w-3 h-3 rounded-full border flex items-center justify-center transition-colors ${showVegOnly ? "border-forest" : "border-text-muted"}`}>
+                <div className={`w-1.5 h-1.5 rounded-full transition-colors ${showVegOnly ? "bg-forest" : "bg-transparent"}`} />
+              </div>
+              <span className="text-xs font-semibold uppercase tracking-wider">Veg / Vegan Only</span>
+            </button>
           </div>
 
           {/* Menu Items Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 min-h-[40vh]">
             <AnimatePresence mode="popLayout">
-              {menuData
-                .find((c) => c.category === activeCategory)
-                ?.items.map((item, index) => (
+              {filteredItems.map((item, index) => (
                   <motion.div
                     key={item.name}
                     initial={{ opacity: 0, y: 20 }}
