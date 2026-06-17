@@ -64,7 +64,7 @@ export default function MenuQRSection() {
               {/* Decorative food thumb */}
               <div className="absolute -bottom-4 -right-4 w-20 h-20 overflow-hidden border-2 border-gold shadow-lg hidden md:block relative">
                 <Image
-                  src="/images/real_bamboo_biryani.jpeg"
+                  src="/images/bamboo_biryani.png"
                   alt=""
                   fill
                   className="object-cover img-warm"

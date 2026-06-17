@@ -52,12 +52,12 @@ const socialLinks = [
 ];
 
 const instagramGrid = [
-  "/images/real_copper_pot.jpeg",
-  "/images/real_banana_leaf.jpeg",
-  "/images/real_bamboo_biryani.jpeg",
-  "/images/real_interior.jpeg",
-  "/images/real_storefront.jpeg",
-  "/images/real_waiter.jpeg",
+  "/images/kadai_paneer.png",
+  "/images/banana_leaf.png",
+  "/images/bamboo_biryani.png",
+  "/images/private_dining.png",
+  "/images/real/kandy_hero_day.jpg",
+  "/images/real/colombo_ceremony.jpg",
 ];
 
 export default function SocialMedia() {

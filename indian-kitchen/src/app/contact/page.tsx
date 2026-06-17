@@ -15,8 +15,8 @@ export default function ContactPage() {
       <PageHero
         label="Visit Us"
         title="Find the Experience"
-        subtitle="357 R.A. De Mel Mawatha, Colombo 03 — open daily from 12:30 PM. Late nights on Fridays and Saturdays."
-        image="/images/real_storefront.jpeg"
+        subtitle="357 R.A. De Mel Mawatha, Colombo 00300 — open daily from 12:30 PM. Late nights on Fridays and Saturdays."
+        image="/images/real/colombo_ceremony.jpg"
       />
       <FindUs />
       <SocialMedia />

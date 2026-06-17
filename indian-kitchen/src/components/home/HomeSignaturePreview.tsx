@@ -10,14 +10,14 @@ const dishes = [
     name: "Bamboo Biryani",
     desc: "Cooked inside bamboo over charcoal — Colombo's most photographed dish.",
     price: "LKR 1,950",
-    image: "/images/real_bamboo_biryani.jpeg",
+    image: "/images/bamboo_biryani.png",
     tag: "Signature",
   },
   {
     name: "Tender Coconut Prawn Curry",
     desc: "Malabar coastal flavours with fresh coconut milk and curry leaves.",
     price: "LKR 2,500",
-    image: "/images/real_banana_leaf.jpeg",
+    image: "/images/banana_leaf.png",
     tag: "Seafood",
   },
   {

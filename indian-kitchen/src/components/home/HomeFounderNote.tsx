@@ -33,7 +33,7 @@ export default function HomeFounderNote() {
             </p>
 
             <p className="text-text-muted text-base md:text-lg leading-relaxed mb-8 font-light">
-              His expertise spans brand conceptualization, operations management, revenue optimization, and international expansion. Recently honored with the "Global Icon Award" at the 2023 Global Economic Forum, Vincent&apos;s vision extends beyond restaurants to create a complete ecosystem of authentic Indian culinary experiences worldwide.
+              His expertise spans brand conceptualization, operations management, revenue optimization, and international expansion. Recently honored with the &quot;Global Icon Award&quot; at the 2023 Global Economic Forum, Vincent&apos;s vision extends beyond restaurants to create a complete ecosystem of authentic Indian culinary experiences worldwide.
             </p>
 
             <div className="bg-sage/5 border-l-2 border-sage p-6">

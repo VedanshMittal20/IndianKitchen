@@ -62,7 +62,7 @@ export default function FindUs() {
                       Colombo Outlet
                     </h4>
                     <p className="font-display text-lg text-espresso leading-snug">
-                      357 R.A. De Mel Mawatha,<br />Kollupitiya, Colombo 03
+                      357 R.A. De Mel Mawatha,<br />Kollupitiya, Colombo 00300
                     </p>
                   </div>
                   <div>
@@ -70,7 +70,7 @@ export default function FindUs() {
                       Kandy Outlet
                     </h4>
                     <p className="font-display text-lg text-espresso leading-snug">
-                      25/8 Sangaraja Mawatha,<br />Hillwood College Rd, Kandy
+                      25/8 Sangaraja Mawatha,<br />Hillwood College Rd, Kandy 20000
                     </p>
                   </div>
                 </div>

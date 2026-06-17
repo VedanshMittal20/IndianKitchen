@@ -35,7 +35,7 @@ export default function HeroSection() {
       {/* Layered backgrounds */}
       <motion.div style={{ y, willChange: "transform" }} className="absolute inset-0">
         <Image
-          src="/images/real_interior.jpeg"
+          src="/images/real/kandy_hero_night.jpg"
           alt=""
           fill
           className="object-cover img-warm opacity-60"
@@ -177,7 +177,7 @@ export default function HeroSection() {
             >
               <div className="col-span-7 row-span-4 relative overflow-hidden gold-frame">
                 <Image
-                  src="/images/real_storefront.jpeg"
+                  src="/images/real/colombo_ceremony.jpg"
                   alt="Indian Kitchen storefront"
                   fill
                   className="object-cover img-warm animate-ken-burns"
@@ -191,7 +191,7 @@ export default function HeroSection() {
               </div>
               <div className="col-span-5 row-span-3 relative overflow-hidden gold-frame">
                 <Image
-                  src="/images/real_bamboo_biryani.jpeg"
+                  src="/images/real/kandy_hero_day.jpg"
                   alt="Bamboo Biryani"
                   fill
                   className="object-cover img-warm"
@@ -201,7 +201,7 @@ export default function HeroSection() {
               </div>
               <div className="col-span-5 row-span-3 relative overflow-hidden gold-frame bg-crimson">
                 <Image
-                  src="/images/real_copper_pot.jpeg"
+                  src="/images/real/colombo_ceremony.jpg"
                   alt="Copper pot biryani"
                   fill
                   className="object-cover img-warm opacity-90"
@@ -210,7 +210,7 @@ export default function HeroSection() {
               </div>
               <div className="col-span-7 row-span-2 relative overflow-hidden gold-frame">
                 <Image
-                  src="/images/real_waiter.jpeg"
+                  src="/images/real/gallery_3.jpg"
                   alt="Immersive dining service"
                   fill
                   className="object-cover img-warm"

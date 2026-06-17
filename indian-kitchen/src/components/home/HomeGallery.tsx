@@ -6,12 +6,12 @@ import LightboxImage from "@/components/ui/LightboxImage";
 import SectionLabel from "@/components/ui/SectionLabel";
 
 const galleryItems = [
-  { type: "image", src: "/images/real_interior.jpeg", alt: "Dining Room", aspect: "aspect-[4/5]" },
-  { type: "image", src: "/images/extracted/page10_img4.jpeg", alt: "Cuisine", aspect: "aspect-square" },
-  { type: "image", src: "/images/slide_5.png", alt: "Chef's Table", aspect: "aspect-[4/3]" },
-  { type: "image", src: "/images/extracted/page13_img2.jpeg", alt: "Spice Display", aspect: "aspect-square" },
-  { type: "image", src: "/images/slide_10.png", alt: "Details", aspect: "aspect-[3/4]" },
-  { type: "image", src: "/images/real_waiter.jpeg", alt: "Service", aspect: "aspect-square" },
+  { type: "image", src: "/images/real/kandy_hero_night.jpg", alt: "Dining Room", aspect: "aspect-[4/5]" },
+  { type: "image", src: "/images/kadai_paneer.png", alt: "Cuisine", aspect: "aspect-square" },
+  { type: "image", src: "/images/real/colombo_ceremony.jpg", alt: "Ceremony", aspect: "aspect-[4/3]" },
+  { type: "image", src: "/images/private_dining.png", alt: "Private Dining", aspect: "aspect-square" },
+  { type: "image", src: "/images/banana_leaf.png", alt: "Details", aspect: "aspect-[3/4]" },
+  { type: "image", src: "/images/real/gallery_4.jpg", alt: "Service", aspect: "aspect-square" },
 ];
 
 const containerVariants = {
@@ -61,22 +61,21 @@ export default function HomeGallery() {
             className="w-full lg:w-7/12 flex flex-col gap-6"
           >
             <motion.div variants={itemVariants} className="w-full aspect-video rounded-3xl overflow-hidden shadow-xl border border-sage/10 group relative">
-              <iframe 
-                src="https://www.youtube.com/embed/5H-B-AWeHXY?autoplay=0&controls=1&mute=0&rel=0&loop=1" 
-                title="Indian Kitchen Cinematic Experience" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
+              <video 
+                src="/videos/parota_reel.mp4" 
+                controls 
+                className="w-full h-full object-cover"
+                poster="/images/real/kandy_hero_night.jpg"
+              />
             </motion.div>
             
             <div className="grid grid-cols-2 gap-6">
               <motion.div variants={itemVariants} className="w-full aspect-square rounded-3xl overflow-hidden shadow-lg border border-sage/10 relative group">
-                <LightboxImage src="/images/real_copper_pot.jpeg" alt="Copper Pot" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <LightboxImage src="/images/real/kandy_hero_night.jpg" alt="Night Exterior" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-void/0 group-hover:bg-void/20 transition-colors duration-500 pointer-events-none" />
               </motion.div>
               <motion.div variants={itemVariants} className="w-full aspect-square rounded-3xl overflow-hidden shadow-lg border border-sage/10 relative group">
-                <LightboxImage src="/images/real_bamboo_biryani.jpeg" alt="Bamboo Biryani" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <LightboxImage src="/images/real/kandy_hero_day.jpg" alt="Day Exterior" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-void/0 group-hover:bg-void/20 transition-colors duration-500 pointer-events-none" />
               </motion.div>
             </div>

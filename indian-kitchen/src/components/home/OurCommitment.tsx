@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Image from "next/image";
+
 import SectionLabel from "@/components/ui/SectionLabel";
 import PipeList from "@/components/ui/PipeList";
 import LightboxImage from "@/components/ui/LightboxImage";
@@ -48,7 +48,7 @@ export default function OurCommitment() {
               className="relative h-[50vh] md:h-[55vh] w-full overflow-hidden border border-sage/10 rounded-2xl"
             >
               <LightboxImage
-                src="/images/real_interior.jpeg"
+                src="/images/real/colombo_ceremony.jpg"
                 alt="Indian Kitchen Interior"
                 className="w-full h-full"
                 sizes="55vw"
@@ -61,7 +61,7 @@ export default function OurCommitment() {
               className="absolute -bottom-6 -left-4 md:-left-8 w-40 md:w-48 aspect-square overflow-hidden border-4 border-parchment shadow-xl rounded-2xl"
             >
               <LightboxImage
-                src="/images/real_copper_pot.jpeg"
+                src="/images/private_dining.png"
                 alt="Copper pot biryani"
                 className="w-full h-full"
                 sizes="200px"
