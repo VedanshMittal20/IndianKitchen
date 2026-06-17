@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import QRWidget from "@/components/QRWidget";
 import CursorGlow from "@/components/ui/CursorGlow";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-body",
@@ -40,6 +41,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppWidget />
         <QRWidget />
+        <Analytics />
       </body>
     </html>
   );
