@@ -1,137 +1,168 @@
-import PageHero from "@/components/ui/PageHero";
-import SectionLabel from "@/components/ui/SectionLabel";
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
+import { ArrowDown } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Our Themes | Indian Kitchen",
-  description:
-    "Explore Pondicherry Street, Kerala Houseboat, and Sherlock Mystery Dining — three immersive worlds across Colombo and Kandy.",
-};
-
-export default function ThemesPage() {
+export default function ThemesCinematicPage() {
   return (
-    <main className="bg-paper min-h-screen">
-      <PageHero
-        label="Immersive Worlds"
-        title="Three Themed Dining Experiences"
-        subtitle="Each outlet is a painstakingly crafted universe — from Indo-French nostalgia to Victorian mystery."
-        image="/images/real/kandy_hero_day.jpg"
-      />
+    <main className="h-[100dvh] w-full overflow-y-auto snap-y snap-mandatory bg-void hide-scrollbar relative">
+      
+      {/* Global Navbar Overlay for this page (optional minimal nav) */}
+      <div className="fixed top-8 left-0 w-full z-50 flex justify-between px-8 pointer-events-none">
+        <div className="text-cream text-xs uppercase tracking-[0.3em] font-semibold mix-blend-difference pointer-events-auto">
+          <Link href="/">← Back to Home</Link>
+        </div>
+      </div>
 
-      {/* Theme 1: Pondicherry Street */}
-      <section className="py-24 md:py-32 bg-cream">
-        <div className="container mx-auto px-6 md:px-12 lg:px-16">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 animate-fade-in-up">
-              <SectionLabel className="mb-4">Theme 01 • Colombo</SectionLabel>
-              <h2 className="text-4xl md:text-6xl font-display text-forest mb-6">Pondicherry Street</h2>
-              <div className="h-1 w-16 bg-gold mb-8"></div>
-              <p className="text-text-dark/80 text-lg md:text-xl font-light leading-relaxed mb-6">
-                Step onto the cobblestone streets of the French Quarter. Our flagship theme captures the dual soul of Pondicherry — where colonial French elegance meets vibrant Tamil culture.
-              </p>
-              <p className="text-text-dark/80 text-lg font-light leading-relaxed mb-10">
-                Surrounded by mustard-yellow walls, terracotta planters, and vintage street lamps, you&apos;ll experience a menu heavily influenced by the coastal spice routes. It&apos;s not just a meal; it&apos;s a nostalgic evening stroll.
-              </p>
-              <Link href="/reservations" className="btn-primary">
-                Reserve Pondicherry
-              </Link>
-            </div>
-            
-            <div className="order-1 lg:order-2 grid grid-cols-2 gap-4 h-[500px] md:h-[600px]">
-              <div className="relative h-full rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-500 shadow-xl gold-frame">
-                <Image src="/images/theme_pondicherry.png" alt="Pondicherry Street" fill className="object-cover img-warm" />
-              </div>
-              <div className="grid grid-rows-2 gap-4 h-full">
-                <div className="relative rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-500 shadow-xl gold-frame">
-                  <Image src="/images/real/colombo_ceremony.jpg" alt="Pondicherry Details" fill className="object-cover img-warm" />
-                </div>
-                <div className="relative rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-500 shadow-xl gold-frame">
-                  <Image src="/images/kadai_paneer.png" alt="Pondicherry Cuisine" fill className="object-cover img-warm" />
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* SECTION 1: THE WELCOME */}
+      <section className="h-[100dvh] w-full snap-start relative flex items-center justify-center overflow-hidden">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
+        >
+          <source src="/videos/colombo_vibe.mov" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-void/40 via-transparent to-void/80" />
+        
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <span className="text-gold text-[10px] tracking-[0.4em] uppercase font-bold mb-6 block">
+              Discover Our Worlds
+            </span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display text-cream tracking-tight mb-6 drop-shadow-lg">
+              Cinematic Dining.
+            </h1>
+            <p className="text-cream/80 text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto">
+              Scroll down to explore three painstakingly crafted universes. Each outlet is an immersive journey across space and time.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="absolute bottom-12 text-cream/50 animate-bounce"
+          >
+            <ArrowDown strokeWidth={1} className="w-8 h-8" />
+          </motion.div>
         </div>
       </section>
 
-      {/* Theme 2: Kerala Houseboat */}
-      <section className="relative py-32 md:py-48 overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover scale-105"
-            poster="/images/real/kandy_hero_night.jpg"
+      {/* SECTION 2: PONDICHERRY STREET */}
+      <section className="h-[100dvh] w-full snap-start relative flex items-center overflow-hidden">
+        <Image 
+          src="/images/real/gallery_3.jpg" 
+          alt="Pondicherry Street" 
+          fill 
+          className="object-cover img-warm"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-void/90 via-void/50 to-transparent" />
+        <div className="absolute inset-0 bg-terracotta/20 mix-blend-multiply" />
+        
+        <div className="relative z-10 px-8 md:px-16 lg:px-24 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <source src="/videos/experience.mov" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-t from-void via-sage/80 to-void opacity-90 mix-blend-multiply"></div>
+            <span className="text-terracotta text-[10px] tracking-[0.3em] uppercase font-bold mb-4 block border-l-2 border-terracotta pl-3">
+              Theme 01
+            </span>
+            <h2 className="text-5xl md:text-7xl font-display text-cream mb-6 leading-tight">
+              Pondicherry Street
+            </h2>
+            <p className="text-cream/80 text-lg font-light leading-relaxed mb-8">
+              Step onto the cobblestone streets of the French Quarter. Colonial arches, mustard-yellow walls, and vintage street lamps set the stage for a menu heavily influenced by the coastal spice routes. It&apos;s not just a meal; it&apos;s a nostalgic evening stroll through an era gone by.
+            </p>
+            <Link href="/reservations" className="inline-flex items-center gap-3 bg-terracotta text-cream px-8 py-4 text-xs tracking-[0.2em] uppercase font-semibold hover:bg-gold transition-colors duration-300">
+              Reserve Pondicherry
+            </Link>
+          </motion.div>
         </div>
+      </section>
 
-        <div className="container relative z-10 mx-auto px-6 md:px-12 lg:px-16 text-center">
-          <div className="max-w-4xl mx-auto animate-fade-in-up">
-            <SectionLabel light className="mb-4 justify-center">Theme 02 • Kandy</SectionLabel>
-            <h2 className="text-5xl md:text-7xl font-display text-cream mb-6 tracking-wide drop-shadow-xl">
+      {/* SECTION 3: KERALA HOUSEBOAT */}
+      <section className="h-[100dvh] w-full snap-start relative flex items-center overflow-hidden">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/experience.mov" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-l from-void/90 via-void/50 to-transparent" />
+        <div className="absolute inset-0 bg-sage/30 mix-blend-multiply" />
+        
+        <div className="relative z-10 px-8 md:px-16 lg:px-24 w-full flex justify-end">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl text-right"
+          >
+            <span className="text-sage-light text-[10px] tracking-[0.3em] uppercase font-bold mb-4 block border-r-2 border-sage-light pr-3">
+              Theme 02
+            </span>
+            <h2 className="text-5xl md:text-7xl font-display text-cream mb-6 leading-tight">
               Kerala Houseboat
             </h2>
-            <div className="h-1 w-24 bg-sage-light mx-auto mb-8 shadow-lg"></div>
-            <p className="text-cream/90 text-xl md:text-2xl font-light leading-relaxed mb-12 drop-shadow-md">
+            <p className="text-cream/80 text-lg font-light leading-relaxed mb-8">
               Float through the serene backwaters of Malabar. Woven bamboo panels, the warm glow of lantern light, and the gentle sounds of water create a sanctuary of absolute tranquility. Pair it with our fiery, coconut-rich coastal dishes for an unforgettable escape.
             </p>
-            <Link href="/reservations" className="btn-outline">
+            <Link href="/reservations" className="inline-flex items-center gap-3 bg-sage text-cream px-8 py-4 text-xs tracking-[0.2em] uppercase font-semibold hover:bg-gold transition-colors duration-300">
               Board the Houseboat
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Theme 3: The Sherlock */}
-      <section className="py-24 md:py-32 bg-void text-cream relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at center, #8B0000 0%, transparent 70%)' }}></div>
+      {/* SECTION 4: THE SHERLOCK */}
+      <section className="h-[100dvh] w-full snap-start relative flex items-center justify-center overflow-hidden">
+        <Image 
+          src="/images/private_dining.png" 
+          alt="The Sherlock Mystery Dining" 
+          fill 
+          className="object-cover img-warm"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-void/70" />
+        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(139,0,0,0.2) 0%, transparent 70%)' }}></div>
         
-        <div className="container relative z-10 mx-auto px-6 md:px-12 lg:px-16">
-          <div className="grid lg:grid-cols-12 gap-16 items-center">
-            
-            <div className="lg:col-span-5 relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-gold/30 gold-frame group">
-              <Image 
-                src="/images/private_dining.png" 
-                alt="The Sherlock Mystery Dining" 
-                fill 
-                className="object-cover img-warm group-hover:scale-105 transition-transform duration-700" 
-              />
-              <div className="absolute inset-0 bg-void/30 group-hover:bg-void/10 transition-colors duration-700"></div>
-            </div>
-
-            <div className="lg:col-span-7 animate-fade-in-up">
-              <SectionLabel light className="mb-4 text-gold">Theme 03 • Colombo</SectionLabel>
-              <h2 className="text-5xl md:text-7xl font-display mb-6 text-cream tracking-tight">
-                The Sherlock
-              </h2>
-              <div className="h-[2px] w-20 bg-gradient-to-r from-gold to-transparent mb-8"></div>
-              
-              <div className="bg-white/5 border border-white/10 p-8 rounded-xl backdrop-blur-sm mb-8">
-                <h3 className="font-display text-2xl text-gold mb-4 uppercase tracking-[0.2em]">Mystery Dining</h3>
-                <p className="text-cream/70 text-lg font-light leading-relaxed mb-6">
-                  Victorian study meets Indian masala. This is our most theatrical and interactive theme. Step into a dimly lit, gaslit study filled with leather armchairs, brass instruments, and old maps.
-                </p>
-                <p className="text-cream/70 text-lg font-light leading-relaxed">
-                  Every table receives a case file. Every course reveals a clue. Will you decode the menu and solve the mystery before dessert is served? 
-                </p>
-              </div>
-
-              <Link href="/reservations" className="btn-outline border-gold text-gold hover:bg-gold hover:text-void">
-                Investigate The Sherlock
-              </Link>
-            </div>
-
-          </div>
+        <div className="relative z-10 px-8 text-center max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="text-gold text-[10px] tracking-[0.3em] uppercase font-bold mb-6 block">
+              Theme 03
+            </span>
+            <h2 className="text-6xl md:text-8xl font-display text-cream mb-6 tracking-tight">
+              The Sherlock
+            </h2>
+            <div className="h-[1px] w-24 bg-gold mx-auto mb-8" />
+            <p className="text-cream/80 text-lg font-light leading-relaxed mb-10">
+              Victorian study meets Indian masala. Our most theatrical and interactive theme. Step into a dimly lit, gaslit study filled with leather armchairs. Every table receives a case file. Every course reveals a clue. Will you decode the menu and solve the mystery?
+            </p>
+            <Link href="/reservations" className="inline-flex items-center gap-3 border border-gold text-gold px-10 py-4 text-xs tracking-[0.2em] uppercase font-semibold hover:bg-gold hover:text-void transition-all duration-300">
+              Investigate Now
+            </Link>
+          </motion.div>
         </div>
       </section>
+
     </main>
   );
 }
