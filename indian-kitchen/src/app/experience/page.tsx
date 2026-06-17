@@ -142,7 +142,7 @@ export default function AboutPage() {
           <div className="mt-16 grid md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-5 relative aspect-[4/5] rounded-xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
               <Image 
-                src="/images/private_dining.png" 
+                src="/images/extracted/page15_img2.png" 
                 alt="Vincent Renold" 
                 fill 
                 className="object-cover"
