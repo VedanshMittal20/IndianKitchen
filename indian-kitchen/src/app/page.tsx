@@ -1,7 +1,7 @@
 import HeroSection from "@/components/home/HeroSection";
 import Marquee from "@/components/home/Marquee";
 import HomeThemesStrip from "@/components/home/HomeThemesStrip";
-import HomeSignaturePreview from "@/components/home/HomeSignaturePreview";
+import HomeMenuCategories from "@/components/home/HomeMenuCategories";
 import HomeGallery from "@/components/home/HomeGallery";
 import Testimonials from "@/components/home/Testimonials";
 import HomeCTA from "@/components/home/HomeCTA";
@@ -12,7 +12,7 @@ export default function Home() {
       <HeroSection />
       <Marquee />
       <HomeThemesStrip />
-      <HomeSignaturePreview />
+      <HomeMenuCategories />
       <HomeGallery />
       <Testimonials />
       <HomeCTA />
