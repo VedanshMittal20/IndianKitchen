@@ -67,14 +67,15 @@ export default function Footer() {
             <ul className="space-y-3 font-sans text-[10px] tracking-[0.14em] uppercase text-cream/55">
               {[
                 ["A Tale of Spice & Time", "/experience"],
-                ["Flavors of the Homeland", "/menu"],
+                ["Our Themed Sanctuaries", "/themes"],
+                ["The Culinary Passport", "/menu"],
                 ["Beyond the Plate", "/services"],
                 ["Franchise Opportunities", "/franchise"],
-                ["Contact & Bookings", "/contact"],
-              ].map(([label, href]) => (
+                ["Reservations", "/reservations"],
+              ].map(([name, href]) => (
                 <li key={href}>
                   <Link href={href} className="hover:text-gold transition-colors inline-block">
-                    {label}
+                    {name}
                   </Link>
                 </li>
               ))}

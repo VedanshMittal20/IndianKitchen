@@ -10,8 +10,8 @@ import BrandMark from "@/components/ui/BrandMark";
 // Shortened nav links for the sleek floating pill design
 const navLinks = [
   { name: "A Tale of Spice & Time", href: "/experience" },
-  { name: "Our Themed Sanctuaries", href: "/#themes" },
-  { name: "Flavors of the Homeland", href: "/menu" },
+  { name: "Our Themed Sanctuaries", href: "/themes" },
+  { name: "The Culinary Passport", href: "/menu" },
   { name: "Beyond the Plate", href: "/services" },
   { name: "Franchise Opportunities", href: "/franchise" },
   { name: "Reservations", href: "/reservations" },
