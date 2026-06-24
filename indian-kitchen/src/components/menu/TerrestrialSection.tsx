@@ -64,6 +64,17 @@ export default function TerrestrialSection() {
               <span className="material-symbols-outlined text-[16px]">arrow_right</span>
             </div>
             <div className="flex justify-between items-baseline mb-2">
+              <h4 className="font-headline-md text-headline-md text-on-surface">Signature Bamboo Biryani</h4>
+              <span className="font-annotation text-annotation text-on-surface-variant">₹2,400</span>
+            </div>
+            <p className="font-body-md text-body-md text-on-surface-variant mb-3">Aromatic Jeerakasala rice and spiced meat sealed inside a hollow bamboo log, cooked slowly over a wood fire for a deeply earthy infusion.</p>
+            <span className="font-annotation text-annotation text-saffron-gold uppercase block mt-2 tracking-widest text-[10px]">Technique: Bamboo Steam</span>
+          </article>
+          <article className="relative group">
+            <div className="absolute -left-6 top-2 opacity-0 group-hover:opacity-100 transition-opacity text-primary-container">
+              <span className="material-symbols-outlined text-[16px]">arrow_right</span>
+            </div>
+            <div className="flex justify-between items-baseline mb-2">
               <h4 className="font-headline-md text-headline-md text-on-surface">Morel Musallam</h4>
               <span className="font-annotation text-annotation text-on-surface-variant">₹2,800</span>
             </div>

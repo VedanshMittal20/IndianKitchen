@@ -42,8 +42,8 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
       </head>
       <body className="font-body-md text-body-md bg-surface-container-lowest text-on-surface min-h-full flex flex-col">
-        {/* WebGL Shader Background (placeholder) */}
-        <div className="fixed inset-0 z-0 pointer-events-none opacity-40"></div>
+        {/* WebGL Shader Background */}
+        <div className="shader-overlay"></div>
         
         <ScrollProvider>
           <CursorGlow />

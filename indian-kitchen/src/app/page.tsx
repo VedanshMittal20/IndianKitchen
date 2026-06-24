@@ -4,6 +4,10 @@ import { useEffect } from "react";
 import HeroSection from "@/components/home/HeroSection";
 import GeometryOfFlavor from "@/components/home/GeometryOfFlavor";
 import Sanctuary from "@/components/home/Sanctuary";
+import HomeCommitmentStrip from "@/components/home/HomeCommitmentStrip";
+import Testimonials from "@/components/home/Testimonials";
+import SocialMedia from "@/components/home/SocialMedia";
+import FindUs from "@/components/home/FindUs";
 
 export default function Home() {
   // Simple scroll reveal logic
@@ -29,6 +33,10 @@ export default function Home() {
       <HeroSection />
       <GeometryOfFlavor />
       <Sanctuary />
+      <HomeCommitmentStrip />
+      <Testimonials />
+      <SocialMedia />
+      <FindUs />
     </div>
   );
 }

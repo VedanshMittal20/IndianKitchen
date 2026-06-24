@@ -9,20 +9,20 @@ export default function ArchitectureOfShadows() {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/2">
             <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-8">
-              The Architecture<br />of Shadows
+              The Atmosphere<br />of The Vault
             </h2>
             <p className="font-body-lg text-body-lg text-on-primary/80 mb-8 max-w-lg">
-              By restricting direct light, the space cultivates deep, intentional shadows. This chiaroscuro approach frames the culinary experience, drawing focus entirely to the illuminated tablescape while leaving the periphery in quiet obscurity.
+              By stepping away from the bright external world, the space cultivates a deep, intentional calm. This shadowed approach frames the dining experience, drawing focus entirely to the illuminated flavors and textures on the plate while leaving the periphery in quiet obscurity.
             </p>
             <ul className="space-y-4 font-annotation text-annotation text-on-primary/70">
               <li className="flex items-center gap-4 border-b border-white/10 pb-4">
-                <span className="text-saffron-gold">01.</span> Primary Light Sources Restricted to Surface Level
+                <span className="text-saffron-gold">01.</span> Intimate Dining Sanctuaries
               </li>
               <li className="flex items-center gap-4 border-b border-white/10 pb-4">
-                <span className="text-saffron-gold">02.</span> Volumetric Absorption via Acoustic Plaster
+                <span className="text-saffron-gold">02.</span> Focus Directed Entirely to the Tablescape
               </li>
               <li className="flex items-center gap-4 border-b border-white/10 pb-4">
-                <span className="text-saffron-gold">03.</span> Diffuse Reflection Mapping
+                <span className="text-saffron-gold">03.</span> Noise Dampening for Uninterrupted Conversation
               </li>
             </ul>
           </div>
@@ -37,7 +37,7 @@ export default function ArchitectureOfShadows() {
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-saffron-gold text-obsidian-accent font-annotation text-annotation p-4 rounded-sm z-10 font-bold">
-              Fig. 02 <br /> Light Attenuation Study
+              Fig. 02 <br /> The Vault Experience
             </div>
           </div>
         </div>

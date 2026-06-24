@@ -1,243 +1,114 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import PageHero from "@/components/ui/PageHero";
-import SectionShell from "@/components/layout/SectionShell";
-import SectionHeader from "@/components/layout/SectionHeader";
-import SplitSection from "@/components/layout/SplitSection";
-import HomeCommitmentStrip from "@/components/home/HomeCommitmentStrip";
 import ArchitectureOfShadows from "@/components/experience/ArchitectureOfShadows";
+import OriginStory from "@/components/experience/OriginStory";
 
-// Self-contained Animated Stat Counter Component
-function StatCounter({ value, label, delay = 0 }: { value: string; label: string; delay?: number }) {
-  const [count, setCount] = useState(0);
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  useEffect(() => {
-    if (!inView) return;
-    const targetNumber = parseInt(value.replace(/[^0-9]/g, ""), 10);
-    if (isNaN(targetNumber)) return;
-
-    let startTime: number | null = null;
-    const duration = 2000; // 2 seconds animation
-
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = timestamp - startTime;
-      const percentage = Math.min(progress / duration, 1);
-      
-      // Ease-out expo curve
-      const ease = percentage === 1 ? 1 : 1 - Math.pow(2, -10 * percentage);
-      const current = Math.floor(ease * targetNumber);
-      
-      setCount(current);
-
-      if (percentage < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    const timer = setTimeout(() => {
-      requestAnimationFrame(animate);
-    }, delay * 1000);
-
-    return () => clearTimeout(timer);
-  }, [inView, value, delay]);
-
-  const hasPlus = value.includes("+");
-  const isYear = parseInt(value, 10) > 2000 && !hasPlus;
-
-  const displayVal = isYear 
-    ? count === 0 ? "0000" : count.toString()
-    : hasPlus ? `${count}+` : count.toString();
-
+export default function ExperiencePage() {
   return (
-    <div ref={ref} className="text-center">
-      <div className="font-headline-md text-5xl md:text-6xl text-saffron-gold mb-2 select-none tracking-tight">
-        {displayVal}
-      </div>
-      <div className="text-[9px] tracking-[0.25em] uppercase text-on-surface-variant font-bold">
-        {label}
-      </div>
-    </div>
-  );
-}
-
-export default function AboutPage() {
-  const mediaRef = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll();
-  const yParallax = useTransform(scrollY, [200, 1000], [0, 80]);
-
-  return (
-    <main className="min-h-screen bg-surface-container-lowest">
-      <PageHero
-        label="About Us"
-        title={<>A Tale of<br />Spice &amp; Time</>}
-        subtitle="Where every meal is choreographed as scenes in a heritage film."
-        image="/images/real/kandy_hero_night.jpg"
-      />
-
-      {/* Intro Scene Statement */}
-      <SectionShell variant="void" className="text-center py-28 relative">
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent" />
-        <div className="max-w-4xl mx-auto">
-          <SectionHeader 
-            label="Our Essence" 
-            title="Transporting Guests Through Heritage" 
-            align="center"
-            lightMode
-          />
-          <p className="text-on-surface/80 font-headline-md italic text-2xl md:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
-            "Indian Kitchen is an immersive theme dining experience that brings India's soul to life through food, culture, and profound staging."
-          </p>
-        </div>
-      </SectionShell>
-
-      {/* The Origin Story SplitSection */}
-      <SectionShell variant="void" className="py-24">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Parallax media block */}
-          <div ref={mediaRef} className="lg:col-span-6 relative overflow-hidden aspect-[4/5] w-full rounded-[3rem] glass-card group p-2">
-            <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden">
-              <motion.div style={{ y: yParallax }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
-                <Image
-                  src="/images/real/colombo_ceremony.jpg"
-                  alt="Colombo Ceremony"
-                  fill
-                  className="object-cover transition-all duration-1000 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                />
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent pointer-events-none" />
-            </div>
+    <main className="pt-[120px] pb-margin-desktop bg-background text-on-background relative z-10">
+      {/* Hero Header */}
+      <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-32 relative">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-primary-container pb-6">
+          <div>
+            <span className="font-annotation text-annotation text-primary tracking-widest uppercase block mb-4">
+              Spatial Analysis Vol. 1
+            </span>
+            <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
+              Acoustics & Architecture
+            </h1>
           </div>
-
-          <div className="lg:col-span-6 flex flex-col justify-center">
-            <SectionHeader 
-              label="Our Origin Story" 
-              title="A Bold Vision Born in Crisis" 
-              lightMode
+          <div className="font-annotation text-annotation text-tertiary flex items-center gap-2 mt-4 md:mt-0">
+            <span className="w-12 h-[1px] bg-primary-container block"></span>
+            Fig. 01
+          </div>
+        </div>
+        <div className="w-full h-[614px] relative overflow-hidden rounded-sm glass-card p-4">
+          <div className="w-full h-full relative">
+            <Image
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhivpPmijCYf7jGLKes4WDh3vNFxlIVeOHM9K0Fhq7hs_2CgPn1mFZseXVczxWxqOB5rQ4TwtnVZUj7Q77yo-GFEeeBW4pvTjLufC4k7iP5PjaX8388nrX7Wp41bJE19pIbqb8eiNOupdCEoThe4d-gicpUcmYDvhj-Tuq1ac6OfylCGN6MPpZjUEgZnEmTm4TR4traFBlMGKha885O1WVlPKUAg4TXsKfz8wmHE3cea4cH4Qrp6L0CkoO_VbEJKJiIgLPtpVozM_V"
+              alt="A wide architectural photograph of a high-end minimalist Indian restaurant interior bathed in soft natural light."
+              fill
+              className="object-cover"
+              unoptimized
             />
-            <div className="space-y-6 text-on-surface/70 font-body-md font-light text-base leading-relaxed">
-              <p>
-                Born during the unprecedented global hospitality crisis of 2019, Indian Kitchen emerged 
-                from a defiant, bold vision: to fundamentally transform dining from a passive transaction 
-                into an experiential, memorable journey rooted deeply in authenticity.
+          </div>
+          <div className="absolute bottom-12 right-12 glass-card p-6 rounded max-w-sm hidden md:block">
+            <p className="font-body-md text-body-md text-on-surface-variant mb-4">
+              An exploration of structural permanence and the deliberate manipulation of light and sound to create a digital sanctuary within physical walls.
+            </p>
+            <div className="flex gap-4">
+              <span className="font-annotation text-annotation px-3 py-1 bg-surface-dim rounded-full text-on-surface">
+                Volumetric
+              </span>
+              <span className="font-annotation text-annotation px-3 py-1 bg-surface-dim rounded-full text-on-surface">
+                Thermal
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Culinary Grids */}
+      <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 blueprint-grid p-8 rounded-lg border border-surface-dim">
+          <div className="col-span-1 md:col-span-4 bg-obsidian-accent border border-white/10 text-on-secondary p-8 rounded flex flex-col justify-between h-full min-h-[300px]">
+            <div className="flex justify-between items-start mb-12">
+              <h3 className="font-headline-md text-headline-md text-on-secondary">Scoville Heat</h3>
+              <span className="material-symbols-outlined text-saffron-gold" style={{ fontVariationSettings: "'FILL' 1" }}>
+                local_fire_department
+              </span>
+            </div>
+            <div>
+              <div className="text-5xl font-annotation font-light text-saffron-gold mb-2">
+                30k<span className="text-xl"> SHU</span>
+              </div>
+              <p className="font-annotation text-annotation text-on-secondary opacity-70 border-t border-white/20 pt-4">
+                Base warmth profile. Tempered using slow-roasted spices for depth over burn.
               </p>
-              <p>
-                Founded in Sri Lanka, we launched our flagship outlet in 2020 in Colombo, introducing 
-                our signature "Pondicherry Street" concept. Since then, we expanded to the historic 
-                city of Kandy with our tranquil "Kerala Houseboat" experience. 
-              </p>
-              <p>
-                When the world paused, our founders used the silence to build. We traveled the spice routes, 
-                consulted with generational chefs, and brought back authentic cooking vessels. The result is a 
-                dining experience that defies convention.
+            </div>
+          </div>
+          <div className="col-span-1 md:col-span-8 bg-emerald-header border border-white/10 text-on-secondary p-8 rounded flex flex-col justify-between relative overflow-hidden h-full min-h-[300px]">
+            <div className="relative z-10 flex justify-between items-start mb-12">
+              <h3 className="font-headline-md text-headline-md text-on-secondary">Flavor Topography</h3>
+              <span className="font-annotation text-annotation text-saffron-gold border border-saffron-gold px-2 py-1 rounded">
+                Palate Monitor
+              </span>
+            </div>
+            <div className="relative z-10 grid grid-cols-3 gap-4 border-t border-white/20 pt-4">
+              <div>
+                <span className="block font-annotation text-annotation text-on-secondary/70 mb-1">Peak</span>
+                <span className="font-annotation text-xl text-saffron-gold">Umami</span>
+              </div>
+              <div>
+                <span className="block font-annotation text-annotation text-on-secondary/70 mb-1">Trough</span>
+                <span className="font-annotation text-xl text-saffron-gold">Acidity</span>
+              </div>
+              <div>
+                <span className="block font-annotation text-annotation text-on-secondary/70 mb-1">Target EQ</span>
+                <span className="font-annotation text-xl text-saffron-gold">Balanced</span>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-1 md:col-span-12 glass-card p-8 md:p-12 mt-4">
+            <div className="max-w-2xl mx-auto text-center">
+              <span className="font-annotation text-annotation text-primary tracking-widest uppercase block mb-6">
+                Spice Equilibrium
+              </span>
+              <p className="font-body-lg text-body-lg text-on-surface-variant">
+                The flavor matrix relies on passive tempering techniques inherited from traditional generational kitchens, integrated seamlessly into modern gastronomy. The result is an invisible but profound culinary consistency.
               </p>
             </div>
           </div>
         </div>
-      </SectionShell>
-
-      {/* Interactive Stats Block */}
-      <SectionShell variant="void" className="border-y border-outline-variant/30 py-14 bg-surface-container-low">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-5xl mx-auto">
-          <StatCounter value="2019" label="Founded" delay={0.1} />
-          <StatCounter value="3" label="Theme Worlds" delay={0.3} />
-          <StatCounter value="2" label="Outlets" delay={0.5} />
-          <StatCounter value="15+" label="Chef Recipes" delay={0.7} />
-        </div>
-      </SectionShell>
+      </section>
 
       {/* Architecture of Shadows */}
       <ArchitectureOfShadows />
 
-      {/* Commitment Strip */}
-      <HomeCommitmentStrip />
-
-      {/* Vision & Mission Cards */}
-      <SectionShell variant="void" className="py-24 border-t border-outline-variant/30">
-        <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-          <div className="glass-card p-10 rounded-[3rem] shadow-2xl flex flex-col justify-between">
-            <div>
-              <SectionHeader label="Our Vision" title={<></>} className="mb-4" lightMode />
-              <h3 className="text-2xl md:text-3xl font-headline-md text-on-surface uppercase tracking-wide leading-tight mb-6">
-                Redefining the boundaries of global theme dining.
-              </h3>
-              <div className="h-[1px] w-12 bg-saffron-gold mb-6" />
-              <p className="text-on-surface/60 font-body-md font-light text-base leading-relaxed">
-                We envision a future where the rich, untold stories of regional Indian cuisines are 
-                celebrated worldwide, completely redefining how global audiences perceive, taste, and 
-                experience Indian food.
-              </p>
-            </div>
-          </div>
-
-          <div className="glass-card p-10 rounded-[3rem] shadow-2xl flex flex-col justify-between">
-            <div>
-              <SectionHeader label="Our Mission" title={<></>} className="mb-4" lightMode />
-              <h3 className="text-2xl md:text-3xl font-headline-md text-on-surface uppercase tracking-wide leading-tight mb-6">
-                Immersive taste, authentic execution.
-              </h3>
-              <div className="h-[1px] w-12 bg-saffron-gold mb-6" />
-              <p className="text-on-surface/60 font-body-md font-light text-base leading-relaxed">
-                We are committed to celebrating India's culinary heritage with every single plate 
-                we serve, ensuring that our guests leave not just satisfied, but inspired.
-              </p>
-            </div>
-          </div>
-        </div>
-      </SectionShell>
-
-      {/* Founder's Note Section */}
-      <SectionShell variant="void" className="border-t border-outline-variant/30 py-24 bg-surface-container-low">
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <SectionHeader 
-            label="Executive Board" 
-            title="Building Experiences Through Passion" 
-            align="center"
-            lightMode
-          />
-        </div>
-
-        <div className="grid lg:grid-cols-12 gap-12 items-center max-w-6xl mx-auto">
-          <div className="lg:col-span-5 relative aspect-[4/5] rounded-[3rem] overflow-hidden glass-card p-2 shadow-2xl hover:scale-[1.01] transition-all duration-500 group">
-            <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden">
-              <Image 
-                src="/images/real/gallery_7.jpg" 
-                alt="Vincent Renold" 
-                fill 
-                className="object-cover transition-all duration-1000 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 40vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/70 via-transparent to-transparent pointer-events-none" />
-            </div>
-          </div>
-
-          <div className="lg:col-span-7">
-            <p className="text-on-surface/80 font-body-md font-light text-base md:text-lg leading-relaxed mb-6">
-              <strong className="text-saffron-gold font-semibold uppercase tracking-wider text-sm block mb-2">Vincent Renold, Founder</strong>
-              Vincent Renold brings over two decades of elite hospitality excellence. His career is defined by prestigious leadership roles across the luxury tourism sectors of Sri Lanka and India, having worked closely with luxury brands like Radisson, ITC, Banyan Tree, and the renowned Zuri Kumarakom Kerala Resort & Spa.
-            </p>
-            <p className="text-on-surface/70 font-body-md font-light text-base leading-relaxed mb-8">
-              It was his deep involvement in inbound tourism that sparked a profound realization. He saw firsthand how travelers craved the *destination experience*. He wanted to capture the magic of dining on a Kerala houseboat or walking the streets of Pondicherry, and bring it directly to Colombo and Kandy.
-            </p>
-
-            <blockquote className="border-l-2 border-saffron-gold pl-6 py-2 bg-surface-container-low p-6 rounded-r-[2rem]">
-              <p className="font-headline-md italic text-2xl text-on-surface/90 mb-4 leading-relaxed">
-                "Two decades shaping hospitality excellence across global brands has led to this: creating a complete ecosystem beyond restaurants. We aren't just serving food; we are curating memories rooted in heritage."
-              </p>
-              <footer className="text-[10px] uppercase tracking-[0.2em] text-saffron-gold font-bold font-body-md">
-                — Vincent Renold, Founder
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </SectionShell>
+      {/* Origin Story restored content */}
+      <OriginStory />
     </main>
   );
 }
