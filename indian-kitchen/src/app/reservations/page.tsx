@@ -9,8 +9,9 @@ export default function ReservationsPage() {
   const [selectedEnvironment, setSelectedEnvironment] = useState("pondicherry");
 
   return (
-    <main className="flex-grow pt-[120px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full relative z-10 flex flex-col items-center">
-      {/* Heritage Header */}
+    <>
+      <main className="flex-grow pt-[120px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full relative z-10 flex flex-col items-center">
+        {/* Heritage Header */}
       <header className="w-full max-w-4xl mb-16 text-center md:text-left relative">
         <div className="flex items-end justify-between border-b border-primary-container/30 pb-4 mb-8">
           <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface relative">
