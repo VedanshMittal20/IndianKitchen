@@ -8,8 +8,8 @@ interface BrandMarkProps {
 
 export default function BrandMark({ variant = "green", size = "md", className }: BrandMarkProps) {
   const colors = {
-    light: { bar: "bg-gold", title: "text-cream", sub: "text-gold-light" },
-    dark: { bar: "bg-void", title: "text-void", sub: "text-void/70" },
+    light: { bar: "bg-saffron-gold", title: "text-on-surface", sub: "text-saffron-gold" },
+    dark: { bar: "bg-surface-container-lowest", title: "text-on-surface", sub: "text-on-surface/70" },
     green: { bar: "bg-sage", title: "text-sage", sub: "text-sage/80" },
   };
 
@@ -26,10 +26,10 @@ export default function BrandMark({ variant = "green", size = "md", className }:
     <div className={cn("flex items-center gap-3", className)}>
       <div className={cn("rounded-full", s.bar, c.bar)} />
       <div className="flex flex-col leading-tight">
-        <span className={cn("font-sans font-bold uppercase", s.title, c.title)}>
+        <span className={cn("font-body-md font-bold uppercase", s.title, c.title)}>
           Indian Kitchen
         </span>
-        <span className={cn("font-sans font-medium uppercase mt-0.5", s.sub, c.sub)}>
+        <span className={cn("font-body-md font-medium uppercase mt-0.5", s.sub, c.sub)}>
           Theme Dining
         </span>
       </div>

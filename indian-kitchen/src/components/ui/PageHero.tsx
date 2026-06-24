@@ -31,23 +31,19 @@ export default function PageHero({
   return (
     <section 
       ref={ref} 
-      className={`relative min-h-[40vh] md:min-h-[46vh] flex items-end overflow-hidden border-b border-gold/10 ${
-        light ? "bg-parchment text-void" : "bg-void text-cream"
-      }`}
+      className={`relative min-h-[40vh] md:min-h-[46vh] flex items-end overflow-hidden border-b border-outline-variant/30 bg-surface-container-lowest text-on-surface`}
     >
       <motion.div style={{ y, willChange: "transform" }} className="absolute inset-0 top-[-10%] h-[120%]">
         <Image 
           src={image} 
           alt="" 
           fill 
-          className={`object-cover img-warm animate-ken-burns ${light ? "opacity-15" : "opacity-25"}`} 
+          className={`object-cover img-warm animate-ken-burns opacity-25`} 
           priority 
           sizes="100vw" 
         />
         <div 
-          className={`absolute inset-0 bg-gradient-to-t ${
-            light ? "from-parchment via-parchment/65 to-transparent" : "from-void via-void/60 to-transparent"
-          }`} 
+          className={`absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/60 to-transparent`} 
         />
       </motion.div>
 
@@ -59,13 +55,9 @@ export default function PageHero({
             transition={{ type: "spring", stiffness: 200, damping: 30, delay: 0.1 }}
           >
             <SectionLabel className="mb-5">{label}</SectionLabel>
-            <h1 className={`font-display text-4xl md:text-5xl lg:text-6xl uppercase tracking-wide leading-tight mb-4 ${
-              light ? "text-void" : "text-cream"
-            }`}>{title}</h1>
+            <h1 className={`font-headline-md text-4xl md:text-5xl lg:text-6xl uppercase tracking-wide leading-tight mb-4 text-on-surface`}>{title}</h1>
             {subtitle && (
-              <p className={`font-light text-base md:text-lg max-w-2xl leading-relaxed ${
-                light ? "text-text-muted" : "text-cream/70"
-              }`}>
+              <p className={`font-light text-base md:text-lg max-w-2xl leading-relaxed text-on-surface/70`}>
                 {subtitle}
               </p>
             )}

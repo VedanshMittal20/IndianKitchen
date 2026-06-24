@@ -28,7 +28,7 @@ export default function LightboxImage({ src, alt, className = "", sizes = "100vw
           sizes={sizes}
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-void/0 group-hover:bg-void/20 transition-colors duration-500" />
+        <div className="absolute inset-0 bg-surface-container-lowest/0 group-hover:bg-surface-container-lowest/20 transition-colors duration-500" />
       </div>
 
       <AnimatePresence>
@@ -38,11 +38,11 @@ export default function LightboxImage({ src, alt, className = "", sizes = "100vw
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[99999] bg-void/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
+            className="fixed inset-0 z-[99999] bg-surface-container-lowest/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
             onClick={() => setIsOpen(false)}
           >
             <button 
-              className="absolute top-6 right-6 p-2 bg-void/50 rounded-full text-cream hover:bg-gold transition-colors z-50"
+              className="absolute top-6 right-6 p-2 bg-surface-container-low/50 rounded-full text-on-surface hover:bg-saffron-gold transition-colors z-50"
               onClick={(e) => {
                 e.stopPropagation();
                 setIsOpen(false);

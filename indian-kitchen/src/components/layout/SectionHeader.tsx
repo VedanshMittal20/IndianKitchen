@@ -22,15 +22,15 @@ export default function SectionHeader({
   return (
     <div className={`mb-10 md:mb-14 ${alignClass} ${className}`}>
       {label && (
-        <p className={`text-[10px] tracking-[0.2em] uppercase font-semibold mb-3 ${lightMode ? 'text-gold-light' : 'text-sage'}`}>
+        <p className={`text-[10px] tracking-[0.2em] uppercase font-semibold mb-3 text-saffron-gold`}>
           {label}
         </p>
       )}
-      <h2 className={`heading-presentation mb-4 ${lightMode ? 'heading-presentation-light' : 'text-void'}`}>
+      <h2 className={`heading-presentation mb-4 text-on-surface`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-sm md:text-base font-light max-w-2xl ${align === 'center' ? 'mx-auto' : ''} ${lightMode ? 'text-cream/70' : 'text-text-muted'}`}>
+        <p className={`text-sm md:text-base font-light max-w-2xl ${align === 'center' ? 'mx-auto' : ''} text-on-surface/70`}>
           {subtitle}
         </p>
       )}

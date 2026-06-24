@@ -22,27 +22,27 @@ export default function PrivateDining() {
           className="absolute inset-0 w-full h-full"
         >
           <Image
-            src="/images/real_waiter.jpeg"
+            src="/images/real/gallery_2.jpg"
             alt="Private Dining at Indian Kitchen"
             fill
-            className="object-cover img-warm"
+            className="object-cover transition-all duration-1000 group-hover:scale-105"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-void/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-void/80 via-transparent to-void/20" />
+          <div className="absolute inset-0 bg-surface-container-lowest/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/20" />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="relative z-10 bg-parchment p-8 md:p-12 max-w-xl text-center border border-gold/20 shadow-xl mx-4 rounded-sm"
+          className="relative z-10 glass-card p-8 md:p-12 max-w-xl text-center shadow-2xl mx-4 rounded-[3rem]"
         >
-          <span className="text-[10px] tracking-[0.3em] uppercase text-terracotta font-bold block mb-4">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-saffron-gold font-bold block mb-4">
             Private Events
           </span>
-          <h2 className="font-display text-3xl md:text-4xl text-void mb-4">Your Event, Our Stage</h2>
-          <p className="text-text-muted font-light leading-relaxed mb-6 text-sm">
+          <h2 className="font-headline-md text-3xl md:text-4xl text-on-surface mb-4">Your Event, Our Stage</h2>
+          <p className="text-on-surface-variant font-light leading-relaxed mb-6 text-sm">
             From intimate celebrations to corporate gatherings — private spaces across all our theme
             concepts, curated for your guests.
           </p>
@@ -50,7 +50,7 @@ export default function PrivateDining() {
             href="https://wa.me/94117112334?text=Hello!%20I'd%20like%20to%20enquire%20about%20private%20dining..."
             target="_blank"
             rel="noreferrer"
-            className="text-[10px] font-sans font-bold tracking-[0.2em] uppercase text-terracotta hover:text-gold transition-colors link-underline pb-1"
+            className="text-[10px] font-body-md font-bold tracking-[0.2em] uppercase text-tertiary-fixed-dim hover:text-saffron-gold transition-colors link-underline pb-1"
           >
             Enquire for Private Dining →
           </Link>

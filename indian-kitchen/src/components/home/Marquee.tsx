@@ -17,7 +17,7 @@ export default function Marquee() {
   const text = items.map((item) => `${item}  ·  `).join("");
 
   return (
-    <div className="w-full bg-void py-3 overflow-hidden border-y border-cream/10">
+    <div className="w-full bg-surface-container-lowest py-3 overflow-hidden border-y border-outline-variant/30">
       <motion.div
         className="flex whitespace-nowrap"
         animate={{ x: ["0%", "-50%"] }}
@@ -27,7 +27,7 @@ export default function Marquee() {
         {[0, 1, 2, 3].map((i) => (
           <span
             key={i}
-            className="text-gold font-sans font-medium text-[9px] tracking-[0.3em] uppercase px-3"
+            className="text-saffron-gold font-body-md font-medium text-[9px] tracking-[0.3em] uppercase px-3"
           >
             {text}
           </span>

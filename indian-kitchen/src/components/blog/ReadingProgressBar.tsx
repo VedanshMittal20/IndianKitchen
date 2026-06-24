@@ -19,9 +19,9 @@ export default function ReadingProgressBar() {
   }, []);
 
   return (
-    <div className="fixed top-[52px] md:top-[68px] left-0 w-full h-[3px] bg-void z-[45]">
+    <div className="fixed top-[52px] md:top-[68px] left-0 w-full h-[3px] bg-surface-container-lowest z-[45]">
       <div 
-        className="h-full bg-gold transition-all duration-75" 
+        className="h-full bg-saffron-gold transition-all duration-75" 
         style={{ width: `${scrollProgress}%` }}
       />
     </div>

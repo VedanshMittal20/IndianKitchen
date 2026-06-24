@@ -73,26 +73,26 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
               />
               <div className="space-y-6">
                 <div>
-                  <span className="text-[9px] tracking-[0.2em] uppercase text-gold mb-1.5 font-bold block">
+                  <span className="text-[9px] tracking-[0.2em] uppercase text-saffron-gold mb-1.5 font-bold block">
                     Direct Booking Hotline
                   </span>
-                  <p className="font-sans text-base text-cream font-medium">+94 117 112 334</p>
+                  <p className="font-body-md text-base text-on-surface font-medium">+94 117 112 334</p>
                 </div>
                 <div>
-                  <span className="text-[9px] tracking-[0.2em] uppercase text-gold mb-1.5 font-bold block">
+                  <span className="text-[9px] tracking-[0.2em] uppercase text-saffron-gold mb-1.5 font-bold block">
                     Colombo Address
                   </span>
-                  <p className="font-sans text-base text-cream/70 font-light leading-relaxed">
+                  <p className="font-body-md text-base text-on-surface/70 font-light leading-relaxed">
                     357 R.A. De Mel Mawatha,
                     <br />
                     Colombo 03
                   </p>
                 </div>
                 <div>
-                  <span className="text-[9px] tracking-[0.2em] uppercase text-gold mb-1.5 font-bold block">
+                  <span className="text-[9px] tracking-[0.2em] uppercase text-saffron-gold mb-1.5 font-bold block">
                     Sanctuary Kitchen Hours
                   </span>
-                  <p className="font-sans text-base text-cream/70 font-light leading-relaxed">
+                  <p className="font-body-md text-base text-on-surface/70 font-light leading-relaxed">
                     Everyday: 12:30 PM - 3:00 AM
                   </p>
                 </div>
@@ -109,14 +109,14 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
           className={`w-full ${showHeader ? "lg:w-3/5" : "max-w-3xl mx-auto"}`}
         >
           {isSubmitted ? (
-            <div className="flex flex-col items-center justify-center py-16 text-center bg-void-light border border-gold/15 p-8 shadow-xl rounded-sm">
-              <span className="font-display text-3xl text-cream mb-4 uppercase tracking-wide">Reservation Sent</span>
-              <p className="text-cream/65 font-sans font-light mb-6 max-w-sm text-sm">
+            <div className="flex flex-col items-center justify-center py-16 text-center glass-card border border-secondary/15 p-8 shadow-2xl rounded-[3rem]">
+              <span className="font-headline-md text-3xl text-on-surface mb-4 uppercase tracking-wide">Reservation Sent</span>
+              <p className="text-on-surface/65 font-body-md font-light mb-6 max-w-sm text-sm">
                 Your request has been forwarded via WhatsApp. Our hosts will confirm your table shortly.
               </p>
               <button
                 onClick={() => setIsSubmitted(false)}
-                className="btn-outline font-sans text-[10px] tracking-[0.2em] uppercase font-bold"
+                className="btn-outline font-body-md text-[10px] tracking-[0.2em] uppercase font-bold"
               >
                 Make Another Booking
               </button>
@@ -124,119 +124,119 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
           ) : (
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="space-y-6 bg-void-light border border-gold/15 p-6 md:p-10 shadow-xl rounded-sm"
+              className="space-y-6 glass-card border border-secondary/15 p-8 md:p-10 shadow-2xl rounded-[3rem]"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-sans">
+                  <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                     Name
                   </label>
                   <input
                     {...register("name")}
                     type="text"
-                    className="w-full bg-transparent border-b border-gold/30 text-cream py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-sm"
                   />
                   {errors.name && (
-                    <p className="text-crimson text-xs mt-1 font-sans">{errors.name.message}</p>
+                    <p className="text-crimson text-xs mt-1 font-body-md">{errors.name.message}</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-sans">
+                  <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                     Phone
                   </label>
                   <input
                     {...register("phone")}
                     type="tel"
-                    className="w-full bg-transparent border-b border-gold/30 text-cream py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-sm"
                   />
                   {errors.phone && (
-                    <p className="text-crimson text-xs mt-1 font-sans">{errors.phone.message}</p>
+                    <p className="text-crimson text-xs mt-1 font-body-md">{errors.phone.message}</p>
                   )}
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <label className="block text-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-sans">
+                  <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                     Date
                   </label>
                   <input
                     {...register("date")}
                     type="date"
-                    className="w-full bg-transparent border-b border-gold/30 text-cream py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-sm appearance-none"
                   />
                   {errors.date && (
-                    <p className="text-crimson text-xs mt-1 font-sans">{errors.date.message}</p>
+                    <p className="text-crimson text-xs mt-1 font-body-md">{errors.date.message}</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-sans">
+                  <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                     Time
                   </label>
                   <input
                     {...register("time")}
                     type="time"
-                    className="w-full bg-transparent border-b border-gold/30 text-cream py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-sm appearance-none"
                   />
                   {errors.time && (
-                    <p className="text-crimson text-xs mt-1 font-sans">{errors.time.message}</p>
+                    <p className="text-crimson text-xs mt-1 font-body-md">{errors.time.message}</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-sans">
+                  <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                     Guests
                   </label>
                   <select
                     {...register("guests")}
-                    className="w-full bg-transparent border-b border-gold/30 text-cream py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-sm appearance-none"
                   >
-                    <option value="" className="bg-void text-cream">Select</option>
+                    <option value="" className="bg-surface-container-lowest text-on-surface">Select</option>
                     {[1, 2, 3, 4, 5, 6, 7, 8, "9+"].map((n) => (
-                      <option key={n} value={n} className="bg-void text-cream">
+                      <option key={n} value={n} className="bg-surface-container-lowest text-on-surface">
                         {n} Guests
                       </option>
                     ))}
                   </select>
                   {errors.guests && (
-                    <p className="text-crimson text-xs mt-1 font-sans">{errors.guests.message}</p>
+                    <p className="text-crimson text-xs mt-1 font-body-md">{errors.guests.message}</p>
                   )}
                 </div>
               </div>
 
               <div>
-                <label className="block text-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-sans">
+                <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                   Theme Preference
                 </label>
                 <select
                   {...register("theme")}
-                  className="w-full bg-transparent border-b border-gold/30 text-cream py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm"
+                  className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-sm appearance-none"
                 >
-                  <option value="" className="bg-void text-cream">Select Theme</option>
-                  <option value="Pondicherry Street" className="bg-void text-cream">Pondicherry Street (Colombo)</option>
-                  <option value="Kerala Houseboat" className="bg-void text-cream">Kerala Houseboat (Kandy)</option>
-                  <option value="Sherlock Mystery" className="bg-void text-cream">Sherlock Mystery Dining (Colombo)</option>
-                  <option value="No Preference" className="bg-void text-cream">No Preference</option>
+                  <option value="" className="bg-surface-container-lowest text-on-surface">Select Theme</option>
+                  <option value="Pondicherry Street" className="bg-surface-container-lowest text-on-surface">Pondicherry Street (Colombo)</option>
+                  <option value="Kerala Houseboat" className="bg-surface-container-lowest text-on-surface">Kerala Houseboat (Kandy)</option>
+                  <option value="Sherlock Mystery" className="bg-surface-container-lowest text-on-surface">Sherlock Mystery Dining (Colombo)</option>
+                  <option value="No Preference" className="bg-surface-container-lowest text-on-surface">No Preference</option>
                 </select>
                 {errors.theme && (
-                  <p className="text-crimson text-xs mt-1 font-sans">{errors.theme.message}</p>
+                  <p className="text-crimson text-xs mt-1 font-body-md">{errors.theme.message}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-sans">
+                <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                   Special Requests (Optional)
                 </label>
                 <textarea
                   {...register("specialRequests")}
                   rows={2}
-                  className="w-full bg-transparent border-b border-gold/30 text-cream py-2 focus:outline-none focus:border-gold transition-colors resize-none font-sans text-sm"
+                  className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all resize-none font-body-md text-sm"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-primary w-full"
+                className="btn-primary w-full py-4 text-sm rounded-full font-label-lg tracking-widest uppercase mt-4"
               >
                 {isSubmitting ? "Processing..." : "Submit Reservation via WhatsApp"}
               </button>

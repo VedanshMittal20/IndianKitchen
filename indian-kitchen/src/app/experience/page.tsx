@@ -9,6 +9,7 @@ import SectionShell from "@/components/layout/SectionShell";
 import SectionHeader from "@/components/layout/SectionHeader";
 import SplitSection from "@/components/layout/SplitSection";
 import HomeCommitmentStrip from "@/components/home/HomeCommitmentStrip";
+import ArchitectureOfShadows from "@/components/experience/ArchitectureOfShadows";
 
 // Self-contained Animated Stat Counter Component
 function StatCounter({ value, label, delay = 0 }: { value: string; label: string; delay?: number }) {
@@ -55,10 +56,10 @@ function StatCounter({ value, label, delay = 0 }: { value: string; label: string
 
   return (
     <div ref={ref} className="text-center">
-      <div className="font-display text-5xl md:text-6xl text-gold mb-2 select-none tracking-tight">
+      <div className="font-headline-md text-5xl md:text-6xl text-saffron-gold mb-2 select-none tracking-tight">
         {displayVal}
       </div>
-      <div className="text-[9px] tracking-[0.25em] uppercase text-text-muted font-bold">
+      <div className="text-[9px] tracking-[0.25em] uppercase text-on-surface-variant font-bold">
         {label}
       </div>
     </div>
@@ -71,7 +72,7 @@ export default function AboutPage() {
   const yParallax = useTransform(scrollY, [200, 1000], [0, 80]);
 
   return (
-    <main className="min-h-screen bg-void">
+    <main className="min-h-screen bg-surface-container-lowest">
       <PageHero
         label="About Us"
         title={<>A Tale of<br />Spice &amp; Time</>}
@@ -81,7 +82,7 @@ export default function AboutPage() {
 
       {/* Intro Scene Statement */}
       <SectionShell variant="void" className="text-center py-28 relative">
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent" />
         <div className="max-w-4xl mx-auto">
           <SectionHeader 
             label="Our Essence" 
@@ -89,7 +90,7 @@ export default function AboutPage() {
             align="center"
             lightMode
           />
-          <p className="text-cream/80 font-display italic text-2xl md:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
+          <p className="text-on-surface/80 font-headline-md italic text-2xl md:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
             "Indian Kitchen is an immersive theme dining experience that brings India's soul to life through food, culture, and profound staging."
           </p>
         </div>
@@ -99,18 +100,20 @@ export default function AboutPage() {
       <SectionShell variant="void" className="py-24">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Parallax media block */}
-          <div ref={mediaRef} className="lg:col-span-6 relative overflow-hidden aspect-[4/5] w-full rounded-[2px] gold-frame shadow-2xl">
-            <motion.div style={{ y: yParallax }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
-              <Image
-                src="/images/real/colombo_ceremony.jpg"
-                alt="Colombo Ceremony"
-                fill
-                className="object-cover img-warm"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
-            </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent pointer-events-none" />
+          <div ref={mediaRef} className="lg:col-span-6 relative overflow-hidden aspect-[4/5] w-full rounded-[3rem] glass-card group p-2">
+            <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden">
+              <motion.div style={{ y: yParallax }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
+                <Image
+                  src="/images/real/colombo_ceremony.jpg"
+                  alt="Colombo Ceremony"
+                  fill
+                  className="object-cover transition-all duration-1000 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent pointer-events-none" />
+            </div>
           </div>
 
           <div className="lg:col-span-6 flex flex-col justify-center">
@@ -119,7 +122,7 @@ export default function AboutPage() {
               title="A Bold Vision Born in Crisis" 
               lightMode
             />
-            <div className="space-y-6 text-cream/70 font-sans font-light text-base leading-relaxed">
+            <div className="space-y-6 text-on-surface/70 font-body-md font-light text-base leading-relaxed">
               <p>
                 Born during the unprecedented global hospitality crisis of 2019, Indian Kitchen emerged 
                 from a defiant, bold vision: to fundamentally transform dining from a passive transaction 
@@ -141,7 +144,7 @@ export default function AboutPage() {
       </SectionShell>
 
       {/* Interactive Stats Block */}
-      <SectionShell variant="void" className="border-y border-gold/15 py-14 bg-void-light/35">
+      <SectionShell variant="void" className="border-y border-outline-variant/30 py-14 bg-surface-container-low">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-5xl mx-auto">
           <StatCounter value="2019" label="Founded" delay={0.1} />
           <StatCounter value="3" label="Theme Worlds" delay={0.3} />
@@ -150,20 +153,23 @@ export default function AboutPage() {
         </div>
       </SectionShell>
 
+      {/* Architecture of Shadows */}
+      <ArchitectureOfShadows />
+
       {/* Commitment Strip */}
       <HomeCommitmentStrip />
 
       {/* Vision & Mission Cards */}
-      <SectionShell variant="void" className="py-24 border-t border-gold/15">
+      <SectionShell variant="void" className="py-24 border-t border-outline-variant/30">
         <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-          <div className="bg-void-light border border-gold/10 p-10 rounded-sm shadow-xl flex flex-col justify-between">
+          <div className="glass-card p-10 rounded-[3rem] shadow-2xl flex flex-col justify-between">
             <div>
               <SectionHeader label="Our Vision" title={<></>} className="mb-4" lightMode />
-              <h3 className="text-2xl md:text-3xl font-display text-cream uppercase tracking-wide leading-tight mb-6">
+              <h3 className="text-2xl md:text-3xl font-headline-md text-on-surface uppercase tracking-wide leading-tight mb-6">
                 Redefining the boundaries of global theme dining.
               </h3>
-              <div className="h-[1px] w-12 bg-gold mb-6" />
-              <p className="text-cream/60 font-sans font-light text-base leading-relaxed">
+              <div className="h-[1px] w-12 bg-saffron-gold mb-6" />
+              <p className="text-on-surface/60 font-body-md font-light text-base leading-relaxed">
                 We envision a future where the rich, untold stories of regional Indian cuisines are 
                 celebrated worldwide, completely redefining how global audiences perceive, taste, and 
                 experience Indian food.
@@ -171,14 +177,14 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="bg-void-light border border-gold/10 p-10 rounded-sm shadow-xl flex flex-col justify-between">
+          <div className="glass-card p-10 rounded-[3rem] shadow-2xl flex flex-col justify-between">
             <div>
               <SectionHeader label="Our Mission" title={<></>} className="mb-4" lightMode />
-              <h3 className="text-2xl md:text-3xl font-display text-cream uppercase tracking-wide leading-tight mb-6">
+              <h3 className="text-2xl md:text-3xl font-headline-md text-on-surface uppercase tracking-wide leading-tight mb-6">
                 Immersive taste, authentic execution.
               </h3>
-              <div className="h-[1px] w-12 bg-gold mb-6" />
-              <p className="text-cream/60 font-sans font-light text-base leading-relaxed">
+              <div className="h-[1px] w-12 bg-saffron-gold mb-6" />
+              <p className="text-on-surface/60 font-body-md font-light text-base leading-relaxed">
                 We are committed to celebrating India's culinary heritage with every single plate 
                 we serve, ensuring that our guests leave not just satisfied, but inspired.
               </p>
@@ -188,7 +194,7 @@ export default function AboutPage() {
       </SectionShell>
 
       {/* Founder's Note Section */}
-      <SectionShell variant="void" className="border-t border-gold/15 py-24 bg-void-light/20">
+      <SectionShell variant="void" className="border-t border-outline-variant/30 py-24 bg-surface-container-low">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <SectionHeader 
             label="Executive Board" 
@@ -199,31 +205,33 @@ export default function AboutPage() {
         </div>
 
         <div className="grid lg:grid-cols-12 gap-12 items-center max-w-6xl mx-auto">
-          <div className="lg:col-span-5 relative aspect-[4/5] rounded-[2px] overflow-hidden gold-frame shadow-2xl bg-void-light hover:scale-[1.01] transition-all duration-500">
-            <Image 
-              src="/images/extracted/page15_img2.png" 
-              alt="Vincent Renold" 
-              fill 
-              className="object-cover img-warm"
-              sizes="(max-width: 768px) 100vw, 40vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-void/70 via-transparent to-transparent pointer-events-none" />
+          <div className="lg:col-span-5 relative aspect-[4/5] rounded-[3rem] overflow-hidden glass-card p-2 shadow-2xl hover:scale-[1.01] transition-all duration-500 group">
+            <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden">
+              <Image 
+                src="/images/real/gallery_7.jpg" 
+                alt="Vincent Renold" 
+                fill 
+                className="object-cover transition-all duration-1000 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 40vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/70 via-transparent to-transparent pointer-events-none" />
+            </div>
           </div>
 
           <div className="lg:col-span-7">
-            <p className="text-cream/80 font-sans font-light text-base md:text-lg leading-relaxed mb-6">
-              <strong className="text-gold font-semibold uppercase tracking-wider text-sm block mb-2">Vincent Renold, Founder</strong>
+            <p className="text-on-surface/80 font-body-md font-light text-base md:text-lg leading-relaxed mb-6">
+              <strong className="text-saffron-gold font-semibold uppercase tracking-wider text-sm block mb-2">Vincent Renold, Founder</strong>
               Vincent Renold brings over two decades of elite hospitality excellence. His career is defined by prestigious leadership roles across the luxury tourism sectors of Sri Lanka and India, having worked closely with luxury brands like Radisson, ITC, Banyan Tree, and the renowned Zuri Kumarakom Kerala Resort & Spa.
             </p>
-            <p className="text-cream/70 font-sans font-light text-base leading-relaxed mb-8">
+            <p className="text-on-surface/70 font-body-md font-light text-base leading-relaxed mb-8">
               It was his deep involvement in inbound tourism that sparked a profound realization. He saw firsthand how travelers craved the *destination experience*. He wanted to capture the magic of dining on a Kerala houseboat or walking the streets of Pondicherry, and bring it directly to Colombo and Kandy.
             </p>
 
-            <blockquote className="border-l-2 border-gold pl-6 py-2 bg-void-light/50 p-6 rounded-r-sm">
-              <p className="font-display italic text-2xl text-cream/90 mb-4 leading-relaxed">
+            <blockquote className="border-l-2 border-saffron-gold pl-6 py-2 bg-surface-container-low p-6 rounded-r-[2rem]">
+              <p className="font-headline-md italic text-2xl text-on-surface/90 mb-4 leading-relaxed">
                 "Two decades shaping hospitality excellence across global brands has led to this: creating a complete ecosystem beyond restaurants. We aren't just serving food; we are curating memories rooted in heritage."
               </p>
-              <footer className="text-[10px] uppercase tracking-[0.2em] text-gold font-bold font-sans">
+              <footer className="text-[10px] uppercase tracking-[0.2em] text-saffron-gold font-bold font-body-md">
                 — Vincent Renold, Founder
               </footer>
             </blockquote>

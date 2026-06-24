@@ -1,102 +1,101 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
-import SectionHeader from "@/components/layout/SectionHeader";
+import { ArrowRight } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const themes = [
   {
     name: "Pondicherry Street",
-    tag: "Indo-French Nostalgia",
+    tag: "Study 01",
     desc: "Colonial arches, mustard walls, and coastal spice \u2014 our flagship sanctuary of cultural cross-pollination since 2020.",
     href: "/themes",
-    image: "/images/theme_pondicherry.png",
-    accent: "from-void/5 to-void-light/95",
-    color: "text-gold"
+    image: "/images/real/gallery_2.jpg",
   },
   {
     name: "Kerala Houseboat",
-    tag: "Backwater Serenity",
+    tag: "Study 02",
     desc: "Bamboo panels, lantern light, and fiery Malabar flavours aboard our traditional kettuvallam dining chamber.",
     href: "/themes",
     image: "/images/real/kandy_hero_day.jpg",
-    accent: "from-void/5 to-void-light/95",
-    color: "text-sage"
   },
   {
     name: "The Sherlock",
-    tag: "Mystery Dining",
+    tag: "Study 03",
     desc: "Victorian study meets Indian masala \u2014 puzzles, clues, and multi-course menus that tell a suspenseful story.",
     href: "/themes",
-    image: "/images/private_dining.png",
-    accent: "from-void/5 to-void-light/95",
-    color: "text-crimson"
+    image: "/images/real/gallery_5.jpg",
   },
 ];
 
 export default function HomeThemesStrip() {
-  return (
-    <div className="relative bg-void w-full pb-24">
-      {/* Editorial Header */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-24 pb-16 z-20 relative">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gold/10 pb-8">
-          <SectionHeader
-            label="Signature Worlds"
-            title="Themed Sanctuaries"
-            subtitle="Dining as theatre. Explore our three beautifully curated dining rooms."
-            lightMode
-            className="mb-0! md:mb-0!"
-          />
-          <Link
-            href="/themes"
-            className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] text-gold hover:text-cream transition-colors group self-start md:self-auto"
-          >
-            Sanctuary Deep Dive
-            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
-        </div>
-      </div>
+  const targetRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
 
-      {/* Elegant Vertical Layout */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 space-y-16 lg:space-y-32">
-        {themes.map((theme, idx) => (
-          <div 
-            key={theme.name} 
-            className={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${
-              idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-            }`}
-          >
-            {/* Image Box */}
-            <div className="w-full lg:w-1/2 relative">
-              <div className="aspect-[4/3] lg:aspect-square relative w-full overflow-hidden bg-void-light border border-gold/10 shadow-lg rounded-[2px] group">
-                <Image
-                  src={theme.image}
-                  alt={theme.name}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
+
+  return (
+    <section ref={targetRef} className="relative h-[400vh] bg-surface-container-lowest">
+      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+        
+        {/* Editorial Header */}
+        <div className="absolute top-20 md:top-32 left-6 md:left-margin-desktop z-20 pointer-events-none">
+          <div className="flex items-center gap-4 mb-4">
+            <span className="h-px w-12 bg-gradient-to-r from-transparent via-secondary to-transparent"></span>
+            <span className="font-label-sm text-[12px] text-saffron-gold tracking-[0.3em] uppercase drop-shadow-md">Fig. 02 — Sanctuaries</span>
+          </div>
+          <h2 className="font-headline-lg text-[40px] md:text-[64px] text-on-surface leading-tight max-w-lg drop-shadow-2xl">
+            The Geometry <br/> of Space.
+          </h2>
+        </div>
+
+        {/* The Grid / Horizontal Scroll */}
+        <motion.div style={{ x }} className="flex gap-12 md:gap-32 px-6 md:px-[20vw] pt-40 md:pt-20 items-center w-[350vw] md:w-[300vw] lg:w-[250vw]">
+          {themes.map((theme, idx) => (
+            <div 
+              key={theme.name} 
+              className="flex-shrink-0 w-[85vw] md:w-[60vw] lg:w-[45vw] flex flex-col md:flex-row gap-8 md:gap-16 items-center"
+            >
+              {/* Image Card */}
+              <div className="w-full md:w-[55%] relative">
+                <div className="glass-card rounded-[3rem] p-3 md:p-4 relative aspect-[4/5] overflow-hidden group shadow-[0_40px_60px_-20px_rgba(6,73,53,0.4)]">
+                  <Image
+                    src={theme.image}
+                    alt={theme.name}
+                    fill
+                    className="object-cover rounded-[2.5rem] transition-all duration-1000 hover:scale-[1.03] group-hover:scale-[1.03]"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute bottom-10 left-10 right-10 flex justify-between items-end opacity-100 z-10 pointer-events-none">
+                    <span className="font-label-sm text-[12px] text-on-surface bg-saffron-gold px-4 py-2 rounded-full uppercase tracking-widest shadow-[0_0_20px_rgba(255,186,9,0.5)]">
+                      {theme.tag}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Text Content */}
+              <div className="w-full md:w-[45%] flex flex-col justify-center">
+                <h3 className="font-headline-md text-4xl lg:text-6xl uppercase tracking-wide text-on-surface mb-6 leading-[0.9]">
+                  {theme.name}
+                </h3>
+                <p className="text-on-surface-variant text-body-lg font-light leading-relaxed mb-8 max-w-sm">
+                  {theme.desc}
+                </p>
+                <Link href={theme.href} className="group flex items-center gap-4 text-tertiary-fixed-dim hover:text-saffron-gold transition-colors w-fit">
+                  <span className="font-label-lg text-[14px] tracking-widest uppercase">Explore Sanctum</span>
+                  <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
+                </Link>
               </div>
             </div>
-
-            {/* Content Details */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-center">
-              <span className="text-[10px] tracking-[0.3em] uppercase text-gold font-bold mb-4 block">
-                {theme.tag}
-              </span>
-              <h3 className="font-display text-4xl lg:text-5xl uppercase tracking-wide text-cream mb-6 leading-none">
-                {theme.name}
-              </h3>
-              <p className="text-text-muted text-base font-light leading-relaxed max-w-md mb-8">
-                {theme.desc}
-              </p>
-              <Link href={theme.href} className="btn-outline w-fit">
-                Explore Sanctum
-              </Link>
-            </div>
-          </div>
-        ))}
+          ))}
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 }

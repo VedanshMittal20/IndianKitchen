@@ -1,27 +1,34 @@
+"use client";
+
+import { useEffect } from "react";
 import HeroSection from "@/components/home/HeroSection";
-import Marquee from "@/components/home/Marquee";
-import HomeThemesStrip from "@/components/home/HomeThemesStrip";
-import HomeMenuCategories from "@/components/home/HomeMenuCategories";
-import HomeSignaturePreview from "@/components/home/HomeSignaturePreview";
-import HomeCommitmentStrip from "@/components/home/HomeCommitmentStrip";
-import HomeGallery from "@/components/home/HomeGallery";
-import Testimonials from "@/components/home/Testimonials";
-import MenuQRSection from "@/components/home/MenuQRSection";
-import HomeCTA from "@/components/home/HomeCTA";
+import GeometryOfFlavor from "@/components/home/GeometryOfFlavor";
+import Sanctuary from "@/components/home/Sanctuary";
 
 export default function Home() {
+  // Simple scroll reveal logic
+  useEffect(() => {
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+        for (let i = 0; i < reveals.length; i++) {
+            const windowHeight = window.innerHeight;
+            const elementTop = reveals[i].getBoundingClientRect().top;
+            const elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('active');
+            }
+        }
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Trigger once on load
+    return () => window.removeEventListener('scroll', revealOnScroll);
+  }, []);
+
   return (
-    <>
+    <div className="relative z-10 pt-32">
       <HeroSection />
-      <Marquee />
-      <HomeThemesStrip />
-      <HomeMenuCategories />
-      <HomeSignaturePreview />
-      <HomeCommitmentStrip />
-      <HomeGallery />
-      <Testimonials />
-      <MenuQRSection />
-      <HomeCTA />
-    </>
+      <GeometryOfFlavor />
+      <Sanctuary />
+    </div>
   );
 }

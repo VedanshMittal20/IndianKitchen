@@ -78,7 +78,7 @@ export default function HomeGallery() {
         {frames.map((frame, idx) => (
           <div 
             key={idx} 
-            className={`relative rounded-[2px] overflow-hidden gold-frame bg-void-light group cursor-zoom-in ${frame.gridClass}`}
+            className={`relative rounded-[3rem] p-3 md:p-4 overflow-hidden glass-card group cursor-zoom-in ${frame.gridClass}`}
             onMouseEnter={() => handleMouseEnter(idx)}
             onMouseLeave={() => handleMouseLeave(idx)}
             onClick={() => openLightbox(frame.video, frame.subtitle)}
@@ -89,24 +89,23 @@ export default function HomeGallery() {
               muted
               loop
               playsInline
-              className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105 opacity-65 group-hover:opacity-100 will-change-transform"
+              className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-[1200ms] group-hover:scale-105 will-change-transform"
             />
             
             {/* Play hover prompt */}
-            <div className="absolute inset-0 bg-void/30 opacity-100 group-hover:opacity-0 transition-opacity duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center text-gold bg-void/50">
+            <div className="absolute inset-0 bg-surface-container-lowest/30 opacity-100 group-hover:opacity-0 transition-opacity duration-500 flex items-center justify-center pointer-events-none">
+              <div className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-saffron-gold bg-surface-container-low/50">
                 <Play className="w-4 h-4 fill-current ml-0.5" />
               </div>
             </div>
 
-            {/* Dark vignette text block */}
-            <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-void/30 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30 pointer-events-none rounded-[3rem]" />
             
-            <div className="absolute bottom-6 left-6 right-6 z-10 transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
-              <span className="text-[8px] tracking-[0.25em] text-gold font-bold block mb-1 uppercase">
+            <div className="absolute bottom-10 left-10 right-10 z-10 transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
+              <span className="font-label-sm text-[12px] bg-saffron-gold text-on-surface px-3 py-1.5 rounded-full uppercase tracking-widest block mb-2 w-fit font-bold">
                 {frame.title}
               </span>
-              <h3 className="font-display text-xl md:text-2xl text-cream uppercase tracking-wide">
+              <h3 className="font-headline-md text-xl md:text-2xl text-on-surface uppercase tracking-wide">
                 {frame.subtitle}
               </h3>
             </div>
@@ -122,11 +121,11 @@ export default function HomeGallery() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[99999] bg-void/98 backdrop-blur-2xl flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
+            className="fixed inset-0 z-[99999] bg-surface-container-lowest/98 backdrop-blur-2xl flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
             onClick={closeLightbox}
           >
             <button 
-              className="absolute top-6 right-6 p-3 bg-void-light border border-gold/25 rounded-full text-cream hover:bg-gold hover:text-void transition-all z-50 shadow-2xl"
+              className="absolute top-6 right-6 p-3 bg-surface-container-low border border-outline-variant/30 rounded-full text-on-surface hover:bg-saffron-gold hover:text-on-surface transition-all z-50 shadow-2xl"
               onClick={(e) => {
                 e.stopPropagation();
                 closeLightbox();
@@ -141,7 +140,7 @@ export default function HomeGallery() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 260 }}
-              className="relative w-full max-w-5xl aspect-video rounded-sm overflow-hidden shadow-2xl border border-gold/15 bg-void"
+              className="relative w-full max-w-5xl aspect-video rounded-[3rem] overflow-hidden shadow-2xl border border-outline-variant/30 bg-surface-container-lowest p-4 glass-card"
               onClick={(e) => e.stopPropagation()}
             >
               <video 
@@ -151,19 +150,19 @@ export default function HomeGallery() {
                 muted={isMuted}
                 loop
                 playsInline
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover rounded-[2.5rem]"
               />
 
               {/* Title & Mute toggle overlay */}
-              <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center z-20 pointer-events-auto bg-void/60 backdrop-blur-md p-4 rounded-sm border border-gold/10">
+              <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center z-20 pointer-events-auto bg-surface-container-lowest/60 backdrop-blur-md p-4 rounded-sm border border-outline-variant/30">
                 <div>
-                  <span className="text-[8px] tracking-[0.2em] uppercase text-gold font-bold block mb-0.5">Indian Kitchen Reel</span>
-                  <h4 className="font-display text-lg md:text-xl text-cream uppercase tracking-wide">{activeTitle}</h4>
+                  <span className="text-[8px] tracking-[0.2em] uppercase text-saffron-gold font-bold block mb-0.5">Indian Kitchen Reel</span>
+                  <h4 className="font-headline-md text-lg md:text-xl text-on-surface uppercase tracking-wide">{activeTitle}</h4>
                 </div>
                 
                 <button 
                   onClick={() => setIsMuted(!isMuted)}
-                  className="p-2 border border-gold/20 hover:border-gold rounded-full text-gold hover:text-cream transition-colors"
+                  className="p-2 border border-outline-variant/30 hover:border-saffron-gold rounded-full text-saffron-gold hover:text-on-surface transition-colors"
                 >
                   {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
                 </button>

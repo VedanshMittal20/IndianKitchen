@@ -49,10 +49,10 @@ export default function MenuQRSection() {
           className="absolute -right-6 top-1/2 -translate-y-1/2 hidden lg:flex items-center"
           style={{ writingMode: "vertical-rl" }}
         >
-          <span className="stencil-text text-[10px] text-cream tracking-[0.45em]">Scan Me</span>
+          <span className="stencil-text text-[10px] text-on-surface tracking-[0.45em]">Scan Me</span>
         </div>
-        <div className="relative p-4 border-[3px] border-cream/10 rounded-sm bg-void shadow-2xl gold-frame">
-          <div className="absolute -top-3 -left-3 bg-gold text-void text-[8px] tracking-[0.2em] uppercase px-2 py-1 font-bold">
+        <div className="relative p-4 border-[3px] border-outline-variant/30 rounded-sm bg-surface-container-lowest shadow-2xl gold-frame">
+          <div className="absolute -top-3 -left-3 bg-saffron-gold text-on-surface text-[8px] tracking-[0.2em] uppercase px-2 py-1 font-bold">
             Menu
           </div>
           <QRCodeSVG

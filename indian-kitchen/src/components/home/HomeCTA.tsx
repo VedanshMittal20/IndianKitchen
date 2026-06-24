@@ -11,9 +11,9 @@ export default function HomeCTA() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
-    <SectionShell variant="crimson" className="relative overflow-hidden bg-spice-pattern py-12 md:py-16">
-      <div className="absolute inset-0 bg-gradient-to-r from-crimson via-crimson/95 to-terracotta/80" />
-      <div className="absolute top-0 left-0 w-full h-1 bg-gold" />
+    <SectionShell variant="void" className="relative overflow-hidden py-12 md:py-16 border-y border-outline-variant/30">
+      <div className="absolute inset-0 bg-surface-container-lowest" />
+      <div className="absolute top-0 left-0 w-full h-1 bg-saffron-gold" />
 
       <motion.div
         ref={ref}
@@ -35,7 +35,7 @@ export default function HomeCTA() {
           </Link>
           <a
             href="tel:+94117112334"
-            className="btn-outline border-cream/30 hover:border-gold"
+            className="btn-outline border-outline-variant/30 hover:border-saffron-gold"
           >
             <Phone className="w-4 h-4" />
             +94 117 112 334

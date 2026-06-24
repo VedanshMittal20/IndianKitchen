@@ -73,8 +73,8 @@ export default function HomeSignaturePreview() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative z-10 bg-void w-full py-24 border-b border-gold/10">
-      <div className="absolute inset-0 bg-gradient-to-tr from-void via-void-light/30 to-transparent pointer-events-none" />
+    <div ref={containerRef} className="relative z-10 bg-surface-container-lowest w-full py-24 border-b border-outline-variant/30">
+      <div className="absolute inset-0 bg-gradient-to-tr from-background via-background-light/30 to-transparent pointer-events-none" />
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 w-full z-10">
@@ -97,12 +97,12 @@ export default function HomeSignaturePreview() {
             <div 
               key={ann.id}
               ref={(el) => { if (el) leftElementsRef.current[idx] = el; }}
-              className="bg-void-light border border-gold/10 p-6 rounded-sm shadow-sm hover:shadow-md transition-shadow"
+              className="bg-surface-container-low border border-outline-variant/30 p-6 rounded-sm shadow-sm hover:shadow-md transition-shadow"
             >
-              <span className="text-[10px] tracking-widest uppercase text-gold font-bold mb-2 block">
+              <span className="text-[10px] tracking-widest uppercase text-saffron-gold font-bold mb-2 block">
                 {ann.title}
               </span>
-              <p className="text-sm font-sans font-light leading-relaxed text-text-muted">
+              <p className="text-sm font-body-md font-light leading-relaxed text-on-surface-variant">
                 {ann.desc}
               </p>
             </div>
@@ -111,7 +111,7 @@ export default function HomeSignaturePreview() {
 
         {/* Center Dish Image */}
         <div className="flex items-center justify-center relative order-1 lg:order-2">
-          <div ref={dishRef} className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[380px] lg:h-[380px] rounded-full overflow-hidden shadow-xl bg-void-light border-4 border-void">
+          <div ref={dishRef} className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[380px] lg:h-[380px] rounded-full overflow-hidden shadow-xl bg-surface-container-low border-4 border-surface-container-lowest">
             <Image
               src="/images/bamboo_biryani.png"
               alt="Bamboo Biryani"
@@ -120,7 +120,7 @@ export default function HomeSignaturePreview() {
               sizes="(max-width: 1024px) 320px, 400px"
             />
             {/* Inner gold ring */}
-            <div className="absolute inset-0 rounded-full border border-gold/30 pointer-events-none" />
+            <div className="absolute inset-0 rounded-full border border-outline-variant/30 pointer-events-none" />
           </div>
         </div>
 
@@ -130,12 +130,12 @@ export default function HomeSignaturePreview() {
             <div 
               key={ann.id}
               ref={(el) => { if (el) rightElementsRef.current[idx] = el; }}
-              className="bg-void-light border border-gold/10 p-6 rounded-sm shadow-sm hover:shadow-md transition-shadow"
+              className="bg-surface-container-low border border-outline-variant/30 p-6 rounded-sm shadow-sm hover:shadow-md transition-shadow"
             >
-              <span className="text-[10px] tracking-widest uppercase text-gold font-bold mb-2 block">
+              <span className="text-[10px] tracking-widest uppercase text-saffron-gold font-bold mb-2 block">
                 {ann.title}
               </span>
-              <p className="text-sm font-sans font-light leading-relaxed text-text-muted">
+              <p className="text-sm font-body-md font-light leading-relaxed text-on-surface-variant">
                 {ann.desc}
               </p>
             </div>

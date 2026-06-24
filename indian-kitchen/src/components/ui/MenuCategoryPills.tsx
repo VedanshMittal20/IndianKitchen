@@ -20,13 +20,13 @@ export default function MenuCategoryPills({ categories, activeCategory, onSelect
             onClick={() => onSelect(cat)}
             className="relative pb-4 shrink-0 transition-colors"
           >
-            <span className={`text-[10px] tracking-[0.2em] uppercase font-semibold ${isActive ? "text-gold" : "text-text-muted hover:text-cream"}`}>
+            <span className={`text-[10px] tracking-[0.2em] uppercase font-semibold ${isActive ? "text-saffron-gold" : "text-on-surface-variant hover:text-on-surface"}`}>
               {cat}
             </span>
             {isActive && (
               <motion.div
                 layoutId="activeCategoryPill"
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold"
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-saffron-gold"
                 initial={false}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               />

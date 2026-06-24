@@ -25,7 +25,7 @@ const faqItems = [
 
 export default function ReservationsFAQ() {
   return (
-    <SectionShell variant="void" id="faq" className="border-t border-gold/10">
+    <SectionShell variant="void" id="faq" className="border-t border-outline-variant/30 bg-surface-container-lowest">
       <SectionHeader 
         label="Common Questions" 
         title="Before You Arrive" 

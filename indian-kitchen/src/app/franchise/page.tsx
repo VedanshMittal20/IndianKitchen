@@ -96,7 +96,7 @@ export default function FranchisePage() {
   };
 
   return (
-    <main className="min-h-screen bg-void text-cream">
+    <main className="min-h-screen bg-surface-container-lowest text-on-surface">
       <PageHero
         label="Franchise Opportunities"
         title={<>Own a World.<br />Build a Legacy.</>}
@@ -112,7 +112,7 @@ export default function FranchisePage() {
           lightMode 
           className="mb-8"
         />
-        <p className="text-text-muted text-lg font-light leading-relaxed mb-16 text-center max-w-3xl mx-auto px-6">
+        <p className="text-on-surface-variant text-lg font-light leading-relaxed mb-16 text-center max-w-3xl mx-auto px-6">
           At Indian Kitchen, we don't just serve food; we serve experiences. Our theme dining concepts offer a unique value proposition that goes beyond traditional dining. We're looking for passionate partners to expand this legacy globally. If you have the vision, we have the blueprint.
         </p>
         
@@ -124,19 +124,19 @@ export default function FranchisePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-void-light border border-gold/10 p-8 rounded-[2px] text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              className="glass-card p-8 rounded-[3rem] text-center shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group"
             >
-              <div className="w-16 h-16 mx-auto bg-void rounded-full flex items-center justify-center mb-6 border border-gold/20 group-hover:bg-gold transition-colors">
-                <b.icon className="w-8 h-8 text-gold group-hover:text-void transition-colors" />
+              <div className="w-16 h-16 mx-auto bg-surface-container-low rounded-[1.5rem] flex items-center justify-center mb-6 border border-outline-variant/30 group-hover:bg-saffron-gold transition-colors duration-500">
+                <b.icon className="w-8 h-8 text-saffron-gold group-hover:text-on-surface transition-colors duration-500" />
               </div>
-              <h4 className="font-display text-xl text-cream mb-4">{b.title}</h4>
-              <p className="text-sm text-text-muted leading-relaxed">{b.desc}</p>
+              <h4 className="font-headline-md text-xl text-on-surface mb-4">{b.title}</h4>
+              <p className="text-sm text-on-surface-variant leading-relaxed">{b.desc}</p>
             </motion.div>
           ))}
         </div>
       </SectionShell>
 
-      <SectionShell variant="void" className="py-20 border-t border-gold/10 bg-void-light/30">
+      <SectionShell variant="void" className="py-20 border-t border-outline-variant/30 bg-surface-container-low">
         <div className="max-w-4xl mx-auto px-6">
           <SectionHeader 
             label="Common Queries" 
@@ -149,7 +149,7 @@ export default function FranchisePage() {
         </div>
       </SectionShell>
 
-      <SectionShell variant="void" id="enquiry" className="border-t border-gold/10 py-24">
+      <SectionShell variant="void" id="enquiry" className="border-t border-outline-variant/30 py-24">
         <SectionHeader 
           label="Application" 
           title="Franchise Enquiry" 
@@ -164,23 +164,23 @@ export default function FranchisePage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto bg-void border border-gold/15 p-8 md:p-14 rounded-[2px] shadow-2xl relative overflow-hidden"
+          className="max-w-4xl mx-auto glass-card border border-outline-variant/30 p-8 md:p-14 rounded-[3rem] shadow-2xl relative overflow-hidden"
         >
           {/* Decorative background element */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-saffron-gold/5 rounded-full blur-3xl pointer-events-none" />
 
           {isSubmitted ? (
             <div className="text-center py-16 relative z-10">
-              <div className="w-20 h-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6 border border-gold/30">
-                <CheckCircle2 className="w-10 h-10 text-gold" />
+              <div className="w-20 h-20 rounded-full bg-saffron-gold/10 flex items-center justify-center mx-auto mb-6 border border-outline-variant/30">
+                <CheckCircle2 className="w-10 h-10 text-saffron-gold" />
               </div>
-              <h3 className="font-display text-3xl text-cream mb-4 uppercase tracking-wide">Enquiry Received</h3>
-              <p className="text-text-muted text-lg mb-8 max-w-md mx-auto">
+              <h3 className="font-headline-md text-3xl text-on-surface mb-4 uppercase tracking-wide">Enquiry Received</h3>
+              <p className="text-on-surface-variant text-lg mb-8 max-w-md mx-auto">
                 Your application has been submitted via WhatsApp. Our franchise team will review your details and get back to you shortly.
               </p>
               <button 
                 onClick={() => setIsSubmitted(false)}
-                className="btn-outline font-sans text-xs tracking-widest uppercase font-bold"
+                className="btn-outline font-body-md text-xs tracking-widest uppercase font-bold"
               >
                 Submit Another Enquiry
               </button>
@@ -189,20 +189,20 @@ export default function FranchisePage() {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Full Name *</label>
+                  <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Full Name *</label>
                   <input
                     {...register("fullName")}
                     type="text"
-                    className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all font-sans"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-4 py-3 focus:outline-none focus:border-saffron-gold transition-all font-body-md"
                   />
                   {errors.fullName && <p className="text-crimson text-xs mt-1">{errors.fullName.message}</p>}
                 </div>
                 <div>
-                  <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Email Address *</label>
+                  <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Email Address *</label>
                   <input
                     {...register("email")}
                     type="email"
-                    className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all font-sans"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-4 py-3 focus:outline-none focus:border-saffron-gold transition-all font-body-md"
                   />
                   {errors.email && <p className="text-crimson text-xs mt-1">{errors.email.message}</p>}
                 </div>
@@ -210,21 +210,21 @@ export default function FranchisePage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Phone Number *</label>
+                  <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Phone Number *</label>
                   <input
                     {...register("phone")}
                     type="tel"
-                    className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all font-sans"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-4 py-3 focus:outline-none focus:border-saffron-gold transition-all font-body-md"
                     placeholder="+CountryCode Number"
                   />
                   {errors.phone && <p className="text-crimson text-xs mt-1">{errors.phone.message}</p>}
                 </div>
                 <div>
-                  <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Proposed Country / City *</label>
+                  <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Proposed Country / City *</label>
                   <input
                     {...register("location")}
                     type="text"
-                    className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all font-sans"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-4 py-3 focus:outline-none focus:border-saffron-gold transition-all font-body-md"
                   />
                   {errors.location && <p className="text-crimson text-xs mt-1">{errors.location.message}</p>}
                 </div>
@@ -232,10 +232,10 @@ export default function FranchisePage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Investment Range *</label>
+                  <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Investment Range *</label>
                   <select
                     {...register("investment")}
-                    className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all font-sans"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-4 py-3 focus:outline-none focus:border-saffron-gold transition-all font-body-md appearance-none"
                   >
                     <option value="">Select Range</option>
                     {investmentRanges.map(r => <option key={r} value={r}>{r}</option>)}
@@ -243,10 +243,10 @@ export default function FranchisePage() {
                   {errors.investment && <p className="text-crimson text-xs mt-1">{errors.investment.message}</p>}
                 </div>
                 <div>
-                  <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">How did you hear about us? *</label>
+                  <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">How did you hear about us? *</label>
                   <select
                     {...register("source")}
-                    className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all font-sans"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-4 py-3 focus:outline-none focus:border-saffron-gold transition-all font-body-md appearance-none"
                   >
                     <option value="">Select Option</option>
                     {sources.map(s => <option key={s} value={s}>{s}</option>)}
@@ -256,21 +256,21 @@ export default function FranchisePage() {
               </div>
 
               <div>
-                <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Current Business Background *</label>
+                <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Current Business Background *</label>
                 <textarea
                   {...register("background")}
                   rows={3}
-                  className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all resize-none font-sans"
+                  className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-4 py-3 focus:outline-none focus:border-saffron-gold transition-all resize-none font-body-md"
                 />
                 {errors.background && <p className="text-crimson text-xs mt-1">{errors.background.message}</p>}
               </div>
 
               <div>
-                <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Why Indian Kitchen? *</label>
+                <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Why Indian Kitchen? *</label>
                 <textarea
                   {...register("whyUs")}
                   rows={3}
-                  className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all resize-none font-sans"
+                  className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-4 py-3 focus:outline-none focus:border-saffron-gold transition-all resize-none font-body-md"
                 />
                 {errors.whyUs && <p className="text-crimson text-xs mt-1">{errors.whyUs.message}</p>}
               </div>
@@ -279,7 +279,7 @@ export default function FranchisePage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-primary w-full py-4 text-sm"
+                  className="btn-primary w-full py-4 text-sm rounded-full font-label-lg tracking-widest uppercase"
                 >
                   {isSubmitting ? "Processing..." : "Submit Enquiry via WhatsApp"}
                 </button>

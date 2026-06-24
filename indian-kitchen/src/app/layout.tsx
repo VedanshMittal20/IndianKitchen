@@ -1,31 +1,34 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Hanken_Grotesk, EB_Garamond, Space_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import WhatsAppWidget from "@/components/WhatsAppWidget";
-import QRWidget from "@/components/QRWidget";
-import CursorGlow from "@/components/ui/CursorGlow";
-import MobileStickyBar from "@/components/layout/MobileStickyBar";
 import ScrollProvider from "@/components/ScrollProvider";
+import CursorGlow from "@/components/ui/CursorGlow";
 
-const inter = Inter({
-  variable: "--font-body",
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["100", "400", "600", "900"],
 });
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-display",
+const ebGaramond = EB_Garamond({
+  variable: "--font-eb-garamond",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
+
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  subsets: ["latin"],
+  weight: ["400", "700"],
   style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "Indian Kitchen | Immersive Theme Dining — Colombo & Kandy",
-  description:
-    "Authentic Indian cuisine inside three themed worlds. Reserve your table at Pondicherry Street, Kerala Houseboat, or Sherlock Mystery Dining.",
+  title: "Indian Kitchen - Architectural Permanence",
+  description: "A curation of regional Indian heritage, distilled through a lens of modern minimalism.",
 };
 
 export default function RootLayout({
@@ -34,18 +37,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans overflow-x-hidden bg-void text-cream">
+    <html lang="en" className={`scroll-smooth ${hanken.variable} ${ebGaramond.variable} ${spaceMono.variable} h-full antialiased`}>
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+      </head>
+      <body className="font-body-md text-body-md bg-surface-container-lowest text-on-surface min-h-full flex flex-col">
+        {/* WebGL Shader Background (placeholder) */}
+        <div className="fixed inset-0 z-0 pointer-events-none opacity-40"></div>
+        
         <ScrollProvider>
-          <div className="min-h-full flex flex-col">
-            <Navigation />
-            <CursorGlow />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-            <WhatsAppWidget />
-            <QRWidget />
-            <MobileStickyBar />
-          </div>
+          <CursorGlow />
+          <Navigation />
+          <main className="flex-grow z-10">{children}</main>
+          <Footer />
         </ScrollProvider>
       </body>
     </html>

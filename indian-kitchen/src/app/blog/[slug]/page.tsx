@@ -44,7 +44,7 @@ export default async function BlogPostPage({
   const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-void text-cream">
+    <main className="min-h-screen bg-surface-container-lowest text-on-surface">
       {/* Sticky Reading Progress Indicator */}
       <ReadingProgressBar />
 
@@ -57,22 +57,22 @@ export default async function BlogPostPage({
           className="object-cover img-warm"
           priority
         />
-        <div className="absolute inset-0 bg-void/65" />
-        <div className="absolute inset-0 bg-gradient-to-t from-void via-void/30 to-void/10" />
+        <div className="absolute inset-0 bg-surface-container-lowest/65" />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-surface-container-lowest/10" />
 
         <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 lg:px-16 pb-12 md:pb-16 z-10">
           <div className="container mx-auto max-w-4xl">
-            <span className="bg-gold text-void text-[8px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-4 shadow-lg">
+            <span className="bg-saffron-gold text-on-surface text-[8px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-4 shadow-lg">
               {post.tag}
             </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-cream leading-tight mb-6 uppercase tracking-wide">
+            <h1 className="font-headline-md text-4xl md:text-5xl lg:text-6xl text-on-surface leading-tight mb-6 uppercase tracking-wide">
               {post.title}
             </h1>
-            <div className="flex items-center gap-4 text-cream/70 text-[9px] font-sans uppercase tracking-[0.15em] font-bold">
+            <div className="flex items-center gap-4 text-on-surface/70 text-[9px] font-body-md uppercase tracking-[0.15em] font-bold">
               <span>{post.date}</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+              <span className="w-1.5 h-1.5 rounded-full bg-saffron-gold" />
               <span>{post.readTime}</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+              <span className="w-1.5 h-1.5 rounded-full bg-saffron-gold" />
               <span>By {post.author}</span>
             </div>
           </div>
@@ -84,23 +84,23 @@ export default async function BlogPostPage({
         <div className="max-w-4xl mx-auto mb-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-[9px] font-sans font-bold tracking-[0.25em] uppercase text-gold hover:text-cream transition-colors link-underline pb-1"
+            className="inline-flex items-center gap-2 text-[9px] font-body-md font-bold tracking-[0.25em] uppercase text-saffron-gold hover:text-on-surface transition-colors link-underline pb-1"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Chronicles
           </Link>
         </div>
 
-        <article className="max-w-4xl mx-auto bg-void-light p-6 md:p-14 shadow-2xl border border-gold/15 rounded-sm">
+        <article className="max-w-4xl mx-auto bg-surface-container-low p-6 md:p-14 shadow-2xl border border-outline-variant/30 rounded-sm">
           <BlogContent content={post.content} />
 
-          <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col sm:flex-row justify-between items-center gap-6">
-            <h3 className="font-display text-xl text-cream uppercase tracking-wide">Share this story</h3>
+          <div className="mt-16 pt-8 border-t border-outline-variant/30 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <h3 className="font-headline-md text-xl text-on-surface uppercase tracking-wide">Share this story</h3>
             <div className="flex gap-4">
               <a
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://indiankitchen.lk/blog/${slug}`)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-void hover:border-gold transition-all duration-300 shadow-md"
+                className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-saffron-gold hover:bg-saffron-gold hover:text-on-surface hover:border-saffron-gold transition-all duration-300 shadow-md"
                 aria-label="Share on Facebook"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -111,7 +111,7 @@ export default async function BlogPostPage({
                 href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-void hover:border-gold transition-all duration-300 shadow-md"
+                className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-saffron-gold hover:bg-saffron-gold hover:text-on-surface hover:border-saffron-gold transition-all duration-300 shadow-md"
                 aria-label="Share on Twitter"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -124,16 +124,16 @@ export default async function BlogPostPage({
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
-          <div className="max-w-5xl mx-auto mt-28 border-t border-gold/15 pt-16">
+          <div className="max-w-5xl mx-auto mt-28 border-t border-outline-variant/30 pt-16">
             <SectionHeader label="Recommendations" title="More from the Kitchen" lightMode className="mb-10" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedPosts.map((related) => (
                 <Link
                   key={related.slug}
                   href={`/blog/${related.slug}`}
-                  className="group block bg-void-light border border-gold/15 overflow-hidden shadow-xl hover:border-gold hover:-translate-y-1 transition-all duration-300 rounded-sm"
+                  className="group block bg-surface-container-low border border-outline-variant/30 overflow-hidden shadow-xl hover:border-saffron-gold hover:-translate-y-1 transition-all duration-300 rounded-sm"
                 >
-                  <div className="relative h-44 overflow-hidden bg-void">
+                  <div className="relative h-44 overflow-hidden bg-surface-container-lowest">
                     <Image
                       src={related.image}
                       alt={related.title}
@@ -142,10 +142,10 @@ export default async function BlogPostPage({
                     />
                   </div>
                   <div className="p-6">
-                    <span className="text-[8px] text-gold uppercase tracking-[0.2em] font-sans font-bold block mb-2">
+                    <span className="text-[8px] text-saffron-gold uppercase tracking-[0.2em] font-body-md font-bold block mb-2">
                       {related.tag}
                     </span>
-                    <h3 className="font-display text-xl text-cream group-hover:text-gold transition-colors duration-300 uppercase leading-snug line-clamp-2">
+                    <h3 className="font-headline-md text-xl text-on-surface group-hover:text-saffron-gold transition-colors duration-300 uppercase leading-snug line-clamp-2">
                       {related.title}
                     </h3>
                   </div>

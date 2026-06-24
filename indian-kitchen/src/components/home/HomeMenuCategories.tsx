@@ -12,22 +12,22 @@ import { ArrowRight } from "lucide-react";
 
 const menuData = {
   Biryani: [
-    { name: "Bamboo Chicken Biryani", price: "LKR 3,400", image: "/images/real/kandy_hero_day.jpg", tag: "Signature" },
-    { name: "Mutton Dum Biryani", price: "LKR 4,200", image: "/images/slide_3.png" },
-    { name: "Prawns Biryani", price: "LKR 3,800", image: "/images/slide_1.png" },
-    { name: "Vegetable Biryani", price: "LKR 2,400", image: "/images/slide_5.png", tag: "Veg" },
+    { name: "Bamboo Chicken Biryani", price: "LKR 3,400", image: "/images/real/gallery_1.jpg", tag: "Signature" },
+    { name: "Mutton Dum Biryani", price: "LKR 4,200", image: "/images/real/gallery_3.jpg" },
+    { name: "Prawns Biryani", price: "LKR 3,800", image: "/images/real/gallery_4.jpg" },
+    { name: "Vegetable Biryani", price: "LKR 2,400", image: "/images/real/gallery_6.jpg", tag: "Veg" },
   ],
   Curries: [
-    { name: "Butter Chicken Masala", price: "LKR 2,800", image: "/images/slide_10.png", tag: "Popular" },
-    { name: "Kadai Paneer", price: "LKR 2,200", image: "/images/slide_2.png", tag: "Veg" },
-    { name: "Mutton Rogan Josh", price: "LKR 3,600", image: "/images/slide_14.png" },
-    { name: "Goan Fish Curry", price: "LKR 3,200", image: "/images/slide_11.png" },
+    { name: "Butter Chicken Masala", price: "LKR 2,800", image: "/images/real/gallery_7.jpg", tag: "Popular" },
+    { name: "Kadai Paneer", price: "LKR 2,200", image: "/images/real/gallery_1.jpg", tag: "Veg" },
+    { name: "Mutton Rogan Josh", price: "LKR 3,600", image: "/images/real/gallery_2.jpg" },
+    { name: "Goan Fish Curry", price: "LKR 3,200", image: "/images/real/gallery_3.jpg" },
   ],
   Tandoor: [
-    { name: "Tandoori Chicken", price: "LKR 3,000", image: "/images/slide_12.png" },
-    { name: "Paneer Tikka", price: "LKR 2,400", image: "/images/slide_8.png", tag: "Veg" },
-    { name: "Seekh Kebab", price: "LKR 3,400", image: "/images/slide_13.png" },
-    { name: "Malai Tikka", price: "LKR 2,900", image: "/images/slide_15.png" },
+    { name: "Tandoori Chicken", price: "LKR 3,000", image: "/images/real/gallery_4.jpg" },
+    { name: "Paneer Tikka", price: "LKR 2,400", image: "/images/real/gallery_5.jpg", tag: "Veg" },
+    { name: "Seekh Kebab", price: "LKR 3,400", image: "/images/real/gallery_6.jpg" },
+    { name: "Malai Tikka", price: "LKR 2,900", image: "/images/real/gallery_7.jpg" },
   ],
 };
 
@@ -55,7 +55,7 @@ export default function HomeMenuCategories() {
         />
         <Link
           href="/menu"
-          className="text-[10px] tracking-[0.2em] uppercase text-gold hover:text-cream transition-colors inline-flex items-center gap-2 mb-2 group"
+          className="text-[10px] tracking-[0.2em] uppercase text-saffron-gold hover:text-on-surface transition-colors inline-flex items-center gap-2 mb-2 group"
         >
           View Full Menu
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

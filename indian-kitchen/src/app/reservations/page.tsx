@@ -17,7 +17,7 @@ export default function ReservationsPage() {
         label="Book Your Table"
         title={<>Reserve Your<br />Journey</>}
         subtitle="Secure your passport to an immersive culinary experience. We recommend booking in advance, especially for Sherlock Mystery Dining."
-        image="/images/real_waiter.jpeg"
+        image="/images/real/gallery_6.jpg"
       />
       <ReservationForm showHeader={false} />
       <PrivateDining />

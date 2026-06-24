@@ -52,7 +52,7 @@ export default function ServicesPage() {
         label="Event Stagecraft" 
         title="Extending the Experience" 
       />
-      <div className="space-y-6 text-text-muted font-sans font-light text-base leading-relaxed">
+      <div className="space-y-6 text-on-surface-variant font-body-md font-light text-base leading-relaxed">
         <p>
           At Indian Kitchen, we extend our experience beyond typical dining, creating tailored solutions
           for corporates, global travelers, and private celebrations. Whether you are hosting an intimate 
@@ -79,7 +79,7 @@ export default function ServicesPage() {
   );
 
   return (
-    <main className="bg-parchment min-h-screen text-void">
+    <main className="bg-surface-container-lowest min-h-screen text-on-surface">
       <PageHero
         label="Our Services"
         title={<>Beyond<br />the Plate</>}
@@ -90,14 +90,14 @@ export default function ServicesPage() {
 
       {/* Intro Split Section */}
       <SplitSection 
-        variant="parchment" 
+        variant="void" 
         content={introContent} 
         media={introMedia} 
         reverse 
       />
 
       {/* Bento Service Cards */}
-      <SectionShell variant="cream-dark" className="py-24 border-y border-gold/10">
+      <SectionShell variant="void" className="py-24 border-y border-outline-variant/30">
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <SectionHeader
             label="Service Portfolios"
@@ -119,32 +119,32 @@ export default function ServicesPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inViewCards ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-parchment border border-gold/15 p-8 md:p-10 rounded-sm shadow-xl hover:border-gold transition-all duration-300 group flex flex-col justify-between"
+                className="bg-surface-container-low border border-outline-variant/30 p-8 md:p-10 rounded-sm shadow-xl hover:border-saffron-gold transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>
                   <div className="flex justify-between items-start mb-8">
-                    <div className="w-10 h-10 rounded-sm bg-gold/5 flex items-center justify-center border border-gold/20 text-gold group-hover:bg-gold group-hover:text-void transition-all duration-300">
+                    <div className="w-10 h-10 rounded-sm bg-saffron-gold/5 flex items-center justify-center border border-outline-variant/30 text-saffron-gold group-hover:bg-saffron-gold group-hover:text-on-surface transition-all duration-300">
                       <IconComponent className="w-5 h-5" />
                     </div>
-                    <span className="font-sans text-[10px] tracking-widest text-gold/30 uppercase font-bold">
+                    <span className="font-body-md text-[10px] tracking-widest text-saffron-gold/30 uppercase font-bold">
                       {service.num}
                     </span>
                   </div>
 
-                  <h3 className="font-display text-2xl text-void uppercase tracking-wide mb-4">
+                  <h3 className="font-headline-md text-2xl text-on-surface uppercase tracking-wide mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-text-muted font-sans font-light leading-relaxed text-sm mb-6">
+                  <p className="text-on-surface-variant font-body-md font-light leading-relaxed text-sm mb-6">
                     {service.desc}
                   </p>
                 </div>
 
                 {/* Features Tags */}
-                <div className="border-t border-gold/10 pt-4 flex flex-wrap gap-2">
+                <div className="border-t border-outline-variant/30 pt-4 flex flex-wrap gap-2">
                   {service.features.map((feat) => (
                     <span 
                       key={feat}
-                      className="text-[8px] font-sans font-bold tracking-widest uppercase px-2.5 py-1 bg-cream-dark border border-gold/10 text-terracotta rounded-full"
+                      className="text-[8px] font-body-md font-bold tracking-widest uppercase px-2.5 py-1 bg-surface-container-lowest border border-outline-variant/30 text-saffron-gold rounded-full"
                     >
                       {feat}
                     </span>
@@ -160,7 +160,7 @@ export default function ServicesPage() {
       <PrivateDining />
 
       {/* Enquire CTA */}
-      <SectionShell variant="void" className="text-center py-28 border-t border-gold/15 relative">
+      <SectionShell variant="void" className="text-center py-28 border-t border-outline-variant/30 relative">
         <div className="max-w-2xl mx-auto flex flex-col items-center">
           <SectionHeader 
             label="Connect with our Host" 

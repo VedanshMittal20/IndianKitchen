@@ -78,9 +78,9 @@ export default function Navigation() {
     <>
       {/* Minimal Header */}
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/40 backdrop-blur-xl border-b transition-all duration-300 ${
           isScrolled || isOpen
-            ? "bg-void/80 backdrop-blur-md py-4 border-b border-cream/10"
+            ? "bg-surface-container-lowest/80 backdrop-blur-md py-4 border-b border-outline-variant/30"
             : "bg-transparent py-6"
         }`}
       >
@@ -94,7 +94,7 @@ export default function Navigation() {
           <div className="flex items-center gap-6 relative z-50">
             <Link
               href="/reservations"
-              className="hidden sm:inline-flex text-[10px] tracking-[0.2em] font-semibold uppercase px-6 py-3 rounded-full transition-all duration-300 bg-gold text-void hover:bg-gold-light hover:shadow-[0_0_20px_rgba(200,135,42,0.3)] hover:-translate-y-0.5"
+              className="hidden sm:inline-flex text-[10px] tracking-[0.2em] font-semibold uppercase px-6 py-3 rounded-full transition-all duration-300 bg-saffron-gold text-surface-container-lowest hover:bg-saffron-gold/90 hover:shadow-[0_0_20px_rgba(255,186,9,0.3)] hover:-translate-y-0.5"
             >
               Book a Table
             </Link>
@@ -102,7 +102,7 @@ export default function Navigation() {
             {/* Menu Trigger Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="flex items-center gap-3 text-cream hover:text-gold transition-colors focus:outline-none group"
+              className="flex items-center gap-3 text-on-surface hover:text-saffron-gold transition-colors focus:outline-none group"
               aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               <span className="text-[10px] tracking-[0.25em] font-semibold uppercase hidden md:inline">
@@ -138,10 +138,10 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-void flex flex-col lg:flex-row overflow-hidden"
+            className="fixed inset-0 z-40 bg-surface-container-lowest flex flex-col lg:flex-row overflow-hidden"
           >
             {/* Image Preview Side (Desktop only) */}
-            <div className="hidden lg:block lg:w-1/2 h-full relative overflow-hidden bg-void-panel border-r border-cream/10">
+            <div className="hidden lg:block lg:w-1/2 h-full relative overflow-hidden bg-surface-container-low border-r border-outline-variant/30">
               <AnimatePresence mode="wait">
                 {hoveredIndex !== null ? (
                   <motion.div
@@ -180,21 +180,21 @@ export default function Navigation() {
               </AnimatePresence>
               
               {/* Overlay styling for preview side */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-void" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface-container-lowest" />
               
               {/* Cinematic Quote/Tagline */}
               <div className="absolute bottom-16 left-16 max-w-md">
-                <span className="text-[10px] tracking-[0.25em] uppercase text-gold font-bold mb-3 block">
+                <span className="text-[10px] tracking-[0.25em] uppercase text-saffron-gold font-bold mb-3 block">
                   Indian Kitchen
                 </span>
-                <p className="font-display italic text-2xl text-cream/70 leading-relaxed">
+                <p className="font-display italic text-2xl text-on-surface/70 leading-relaxed">
                   "Food is theater, spice is the script, and the palate is our canvas."
                 </p>
               </div>
             </div>
 
             {/* Menu Links Side */}
-            <div className="w-full lg:w-1/2 h-full flex flex-col justify-between pt-32 pb-12 px-6 md:px-16 lg:px-20 bg-void">
+            <div className="w-full lg:w-1/2 h-full flex flex-col justify-between pt-32 pb-12 px-6 md:px-16 lg:px-20 bg-surface-container-lowest">
               {/* Navigation Links */}
               <nav className="flex-1 flex flex-col justify-center gap-6 lg:gap-8 my-auto">
                 <div className="space-y-1 md:space-y-2">
@@ -212,14 +212,14 @@ export default function Navigation() {
                         onMouseLeave={() => setHoveredIndex(null)}
                       >
                         <div className="flex items-baseline gap-4">
-                          <span className="font-sans text-[10px] tracking-widest text-gold opacity-0 group-hover:opacity-100 transition-opacity">
+                          <span className="font-sans text-[10px] tracking-widest text-saffron-gold opacity-0 group-hover:opacity-100 transition-opacity">
                             0{idx + 1}
                           </span>
-                          <span className="font-display text-3xl md:text-5xl lg:text-6xl uppercase tracking-wide text-cream group-hover:text-gold transition-colors duration-300">
+                          <span className="font-display text-3xl md:text-5xl lg:text-6xl uppercase tracking-wide text-on-surface group-hover:text-saffron-gold transition-colors duration-300">
                             {link.name}
                           </span>
                         </div>
-                        <span className="text-xs text-text-muted pl-8 font-light uppercase tracking-wider opacity-60 group-hover:opacity-100 transition-opacity">
+                        <span className="text-xs text-on-surface-variant pl-8 font-light uppercase tracking-wider opacity-60 group-hover:opacity-100 transition-opacity">
                           {link.subtitle}
                         </span>
                       </Link>
@@ -228,7 +228,7 @@ export default function Navigation() {
                 </div>
 
                 {/* Divider */}
-                <div className="w-full h-px bg-cream/10 my-4" />
+                <div className="w-full h-px bg-outline-variant/30 my-4" />
 
                 {/* Secondary Links Grid */}
                 <div className="grid grid-cols-2 gap-4">
@@ -241,7 +241,7 @@ export default function Navigation() {
                     >
                       <Link
                         href={link.href}
-                        className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] font-semibold text-cream/70 hover:text-gold transition-colors group"
+                        className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] font-semibold text-on-surface/70 hover:text-saffron-gold transition-colors group"
                       >
                         {link.name}
                         <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
@@ -252,16 +252,16 @@ export default function Navigation() {
               </nav>
 
               {/* Bottom footer elements inside overlay */}
-              <div className="border-t border-cream/10 pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+              <div className="border-t border-outline-variant/30 pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                 <div>
-                  <span className="block text-[8px] tracking-[0.25em] uppercase text-text-muted mb-1">
+                  <span className="block text-[8px] tracking-[0.25em] uppercase text-on-surface-variant mb-1">
                     Direct Table Booking
                   </span>
                   <a
                     href="tel:+94117112334"
-                    className="flex items-center gap-2 text-sm text-cream hover:text-gold transition-colors font-medium"
+                    className="flex items-center gap-2 text-sm text-on-surface hover:text-saffron-gold transition-colors font-medium"
                   >
-                    <Phone className="w-4 h-4 text-gold" />
+                    <Phone className="w-4 h-4 text-saffron-gold" />
                     +94 117 112 334
                   </a>
                 </div>

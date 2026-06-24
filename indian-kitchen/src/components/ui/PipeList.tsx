@@ -13,8 +13,8 @@ export default function PipeList({ items, className, light = false }: PipeListPr
         <li
           key={item}
           className={cn(
-            "font-sans text-[10px] md:text-[11px] tracking-[0.18em] uppercase font-medium pipe-item",
-            light ? "text-cream/90" : "text-text-dark"
+            "font-body-md text-[10px] md:text-[11px] tracking-[0.18em] uppercase font-medium pipe-item",
+            light ? "text-on-surface/90" : "text-text-dark"
           )}
         >
           {item}

@@ -13,7 +13,7 @@ export default function BlogPage() {
   const rest = blogPosts.slice(1);
 
   return (
-    <main className="min-h-screen bg-void text-cream">
+    <main className="min-h-screen bg-surface-container-lowest text-on-surface">
       <PageHero
         label="From the Spice Trail"
         title={<>Tales from<br />the Kitchen</>}
@@ -32,9 +32,9 @@ export default function BlogPage() {
           >
             <Link 
               href={`/blog/${featured.slug}`} 
-              className="group grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gold/15 bg-void-light overflow-hidden gold-frame rounded-sm shadow-xl hover:shadow-[0_0_30px_rgba(200,135,42,0.15)] transition-all duration-500"
+              className="group grid grid-cols-1 lg:grid-cols-2 gap-0 border border-outline-variant/30 bg-surface-container-low overflow-hidden rounded-sm shadow-xl hover:shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-500"
             >
-              <div className="relative h-64 lg:h-auto min-h-[300px] overflow-hidden bg-void">
+              <div className="relative h-64 lg:h-auto min-h-[300px] overflow-hidden bg-surface-container-lowest">
                 <Image
                   src={featured.image}
                   alt={featured.title}
@@ -43,22 +43,22 @@ export default function BlogPage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
-                <span className="absolute top-4 left-4 bg-gold text-void px-3 py-1 text-[8px] font-bold uppercase tracking-widest">
+                <span className="absolute top-4 left-4 bg-saffron-gold text-on-surface px-3 py-1 text-[8px] font-bold uppercase tracking-widest">
                   Featured Article
                 </span>
               </div>
               
               <div className="p-8 md:p-12 flex flex-col justify-center">
-                <span className="text-[9px] tracking-[0.25em] uppercase text-gold mb-3 font-bold">
+                <span className="text-[9px] tracking-[0.25em] uppercase text-saffron-gold mb-3 font-bold">
                   {featured.tag}
                 </span>
-                <h2 className="font-display text-3xl md:text-4xl text-cream mb-4 group-hover:text-gold transition-colors duration-300 uppercase leading-tight">
+                <h2 className="font-headline-md text-3xl md:text-4xl text-on-surface mb-4 group-hover:text-saffron-gold transition-colors duration-300 uppercase leading-tight">
                   {featured.title}
                 </h2>
-                <p className="text-cream/60 font-sans font-light text-sm leading-relaxed mb-6 line-clamp-3">
+                <p className="text-on-surface/60 font-body-md font-light text-sm leading-relaxed mb-6 line-clamp-3">
                   {featured.excerpt}
                 </p>
-                <div className="flex items-center justify-between text-[9px] text-text-muted uppercase tracking-[0.2em] font-bold pt-4 border-t border-cream/10">
+                <div className="flex items-center justify-between text-[9px] text-on-surface-variant uppercase tracking-[0.2em] font-bold pt-4 border-t border-outline-variant/30">
                   <span>{featured.date}</span>
                   <span>{featured.readTime}</span>
                 </div>
@@ -86,10 +86,10 @@ export default function BlogPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "50px" }}
               transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-              className="group bg-void-light border border-gold/15 overflow-hidden rounded-sm shadow-xl hover:border-gold hover:-translate-y-1 transition-all duration-300"
+              className="group bg-surface-container-low border border-outline-variant/30 overflow-hidden rounded-sm shadow-xl hover:border-saffron-gold hover:-translate-y-1 transition-all duration-300"
             >
               <Link href={`/blog/${post.slug}`} className="block h-full flex flex-col">
-                <div className="relative h-52 overflow-hidden bg-void shrink-0">
+                <div className="relative h-52 overflow-hidden bg-surface-container-lowest shrink-0">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -97,21 +97,21 @@ export default function BlogPage() {
                     className="object-cover img-warm group-hover:scale-105 transition-transform duration-700 will-change-transform"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <span className="absolute top-3 right-3 bg-void-light border border-gold/25 text-gold px-2.5 py-1 text-[8px] font-bold uppercase tracking-widest shadow-lg">
+                  <span className="absolute top-3 right-3 bg-surface-container-low border border-outline-variant/30 text-saffron-gold px-2.5 py-1 text-[8px] font-bold uppercase tracking-widest shadow-lg">
                     {post.tag}
                   </span>
                 </div>
 
                 <div className="p-6 flex flex-col flex-1">
-                  <h2 className="font-display text-xl md:text-2xl text-cream mb-3 group-hover:text-gold transition-colors duration-300 uppercase leading-snug line-clamp-2">
+                  <h2 className="font-headline-md text-xl md:text-2xl text-on-surface mb-3 group-hover:text-saffron-gold transition-colors duration-300 uppercase leading-snug line-clamp-2">
                     {post.title}
                   </h2>
-                  <p className="text-cream/60 font-sans font-light text-sm leading-relaxed mb-6 line-clamp-2 flex-1">
+                  <p className="text-on-surface/60 font-body-md font-light text-sm leading-relaxed mb-6 line-clamp-2 flex-1">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-[9px] text-text-muted uppercase tracking-[0.2em] font-bold pt-4 border-t border-cream/10">
+                  <div className="flex items-center justify-between text-[9px] text-on-surface-variant uppercase tracking-[0.2em] font-bold pt-4 border-t border-outline-variant/30">
                     <span>{post.date}</span>
-                    <span className="text-gold group-hover:text-cream transition-colors duration-300">
+                    <span className="text-saffron-gold group-hover:text-on-surface transition-colors duration-300">
                       Read Entry →
                     </span>
                   </div>

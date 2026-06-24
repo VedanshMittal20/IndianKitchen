@@ -11,7 +11,7 @@ export default function HomeCommitmentStrip() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <SectionShell variant="void" className="relative overflow-hidden py-16 md:py-24 border-y border-gold/10">
+    <SectionShell variant="void" className="relative overflow-hidden py-16 md:py-24 border-y border-outline-variant/30">
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center relative z-10">
         
@@ -53,7 +53,7 @@ export default function HomeCommitmentStrip() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ delay: 0.25 }}
-          className="lg:col-span-6 xl:col-span-3 relative h-64 lg:h-72 overflow-hidden border border-gold/20 shadow-lg rounded-[2px]"
+          className="lg:col-span-6 xl:col-span-3 relative h-64 lg:h-72 overflow-hidden border border-outline-variant/30 shadow-lg rounded-[2px]"
         >
           <Image
             src="/images/real_copper_pot.jpeg"

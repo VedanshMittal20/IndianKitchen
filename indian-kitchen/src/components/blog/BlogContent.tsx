@@ -15,7 +15,7 @@ export default function BlogContent({ content }: BlogContentProps) {
           return (
             <blockquote
               key={index}
-              className="border-l-2 border-gold bg-void-panel px-6 py-5 font-display text-xl md:text-2xl text-cream font-light leading-relaxed italic rounded-r-sm"
+              className="border-l-2 border-saffron-gold bg-surface-container-low px-6 py-5 font-headline-md text-xl md:text-2xl text-on-surface font-light leading-relaxed italic rounded-r-sm"
             >
               {quote}
             </blockquote>
@@ -29,9 +29,9 @@ export default function BlogContent({ content }: BlogContentProps) {
           return (
             <p
               key={index}
-              className="text-cream/85 font-light leading-[1.9] text-base md:text-lg"
+              className="text-on-surface/85 font-light leading-[1.9] text-base md:text-lg"
             >
-              <span className="float-left text-5xl md:text-6xl font-display text-gold pr-3 pt-1 font-bold leading-[0.8] select-none">
+              <span className="float-left text-5xl md:text-6xl font-headline-md text-saffron-gold pr-3 pt-1 font-bold leading-[0.8] select-none">
                 {firstChar}
               </span>
               {restText}
@@ -42,7 +42,7 @@ export default function BlogContent({ content }: BlogContentProps) {
         return (
           <p
             key={index}
-            className="text-cream/80 font-light leading-[1.85] text-base md:text-lg"
+            className="text-on-surface/80 font-light leading-[1.85] text-base md:text-lg"
           >
             {trimmed}
           </p>
