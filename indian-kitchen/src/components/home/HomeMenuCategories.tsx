@@ -1,82 +1,87 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
-import { Coffee, Soup, Martini, CakeSlice } from "lucide-react";
+import SectionShell from "@/components/layout/SectionShell";
+import SectionHeader from "@/components/layout/SectionHeader";
+import MenuCategoryPills from "@/components/ui/MenuCategoryPills";
+import DishCard from "@/components/ui/DishCard";
+import { ArrowRight } from "lucide-react";
 
-const categories = [
-  {
-    title: "Starters",
-    desc: "In the new era of gastronomy we look to the future while embracing the traditions of our past.",
-    icon: Coffee,
-    href: "/menu#starters",
-  },
-  {
-    title: "Main Dishes",
-    desc: "In the new era of gastronomy we look to the future while embracing the traditions of our past.",
-    icon: Soup,
-    href: "/menu#mains",
-  },
-  {
-    title: "Drinks",
-    desc: "In the new era of gastronomy we look to the future while embracing the traditions of our past.",
-    icon: Martini,
-    href: "/menu#drinks",
-  },
-  {
-    title: "Desserts",
-    desc: "In the new era of gastronomy we look to the future while embracing the traditions of our past.",
-    icon: CakeSlice,
-    href: "/menu#desserts",
-  },
-];
+const menuData = {
+  Biryani: [
+    { name: "Bamboo Chicken Biryani", price: "LKR 3,400", image: "/images/real/kandy_hero_day.jpg", tag: "Signature" },
+    { name: "Mutton Dum Biryani", price: "LKR 4,200", image: "/images/slide_3.png" },
+    { name: "Prawns Biryani", price: "LKR 3,800", image: "/images/slide_1.png" },
+    { name: "Vegetable Biryani", price: "LKR 2,400", image: "/images/slide_5.png", tag: "Veg" },
+  ],
+  Curries: [
+    { name: "Butter Chicken Masala", price: "LKR 2,800", image: "/images/slide_10.png", tag: "Popular" },
+    { name: "Kadai Paneer", price: "LKR 2,200", image: "/images/slide_2.png", tag: "Veg" },
+    { name: "Mutton Rogan Josh", price: "LKR 3,600", image: "/images/slide_14.png" },
+    { name: "Goan Fish Curry", price: "LKR 3,200", image: "/images/slide_11.png" },
+  ],
+  Tandoor: [
+    { name: "Tandoori Chicken", price: "LKR 3,000", image: "/images/slide_12.png" },
+    { name: "Paneer Tikka", price: "LKR 2,400", image: "/images/slide_8.png", tag: "Veg" },
+    { name: "Seekh Kebab", price: "LKR 3,400", image: "/images/slide_13.png" },
+    { name: "Malai Tikka", price: "LKR 2,900", image: "/images/slide_15.png" },
+  ],
+};
+
+type Category = keyof typeof menuData;
 
 export default function HomeMenuCategories() {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [activeTab, setActiveTab] = useState<Category>("Biryani");
+
+  const categories = Object.keys(menuData) as Category[];
 
   return (
-    <section className="section-padding bg-paper" id="menu-categories">
-      <div className="container mx-auto px-6 md:px-12 lg:px-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "50px" }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+    <SectionShell variant="void" id="menu-categories">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7 }}
+        className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8"
+      >
+        <SectionHeader 
+          label="The Culinary Passport" 
+          title="Browse Our Menu" 
+          className="mb-0 md:mb-0"
+        />
+        <Link
+          href="/menu"
+          className="text-[10px] tracking-[0.2em] uppercase text-gold hover:text-cream transition-colors inline-flex items-center gap-2 mb-2 group"
         >
-          <h2 className="heading-presentation text-forest mb-4">Browse Our Menu</h2>
-        </motion.div>
+          View Full Menu
+          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto" ref={ref}>
-          {categories.map((category, index) => {
-            const Icon = category.icon;
-            return (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="bg-white rounded-2xl p-8 border border-sage/15 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center group"
-              >
-                <div className="w-20 h-20 rounded-full bg-sage/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <Icon className="w-8 h-8 text-forest" strokeWidth={1.5} />
-                </div>
-                <h3 className="font-display text-xl text-forest mb-4">{category.title}</h3>
-                <p className="text-text-muted text-sm leading-relaxed mb-6 flex-grow font-light">
-                  {category.desc}
-                </p>
-                <Link
-                  href={category.href}
-                  className="text-terracotta font-semibold text-sm tracking-wide hover:text-forest transition-colors mt-auto"
-                >
-                  Explore Menu
-                </Link>
-              </motion.div>
-            );
-          })}
-        </div>
+      <div className="mb-6">
+        <MenuCategoryPills 
+          categories={categories} 
+          activeCategory={activeTab} 
+          onSelect={(cat) => setActiveTab(cat as Category)} 
+        />
       </div>
-    </section>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        {menuData[activeTab].map((dish, index) => (
+          <motion.div
+            key={dish.name}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+          >
+            <DishCard {...dish} />
+          </motion.div>
+        ))}
+      </div>
+    </SectionShell>
   );
 }

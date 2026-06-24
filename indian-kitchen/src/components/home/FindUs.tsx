@@ -3,141 +3,143 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
+import SectionShell from "@/components/layout/SectionShell";
+import SectionHeader from "@/components/layout/SectionHeader";
+import SplitSection from "@/components/layout/SplitSection";
 
 export default function FindUs() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  return (
-    <section className="section-padding bg-cream" id="find-us">
-      <div className="container mx-auto px-6 md:px-12 lg:px-16">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-10"
-        >
-          <span className="text-[10px] tracking-[0.3em] uppercase text-terracotta font-medium block mb-3">
-            Find Us
-          </span>
-          <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-tight text-espresso">
-            Our Themed Sanctuaries
-          </h2>
-        </motion.div>
+  const mapIframe = (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={inView ? { opacity: 1 } : {}}
+      transition={{ duration: 0.8, delay: 0.15 }}
+      className="w-full h-[320px] lg:h-full lg:min-h-[500px] bg-void-panel relative shadow-2xl border border-gold/15 rounded-sm overflow-hidden"
+    >
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.916172671018!2d79.8504313!3d6.8908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2596041695555%3A0x6b306b3a2be641c8!2s357%20R.A.%20De%20Mel%20Mawatha%2C%20Colombo%2000300%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen={false}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Indian Kitchen Location Map"
+        className="absolute inset-0 grayscale invert brightness-[0.7] contrast-[1.2] opacity-75 hover:opacity-90 transition-opacity duration-500"
+      />
+    </motion.div>
+  );
 
-        <div className="flex flex-col lg:flex-row gap-0 border border-terracotta/15 shadow-lg bg-white overflow-hidden max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="w-full lg:w-1/2 h-[320px] lg:h-auto lg:min-h-[420px] bg-parchment relative"
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.916172671018!2d79.8504313!3d6.8908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2596041695555%3A0x6b306b3a2be641c8!2s357%20R.A.%20De%20Mel%20Mawatha%2C%20Colombo%2000300%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Indian Kitchen Location Map"
-              className="absolute inset-0 grayscale-[70%] sepia-[20%] contrast-[1.1]"
-            />
-          </motion.div>
+  const contactDetails = (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: 20 }}
+      animate={inView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.8, delay: 0.25 }}
+      className="w-full flex flex-col justify-center"
+    >
+      <SectionHeader 
+        label="Sanctuary Directions" 
+        title={<>Visit Our <span className="italic text-gold">Outlets</span></>}
+        lightMode
+      />
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="w-full lg:w-1/2 p-8 md:p-10 flex flex-col justify-center bg-cream"
-          >
-            <div className="space-y-7">
-              <div className="flex gap-4 items-start group">
-                <div className="w-9 h-9 rounded-full border border-terracotta/25 flex items-center justify-center shrink-0 group-hover:bg-espresso group-hover:text-cream transition-colors text-terracotta">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <div className="flex flex-col gap-4">
-                  <div>
-                    <h4 className="font-sans text-[9px] tracking-[0.2em] uppercase text-terracotta mb-1">
-                      Colombo Outlet
-                    </h4>
-                    <p className="font-display text-lg text-espresso leading-snug">
-                      357 R.A. De Mel Mawatha,<br />Kollupitiya, Colombo 00300
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-sans text-[9px] tracking-[0.2em] uppercase text-terracotta mb-1">
-                      Kandy Outlet
-                    </h4>
-                    <p className="font-display text-lg text-espresso leading-snug">
-                      25/8 Sangaraja Mawatha,<br />Hillwood College Rd, Kandy 20000
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex gap-4 items-start group">
-                <div className="w-9 h-9 rounded-full border border-terracotta/25 flex items-center justify-center shrink-0 group-hover:bg-espresso group-hover:text-cream transition-colors text-terracotta">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="font-sans text-[9px] tracking-[0.2em] uppercase text-terracotta mb-1">
-                    Reservations & Inquiries
-                  </h4>
-                  <div className="flex flex-col">
-                    <a
-                      href="tel:+94778191396"
-                      className="font-display text-lg text-espresso hover:text-saffron transition-colors"
-                    >
-                      +94 778 191 396
-                    </a>
-                    <a
-                      href="mailto:kitchenindian1@gmail.com"
-                      className="font-light text-sm text-espresso hover:text-saffron transition-colors"
-                    >
-                      kitchenindian1@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex gap-4 items-start group">
-                <div className="w-9 h-9 rounded-full border border-terracotta/25 flex items-center justify-center shrink-0 group-hover:bg-espresso group-hover:text-cream transition-colors text-terracotta">
-                  <Clock className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="font-sans text-[9px] tracking-[0.2em] uppercase text-terracotta mb-1">
-                    Opening Hours
-                  </h4>
-                  <div className="text-espresso space-y-0.5 font-light text-sm">
-                    <p>
-                      <span className="font-medium">Mon – Thu:</span> 12:30 PM – 11:30 PM
-                    </p>
-                    <p>
-                      <span className="font-medium">Fri – Sat:</span> 12:30 PM – 3:00 AM
-                    </p>
-                    <p>
-                      <span className="font-medium">Sun:</span> 12:30 PM – 11:30 PM
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-terracotta/15">
-                <a
-                  href="https://wa.me/94117112334?text=Hello!%20I'd%20like%20to%20enquire%20about..."
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 w-full py-3.5 bg-[#25D366] text-white font-sans text-[10px] tracking-[0.2em] uppercase font-medium hover:bg-[#1DA851] transition-colors"
-                >
-                  <MessageCircle className="w-4 h-4 fill-current" />
-                  Chat on WhatsApp
-                </a>
-              </div>
+      <div className="space-y-8 mt-2">
+        <div className="flex gap-5 items-start group">
+          <div className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:text-void transition-all duration-300 text-gold bg-void-light shadow-md">
+            <MapPin className="w-4 h-4" />
+          </div>
+          <div className="flex flex-col gap-6">
+            <div>
+              <h4 className="font-sans text-[8px] tracking-[0.25em] uppercase text-text-muted mb-1.5 font-bold">
+                Colombo Outlet
+              </h4>
+              <p className="font-display text-xl text-cream leading-snug">
+                357 R.A. De Mel Mawatha,<br />Kollupitiya, Colombo 00300
+              </p>
             </div>
-          </motion.div>
+            <div>
+              <h4 className="font-sans text-[8px] tracking-[0.25em] uppercase text-text-muted mb-1.5 font-bold">
+                Kandy Outlet
+              </h4>
+              <p className="font-display text-xl text-cream leading-snug">
+                25/8 Sangaraja Mawatha,<br />Hillwood College Rd, Kandy 20000
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex gap-5 items-start group">
+          <div className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:text-void transition-all duration-300 text-gold bg-void-light shadow-md">
+            <Phone className="w-4 h-4" />
+          </div>
+          <div>
+            <h4 className="font-sans text-[8px] tracking-[0.25em] uppercase text-text-muted mb-1.5 font-bold">
+              Reservations & Inquiries
+            </h4>
+            <div className="flex flex-col gap-1.5">
+              <a
+                href="tel:+94117112334"
+                className="font-display text-xl text-cream hover:text-gold transition-colors font-medium"
+              >
+                +94 117 112 334
+              </a>
+              <a
+                href="mailto:kitchenindian1@gmail.com"
+                className="font-light text-sm text-cream/60 hover:text-gold transition-colors font-sans"
+              >
+                kitchenindian1@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex gap-5 items-start group">
+          <div className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:text-void transition-all duration-300 text-gold bg-void-light shadow-md">
+            <Clock className="w-4 h-4" />
+          </div>
+          <div>
+            <h4 className="font-sans text-[8px] tracking-[0.25em] uppercase text-text-muted mb-1.5 font-bold">
+              Kitchen Hours
+            </h4>
+            <div className="text-cream/70 space-y-1.5 font-sans font-light text-sm">
+              <p>
+                <span className="font-semibold text-cream">Mon – Thu:</span> 12:30 PM – 11:30 PM
+              </p>
+              <p>
+                <span className="font-semibold text-cream">Fri – Sat:</span> 12:30 PM – 3:00 AM
+              </p>
+              <p>
+                <span className="font-semibold text-cream">Sun:</span> 12:30 PM – 11:30 PM
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-6">
+          <a
+            href="https://wa.me/94117112334?text=Hello!%20I'd%20like%20to%20enquire%20about..."
+            target="_blank"
+            rel="noreferrer"
+            className="btn-primary w-full md:w-auto text-center"
+          >
+            <MessageCircle className="w-4 h-4 inline-block mr-2" />
+            Enquire via WhatsApp
+          </a>
         </div>
       </div>
-    </section>
+    </motion.div>
+  );
+
+  return (
+    <div id="find-us">
+      <SplitSection 
+        variant="void" 
+        content={contactDetails} 
+        media={mapIframe} 
+        reverse 
+      />
+    </div>
   );
 }

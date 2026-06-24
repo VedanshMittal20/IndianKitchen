@@ -4,68 +4,66 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import PipeList from "@/components/ui/PipeList";
+import SectionShell from "@/components/layout/SectionShell";
+import SectionHeader from "@/components/layout/SectionHeader";
 
 export default function HomeCommitmentStrip() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section className="relative bg-sage overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gold/40" />
+    <SectionShell variant="void" className="relative overflow-hidden py-16 md:py-24 border-y border-gold/10">
 
-      <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-16 py-10 md:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            className="lg:col-span-5"
-          >
-            <p className="text-[9px] tracking-[0.3em] uppercase text-gold font-semibold mb-3">
-              Our Commitment
-            </p>
-            <h2 className="font-display text-3xl md:text-4xl uppercase tracking-wide text-cream leading-tight mb-4">
-              Culinary
-              <br />
-              Authenticity
-            </h2>
-            <p className="text-cream/75 font-light text-sm leading-relaxed">
-              Every dish tells a story of tradition — ingredients sourced from India&apos;s heartland,
-              crafted without compromise.
-            </p>
-          </motion.div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center relative z-10">
+        
+        {/* Title taking more space to avoid overlapping */}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          className="lg:col-span-12 xl:col-span-5"
+        >
+          <SectionHeader 
+            label="Our Commitment" 
+            title={<>Culinary<br className="hidden xl:block" />Authenticity</>}
+            subtitle="Every dish tells a story of tradition \u2014 ingredients sourced from India's heartland, crafted without compromise."
+            lightMode
+            className="mb-0"
+          />
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.15 }}
-            className="lg:col-span-4"
-          >
-            <PipeList
-              light
-              items={[
-                "Chefs handpicked from Indian villages",
-                "Family-rooted regional recipes",
-                "No artificial colors or preservatives",
-              ]}
-            />
-          </motion.div>
+        {/* Benefits list */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ delay: 0.15 }}
+          className="lg:col-span-6 xl:col-span-4"
+        >
+          <PipeList
+            light
+            items={[
+              "Chefs handpicked from Indian villages",
+              "Family-rooted regional recipes",
+              "No artificial colors or preservatives",
+            ]}
+          />
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ delay: 0.25 }}
-            className="lg:col-span-3 relative h-48 lg:h-56 overflow-hidden gold-frame border-gold/30"
-          >
-            <Image
-              src="/images/real_copper_pot.jpeg"
-              alt="Authentic copper pot cooking"
-              fill
-              className="object-cover img-warm"
-              sizes="300px"
-            />
-          </motion.div>
-        </div>
+        {/* Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ delay: 0.25 }}
+          className="lg:col-span-6 xl:col-span-3 relative h-64 lg:h-72 overflow-hidden border border-gold/20 shadow-lg rounded-[2px]"
+        >
+          <Image
+            src="/images/real_copper_pot.jpeg"
+            alt="Authentic copper pot cooking"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 300px"
+          />
+        </motion.div>
       </div>
-    </section>
+    </SectionShell>
   );
 }

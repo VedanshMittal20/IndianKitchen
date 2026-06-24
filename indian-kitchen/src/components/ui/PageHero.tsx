@@ -7,9 +7,10 @@ import SectionLabel from "@/components/ui/SectionLabel";
 
 interface PageHeroProps {
   label: string;
-  title: string;
+  title: React.ReactNode;
   subtitle?: string;
   image?: string;
+  light?: boolean;
 }
 
 export default function PageHero({
@@ -17,6 +18,7 @@ export default function PageHero({
   title,
   subtitle,
   image = "/images/real_interior.jpeg",
+  light = false,
 }: PageHeroProps) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -27,24 +29,43 @@ export default function PageHero({
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
-    <section ref={ref} className="relative min-h-[40vh] md:min-h-[46vh] flex items-end overflow-hidden bg-void text-cream border-b border-void">
+    <section 
+      ref={ref} 
+      className={`relative min-h-[40vh] md:min-h-[46vh] flex items-end overflow-hidden border-b border-gold/10 ${
+        light ? "bg-parchment text-void" : "bg-void text-cream"
+      }`}
+    >
       <motion.div style={{ y, willChange: "transform" }} className="absolute inset-0 top-[-10%] h-[120%]">
-        <Image src={image} alt="" fill className="object-cover img-warm opacity-40" priority sizes="100vw" />
-        {/* Subtle gradient overlay to ensure text readability at the bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-void via-void/50 to-transparent" />
+        <Image 
+          src={image} 
+          alt="" 
+          fill 
+          className={`object-cover img-warm animate-ken-burns ${light ? "opacity-15" : "opacity-25"}`} 
+          priority 
+          sizes="100vw" 
+        />
+        <div 
+          className={`absolute inset-0 bg-gradient-to-t ${
+            light ? "from-parchment via-parchment/65 to-transparent" : "from-void via-void/60 to-transparent"
+          }`} 
+        />
       </motion.div>
 
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-16 pb-10 md:pb-12 pt-32">
-        <div className="container mx-auto max-w-5xl">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 200, damping: 30, delay: 0.1 }}
           >
-            <SectionLabel light className="mb-5">{label}</SectionLabel>
-            <h1 className="heading-presentation mb-4">{title}</h1>
+            <SectionLabel className="mb-5">{label}</SectionLabel>
+            <h1 className={`font-display text-4xl md:text-5xl lg:text-6xl uppercase tracking-wide leading-tight mb-4 ${
+              light ? "text-void" : "text-cream"
+            }`}>{title}</h1>
             {subtitle && (
-              <p className="text-cream/80 font-light text-base md:text-lg max-w-2xl leading-relaxed">
+              <p className={`font-light text-base md:text-lg max-w-2xl leading-relaxed ${
+                light ? "text-text-muted" : "text-cream/70"
+              }`}>
                 {subtitle}
               </p>
             )}

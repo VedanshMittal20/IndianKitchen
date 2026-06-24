@@ -12,12 +12,10 @@ export default function QRWidget() {
   const router = useRouter();
 
   const handleScan = (result: unknown) => {
-    // The library may return an array of results or a single string depending on version
     const text = Array.isArray(result) ? result[0]?.rawValue : result;
     
     if (text) {
       setScanned(true);
-      // Mock redirect logic
       setTimeout(() => {
         setIsOpen(false);
         setScanned(false);
@@ -30,13 +28,13 @@ export default function QRWidget() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 left-6 z-50 bg-wood text-cream w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-forest transition-all duration-300 group"
+        className="fixed bottom-24 sm:bottom-6 left-6 z-50 bg-void text-gold border border-gold/60 w-12 h-12 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:border-gold hover:bg-gold-light hover:text-void transition-all duration-300 group"
         aria-label="Scan Table QR Code"
       >
-        <QrCode className="w-6 h-6" />
+        <QrCode className="w-5 h-5" />
         {/* Tooltip */}
-        <span className="absolute left-full ml-4 px-3 py-1.5 bg-forest text-cream text-[10px] uppercase tracking-wider whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-sm">
-          Scan to Order
+        <span className="absolute left-full ml-4 px-3 py-1.5 bg-void-light border border-gold/30 text-cream text-[10px] uppercase font-sans tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-sm shadow-2xl">
+          Scan Table QR
         </span>
       </button>
 
@@ -46,11 +44,11 @@ export default function QRWidget() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-cream/95 backdrop-blur-md flex items-center justify-center p-6"
+            className="fixed inset-0 z-[100] bg-void/95 backdrop-blur-xl flex items-center justify-center p-6"
           >
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-6 right-6 text-forest hover:text-wood transition-colors p-2"
+              className="absolute top-6 right-6 text-cream hover:text-gold transition-colors p-2 z-50"
             >
               <X className="w-8 h-8" strokeWidth={1.5} />
             </button>
@@ -59,35 +57,40 @@ export default function QRWidget() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="max-w-md w-full bg-cream-dark p-8 rounded-sm shadow-2xl border border-wood/20 text-center relative overflow-hidden"
+              className="max-w-md w-full bg-void-light p-8 rounded-sm shadow-2xl border border-gold/20 text-center relative overflow-hidden"
             >
               <div className="mb-8">
-                <h3 className="font-display text-4xl text-forest mb-2">Scan Your Table</h3>
-                <p className="text-text-muted font-light">Point your camera at the QR code on your table to access the ordering menu.</p>
+                <span className="text-[9px] tracking-[0.25em] uppercase text-gold font-bold block mb-2">
+                  Dine In Order
+                </span>
+                <h3 className="font-display text-3xl text-cream mb-3 uppercase tracking-wide">Scan Your Table</h3>
+                <p className="text-text-muted text-sm font-sans font-light leading-relaxed">
+                  Focus your camera on the QR code on your table to automatically open our digital menu.
+                </p>
               </div>
 
               {!scanned ? (
-                <div className="relative w-full aspect-square overflow-hidden rounded-sm border-2 border-dashed border-wood/50 bg-black/5">
+                <div className="relative w-full aspect-square overflow-hidden rounded-sm border border-gold/30 bg-void/50">
                   <Scanner
                     onScan={handleScan}
                     onError={(error) => console.log(error)}
                     components={{ finder: false }}
                   />
-                  {/* Decorative corner markers */}
-                  <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-forest m-4 z-10" />
-                  <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-forest m-4 z-10" />
-                  <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-forest m-4 z-10" />
-                  <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-forest m-4 z-10" />
+                  {/* Corner bounds */}
+                  <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold m-4 z-10" />
+                  <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-gold m-4 z-10" />
+                  <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-gold m-4 z-10" />
+                  <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold m-4 z-10" />
                 </div>
               ) : (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="w-full aspect-square flex flex-col items-center justify-center bg-forest text-cream rounded-sm"
+                  className="w-full aspect-square flex flex-col items-center justify-center bg-gold/10 border border-gold text-gold rounded-sm"
                 >
-                  <Utensils className="w-16 h-16 mb-4 animate-bounce" strokeWidth={1} />
-                  <h4 className="font-display text-3xl mb-2">Table Recognized!</h4>
-                  <p className="text-cream/80 text-sm tracking-wider uppercase">Opening your menu...</p>
+                  <Utensils className="w-12 h-12 mb-4 animate-bounce" strokeWidth={1.5} />
+                  <h4 className="font-display text-2xl mb-1 uppercase tracking-wide text-cream">Table Recognized</h4>
+                  <p className="text-gold/80 text-[10px] tracking-widest uppercase font-sans font-semibold">Retrieving Culinary Passport...</p>
                 </motion.div>
               )}
             </motion.div>

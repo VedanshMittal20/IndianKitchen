@@ -1,87 +1,136 @@
 "use client";
 
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import SectionLabel from "@/components/ui/SectionLabel";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import PageHero from "@/components/ui/PageHero";
+import SectionShell from "@/components/layout/SectionShell";
+import SectionHeader from "@/components/layout/SectionHeader";
+import SplitSection from "@/components/layout/SplitSection";
+import HomeCommitmentStrip from "@/components/home/HomeCommitmentStrip";
 
-// A reusable CSS parallax image component
-function ParallaxImage({ src, className = "" }: { src: string, className?: string }) {
+// Self-contained Animated Stat Counter Component
+function StatCounter({ value, label, delay = 0 }: { value: string; label: string; delay?: number }) {
+  const [count, setCount] = useState(0);
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  useEffect(() => {
+    if (!inView) return;
+    const targetNumber = parseInt(value.replace(/[^0-9]/g, ""), 10);
+    if (isNaN(targetNumber)) return;
+
+    let startTime: number | null = null;
+    const duration = 2000; // 2 seconds animation
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const percentage = Math.min(progress / duration, 1);
+      
+      // Ease-out expo curve
+      const ease = percentage === 1 ? 1 : 1 - Math.pow(2, -10 * percentage);
+      const current = Math.floor(ease * targetNumber);
+      
+      setCount(current);
+
+      if (percentage < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    const timer = setTimeout(() => {
+      requestAnimationFrame(animate);
+    }, delay * 1000);
+
+    return () => clearTimeout(timer);
+  }, [inView, value, delay]);
+
+  const hasPlus = value.includes("+");
+  const isYear = parseInt(value, 10) > 2000 && !hasPlus;
+
+  const displayVal = isYear 
+    ? count === 0 ? "0000" : count.toString()
+    : hasPlus ? `${count}+` : count.toString();
+
   return (
-    <div 
-      className={`relative overflow-hidden bg-fixed bg-center bg-cover ${className}`}
-      style={{ backgroundImage: `url(${src})` }}
-    >
-      <div className="absolute inset-0 bg-void/20" />
+    <div ref={ref} className="text-center">
+      <div className="font-display text-5xl md:text-6xl text-gold mb-2 select-none tracking-tight">
+        {displayVal}
+      </div>
+      <div className="text-[9px] tracking-[0.25em] uppercase text-text-muted font-bold">
+        {label}
+      </div>
     </div>
   );
 }
 
 export default function AboutPage() {
+  const mediaRef = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll();
+  const yParallax = useTransform(scrollY, [200, 1000], [0, 80]);
+
   return (
-    <main className="bg-paper min-h-screen">
+    <main className="min-h-screen bg-void">
       <PageHero
         label="About Us"
-        title="A Tale of Spice & Time"
-        subtitle="Where every meal tells a story."
+        title={<>A Tale of<br />Spice &amp; Time</>}
+        subtitle="Where every meal is choreographed as scenes in a heritage film."
         image="/images/real/kandy_hero_night.jpg"
       />
 
-      {/* Intro Row */}
-      <section className="py-24 md:py-32">
-        <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-5xl text-center">
-          <div className="animate-fade-in-up">
-            <SectionLabel className="mb-6 justify-center">About Indian Kitchen</SectionLabel>
-            <h2 className="text-3xl md:text-5xl font-display text-forest mb-8 leading-tight">
-              Transporting Guests Through Heritage
-            </h2>
-            <p className="text-text-dark/80 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto">
-              Indian Kitchen is an immersive theme dining experience that brings India&apos;s soul
-              to life through food, culture, and profound storytelling. Every intricate detail—from 
-              the hand-carved woodwork to the aroma of freshly ground spices—is meticulously crafted to
-              transport guests directly into the heart of India&apos;s rich, diverse culinary heritage.
-            </p>
-          </div>
+      {/* Intro Scene Statement */}
+      <SectionShell variant="void" className="text-center py-28 relative">
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent" />
+        <div className="max-w-4xl mx-auto">
+          <SectionHeader 
+            label="Our Essence" 
+            title="Transporting Guests Through Heritage" 
+            align="center"
+            lightMode
+          />
+          <p className="text-cream/80 font-display italic text-2xl md:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
+            "Indian Kitchen is an immersive theme dining experience that brings India's soul to life through food, culture, and profound staging."
+          </p>
         </div>
-      </section>
+      </SectionShell>
 
-      {/* Parallax Break 1 */}
-      <ParallaxImage 
-        src="/images/real/kandy_hero_night.jpg" 
-        className="h-[50vh] md:h-[70vh] w-full"
-      />
+      {/* The Origin Story SplitSection */}
+      <SectionShell variant="void" className="py-24">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Parallax media block */}
+          <div ref={mediaRef} className="lg:col-span-6 relative overflow-hidden aspect-[4/5] w-full rounded-[2px] gold-frame shadow-2xl">
+            <motion.div style={{ y: yParallax }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
+              <Image
+                src="/images/real/colombo_ceremony.jpg"
+                alt="Colombo Ceremony"
+                fill
+                className="object-cover img-warm"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </motion.div>
+            <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent pointer-events-none" />
+          </div>
 
-      {/* The Origin Story Row */}
-      <section className="py-24 md:py-32 bg-parchment">
-        <div className="container mx-auto px-6 md:px-12 lg:px-16">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <div className="lg:w-1/2">
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl hover:scale-[1.02] transition-transform duration-500">
-                <Image
-                  src="/images/real/colombo_ceremony.jpg"
-                  alt="Colombo Ceremony"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-
-            <div className="lg:w-1/2">
-              <SectionLabel className="mb-6">Our Origin Story</SectionLabel>
-              <h2 className="text-4xl md:text-5xl font-display text-forest mb-8">
-                A Bold Vision Born in Crisis
-              </h2>
-              <p className="text-text-dark/80 text-lg font-light leading-relaxed mb-6">
+          <div className="lg:col-span-6 flex flex-col justify-center">
+            <SectionHeader 
+              label="Our Origin Story" 
+              title="A Bold Vision Born in Crisis" 
+              lightMode
+            />
+            <div className="space-y-6 text-cream/70 font-sans font-light text-base leading-relaxed">
+              <p>
                 Born during the unprecedented global hospitality crisis of 2019, Indian Kitchen emerged 
                 from a defiant, bold vision: to fundamentally transform dining from a passive transaction 
                 into an experiential, memorable journey rooted deeply in authenticity.
               </p>
-              <p className="text-text-dark/80 text-lg font-light leading-relaxed mb-6">
+              <p>
                 Founded in Sri Lanka, we launched our flagship outlet in 2020 in Colombo, introducing 
-                our signature &quot;Pondicherry Street&quot; concept. Since then, we expanded to the historic 
-                city of Kandy with our tranquil &quot;Kerala Houseboat&quot; experience. 
+                our signature "Pondicherry Street" concept. Since then, we expanded to the historic 
+                city of Kandy with our tranquil "Kerala Houseboat" experience. 
               </p>
-              <p className="text-text-dark/80 text-lg font-light leading-relaxed">
+              <p>
                 When the world paused, our founders used the silence to build. We traveled the spice routes, 
                 consulted with generational chefs, and brought back authentic cooking vessels. The result is a 
                 dining experience that defies convention.
@@ -89,93 +138,98 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionShell>
 
-      {/* Vision & Mission Row */}
-      <section className="bg-void text-cream py-24 md:py-32">
-        <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-16 md:gap-24">
+      {/* Interactive Stats Block */}
+      <SectionShell variant="void" className="border-y border-gold/15 py-14 bg-void-light/35">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-5xl mx-auto">
+          <StatCounter value="2019" label="Founded" delay={0.1} />
+          <StatCounter value="3" label="Theme Worlds" delay={0.3} />
+          <StatCounter value="2" label="Outlets" delay={0.5} />
+          <StatCounter value="15+" label="Chef Recipes" delay={0.7} />
+        </div>
+      </SectionShell>
+
+      {/* Commitment Strip */}
+      <HomeCommitmentStrip />
+
+      {/* Vision & Mission Cards */}
+      <SectionShell variant="void" className="py-24 border-t border-gold/15">
+        <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          <div className="bg-void-light border border-gold/10 p-10 rounded-sm shadow-xl flex flex-col justify-between">
             <div>
-              <SectionLabel light className="mb-6">Our Vision</SectionLabel>
-              <h3 className="text-2xl md:text-4xl font-display leading-tight mb-6">
-                To establish Indian Kitchen as the globally recognized pinnacle of theme dining.
+              <SectionHeader label="Our Vision" title={<></>} className="mb-4" lightMode />
+              <h3 className="text-2xl md:text-3xl font-display text-cream uppercase tracking-wide leading-tight mb-6">
+                Redefining the boundaries of global theme dining.
               </h3>
               <div className="h-[1px] w-12 bg-gold mb-6" />
-              <p className="text-cream/60 font-light text-lg">
+              <p className="text-cream/60 font-sans font-light text-base leading-relaxed">
                 We envision a future where the rich, untold stories of regional Indian cuisines are 
-                accessible worldwide, completely redefining how global audiences perceive, taste, and 
+                celebrated worldwide, completely redefining how global audiences perceive, taste, and 
                 experience Indian food.
               </p>
             </div>
+          </div>
 
+          <div className="bg-void-light border border-gold/10 p-10 rounded-sm shadow-xl flex flex-col justify-between">
             <div>
-              <SectionLabel light className="mb-6">Our Mission</SectionLabel>
-              <h3 className="text-2xl md:text-4xl font-display leading-tight mb-6">
-                To deliver a dining experience unique in taste, deeply immersive in ambience, and authentic.
+              <SectionHeader label="Our Mission" title={<></>} className="mb-4" lightMode />
+              <h3 className="text-2xl md:text-3xl font-display text-cream uppercase tracking-wide leading-tight mb-6">
+                Immersive taste, authentic execution.
               </h3>
               <div className="h-[1px] w-12 bg-gold mb-6" />
-              <p className="text-cream/60 font-light text-lg">
-                We are on a mission to celebrate India&apos;s culinary heritage with every single plate 
-                we serve, ensuring that our guests leave not just satiated, but inspired.
+              <p className="text-cream/60 font-sans font-light text-base leading-relaxed">
+                We are committed to celebrating India's culinary heritage with every single plate 
+                we serve, ensuring that our guests leave not just satisfied, but inspired.
               </p>
             </div>
           </div>
         </div>
-      </section>
+      </SectionShell>
 
-      {/* Parallax Break 2 */}
-      <ParallaxImage 
-        src="/images/real/kandy_hero_day.jpg" 
-        className="h-[60vh] w-full"
-      />
+      {/* Founder's Note Section */}
+      <SectionShell variant="void" className="border-t border-gold/15 py-24 bg-void-light/20">
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <SectionHeader 
+            label="Executive Board" 
+            title="Building Experiences Through Passion" 
+            align="center"
+            lightMode
+          />
+        </div>
 
-      {/* Founder's Note Row */}
-      <section className="py-24 md:py-32 bg-paper">
-        <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-5xl">
-          <div className="text-center">
-            <SectionLabel className="mb-6 justify-center">Founder&apos;s Note</SectionLabel>
-            <h2 className="text-4xl md:text-6xl font-display text-forest mb-8">
-              Building Experiences Through Passion
-            </h2>
+        <div className="grid lg:grid-cols-12 gap-12 items-center max-w-6xl mx-auto">
+          <div className="lg:col-span-5 relative aspect-[4/5] rounded-[2px] overflow-hidden gold-frame shadow-2xl bg-void-light hover:scale-[1.01] transition-all duration-500">
+            <Image 
+              src="/images/extracted/page15_img2.png" 
+              alt="Vincent Renold" 
+              fill 
+              className="object-cover img-warm"
+              sizes="(max-width: 768px) 100vw, 40vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-void/70 via-transparent to-transparent pointer-events-none" />
           </div>
 
-          <div className="mt-16 grid md:grid-cols-12 gap-12 items-center">
-            <div className="md:col-span-5 relative aspect-[4/5] rounded-xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
-              <Image 
-                src="/images/extracted/page15_img2.png" 
-                alt="Vincent Renold" 
-                fill 
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 40vw"
-              />
-            </div>
+          <div className="lg:col-span-7">
+            <p className="text-cream/80 font-sans font-light text-base md:text-lg leading-relaxed mb-6">
+              <strong className="text-gold font-semibold uppercase tracking-wider text-sm block mb-2">Vincent Renold, Founder</strong>
+              Vincent Renold brings over two decades of elite hospitality excellence. His career is defined by prestigious leadership roles across the luxury tourism sectors of Sri Lanka and India, having worked closely with luxury brands like Radisson, ITC, Banyan Tree, and the renowned Zuri Kumarakom Kerala Resort & Spa.
+            </p>
+            <p className="text-cream/70 font-sans font-light text-base leading-relaxed mb-8">
+              It was his deep involvement in inbound tourism that sparked a profound realization. He saw firsthand how travelers craved the *destination experience*. He wanted to capture the magic of dining on a Kerala houseboat or walking the streets of Pondicherry, and bring it directly to Colombo and Kandy.
+            </p>
 
-            <div className="md:col-span-7">
-              <p className="text-text-dark/80 text-lg font-light leading-relaxed mb-6">
-                <strong className="text-forest font-semibold">Vincent Renold</strong> brings over two decades of 
-                elite hospitality excellence. His career is defined by prestigious leadership roles across 
-                the tourism sectors of Sri Lanka and India, having worked closely with luxury brands like 
-                Radisson, ITC, Banyan Tree, and the renowned Zuri Kumarakom Kerala Resort & Spa.
+            <blockquote className="border-l-2 border-gold pl-6 py-2 bg-void-light/50 p-6 rounded-r-sm">
+              <p className="font-display italic text-2xl text-cream/90 mb-4 leading-relaxed">
+                "Two decades shaping hospitality excellence across global brands has led to this: creating a complete ecosystem beyond restaurants. We aren't just serving food; we are curating memories rooted in heritage."
               </p>
-              <p className="text-text-dark/80 text-lg font-light leading-relaxed mb-8">
-                It was his deep involvement in inbound tourism that sparked a profound realization. He saw firsthand 
-                how travelers craved the *destination experience*. He wanted to capture the magic of dining on a 
-                Kerala houseboat or walking the streets of Pondicherry, and bring it directly to Colombo and Kandy.
-              </p>
-
-              <blockquote className="border-l-2 border-terracotta pl-6 py-2">
-                <p className="font-display italic text-2xl text-forest mb-4 leading-relaxed">
-                  &quot;Two decades shaping hospitality excellence across global brands has led to this: creating a complete ecosystem beyond restaurants. We aren&apos;t just serving food; we are curating memories rooted in heritage.&quot;
-                </p>
-                <footer className="text-sm uppercase tracking-[0.2em] text-terracotta font-semibold">
-                  — Vincent Renold, Founder
-                </footer>
-              </blockquote>
-            </div>
+              <footer className="text-[10px] uppercase tracking-[0.2em] text-gold font-bold font-sans">
+                — Vincent Renold, Founder
+              </footer>
+            </blockquote>
           </div>
         </div>
-      </section>
-
+      </SectionShell>
     </main>
   );
 }

@@ -8,6 +8,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useSearchParams } from "next/navigation";
 import * as z from "zod";
 import PageHero from "@/components/ui/PageHero";
+import SectionShell from "@/components/layout/SectionShell";
+import SectionHeader from "@/components/layout/SectionHeader";
 
 const jobListings = [
   {
@@ -92,17 +94,17 @@ function CareersContent() {
 
   const onSubmit = (data: ApplicationData) => {
     const message = `🎯 *New Career Application*
-
+ 
 *Name:* ${data.fullName}
 *Role:* ${data.role}
 *Email:* ${data.email}
 *Phone:* ${data.phone}
 *Location:* ${data.currentLocation}
 *Experience:* ${data.experience}
-
+ 
 *LinkedIn:* ${data.linkedin || "N/A"}
 *Portfolio:* ${data.portfolio || "N/A"}
-
+ 
 *Why Indian Kitchen?*
 ${data.whyUs}`;
 
@@ -112,22 +114,21 @@ ${data.whyUs}`;
   };
 
   return (
-    <main className="min-h-screen bg-paper text-text-dark">
+    <main className="min-h-screen bg-parchment text-void">
       <PageHero
         label="Join Our Village"
-        title="Join the World-Builders"
+        title={<>Join the<br />World-Builders</>}
         subtitle="We don't hire waitstaff. We hire storytellers. Every person — from kitchen to floor — plays a character in an immersive world."
         image="/images/real_waiter.jpeg"
+        light
       />
 
-      <div className="container mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-16">
+      <SectionShell variant="parchment" className="py-24">
         {/* Job Listings */}
-        <div className="max-w-5xl mx-auto mb-14 md:mb-16">
-          <h2 className="font-display text-2xl md:text-3xl text-espresso mb-8 text-center">
-            Current Openings
-          </h2>
+        <div className="max-w-5xl mx-auto mb-24">
+          <SectionHeader label="Careers" title="Current Openings" align="center" className="mb-12" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {jobListings.map((job, index) => (
               <motion.div
                 key={index}
@@ -135,22 +136,22 @@ ${data.whyUs}`;
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-8 md:p-10 border border-terracotta/15 hover:border-terracotta/40 transition-colors shadow-sm rounded-3xl"
+                className="bg-cream p-8 md:p-10 border border-gold/15 hover:border-gold transition-all duration-300 shadow-xl rounded-sm"
               >
-                <span className="text-[9px] tracking-[0.2em] uppercase text-terracotta mb-2 block">
+                <span className="text-[9px] tracking-[0.2em] uppercase text-gold font-bold mb-3 block">
                   {job.location}
                 </span>
-                <h3 className="font-display text-xl md:text-2xl text-espresso mb-2">{job.title}</h3>
-                <span className="flex items-center gap-1.5 font-medium uppercase tracking-[0.1em] text-[9px] text-terracotta mb-3">
-                  <Clock className="w-3 h-3" />
+                <h3 className="font-display text-2xl text-void mb-3 uppercase tracking-wide">{job.title}</h3>
+                <span className="flex items-center gap-1.5 font-bold uppercase tracking-[0.1em] text-[9px] text-terracotta mb-4 font-sans">
+                  <Clock className="w-3.5 h-3.5" />
                   {job.type}
                 </span>
-                <p className="text-text-muted font-light text-sm leading-relaxed mb-5">{job.desc}</p>
+                <p className="text-text-muted font-sans font-light text-sm leading-relaxed mb-6">{job.desc}</p>
                 <a
                   href={`/careers?role=${encodeURIComponent(job.title)}#application-form`}
-                  className="inline-block border border-espresso text-espresso hover:bg-espresso hover:text-cream px-5 py-2 transition-colors text-[10px] tracking-[0.2em] uppercase font-sans"
+                  className="btn-outline w-full text-center"
                 >
-                  Apply for this Role →
+                  Apply for Role
                 </a>
               </motion.div>
             ))}
@@ -163,184 +164,183 @@ ${data.whyUs}`;
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto bg-white p-7 md:p-10 shadow-lg border border-terracotta/12"
+            className="max-w-4xl mx-auto bg-cream p-8 md:p-14 shadow-xl border border-gold/15 rounded-sm"
           >
-            <div className="text-center mb-8">
-              <h4 className="font-display text-2xl md:text-3xl text-espresso mb-2">
-                Don&apos;t see your role?
+            <div className="text-center mb-10 border-b border-gold/10 pb-6">
+              <h4 className="font-display text-3xl text-void mb-3 uppercase tracking-wide">
+                Don't see your role?
               </h4>
-              <p className="text-text-muted text-sm">Apply below and we&apos;ll reach out via WhatsApp.</p>
+              <p className="text-text-muted text-sm font-sans font-light">Apply below and we'll reach out to schedule an interview.</p>
             </div>
 
             {isSubmitted ? (
               <div className="text-center py-12">
-                <div className="w-16 h-16 rounded-full bg-sage/10 flex items-center justify-center mx-auto mb-5 border border-sage/20">
-                  <CheckCircle2 className="w-8 h-8 text-sage" />
+                <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5 border border-gold/30">
+                  <CheckCircle2 className="w-8 h-8 text-gold" />
                 </div>
-                <h3 className="font-display text-2xl text-espresso mb-3">Application Sent</h3>
-                <p className="text-text-muted mb-6 max-w-md mx-auto">
-                  Your application has been submitted via WhatsApp. Our team will review and get back
-                  to you.
+                <h3 className="font-display text-2xl text-void mb-3 uppercase tracking-wide">Application Sent</h3>
+                <p className="text-text-muted mb-6 max-w-md mx-auto font-sans font-light">
+                  Your application has been submitted via WhatsApp. Our talent team will review your details and get back to you shortly.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
-                  className="text-[10px] tracking-[0.2em] uppercase text-terracotta hover:text-espresso transition-colors font-medium link-underline"
+                  className="btn-outline"
                 >
-                  Submit Another Application
+                  Make Another Application
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-terracotta text-[9px] mb-1.5 uppercase tracking-[0.2em] font-sans">
+                    <label className="block text-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-sans">
                       Full Name *
                     </label>
                     <input
                       {...register("fullName")}
                       type="text"
-                      className="w-full bg-transparent border-b border-terracotta/25 text-text-dark py-2 focus:outline-none focus:border-espresso transition-colors font-sans text-sm"
+                      className="w-full bg-transparent border-b border-gold/30 text-void py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm"
                     />
                     {errors.fullName && (
-                      <p className="text-red-600 text-xs mt-1">{errors.fullName.message}</p>
+                      <p className="text-crimson text-xs mt-1">{errors.fullName.message}</p>
                     )}
                   </div>
                   <div>
-                    <label className="block text-terracotta text-[9px] mb-1.5 uppercase tracking-[0.2em] font-sans">
+                    <label className="block text-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-sans">
                       Email *
                     </label>
                     <input
                       {...register("email")}
                       type="email"
-                      className="w-full bg-transparent border-b border-terracotta/25 text-text-dark py-2 focus:outline-none focus:border-espresso transition-colors font-sans text-sm"
+                      className="w-full bg-transparent border-b border-gold/30 text-void py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm"
                     />
                     {errors.email && (
-                      <p className="text-red-600 text-xs mt-1">{errors.email.message}</p>
+                      <p className="text-crimson text-xs mt-1">{errors.email.message}</p>
                     )}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-terracotta text-[9px] mb-1.5 uppercase tracking-[0.2em] font-sans">
+                    <label className="block text-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-sans">
                       Phone *
                     </label>
                     <input
                       {...register("phone")}
                       type="tel"
-                      className="w-full bg-transparent border-b border-terracotta/25 text-text-dark py-2 focus:outline-none focus:border-espresso transition-colors font-sans text-sm"
+                      className="w-full bg-transparent border-b border-gold/30 text-void py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm"
                     />
                     {errors.phone && (
-                      <p className="text-red-600 text-xs mt-1">{errors.phone.message}</p>
+                      <p className="text-crimson text-xs mt-1">{errors.phone.message}</p>
                     )}
                   </div>
                   <div>
-                    <label className="block text-terracotta text-[9px] mb-1.5 uppercase tracking-[0.2em] font-sans">
+                    <label className="block text-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-sans">
                       Role Applying For *
                     </label>
                     <select
                       {...register("role")}
-                      className="w-full bg-transparent border-b border-terracotta/25 text-text-dark py-2 focus:outline-none focus:border-espresso transition-colors font-sans text-sm"
+                      className="w-full bg-transparent border-b border-gold/30 text-void py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm"
                     >
-                      <option value="">Select Role</option>
+                      <option value="" className="bg-cream text-void">Select Role</option>
                       {jobListings.map((j) => (
-                        <option key={j.title} value={j.title}>
+                        <option key={j.title} value={j.title} className="bg-cream text-void">
                           {j.title}
                         </option>
                       ))}
-                      <option value="General Application">General Application</option>
+                      <option value="General Application" className="bg-cream text-void">General Application</option>
                     </select>
                     {errors.role && (
-                      <p className="text-red-600 text-xs mt-1">{errors.role.message}</p>
+                      <p className="text-crimson text-xs mt-1">{errors.role.message}</p>
                     )}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-terracotta text-[9px] mb-1.5 uppercase tracking-[0.2em] font-sans">
+                    <label className="block text-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-sans">
                       Current Location *
                     </label>
                     <input
                       {...register("currentLocation")}
                       type="text"
-                      className="w-full bg-transparent border-b border-terracotta/25 text-text-dark py-2 focus:outline-none focus:border-espresso transition-colors font-sans text-sm"
+                      className="w-full bg-transparent border-b border-gold/30 text-void py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm"
                     />
                     {errors.currentLocation && (
-                      <p className="text-red-600 text-xs mt-1">{errors.currentLocation.message}</p>
+                      <p className="text-crimson text-xs mt-1">{errors.currentLocation.message}</p>
                     )}
                   </div>
                   <div>
-                    <label className="block text-terracotta text-[9px] mb-1.5 uppercase tracking-[0.2em] font-sans">
-                      Years of F&B Experience *
+                    <label className="block text-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-sans">
+                      Years of Experience *
                     </label>
                     <select
                       {...register("experience")}
-                      className="w-full bg-transparent border-b border-terracotta/25 text-text-dark py-2 focus:outline-none focus:border-espresso transition-colors font-sans text-sm"
+                      className="w-full bg-transparent border-b border-gold/30 text-void py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm"
                     >
-                      <option value="">Select</option>
+                      <option value="" className="bg-cream text-void">Select</option>
                       {experienceOptions.map((e) => (
-                        <option key={e} value={e}>
+                        <option key={e} value={e} className="bg-cream text-void">
                           {e}
                         </option>
                       ))}
                     </select>
                     {errors.experience && (
-                      <p className="text-red-600 text-xs mt-1">{errors.experience.message}</p>
+                      <p className="text-crimson text-xs mt-1">{errors.experience.message}</p>
                     )}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-terracotta text-[9px] mb-1.5 uppercase tracking-[0.2em] font-sans">
+                    <label className="block text-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-sans">
                       LinkedIn Profile
                     </label>
                     <input
                       {...register("linkedin")}
                       type="url"
                       placeholder="https://linkedin.com/in/..."
-                      className="w-full bg-transparent border-b border-terracotta/25 text-text-dark py-2 focus:outline-none focus:border-espresso transition-colors font-sans text-sm placeholder:text-text-muted/40"
+                      className="w-full bg-transparent border-b border-gold/30 text-void py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm placeholder:text-void/25"
                     />
                     {errors.linkedin && (
-                      <p className="text-red-600 text-xs mt-1">{errors.linkedin.message}</p>
+                      <p className="text-crimson text-xs mt-1">{errors.linkedin.message}</p>
                     )}
                   </div>
                   <div>
-                    <label className="block text-terracotta text-[9px] mb-1.5 uppercase tracking-[0.2em] font-sans">
+                    <label className="block text-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-sans">
                       Portfolio / Website
                     </label>
                     <input
                       {...register("portfolio")}
                       type="url"
                       placeholder="https://..."
-                      className="w-full bg-transparent border-b border-terracotta/25 text-text-dark py-2 focus:outline-none focus:border-espresso transition-colors font-sans text-sm placeholder:text-text-muted/40"
+                      className="w-full bg-transparent border-b border-gold/30 text-void py-2 focus:outline-none focus:border-gold transition-colors font-sans text-sm placeholder:text-void/25"
                     />
                     {errors.portfolio && (
-                      <p className="text-red-600 text-xs mt-1">{errors.portfolio.message}</p>
+                      <p className="text-crimson text-xs mt-1">{errors.portfolio.message}</p>
                     )}
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-terracotta text-[9px] mb-1.5 uppercase tracking-[0.2em] font-sans">
+                  <label className="block text-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-sans">
                     Why do you want to work at Indian Kitchen? *
                   </label>
                   <textarea
                     {...register("whyUs")}
                     rows={4}
-                    className="w-full bg-transparent border-b border-terracotta/25 text-text-dark py-2 focus:outline-none focus:border-espresso transition-colors resize-none font-sans text-sm"
+                    className="w-full bg-transparent border-b border-gold/30 text-void py-2 focus:outline-none focus:border-gold transition-colors resize-none font-sans text-sm"
                   />
                   {errors.whyUs && (
-                    <p className="text-red-600 text-xs mt-1">{errors.whyUs.message}</p>
+                    <p className="text-crimson text-xs mt-1">{errors.whyUs.message}</p>
                   )}
                 </div>
 
-                <div className="pt-4">
+                <div className="pt-6">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 bg-espresso text-cream font-medium text-[10px] font-sans tracking-[0.2em] uppercase border border-espresso hover:bg-saffron hover:border-saffron hover:text-espresso transition-colors disabled:opacity-50"
+                    className="btn-primary w-full"
                   >
                     {isSubmitting ? "Processing..." : "Submit Application via WhatsApp"}
                   </button>
@@ -349,14 +349,14 @@ ${data.whyUs}`;
             )}
           </motion.div>
         </div>
-      </div>
+      </SectionShell>
     </main>
   );
 }
 
 export default function CareersPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-cream pt-32" />}>
+    <Suspense fallback={<div className="min-h-screen bg-parchment pt-32" />}>
       <CareersContent />
     </Suspense>
   );

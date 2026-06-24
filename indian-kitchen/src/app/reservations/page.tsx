@@ -1,5 +1,6 @@
 import ReservationForm from "@/components/home/ReservationForm";
 import PrivateDining from "@/components/home/PrivateDining";
+import ReservationsFAQ from "@/components/home/ReservationsFAQ";
 import PageHero from "@/components/ui/PageHero";
 import type { Metadata } from "next";
 
@@ -14,12 +15,13 @@ export default function ReservationsPage() {
     <>
       <PageHero
         label="Book Your Table"
-        title="Reserve Your Journey"
+        title={<>Reserve Your<br />Journey</>}
         subtitle="Secure your passport to an immersive culinary experience. We recommend booking in advance, especially for Sherlock Mystery Dining."
         image="/images/real_waiter.jpeg"
       />
       <ReservationForm showHeader={false} />
       <PrivateDining />
+      <ReservationsFAQ />
     </>
   );
 }

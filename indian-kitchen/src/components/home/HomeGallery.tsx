@@ -1,104 +1,177 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useState, useRef } from "react";
+import { AnimatePresence as FramerAnimatePresence, motion as FramerMotion } from "framer-motion";
+import { Play, X, Volume2, VolumeX } from "lucide-react";
+import SectionShell from "@/components/layout/SectionShell";
+import SectionHeader from "@/components/layout/SectionHeader";
 
 const frames = [
   {
-    title: "Culinary Art",
-    subtitle: "Parota Making",
+    title: "Culinary Theatre",
+    subtitle: "Flaky Parota Prep",
     video: "/videos/parota_reel.mp4",
+    gridClass: "md:col-span-1 md:row-span-2 aspect-[9/16] md:aspect-auto"
   },
   {
     title: "Colombo Elegance",
-    subtitle: "A immersive experience",
+    subtitle: "Heritage Sanctuary",
     video: "/videos/colombo_vibe.mov",
-  },
-  {
-    title: "Kerala Houseboat",
-    subtitle: "Tranquil dining",
-    video: "/videos/experience.mov",
+    gridClass: "md:col-span-1 md:row-span-1 aspect-square md:aspect-auto"
   },
   {
     title: "Kandy Vibe",
-    subtitle: "Surrounded by nature",
+    subtitle: "Mountain Retreat",
     video: "/videos/kandy_vibe.mov",
+    gridClass: "md:col-span-1 md:row-span-1 aspect-square md:aspect-auto"
+  },
+  {
+    title: "Kerala Houseboat",
+    subtitle: "Backwater Dining",
+    video: "/videos/experience.mov",
+    gridClass: "md:col-span-1 md:row-span-2 aspect-[9/16] md:aspect-auto"
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    scale: 1,
-    transition: { type: "spring" as const, stiffness: 100, damping: 20 }
-  },
-};
-
 export default function HomeGallery() {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [activeTitle, setActiveTitle] = useState<string>("");
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  const handleMouseEnter = (idx: number) => {
+    const video = videoRefs.current[idx];
+    if (video) {
+      video.play().catch(() => {});
+    }
+  };
+
+  const handleMouseLeave = (idx: number) => {
+    const video = videoRefs.current[idx];
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  };
+
+  const openLightbox = (videoUrl: string, title: string) => {
+    setActiveVideo(videoUrl);
+    setActiveTitle(title);
+  };
+
+  const closeLightbox = () => {
+    setActiveVideo(null);
+  };
 
   return (
-    <section className="section-padding bg-paper" id="gallery">
-      <div className="container mx-auto px-4 md:px-8 lg:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "50px" }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 md:mb-16"
-        >
-          <h2 className="heading-presentation text-forest mb-3 uppercase tracking-wider text-2xl md:text-4xl lg:text-5xl">JOURNEY IN FRAMES</h2>
-          <p className="text-text-dark font-medium text-lg">Pictures Perfect Moments</p>
-        </motion.div>
+    <SectionShell variant="void" id="gallery">
+      <SectionHeader 
+        label="Cinematic Frames" 
+        title="Journey in Motion"
+        subtitle="Hover to play the culinary theatre, click to step inside."
+        align="center"
+        lightMode
+      />
 
-        <motion.div 
-          ref={ref}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={containerVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-[1400px] mx-auto"
-        >
-          {frames.map((frame, idx) => (
-            <motion.div 
-              key={idx} 
-              variants={itemVariants}
-              className="relative rounded-[32px] overflow-hidden shadow-lg group aspect-[9/16] bg-void"
+      {/* Asymmetric Bento Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-5 md:h-[750px] max-w-6xl mx-auto">
+        {frames.map((frame, idx) => (
+          <div 
+            key={idx} 
+            className={`relative rounded-[2px] overflow-hidden gold-frame bg-void-light group cursor-zoom-in ${frame.gridClass}`}
+            onMouseEnter={() => handleMouseEnter(idx)}
+            onMouseLeave={() => handleMouseLeave(idx)}
+            onClick={() => openLightbox(frame.video, frame.subtitle)}
+          >
+            <video 
+              ref={(el) => { videoRefs.current[idx] = el; }}
+              src={frame.video} 
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105 opacity-65 group-hover:opacity-100 will-change-transform"
+            />
+            
+            {/* Play hover prompt */}
+            <div className="absolute inset-0 bg-void/30 opacity-100 group-hover:opacity-0 transition-opacity duration-500 flex items-center justify-center pointer-events-none">
+              <div className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center text-gold bg-void/50">
+                <Play className="w-4 h-4 fill-current ml-0.5" />
+              </div>
+            </div>
+
+            {/* Dark vignette text block */}
+            <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-void/30 pointer-events-none" />
+            
+            <div className="absolute bottom-6 left-6 right-6 z-10 transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
+              <span className="text-[8px] tracking-[0.25em] text-gold font-bold block mb-1 uppercase">
+                {frame.title}
+              </span>
+              <h3 className="font-display text-xl md:text-2xl text-cream uppercase tracking-wide">
+                {frame.subtitle}
+              </h3>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Fullscreen Video Lightbox */}
+      <FramerAnimatePresence>
+        {activeVideo && (
+          <FramerMotion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-[99999] bg-void/98 backdrop-blur-2xl flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
+            onClick={closeLightbox}
+          >
+            <button 
+              className="absolute top-6 right-6 p-3 bg-void-light border border-gold/25 rounded-full text-cream hover:bg-gold hover:text-void transition-all z-50 shadow-2xl"
+              onClick={(e) => {
+                e.stopPropagation();
+                closeLightbox();
+              }}
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Media controls wrapper */}
+            <FramerMotion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 260 }}
+              className="relative w-full max-w-5xl aspect-video rounded-sm overflow-hidden shadow-2xl border border-gold/15 bg-void"
+              onClick={(e) => e.stopPropagation()}
             >
               <video 
-                src={frame.video} 
+                src={activeVideo} 
                 autoPlay
-                muted
+                controls
+                muted={isMuted}
                 loop
                 playsInline
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                className="w-full h-full object-contain"
               />
-              {/* Dark gradient for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-b from-void/60 via-transparent to-void/60 pointer-events-none" />
-              
-              <div className="absolute top-8 left-0 right-0 text-center px-4">
-                <h3 className="font-display text-2xl text-cream italic tracking-wide mb-1 opacity-90 drop-shadow-md">
-                  {frame.title}
-                </h3>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-cream/70 font-semibold drop-shadow-md">
-                  {frame.subtitle}
-                </p>
+
+              {/* Title & Mute toggle overlay */}
+              <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center z-20 pointer-events-auto bg-void/60 backdrop-blur-md p-4 rounded-sm border border-gold/10">
+                <div>
+                  <span className="text-[8px] tracking-[0.2em] uppercase text-gold font-bold block mb-0.5">Indian Kitchen Reel</span>
+                  <h4 className="font-display text-lg md:text-xl text-cream uppercase tracking-wide">{activeTitle}</h4>
+                </div>
+                
+                <button 
+                  onClick={() => setIsMuted(!isMuted)}
+                  className="p-2 border border-gold/20 hover:border-gold rounded-full text-gold hover:text-cream transition-colors"
+                >
+                  {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                </button>
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
+            </FramerMotion.div>
+          </FramerMotion.div>
+        )}
+      </FramerAnimatePresence>
+    </SectionShell>
   );
 }

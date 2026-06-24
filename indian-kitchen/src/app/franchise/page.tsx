@@ -5,8 +5,11 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import Image from "next/image";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, TrendingUp, ChefHat, Globe, Users } from "lucide-react";
+import PageHero from "@/components/ui/PageHero";
+import SectionShell from "@/components/layout/SectionShell";
+import SectionHeader from "@/components/layout/SectionHeader";
+import FAQAccordion from "@/components/ui/FAQAccordion";
 
 const franchiseSchema = z.object({
   fullName: z.string().min(2, "Name is required"),
@@ -37,11 +40,29 @@ const sources = [
 ];
 
 const benefits = [
-  "Scalable, proven theme formats",
-  "Strong repeat clientele base",
-  "Event-driven revenue streams",
-  "Full operational support and chef training",
-  "A brand with global expansion vision"
+  { icon: Globe, title: "Global Luxury Brand", desc: "A recognizable brand identity with a proven track record of expansion." },
+  { icon: Users, title: "High Retention", desc: "Immersive experiences guarantee high repeat guest profiles." },
+  { icon: TrendingUp, title: "High ROI", desc: "Theatrical, event-driven beverage and food yields." },
+  { icon: ChefHat, title: "Complete Support", desc: "Back-of-house operational support & continuous chef training." },
+];
+
+const faqItems = [
+  {
+    question: "What is the typical ROI timeline?",
+    answer: "Most of our franchise partners see a full return on investment within 18 to 24 months, driven by our unique event-based revenue model and strong brand loyalty."
+  },
+  {
+    question: "Do I need prior restaurant experience?",
+    answer: "While beneficial, it is not strictly required. We provide comprehensive operational training, including chef placements and front-of-house management protocols."
+  },
+  {
+    question: "Can I choose my own theme?",
+    answer: "We work collaboratively to assess your location and market demographics before finalizing the theme (e.g., Pondicherry, Kerala) to ensure optimal success."
+  },
+  {
+    question: "Are international master franchises available?",
+    answer: "Yes, we are actively looking for master franchise partners in the Middle East, Southeast Asia, and Europe."
+  }
 ];
 
 export default function FranchisePage() {
@@ -56,8 +77,8 @@ export default function FranchisePage() {
   });
 
   const onSubmit = (data: FranchiseData) => {
-    const message = `🏢 *New Franchise Enquiry*
-
+    const message = `\uD83C\uDFE2 *New Franchise Enquiry*
+ 
 *Name:* ${data.fullName}
 *Email:* ${data.email}
 *Phone:* ${data.phone}
@@ -75,185 +96,198 @@ export default function FranchisePage() {
   };
 
   return (
-    <>
-      <main className="min-h-screen bg-cream pt-32 pb-24">
-        <div className="container mx-auto px-6 md:px-12">
-          
-          {/* Hero Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-forest mb-6 leading-tight">
-                Own a World.<br />
-                <span className="text-yellow">Build a Legacy.</span>
-              </h1>
-              <p className="text-text-muted text-lg leading-relaxed mb-8">
-               At Indian Kitchen, we don&apos;t just serve food; we serve experiences. Our theme dining concepts—from the bustling streets of Pondicherry to the tranquil backwaters of Kerala—offer a unique value proposition that goes beyond traditional dining. We&apos;re looking for passionate partners to expand this legacy globally. If you have the vision, we have the blueprint.
-              </p>
+    <main className="min-h-screen bg-void text-cream">
+      <PageHero
+        label="Franchise Opportunities"
+        title={<>Own a World.<br />Build a Legacy.</>}
+        subtitle="Bring the ultimate theme dining experience to your city."
+        image="/images/real/colombo_ceremony.jpg"
+      />
 
-              <div className="space-y-4">
-                <h3 className="font-display text-2xl text-forest mb-4">Why Franchise with us?</h3>
-                {benefits.map((benefit, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-yellow shrink-0" />
-                    <span className="text-text-dark font-medium">{benefit}</span>
-                  </div>
-                ))}
+      <SectionShell variant="void" className="py-24">
+        <SectionHeader 
+          label="Partnership" 
+          title="Why Franchise with us?" 
+          align="center" 
+          lightMode 
+          className="mb-8"
+        />
+        <p className="text-text-muted text-lg font-light leading-relaxed mb-16 text-center max-w-3xl mx-auto px-6">
+          At Indian Kitchen, we don't just serve food; we serve experiences. Our theme dining concepts offer a unique value proposition that goes beyond traditional dining. We're looking for passionate partners to expand this legacy globally. If you have the vision, we have the blueprint.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-6">
+          {benefits.map((b, i) => (
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-void-light border border-gold/10 p-8 rounded-[2px] text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+            >
+              <div className="w-16 h-16 mx-auto bg-void rounded-full flex items-center justify-center mb-6 border border-gold/20 group-hover:bg-gold transition-colors">
+                <b.icon className="w-8 h-8 text-gold group-hover:text-void transition-colors" />
               </div>
+              <h4 className="font-display text-xl text-cream mb-4">{b.title}</h4>
+              <p className="text-sm text-text-muted leading-relaxed">{b.desc}</p>
             </motion.div>
+          ))}
+        </div>
+      </SectionShell>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[600px] rounded-sm overflow-hidden shadow-2xl"
-            >
-              <Image
-                src="/images/real_storefront.jpeg"
-                alt="Indian Kitchen Franchise"
-                fill
-                className="object-cover sepia-[0.1] saturate-[1.1]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-cream/80 to-transparent mix-blend-overlay" />
-            </motion.div>
-          </div>
+      <SectionShell variant="void" className="py-20 border-t border-gold/10 bg-void-light/30">
+        <div className="max-w-4xl mx-auto px-6">
+          <SectionHeader 
+            label="Common Queries" 
+            title="Franchise FAQs" 
+            align="center" 
+            lightMode
+            className="mb-12"
+          />
+          <FAQAccordion items={faqItems} />
+        </div>
+      </SectionShell>
 
-          {/* Form Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-4xl mx-auto bg-white text-text-dark p-8 md:p-12 rounded-sm shadow-xl border border-wood/20"
-          >
-            <div className="text-center mb-10">
-              <h2 className="font-display text-4xl text-forest mb-4">Franchise Enquiry Form</h2>
-              <p className="text-text-muted">Tell us about yourself and your vision.</p>
+      <SectionShell variant="void" id="enquiry" className="border-t border-gold/10 py-24">
+        <SectionHeader 
+          label="Application" 
+          title="Franchise Enquiry" 
+          subtitle="Tell us about yourself, your vision, and your proposed location."
+          align="center" 
+          lightMode
+          className="mb-12"
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto bg-void border border-gold/15 p-8 md:p-14 rounded-[2px] shadow-2xl relative overflow-hidden"
+        >
+          {/* Decorative background element */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
+
+          {isSubmitted ? (
+            <div className="text-center py-16 relative z-10">
+              <div className="w-20 h-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6 border border-gold/30">
+                <CheckCircle2 className="w-10 h-10 text-gold" />
+              </div>
+              <h3 className="font-display text-3xl text-cream mb-4 uppercase tracking-wide">Enquiry Received</h3>
+              <p className="text-text-muted text-lg mb-8 max-w-md mx-auto">
+                Your application has been submitted via WhatsApp. Our franchise team will review your details and get back to you shortly.
+              </p>
+              <button 
+                onClick={() => setIsSubmitted(false)}
+                className="btn-outline font-sans text-xs tracking-widest uppercase font-bold"
+              >
+                Submit Another Enquiry
+              </button>
             </div>
-
-            {isSubmitted ? (
-              <div className="text-center py-16">
-                <div className="w-20 h-20 rounded-full bg-forest/5 flex items-center justify-center mx-auto mb-6 border border-forest/10">
-                  <CheckCircle2 className="w-10 h-10 text-forest" />
+          ) : (
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 relative z-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Full Name *</label>
+                  <input
+                    {...register("fullName")}
+                    type="text"
+                    className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all font-sans"
+                  />
+                  {errors.fullName && <p className="text-crimson text-xs mt-1">{errors.fullName.message}</p>}
                 </div>
-                <h3 className="font-display text-3xl text-forest mb-4">Enquiry Received</h3>
-                <p className="text-text-muted text-lg mb-8">
-                  Your application has been submitted via WhatsApp. Our franchise team will review your details and get back to you shortly.
-                </p>
-                <button 
-                  onClick={() => setIsSubmitted(false)}
-                  className="px-6 py-2 border border-forest text-forest hover:bg-forest hover:text-cream transition-colors font-sans text-sm tracking-widest uppercase"
+                <div>
+                  <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Email Address *</label>
+                  <input
+                    {...register("email")}
+                    type="email"
+                    className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all font-sans"
+                  />
+                  {errors.email && <p className="text-crimson text-xs mt-1">{errors.email.message}</p>}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Phone Number *</label>
+                  <input
+                    {...register("phone")}
+                    type="tel"
+                    className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all font-sans"
+                    placeholder="+CountryCode Number"
+                  />
+                  {errors.phone && <p className="text-crimson text-xs mt-1">{errors.phone.message}</p>}
+                </div>
+                <div>
+                  <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Proposed Country / City *</label>
+                  <input
+                    {...register("location")}
+                    type="text"
+                    className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all font-sans"
+                  />
+                  {errors.location && <p className="text-crimson text-xs mt-1">{errors.location.message}</p>}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Investment Range *</label>
+                  <select
+                    {...register("investment")}
+                    className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all font-sans"
+                  >
+                    <option value="">Select Range</option>
+                    {investmentRanges.map(r => <option key={r} value={r}>{r}</option>)}
+                  </select>
+                  {errors.investment && <p className="text-crimson text-xs mt-1">{errors.investment.message}</p>}
+                </div>
+                <div>
+                  <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">How did you hear about us? *</label>
+                  <select
+                    {...register("source")}
+                    className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all font-sans"
+                  >
+                    <option value="">Select Option</option>
+                    {sources.map(s => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                  {errors.source && <p className="text-crimson text-xs mt-1">{errors.source.message}</p>}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Current Business Background *</label>
+                <textarea
+                  {...register("background")}
+                  rows={3}
+                  className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all resize-none font-sans"
+                />
+                {errors.background && <p className="text-crimson text-xs mt-1">{errors.background.message}</p>}
+              </div>
+
+              <div>
+                <label className="block text-text-muted text-xs font-bold mb-2 uppercase tracking-widest font-sans">Why Indian Kitchen? *</label>
+                <textarea
+                  {...register("whyUs")}
+                  rows={3}
+                  className="w-full bg-void-light border border-gold/20 rounded-[2px] text-cream px-4 py-3 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all resize-none font-sans"
+                />
+                {errors.whyUs && <p className="text-crimson text-xs mt-1">{errors.whyUs.message}</p>}
+              </div>
+
+              <div className="pt-6">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="btn-primary w-full py-4 text-sm"
                 >
-                  Submit Another Enquiry
+                  {isSubmitting ? "Processing..." : "Submit Enquiry via WhatsApp"}
                 </button>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-wood text-xs mb-2 uppercase tracking-[0.2em] font-sans">Full Name *</label>
-                    <input
-                      {...register("fullName")}
-                      type="text"
-                      className="w-full bg-transparent border-b border-wood/30 text-text-dark py-2 focus:outline-none focus:border-forest transition-colors font-sans"
-                    />
-                    {errors.fullName && <p className="text-red-400 text-xs mt-1">{errors.fullName.message}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-wood text-xs mb-2 uppercase tracking-[0.2em] font-sans">Email Address *</label>
-                    <input
-                      {...register("email")}
-                      type="email"
-                      className="w-full bg-transparent border-b border-wood/30 text-text-dark py-2 focus:outline-none focus:border-forest transition-colors font-sans"
-                    />
-                    {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-wood text-xs mb-2 uppercase tracking-[0.2em] font-sans">Phone Number *</label>
-                    <input
-                      {...register("phone")}
-                      type="tel"
-                      className="w-full bg-transparent border-b border-wood/30 text-text-dark py-2 focus:outline-none focus:border-forest transition-colors font-sans"
-                      placeholder="+CountryCode Number"
-                    />
-                    {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone.message}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-wood text-xs mb-2 uppercase tracking-[0.2em] font-sans">Country / City *</label>
-                    <input
-                      {...register("location")}
-                      type="text"
-                      className="w-full bg-transparent border-b border-wood/30 text-text-dark py-2 focus:outline-none focus:border-forest transition-colors font-sans"
-                    />
-                    {errors.location && <p className="text-red-400 text-xs mt-1">{errors.location.message}</p>}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-wood text-xs mb-2 uppercase tracking-[0.2em] font-sans">Investment Range *</label>
-                    <select
-                      {...register("investment")}
-                      className="w-full bg-white border-b border-wood/30 text-text-dark py-2 focus:outline-none focus:border-forest transition-colors font-sans"
-                    >
-                      <option value="">Select Range</option>
-                      {investmentRanges.map(r => <option key={r} value={r}>{r}</option>)}
-                    </select>
-                    {errors.investment && <p className="text-red-400 text-xs mt-1">{errors.investment.message}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-wood text-xs mb-2 uppercase tracking-[0.2em] font-sans">How did you hear about us? *</label>
-                    <select
-                      {...register("source")}
-                      className="w-full bg-white border-b border-wood/30 text-text-dark py-2 focus:outline-none focus:border-forest transition-colors font-sans"
-                    >
-                      <option value="">Select Option</option>
-                      {sources.map(s => <option key={s} value={s}>{s}</option>)}
-                    </select>
-                    {errors.source && <p className="text-red-400 text-xs mt-1">{errors.source.message}</p>}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-cream/80 text-sm mb-2 uppercase tracking-wide">Current Business Background *</label>
-                  <textarea
-                    {...register("background")}
-                    rows={3}
-                    className="w-full bg-transparent border-b border-gold/40 text-cream py-2 focus:outline-none focus:border-gold transition-colors resize-none"
-                  />
-                  {errors.background && <p className="text-red-400 text-xs mt-1">{errors.background.message}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-cream/80 text-sm mb-2 uppercase tracking-wide">Why Indian Kitchen? *</label>
-                  <textarea
-                    {...register("whyUs")}
-                    rows={3}
-                    className="w-full bg-transparent border-b border-gold/40 text-cream py-2 focus:outline-none focus:border-gold transition-colors resize-none"
-                  />
-                  {errors.whyUs && <p className="text-red-400 text-xs mt-1">{errors.whyUs.message}</p>}
-                </div>
-
-                <div className="pt-6">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 bg-forest text-cream font-medium text-sm font-sans tracking-[0.2em] uppercase border border-forest hover:bg-yellow hover:border-yellow hover:text-forest transition-colors disabled:opacity-50"
-                  >
-                    {isSubmitting ? "Processing..." : "Submit Enquiry"}
-                  </button>
-                </div>
-              </form>
-            )}
-          </motion.div>
-
-        </div>
-      </main>
-    </>
+            </form>
+          )}
+        </motion.div>
+      </SectionShell>
+    </main>
   );
 }

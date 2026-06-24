@@ -15,17 +15,34 @@ export default function BlogContent({ content }: BlogContentProps) {
           return (
             <blockquote
               key={index}
-              className="border-l-4 border-saffron bg-cream/60 px-6 py-5 font-display text-xl md:text-2xl text-espresso font-light leading-relaxed not-italic"
+              className="border-l-2 border-gold bg-void-panel px-6 py-5 font-display text-xl md:text-2xl text-cream font-light leading-relaxed italic rounded-r-sm"
             >
               {quote}
             </blockquote>
           );
         }
 
+        // Apply Drop-Cap to the first paragraph
+        if (index === 0 && trimmed.length > 0) {
+          const firstChar = trimmed.charAt(0);
+          const restText = trimmed.slice(1);
+          return (
+            <p
+              key={index}
+              className="text-cream/85 font-light leading-[1.9] text-base md:text-lg"
+            >
+              <span className="float-left text-5xl md:text-6xl font-display text-gold pr-3 pt-1 font-bold leading-[0.8] select-none">
+                {firstChar}
+              </span>
+              {restText}
+            </p>
+          );
+        }
+
         return (
           <p
             key={index}
-            className="text-text-muted font-light leading-[1.85] text-base md:text-lg"
+            className="text-cream/80 font-light leading-[1.85] text-base md:text-lg"
           >
             {trimmed}
           </p>

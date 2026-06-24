@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
 import BlogContent from "@/components/blog/BlogContent";
+import SectionShell from "@/components/layout/SectionShell";
+import SectionHeader from "@/components/layout/SectionHeader";
+import ReadingProgressBar from "@/components/blog/ReadingProgressBar";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -41,9 +44,12 @@ export default async function BlogPostPage({
   const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-cream">
-      {/* Hero Image */}
-      <div className="relative w-full h-[45vh] md:h-[55vh]">
+    <main className="min-h-screen bg-void text-cream">
+      {/* Sticky Reading Progress Indicator */}
+      <ReadingProgressBar />
+
+      {/* Hero Header */}
+      <div className="relative w-full h-[50vh] md:h-[65vh]">
         <Image
           src={post.image}
           alt={post.title}
@@ -51,48 +57,50 @@ export default async function BlogPostPage({
           className="object-cover img-warm"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/30 to-espresso/20" />
+        <div className="absolute inset-0 bg-void/65" />
+        <div className="absolute inset-0 bg-gradient-to-t from-void via-void/30 to-void/10" />
 
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 lg:p-16">
+        <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 lg:px-16 pb-12 md:pb-16 z-10">
           <div className="container mx-auto max-w-4xl">
-            <span className="bg-saffron/90 text-espresso text-[9px] font-bold uppercase tracking-wider px-3 py-1 inline-block mb-4">
+            <span className="bg-gold text-void text-[8px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-4 shadow-lg">
               {post.tag}
             </span>
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-cream leading-tight mb-3">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-cream leading-tight mb-6 uppercase tracking-wide">
               {post.title}
             </h1>
-            <div className="flex items-center gap-4 text-cream/75 text-[10px] font-sans uppercase tracking-wider">
+            <div className="flex items-center gap-4 text-cream/70 text-[9px] font-sans uppercase tracking-[0.15em] font-bold">
               <span>{post.date}</span>
-              <span className="w-1 h-1 rounded-full bg-saffron" />
+              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
               <span>{post.readTime}</span>
-              <span className="w-1 h-1 rounded-full bg-saffron" />
-              <span>{post.author}</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+              <span>By {post.author}</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 lg:px-16 py-10 md:py-14">
+      {/* Article Content Section */}
+      <SectionShell variant="void" className="pt-10 md:pt-14 pb-24">
         <div className="max-w-4xl mx-auto mb-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-[10px] font-sans font-medium tracking-[0.2em] uppercase text-terracotta hover:text-espresso transition-colors link-underline pb-1"
+            className="inline-flex items-center gap-2 text-[9px] font-sans font-bold tracking-[0.25em] uppercase text-gold hover:text-cream transition-colors link-underline pb-1"
           >
-            <ArrowLeft className="w-4 h-4" /> Back to All Stories
+            <ArrowLeft className="w-4 h-4" /> Back to Chronicles
           </Link>
         </div>
 
-        <article className="max-w-4xl mx-auto bg-white p-7 md:p-12 shadow-lg border border-terracotta/12">
+        <article className="max-w-4xl mx-auto bg-void-light p-6 md:p-14 shadow-2xl border border-gold/15 rounded-sm">
           <BlogContent content={post.content} />
 
-          <div className="mt-12 pt-6 border-t border-terracotta/15 flex flex-col md:flex-row justify-between items-center gap-4">
-            <h3 className="font-display text-xl text-espresso">Share this story</h3>
-            <div className="flex gap-3">
+          <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <h3 className="font-display text-xl text-cream uppercase tracking-wide">Share this story</h3>
+            <div className="flex gap-4">
               <a
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://indiankitchen.lk/blog/${slug}`)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full border border-terracotta/25 flex items-center justify-center text-terracotta hover:bg-espresso hover:text-cream hover:border-espresso transition-all"
+                className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-void hover:border-gold transition-all duration-300 shadow-md"
                 aria-label="Share on Facebook"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -103,7 +111,7 @@ export default async function BlogPostPage({
                 href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full border border-terracotta/25 flex items-center justify-center text-terracotta hover:bg-espresso hover:text-cream hover:border-espresso transition-all"
+                className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-void hover:border-gold transition-all duration-300 shadow-md"
                 aria-label="Share on Twitter"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -114,20 +122,18 @@ export default async function BlogPostPage({
           </div>
         </article>
 
+        {/* Related Posts */}
         {relatedPosts.length > 0 && (
-          <div className="max-w-4xl mx-auto mt-14 md:mt-16">
-            <div className="flex items-center gap-4 mb-8">
-              <h2 className="font-display text-2xl md:text-3xl text-espresso">More from the Kitchen</h2>
-              <div className="flex-1 h-px bg-terracotta/20" />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="max-w-5xl mx-auto mt-28 border-t border-gold/15 pt-16">
+            <SectionHeader label="Recommendations" title="More from the Kitchen" lightMode className="mb-10" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedPosts.map((related) => (
                 <Link
                   key={related.slug}
                   href={`/blog/${related.slug}`}
-                  className="group block bg-white border border-terracotta/12 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-400"
+                  className="group block bg-void-light border border-gold/15 overflow-hidden shadow-xl hover:border-gold hover:-translate-y-1 transition-all duration-300 rounded-sm"
                 >
-                  <div className="relative h-40 overflow-hidden">
+                  <div className="relative h-44 overflow-hidden bg-void">
                     <Image
                       src={related.image}
                       alt={related.title}
@@ -135,11 +141,11 @@ export default async function BlogPostPage({
                       className="object-cover img-warm group-hover:scale-105 transition-transform duration-700 will-change-transform"
                     />
                   </div>
-                  <div className="p-5">
-                    <span className="text-[9px] text-terracotta uppercase tracking-[0.2em] font-sans font-medium block mb-1.5">
+                  <div className="p-6">
+                    <span className="text-[8px] text-gold uppercase tracking-[0.2em] font-sans font-bold block mb-2">
                       {related.tag}
                     </span>
-                    <h3 className="font-display text-lg text-espresso group-hover:text-saffron transition-colors line-clamp-2 leading-snug">
+                    <h3 className="font-display text-xl text-cream group-hover:text-gold transition-colors duration-300 uppercase leading-snug line-clamp-2">
                       {related.title}
                     </h3>
                   </div>
@@ -148,7 +154,7 @@ export default async function BlogPostPage({
             </div>
           </div>
         )}
-      </div>
+      </SectionShell>
     </main>
   );
 }

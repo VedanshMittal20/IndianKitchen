@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import SectionShell from "@/components/layout/SectionShell";
+import SectionHeader from "@/components/layout/SectionHeader";
 
 const socialLinks = [
   {
@@ -52,8 +54,8 @@ const socialLinks = [
 ];
 
 const instagramGrid = [
-  "/images/kadai_paneer.png",
-  "/images/banana_leaf.png",
+  "/images/slide_2.png",
+  "/images/slide_11.png",
   "/images/bamboo_biryani.png",
   "/images/private_dining.png",
   "/images/real/kandy_hero_day.jpg",
@@ -64,72 +66,70 @@ export default function SocialMedia() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section className="section-padding bg-cream-dark border-t border-terracotta/10" id="social">
-      <div className="container mx-auto px-6 md:px-12 lg:px-16">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-10"
-        >
-          <span className="text-[10px] tracking-[0.3em] uppercase text-terracotta font-medium block mb-3">
-            Community
-          </span>
-          <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-tight text-espresso">
-            Follow the Flavour
-          </h2>
-        </motion.div>
+    <SectionShell variant="cream-dark" id="social">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 24 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        className="text-center mb-10 max-w-2xl mx-auto"
+      >
+        <SectionHeader 
+          label="Community" 
+          title="Follow the Flavour" 
+          align="center" 
+          className="mb-0 md:mb-0"
+        />
+      </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 max-w-4xl mx-auto">
-          {socialLinks.map((social, index) => (
-            <motion.a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noreferrer"
-              initial={{ opacity: 0, y: 16 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 + index * 0.08 }}
-              className="group flex flex-col items-center justify-center py-8 border border-terracotta/15 bg-white hover:border-saffron transition-colors duration-400"
-            >
-              <div className="text-espresso mb-3 group-hover:text-saffron transition-colors duration-400">
-                {social.icon}
-              </div>
-              <h3 className="font-display text-xl text-espresso mb-1">{social.name}</h3>
-              <p className="font-sans text-[9px] tracking-[0.2em] uppercase text-terracotta group-hover:text-espresso transition-colors">
-                {social.handle}
-              </p>
-            </motion.a>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-1 max-w-5xl mx-auto">
-          {instagramGrid.map((src, index) => (
-            <motion.a
-              key={index}
-              href="https://www.instagram.com/indian.kitchen_/"
-              target="_blank"
-              rel="noreferrer"
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.06 }}
-              className="relative aspect-square overflow-hidden group"
-            >
-              <Image
-                src={src}
-                alt="Indian Kitchen on Instagram"
-                fill
-                className="object-cover img-warm transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 768px) 33vw, 16vw"
-              />
-              <div className="absolute inset-0 bg-espresso/70 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
-                <span className="text-cream text-[9px] tracking-[0.2em] uppercase">View</span>
-              </div>
-            </motion.a>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 max-w-4xl mx-auto">
+        {socialLinks.map((social, index) => (
+          <motion.a
+            key={social.name}
+            href={social.url}
+            target="_blank"
+            rel="noreferrer"
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 + index * 0.08 }}
+            className="group flex flex-col items-center justify-center py-8 border border-gold/15 bg-parchment hover:border-gold shadow-sm transition-colors duration-400 rounded-sm"
+          >
+            <div className="text-void mb-3 group-hover:text-gold transition-colors duration-400">
+              {social.icon}
+            </div>
+            <h3 className="font-display text-xl text-void mb-1">{social.name}</h3>
+            <p className="font-sans text-[9px] tracking-[0.2em] uppercase text-terracotta group-hover:text-void transition-colors font-bold">
+              {social.handle}
+            </p>
+          </motion.a>
+        ))}
       </div>
-    </section>
+
+      <div className="grid grid-cols-3 md:grid-cols-6 gap-1 max-w-5xl mx-auto border border-gold/15 p-1 bg-parchment rounded-sm">
+        {instagramGrid.map((src, index) => (
+          <motion.a
+            key={index}
+            href="https://www.instagram.com/indian.kitchen_/"
+            target="_blank"
+            rel="noreferrer"
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 + index * 0.06 }}
+            className="relative aspect-square overflow-hidden group rounded-[2px]"
+          >
+            <Image
+              src={src}
+              alt="Indian Kitchen on Instagram"
+              fill
+              className="object-cover img-warm transition-transform duration-700 group-hover:scale-110"
+              sizes="(max-width: 768px) 33vw, 16vw"
+            />
+            <div className="absolute inset-0 bg-void/70 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
+              <span className="text-cream text-[9px] tracking-[0.2em] uppercase font-bold">View</span>
+            </div>
+          </motion.a>
+        ))}
+      </div>
+    </SectionShell>
   );
 }
