@@ -53,6 +53,12 @@
   --color-emerald-header: #043927;
   --color-obsidian-accent: #0b0c10;
   --color-saffron-gold: #f4c430;
+  --color-brand-green: #59BD49;
+  --color-brand-dark-green: #064935;
+  --color-brand-light-gold: #FBE7AD;
+  --color-brand-gold: #FFBA09;
+  --color-brand-red: #9E0000;
+  --color-brand-tan: #C5AC89;
 
   /* Border Radius */
   --radius-DEFAULT: 0.25rem;
