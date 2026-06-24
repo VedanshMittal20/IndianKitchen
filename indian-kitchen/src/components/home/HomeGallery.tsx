@@ -121,7 +121,7 @@ export default function HomeGallery() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[99999] bg-surface-container-lowest/98 backdrop-blur-2xl flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
+            className="fixed inset-0 z-[99999] bg-surface-container-lowest flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
             onClick={closeLightbox}
           >
             <button 
@@ -154,7 +154,7 @@ export default function HomeGallery() {
               />
 
               {/* Title & Mute toggle overlay */}
-              <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center z-20 pointer-events-auto bg-surface-container-lowest/60 backdrop-blur-md p-4 rounded-sm border border-outline-variant/30">
+              <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center z-20 pointer-events-auto bg-surface-container-lowest p-4 rounded-sm border border-outline-variant/30">
                 <div>
                   <span className="text-[8px] tracking-[0.2em] uppercase text-saffron-gold font-bold block mb-0.5">Indian Kitchen Reel</span>
                   <h4 className="font-headline-md text-lg md:text-xl text-on-surface uppercase tracking-wide">{activeTitle}</h4>

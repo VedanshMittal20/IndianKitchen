@@ -11,13 +11,13 @@ export default function ThemesCinematicPage() {
   const [isPlayingSound, setIsPlayingSound] = useState(false);
 
   return (
-    <main className="h-[100dvh] w-full overflow-y-auto snap-y snap-mandatory bg-surface-container-lowest hide-scrollbar relative">
+    <main className="w-full bg-obsidian-accent text-white relative">
       
       {/* Floating Audio Controller & Back Button */}
       <div className="fixed top-8 left-8 z-50 pointer-events-auto">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold uppercase text-on-surface/70 hover:text-saffron-gold transition-colors bg-surface-container-low/50 backdrop-blur-md px-4 py-2 border border-outline-variant/30 rounded-full shadow-lg"
+          className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold uppercase text-white/70 hover:text-saffron-gold transition-colors bg-obsidian-accent/90 px-4 py-2 border border-white/10 rounded-full shadow-lg"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           Back to Home
@@ -44,7 +44,7 @@ export default function ThemesCinematicPage() {
         )}
         <button
           onClick={() => setIsPlayingSound(!isPlayingSound)}
-          className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold uppercase text-on-surface/70 hover:text-saffron-gold transition-colors bg-surface-container-low/50 backdrop-blur-md px-4 py-2 border border-outline-variant/30 rounded-full shadow-lg"
+          className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold uppercase text-white/70 hover:text-saffron-gold transition-colors bg-obsidian-accent/90 px-4 py-2 border border-white/10 rounded-full shadow-lg"
           aria-label="Toggle ambient soundtrack"
         >
           {isPlayingSound ? (
@@ -54,7 +54,7 @@ export default function ThemesCinematicPage() {
             </>
           ) : (
             <>
-              <VolumeX className="w-3.5 h-3.5 text-on-surface/40" />
+              <VolumeX className="w-3.5 h-3.5 text-white/40" />
               <span>Ambient Off</span>
             </>
           )}
@@ -62,18 +62,18 @@ export default function ThemesCinematicPage() {
       </div>
 
       {/* SECTION 1: THE WELCOME */}
-      <section className="h-[100dvh] w-full snap-start relative flex items-center justify-center overflow-hidden">
+      <section className="min-h-[100dvh] w-full relative flex items-center justify-center overflow-hidden bg-obsidian-accent">
         <video 
           autoPlay 
           muted 
           loop 
           playsInline 
-          className="absolute inset-0 w-full h-full object-cover opacity-45 scale-105"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 scale-105"
         >
           <source src="/videos/colombo_vibe.mov" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-surface-container-lowest/60 via-transparent to-surface-container-lowest" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(7,4,3,0.85)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-obsidian-accent/80 via-transparent to-obsidian-accent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(11,12,16,0.9)_100%)]" />
         
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
           <motion.div
@@ -85,10 +85,10 @@ export default function ThemesCinematicPage() {
             <span className="text-saffron-gold text-[9px] tracking-[0.35em] uppercase font-bold mb-4 block">
               Cinematic Dining
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-headline-md text-on-surface tracking-tight mb-6 uppercase leading-none">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-headline-md text-white tracking-tight mb-6 uppercase leading-none text-shadow-xl drop-shadow-2xl">
               Immersive<br />Sanctuaries
             </h1>
-            <p className="text-on-surface/70 text-base md:text-lg font-light tracking-wide max-w-2xl mx-auto font-body-md leading-relaxed">
+            <p className="text-white/90 text-base md:text-lg font-light tracking-wide max-w-2xl mx-auto font-body-md leading-relaxed drop-shadow-md">
               Step through our portals. Each of our physical spaces is built as a complete theatrical scene designed to capture a specific mood, place, and historical epoch.
             </p>
           </motion.div>
@@ -106,7 +106,7 @@ export default function ThemesCinematicPage() {
       </section>
 
       {/* SECTION 2: PONDICHERRY STREET */}
-      <section className="h-[100dvh] w-full snap-start relative flex items-center overflow-hidden">
+      <section className="min-h-[100dvh] w-full relative flex items-center overflow-hidden bg-obsidian-accent">
         <Image 
           src="/images/real/gallery_3.jpg" 
           alt="Pondicherry Street Theme" 
@@ -114,8 +114,8 @@ export default function ThemesCinematicPage() {
           className="object-cover img-warm opacity-40 scale-100"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/50 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(7,4,3,0.8)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-obsidian-accent via-obsidian-accent/60 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(11,12,16,0.9)_100%)]" />
         
         <div className="relative z-10 px-6 md:px-16 lg:px-24 max-w-3xl">
           <motion.div
@@ -127,10 +127,10 @@ export default function ThemesCinematicPage() {
             <span className="text-saffron-gold text-[9px] tracking-[0.25em] uppercase font-bold mb-3 block border-l border-saffron-gold pl-3">
               Sanctuary 01 / Colombo
             </span>
-            <h2 className="text-5xl md:text-7xl font-headline-md text-on-surface mb-6 uppercase tracking-wide leading-none">
+            <h2 className="text-5xl md:text-7xl font-headline-md text-white mb-6 uppercase tracking-wide leading-none drop-shadow-lg">
               Pondicherry<br />Street
             </h2>
-            <p className="text-on-surface/70 font-body-md font-light text-base leading-relaxed mb-8 max-w-xl">
+            <p className="text-white/80 font-body-md font-light text-base leading-relaxed mb-8 max-w-xl drop-shadow-md">
               Step onto the cobblestone streets of the French Quarter. Colonial mustard-yellow walls, heavy timber arches, and vintage street lamps set the stage for a menu heavily influenced by coastal spice route heritage. It's an evening walk in a nostalgic bygone era.
             </p>
             <Link href="/reservations" className="btn-primary">
@@ -141,18 +141,18 @@ export default function ThemesCinematicPage() {
       </section>
 
       {/* SECTION 3: KERALA HOUSEBOAT */}
-      <section className="h-[100dvh] w-full snap-start relative flex items-center overflow-hidden">
+      <section className="min-h-[100dvh] w-full relative flex items-center overflow-hidden bg-obsidian-accent">
         <video 
           autoPlay 
           muted 
           loop 
           playsInline 
-          className="absolute inset-0 w-full h-full object-cover opacity-35 scale-100"
+          className="absolute inset-0 w-full h-full object-cover opacity-40 scale-100"
         >
           <source src="/videos/experience.mov" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-l from-surface-container-lowest via-surface-container-lowest/55 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(7,4,3,0.85)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-l from-obsidian-accent via-obsidian-accent/60 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(11,12,16,0.9)_100%)]" />
         
         <div className="relative z-10 px-6 md:px-16 lg:px-24 w-full flex justify-end">
           <motion.div
@@ -165,10 +165,10 @@ export default function ThemesCinematicPage() {
             <span className="text-saffron-gold text-[9px] tracking-[0.25em] uppercase font-bold mb-3 block border-r border-saffron-gold pr-3">
               Sanctuary 02 / Kandy
             </span>
-            <h2 className="text-5xl md:text-7xl font-headline-md text-on-surface mb-6 uppercase tracking-wide leading-none">
+            <h2 className="text-5xl md:text-7xl font-headline-md text-white mb-6 uppercase tracking-wide leading-none drop-shadow-lg">
               Kerala<br />Houseboat
             </h2>
-            <p className="text-on-surface/70 font-body-md font-light text-base leading-relaxed mb-8 max-w-xl ml-auto">
+            <p className="text-white/80 font-body-md font-light text-base leading-relaxed mb-8 max-w-xl ml-auto drop-shadow-md">
               Float down the tranquil backwaters of Malabar. Woven panels of raw bamboo, the quiet warmth of flickering oil lanterns, and ambient aquatic sounds create a pocket of absolute stillness. The ideal sanctuary for our coconut-infused coastal delicacies.
             </p>
             <Link href="/reservations" className="btn-primary">
@@ -179,17 +179,17 @@ export default function ThemesCinematicPage() {
       </section>
 
       {/* SECTION 4: THE SHERLOCK */}
-      <section className="h-[100dvh] w-full snap-start relative flex items-center justify-center overflow-hidden">
+      <section className="min-h-[100dvh] w-full relative flex items-center justify-center overflow-hidden bg-obsidian-accent">
         <Image 
           src="/images/private_dining.png" 
           alt="The Sherlock Mystery Dining Theme" 
           fill 
-          className="object-cover img-warm opacity-30 scale-100"
+          className="object-cover img-warm opacity-40 scale-100"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-surface-container-lowest/65" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(7,4,3,0.9)_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-90" />
+        <div className="absolute inset-0 bg-obsidian-accent/60" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(11,12,16,0.95)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-obsidian-accent to-transparent opacity-90" />
         
         <div className="relative z-10 px-6 text-center max-w-3xl flex flex-col items-center">
           <motion.div
@@ -202,11 +202,11 @@ export default function ThemesCinematicPage() {
             <span className="text-saffron-gold text-[9px] tracking-[0.25em] uppercase font-bold mb-4 block">
               Sanctuary 03 / Colombo
             </span>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-headline-md text-on-surface mb-6 uppercase tracking-wide leading-none">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-headline-md text-white mb-6 uppercase tracking-wide leading-none drop-shadow-lg">
               The Sherlock
             </h2>
             <div className="h-[1px] w-16 bg-saffron-gold/40 mb-8" />
-            <p className="text-on-surface/70 font-body-md font-light text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+            <p className="text-white/80 font-body-md font-light text-base leading-relaxed mb-10 max-w-2xl mx-auto drop-shadow-md">
               Our most theatrical mystery dining room. Step into a gaslit, dark Victorian study filled with vintage leather armchairs, sliding panels, and riddles. Every table receives a private dossier. Every course unlocks a clue. Will you decode the menu and solve the culinary mystery?
             </p>
             <Link href="/reservations" className="btn-outline">
@@ -217,10 +217,10 @@ export default function ThemesCinematicPage() {
       </section>
 
       {/* SECTION 5: FINAL CTA */}
-      <section className="h-[100dvh] w-full snap-start relative flex flex-col justify-center bg-surface-container-lowest">
+      <section className="min-h-[100dvh] w-full relative flex flex-col justify-center bg-obsidian-accent">
         <HomeCTA />
         {/* Decorative footer filler */}
-        <div className="flex-1 max-h-[15vh] bg-surface-container-lowest border-t border-outline-variant/30" />
+        <div className="flex-1 max-h-[15vh] bg-obsidian-accent border-t border-white/10" />
       </section>
 
       {/* Ambient Audio simulation element (silent mock if no file, but updates UI status) */}

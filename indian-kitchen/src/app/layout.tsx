@@ -37,13 +37,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${hanken.variable} ${ebGaramond.variable} ${spaceMono.variable} h-full antialiased`}>
+    <html lang="en" className={`${hanken.variable} ${ebGaramond.variable} ${spaceMono.variable} h-full antialiased`}>
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
       </head>
       <body className="font-body-md text-body-md bg-surface-container-lowest text-on-surface min-h-full flex flex-col">
-        {/* WebGL Shader Background */}
-        <div className="shader-overlay"></div>
+        {/* WebGL Shader Background removed as requested */}
         
         <ScrollProvider>
           <CursorGlow />

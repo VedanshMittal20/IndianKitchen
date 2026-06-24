@@ -44,7 +44,7 @@ export default function QRWidget() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-surface-container-lowest/95 backdrop-blur-xl flex items-center justify-center p-6"
+            className="fixed inset-0 z-[100] bg-surface-container-lowest flex items-center justify-center p-6"
           >
             <button
               onClick={() => setIsOpen(false)}

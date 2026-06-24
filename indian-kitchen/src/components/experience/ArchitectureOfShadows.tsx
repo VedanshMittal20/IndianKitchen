@@ -4,25 +4,25 @@ import Image from "next/image";
 
 export default function ArchitectureOfShadows() {
   return (
-    <section className="bg-obsidian-accent w-full py-32 px-margin-mobile md:px-margin-desktop">
-      <div className="max-w-container-max mx-auto">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
+    <section className="bg-brand-dark-green w-full py-32 px-6 md:px-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
           <div className="w-full md:w-1/2">
-            <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-8">
-              The Atmosphere<br />of The Vault
+            <h2 className="font-headline-md text-5xl md:text-6xl lg:text-7xl text-brand-light-gold mb-8 leading-tight">
+              The Atmosphere<br />of The Sanctuary
             </h2>
-            <p className="font-body-lg text-body-lg text-on-primary/80 mb-8 max-w-lg">
-              By stepping away from the bright external world, the space cultivates a deep, intentional calm. This shadowed approach frames the dining experience, drawing focus entirely to the illuminated flavors and textures on the plate while leaving the periphery in quiet obscurity.
+            <p className="font-light text-lg text-white/80 mb-12 max-w-lg leading-relaxed">
+              By stepping away from the bustling streets, our space cultivates a deep, intentional calm. This shadowed approach frames the dining experience, drawing focus entirely to the vibrant colors and complex aromas of our regional Indian dishes, while leaving the periphery in quiet obscurity.
             </p>
-            <ul className="space-y-4 font-annotation text-annotation text-on-primary/70">
-              <li className="flex items-center gap-4 border-b border-white/10 pb-4">
-                <span className="text-saffron-gold">01.</span> Intimate Dining Sanctuaries
+            <ul className="space-y-6 text-sm tracking-widest uppercase font-bold text-white/70">
+              <li className="flex items-center gap-6 border-b border-white/10 pb-4">
+                <span className="text-brand-green">01.</span> Intimate Dining Sanctuaries
               </li>
-              <li className="flex items-center gap-4 border-b border-white/10 pb-4">
-                <span className="text-saffron-gold">02.</span> Focus Directed Entirely to the Tablescape
+              <li className="flex items-center gap-6 border-b border-white/10 pb-4">
+                <span className="text-brand-green">02.</span> Focus Directed Entirely to the Tablescape
               </li>
-              <li className="flex items-center gap-4 border-b border-white/10 pb-4">
-                <span className="text-saffron-gold">03.</span> Noise Dampening for Uninterrupted Conversation
+              <li className="flex items-center gap-6 border-b border-white/10 pb-4">
+                <span className="text-brand-green">03.</span> Noise Dampening for Uninterrupted Conversation
               </li>
             </ul>
           </div>
@@ -36,8 +36,8 @@ export default function ArchitectureOfShadows() {
                 unoptimized
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-saffron-gold text-obsidian-accent font-annotation text-annotation p-4 rounded-sm z-10 font-bold">
-              Fig. 02 <br /> The Vault Experience
+            <div className="absolute -bottom-6 -left-6 bg-brand-gold text-brand-dark-green text-[10px] tracking-[0.2em] uppercase p-6 rounded-sm z-10 font-bold shadow-xl border-2 border-brand-dark-green">
+              Fig. 02 <br /> The Sanctuary Experience
             </div>
           </div>
         </div>

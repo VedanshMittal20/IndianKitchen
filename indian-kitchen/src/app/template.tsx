@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
-      initial={{ opacity: 0, filter: "brightness(0.65) blur(4px)" }}
-      animate={{ opacity: 1, filter: "brightness(1) blur(0px)" }}
-      exit={{ opacity: 0, filter: "brightness(0.65) blur(4px)" }}
-      transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className="flex-grow flex flex-col"
-      style={{ willChange: "opacity, filter" }}
+      style={{ willChange: "opacity, transform" }}
     >
       {children}
     </motion.div>
