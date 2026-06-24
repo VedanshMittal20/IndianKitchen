@@ -121,7 +121,6 @@
   }
   .glass-card {
       background: rgba(255, 248, 243, 0.5);
-<<<<<<< Updated upstream
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--color-surface-dim);
@@ -131,13 +130,6 @@
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--color-surface-dim);
-=======
-      border: 1px solid var(--tw-colors-surface-dim);
-  }
-  .glass-panel {
-      background: rgba(255, 255, 255, 0.4);
-      border: 1px solid var(--tw-colors-surface-dim);
->>>>>>> Stashed changes
   }
   .glass-panel-dark {
       background: rgba(10, 10, 10, 0.6);

@@ -8,8 +8,6 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-<<<<<<< Updated upstream
-=======
   darkMode: "class",
   theme: {
     extend: {
@@ -104,11 +102,7 @@ const config: Config = {
       }
     },
   },
-  plugins: [
-    formsPlugin,
-    containerQueriesPlugin,
-  ],
->>>>>>> Stashed changes
+
 };
 
 export default config;
