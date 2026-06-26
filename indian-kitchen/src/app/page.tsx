@@ -1,13 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import HeroSection from "@/components/home/HeroSection";
-import GeometryOfFlavor from "@/components/home/GeometryOfFlavor";
-import Sanctuary from "@/components/home/Sanctuary";
-import HomeCommitmentStrip from "@/components/home/HomeCommitmentStrip";
-import Testimonials from "@/components/home/Testimonials";
-import SocialMedia from "@/components/home/SocialMedia";
-import FindUs from "@/components/home/FindUs";
+import HomeHeroSection from "@/components/home/HomeHeroSection";
+import CulinaryVault from "@/components/home/CulinaryVault";
+import HeritageAtmosphere from "@/components/home/HeritageAtmosphere";
+import ReservationSection from "@/components/home/ReservationSection";
 
 export default function Home() {
   // Simple scroll reveal logic
@@ -29,14 +26,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative z-10 pt-32">
-      <HeroSection />
-      <GeometryOfFlavor />
-      <Sanctuary />
-      <HomeCommitmentStrip />
-      <Testimonials />
-      <SocialMedia />
-      <FindUs />
+    <div className="relative z-10 w-full bg-surface">
+      <HomeHeroSection />
+      <CulinaryVault />
+      <HeritageAtmosphere />
+      <ReservationSection />
     </div>
   );
 }
