@@ -15,12 +15,12 @@ export default function ReservationsPage() {
       <header className="w-full max-w-4xl mb-16 text-center md:text-left relative">
         <div className="flex items-end justify-between border-b border-primary-container/30 pb-4 mb-8">
           <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface relative">
-            <span className="absolute -top-6 -left-4 font-annotation text-annotation text-primary-container/60">
+            <span className="absolute -top-6 -left-4 font-label-sm text-label-sm text-primary-container/60">
               Fig. 01
             </span>
             Sanctuary Portal
           </h1>
-          <span className="font-annotation text-annotation text-tertiary hidden md:block">
+          <span className="font-label-sm text-label-sm text-tertiary hidden md:block">
             Est. 2024
           </span>
         </div>
@@ -85,7 +85,7 @@ export default function ReservationsPage() {
               checked={selectedEnvironment === "kerala"}
               onChange={() => setSelectedEnvironment("kerala")}
             />
-            <div className="bg-emerald-header border border-white/10 p-8 rounded-lg relative overflow-hidden transition-all duration-500 peer-checked:border-saffron-gold peer-checked:shadow-[0_0_30px_rgba(244,196,48,0.2)] h-64 flex flex-col justify-end">
+            <div className="bg-brand-deep-forest border border-white/10 p-8 rounded-lg relative overflow-hidden transition-all duration-500 peer-checked:border-saffron-gold peer-checked:shadow-[0_0_30px_rgba(244,196,48,0.2)] h-64 flex flex-col justify-end">
               <div className="absolute inset-0 z-0">
                 <Image
                   src="/images/real/kandy_hero_night.jpg"
@@ -108,7 +108,7 @@ export default function ReservationsPage() {
               </div>
             </div>
             <div className="absolute top-6 right-6 z-20 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity">
-              <span className="material-symbols-outlined text-saffron-gold" style={{ fontVariationSettings: "'FILL' 1" }}>
+              <span className="material-symbols-outlined text-brand-golden" style={{ fontVariationSettings: "'FILL' 1" }}>
                 check_circle
               </span>
             </div>
@@ -156,7 +156,7 @@ export default function ReservationsPage() {
         <div className="lg:col-span-7 w-full mt-8 lg:mt-0">
           <div className="glass-panel p-8 md:p-12 rounded-xl relative">
             <div className="absolute top-0 right-0 p-6">
-              <span className="font-annotation text-annotation text-outline">
+              <span className="font-label-sm text-label-sm text-outline">
                 Form .01
               </span>
             </div>
@@ -164,7 +164,7 @@ export default function ReservationsPage() {
               {/* Date & Time Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2 relative group">
-                  <label className="font-annotation text-annotation uppercase tracking-widest text-tertiary">
+                  <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
                     Date of Arrival
                   </label>
                   <div className="flex items-center">
@@ -179,7 +179,7 @@ export default function ReservationsPage() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2 relative group">
-                  <label className="font-annotation text-annotation uppercase tracking-widest text-tertiary">
+                  <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
                     Time
                   </label>
                   <div className="flex items-center">
@@ -198,7 +198,7 @@ export default function ReservationsPage() {
               {/* Party Size & Occasion */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
-                  <label className="font-annotation text-annotation uppercase tracking-widest text-tertiary">
+                  <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
                     Party Size
                   </label>
                   <div className="flex items-center">
@@ -214,7 +214,7 @@ export default function ReservationsPage() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
-                  <label className="font-annotation text-annotation uppercase tracking-widest text-tertiary">
+                  <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
                     Occasion (Optional)
                   </label>
                   <input
@@ -231,7 +231,7 @@ export default function ReservationsPage() {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
-                    <label className="font-annotation text-annotation uppercase tracking-widest text-tertiary">
+                    <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
                       First Name
                     </label>
                     <input
@@ -240,7 +240,7 @@ export default function ReservationsPage() {
                     />
                   </div>
                   <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
-                    <label className="font-annotation text-annotation uppercase tracking-widest text-tertiary">
+                    <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
                       Last Name
                     </label>
                     <input
@@ -250,7 +250,7 @@ export default function ReservationsPage() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
-                  <label className="font-annotation text-annotation uppercase tracking-widest text-tertiary">
+                  <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
                     Email Address
                   </label>
                   <input
@@ -259,7 +259,7 @@ export default function ReservationsPage() {
                   />
                 </div>
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
-                  <label className="font-annotation text-annotation uppercase tracking-widest text-tertiary">
+                  <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
                     Special Requests
                   </label>
                   <textarea
@@ -271,7 +271,7 @@ export default function ReservationsPage() {
               </div>
               {/* Submit Area */}
               <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-outline-variant/50">
-                <p className="font-annotation text-annotation text-tertiary max-w-xs text-center sm:text-left">
+                <p className="font-label-sm text-label-sm text-tertiary max-w-xs text-center sm:text-left">
                   By proceeding, you agree to our{" "}
                   <a className="underline hover:text-primary-container transition-colors" href="#">
                     cancellation policy
@@ -287,11 +287,11 @@ export default function ReservationsPage() {
                     const originalContent = btn.innerHTML;
                     btn.innerHTML = `<span class="relative z-10 flex items-center justify-center gap-2 text-[#047857]">Confirmed <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check</span></span>`;
                     btn.classList.remove("bg-primary-container", "text-on-primary", "hover:bg-primary");
-                    btn.classList.add("bg-emerald-header/10", "border", "border-emerald-header");
+                    btn.classList.add("bg-brand-deep-forest/10", "border", "border-emerald-header");
                     setTimeout(() => {
                       btn.innerHTML = originalContent;
                       btn.classList.add("bg-primary-container", "text-on-primary", "hover:bg-primary");
-                      btn.classList.remove("bg-emerald-header/10", "border", "border-emerald-header");
+                      btn.classList.remove("bg-brand-deep-forest/10", "border", "border-emerald-header");
                     }, 3000);
                   }}
                 >

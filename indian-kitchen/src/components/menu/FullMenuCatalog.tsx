@@ -62,7 +62,7 @@ export default function FullMenuCatalog() {
   return (
     <section aria-labelledby="full-catalog-heading" className="relative mt-24 md:mt-40 border-t border-outline-variant pt-16">
       <div className="mb-12">
-        <span className="font-annotation text-annotation uppercase text-primary-container block mb-4">Fig. 03</span>
+        <span className="font-label-sm text-label-sm uppercase text-primary-container block mb-4">Fig. 03</span>
         <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface" id="full-catalog-heading">Full Catalog</h2>
         <p className="font-body-md text-body-md mt-4 text-on-surface-variant max-w-xl">
           The complete compendium of our culinary heritage. A passport through regional specialties, street food favorites, and reimagined classics.
@@ -76,9 +76,9 @@ export default function FullMenuCatalog() {
             <button
               key={cat.category}
               onClick={() => setActiveCategory(cat.category)}
-              className={`whitespace-nowrap px-6 py-2 rounded-full font-annotation text-annotation uppercase tracking-wider transition-all duration-300 ${
+              className={`whitespace-nowrap px-6 py-2 rounded-full font-label-sm text-label-sm uppercase tracking-wider transition-all duration-300 ${
                 activeCategory === cat.category
-                  ? "bg-obsidian-accent text-saffron-gold shadow-lg"
+                  ? "bg-surface-dark text-brand-golden shadow-lg"
                   : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"
               }`}
             >
@@ -111,11 +111,11 @@ export default function FullMenuCatalog() {
                       {item.tags.map(tag => (
                         <span
                           key={tag}
-                          className={`font-annotation text-[9px] uppercase tracking-widest px-2 py-0.5 rounded border ${
+                          className={`font-label-sm text-[9px] uppercase tracking-widest px-2 py-0.5 rounded border ${
                             tag === "VEG" ? "border-emerald-600/30 text-emerald-700" :
                             tag === "NON-VEG" ? "border-red-800/30 text-red-800" :
                             tag === "VEGAN" ? "border-emerald-800/30 text-emerald-800" :
-                            "border-saffron-gold/50 text-saffron-gold"
+                            "border-saffron-gold/50 text-brand-golden"
                           }`}
                         >
                           {tag}
@@ -148,7 +148,7 @@ export default function FullMenuCatalog() {
       </div>
 
       <div className="mt-20 pt-8 border-t border-outline-variant/30 text-center">
-        <p className="font-annotation text-annotation text-on-surface-variant italic">
+        <p className="font-label-sm text-label-sm text-on-surface-variant italic">
           Full menu is updated regularly. Prices may vary by outlet. For the most current menu, scan the QR code or visit us in-store.
         </p>
       </div>

@@ -94,11 +94,11 @@ export default function SocialMedia() {
             transition={{ duration: 0.5, delay: 0.1 + index * 0.08 }}
             className="group flex flex-col items-center justify-center py-8 border border-outline-variant/30 bg-surface-container-low hover:border-saffron-gold shadow-sm transition-colors duration-400 rounded-sm"
           >
-            <div className="text-on-surface mb-3 group-hover:text-saffron-gold transition-colors duration-400">
+            <div className="text-on-surface mb-3 group-hover:text-brand-golden transition-colors duration-400">
               {social.icon}
             </div>
             <h3 className="font-headline-md text-xl text-on-surface mb-1">{social.name}</h3>
-            <p className="font-body-md text-[9px] tracking-[0.2em] uppercase text-saffron-gold group-hover:text-on-surface transition-colors font-bold">
+            <p className="font-body-md text-[9px] tracking-[0.2em] uppercase text-brand-golden group-hover:text-on-surface transition-colors font-bold">
               {social.handle}
             </p>
           </motion.a>

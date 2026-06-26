@@ -19,9 +19,9 @@ const services = [
     features: ["Custom Branding", "A/V Setup Available", "Menu Tasters"],
     image: "/images/real/kandy_hero_day.jpg",
     bgColor: "bg-surface-container-lowest",
-    textColor: "text-brand-dark-green",
+    textColor: "text-brand-deep-forest",
     subtextColor: "text-on-surface-variant",
-    accentColor: "text-brand-green",
+    accentColor: "text-brand-accent-green",
     reverse: false,
   },
   {
@@ -30,10 +30,10 @@ const services = [
     desc: "Intimate, highly art-directed spaces dedicated entirely to birthday galas, anniversaries, and reunions. Every detail, from the floral stagecraft to the personalized menu, is meticulously curated.",
     features: ["Personal Butler", "Theme Customization", "Floral Stagecraft"],
     image: "/images/real/gallery_2.jpg",
-    bgColor: "bg-brand-dark-green",
-    textColor: "text-brand-light-gold",
+    bgColor: "bg-brand-deep-forest",
+    textColor: "text-brand-warm-cream",
     subtextColor: "text-white/70",
-    accentColor: "text-brand-green",
+    accentColor: "text-brand-accent-green",
     reverse: true,
   },
   {
@@ -43,7 +43,7 @@ const services = [
     features: ["Multi-lingual Hosts", "Interactive Demos", "Set Menus"],
     image: "/images/real/colombo_ceremony.jpg",
     bgColor: "bg-[#F5F2EA]",
-    textColor: "text-brand-dark-green",
+    textColor: "text-brand-deep-forest",
     subtextColor: "text-on-surface-variant",
     accentColor: "text-brand-red",
     reverse: false,
@@ -55,9 +55,9 @@ const services = [
     features: ["Wine Pairings", "Live Tandoor Station", "Off-site Catering"],
     image: "/images/bamboo_biryani.png",
     bgColor: "bg-surface-container-lowest",
-    textColor: "text-brand-dark-green",
+    textColor: "text-brand-deep-forest",
     subtextColor: "text-on-surface-variant",
-    accentColor: "text-brand-green",
+    accentColor: "text-brand-accent-green",
     reverse: true,
   },
 ];
@@ -128,9 +128,9 @@ function EditorialBlock({ service, index }: { service: any; index: number }) {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.6 + (idx * 0.1) }}
                     className={`text-[10px] font-bold tracking-[0.2em] uppercase px-4 py-2 border ${
-                      service.bgColor === "bg-brand-dark-green" 
-                        ? "border-brand-green/30 text-brand-light-gold bg-brand-green/10" 
-                        : "border-brand-dark-green/20 text-brand-dark-green bg-white/50"
+                      service.bgColor === "bg-brand-deep-forest" 
+                        ? "border-brand-accent-green/30 text-brand-warm-cream bg-brand-accent-green/10" 
+                        : "border-brand-deep-forest/20 text-brand-deep-forest bg-white/50"
                     } rounded-sm`}
                   >
                     {feat}
@@ -159,10 +159,10 @@ export default function ServicesPage() {
 
       {/* Prologue Section */}
       <section className="py-24 md:py-32 px-6 md:px-12 lg:px-16 max-w-5xl mx-auto text-center">
-        <span className="text-[10px] tracking-[0.3em] uppercase text-brand-green font-bold block mb-8">
+        <span className="text-[10px] tracking-[0.3em] uppercase text-brand-accent-green font-bold block mb-8">
           The Philosophy
         </span>
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-brand-dark-green leading-tight mb-8">
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-brand-deep-forest leading-tight mb-8">
           "Whether you are hosting an intimate gathering or a grand corporate milestone, our sanctuaries adapt to tell your story."
         </h2>
         <p className="font-light text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
@@ -183,7 +183,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Enquire CTA */}
-      <SectionShell variant="void" className="text-center py-28 border-t border-brand-tan/20 relative mt-24">
+      <SectionShell variant="void" className="text-center py-28 border-t border-brand-sandy/20 relative mt-24">
         <div className="max-w-2xl mx-auto flex flex-col items-center">
           <SectionHeader 
             label="Connect with our Host" 

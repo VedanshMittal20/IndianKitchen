@@ -127,7 +127,7 @@ export default function FranchisePage() {
               className="glass-card p-8 rounded-[3rem] text-center shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group"
             >
               <div className="w-16 h-16 mx-auto bg-surface-container-low rounded-[1.5rem] flex items-center justify-center mb-6 border border-outline-variant/30 group-hover:bg-saffron-gold transition-colors duration-500">
-                <b.icon className="w-8 h-8 text-saffron-gold group-hover:text-on-surface transition-colors duration-500" />
+                <b.icon className="w-8 h-8 text-brand-golden group-hover:text-on-surface transition-colors duration-500" />
               </div>
               <h4 className="font-headline-md text-xl text-on-surface mb-4">{b.title}</h4>
               <p className="text-sm text-on-surface-variant leading-relaxed">{b.desc}</p>
@@ -172,7 +172,7 @@ export default function FranchisePage() {
           {isSubmitted ? (
             <div className="text-center py-16 relative z-10">
               <div className="w-20 h-20 rounded-full bg-saffron-gold/10 flex items-center justify-center mx-auto mb-6 border border-outline-variant/30">
-                <CheckCircle2 className="w-10 h-10 text-saffron-gold" />
+                <CheckCircle2 className="w-10 h-10 text-brand-golden" />
               </div>
               <h3 className="font-headline-md text-3xl text-on-surface mb-4 uppercase tracking-wide">Enquiry Received</h3>
               <p className="text-on-surface-variant text-lg mb-8 max-w-md mx-auto">

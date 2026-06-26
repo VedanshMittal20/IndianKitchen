@@ -30,10 +30,10 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
               onClick={() => setOpenIndex(isOpen ? null : index)}
               className="flex items-center justify-between w-full py-4 text-left group"
             >
-              <h3 className="font-headline-md text-xl text-on-surface group-hover:text-saffron-gold transition-colors">
+              <h3 className="font-headline-md text-xl text-on-surface group-hover:text-brand-golden transition-colors">
                 {item.question}
               </h3>
-              <div className="ml-4 shrink-0 bg-surface-container-lowest border border-outline-variant/30 w-8 h-8 rounded-full flex items-center justify-center text-saffron-gold transition-transform duration-300">
+              <div className="ml-4 shrink-0 bg-surface-container-lowest border border-outline-variant/30 w-8 h-8 rounded-full flex items-center justify-center text-brand-golden transition-transform duration-300">
                 {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
               </div>
             </button>

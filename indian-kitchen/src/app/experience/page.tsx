@@ -10,17 +10,17 @@ export default function ExperiencePage() {
     <main className="pt-32 pb-32 bg-surface-container-lowest text-on-surface relative z-10">
       {/* Hero Header */}
       <section className="px-6 md:px-16 max-w-7xl mx-auto mb-32 relative">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-brand-tan/30 pb-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-brand-sandy/30 pb-6">
           <div>
-            <span className="text-[10px] tracking-[0.3em] font-bold text-brand-green uppercase block mb-4">
+            <span className="text-[10px] tracking-[0.3em] font-bold text-brand-accent-green uppercase block mb-4">
               Spatial Analysis Vol. 1
             </span>
-            <h1 className="font-headline-md text-5xl md:text-7xl text-brand-dark-green leading-tight">
+            <h1 className="font-headline-md text-5xl md:text-7xl text-brand-deep-forest leading-tight">
               Sensory Architecture
             </h1>
           </div>
-          <div className="text-[10px] tracking-widest text-brand-tan flex items-center gap-4 mt-4 md:mt-0 font-bold uppercase">
-            <span className="w-12 h-[1px] bg-brand-tan block"></span>
+          <div className="text-[10px] tracking-widest text-brand-sandy flex items-center gap-4 mt-4 md:mt-0 font-bold uppercase">
+            <span className="w-12 h-[1px] bg-brand-sandy block"></span>
             Fig. 01
           </div>
         </div>
@@ -34,15 +34,15 @@ export default function ExperiencePage() {
               unoptimized
             />
           </div>
-          <div className="absolute bottom-12 right-12 bg-brand-dark-green p-8 rounded-sm max-w-sm hidden md:block shadow-2xl border-t-4 border-brand-green">
-            <p className="font-light text-brand-light-gold text-lg mb-6 leading-relaxed">
+          <div className="absolute bottom-12 right-12 bg-brand-deep-forest p-8 rounded-sm max-w-sm hidden md:block shadow-2xl border-t-4 border-brand-accent-green">
+            <p className="font-light text-brand-warm-cream text-lg mb-6 leading-relaxed">
               An exploration of structural permanence, blending ancient Indian spices with the deliberate manipulation of light and shadow to create a modern sanctuary within physical walls.
             </p>
             <div className="flex gap-4">
-              <span className="text-[10px] uppercase tracking-widest font-bold px-4 py-2 bg-brand-green/20 border border-brand-green/30 rounded-sm text-brand-green">
+              <span className="text-[10px] uppercase tracking-widest font-bold px-4 py-2 bg-brand-accent-green/20 border border-brand-accent-green/30 rounded-sm text-brand-accent-green">
                 Volumetric
               </span>
-              <span className="text-[10px] uppercase tracking-widest font-bold px-4 py-2 bg-brand-green/20 border border-brand-green/30 rounded-sm text-brand-green">
+              <span className="text-[10px] uppercase tracking-widest font-bold px-4 py-2 bg-brand-accent-green/20 border border-brand-accent-green/30 rounded-sm text-brand-accent-green">
                 Thermal
               </span>
             </div>
@@ -52,8 +52,8 @@ export default function ExperiencePage() {
 
       {/* Culinary Grids */}
       <section className="px-6 md:px-16 max-w-7xl mx-auto mb-32">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 border border-brand-tan/20 p-8 rounded-sm bg-surface-container-low shadow-sm">
-          <div className="col-span-1 md:col-span-4 bg-brand-dark-green border-t-4 border-brand-red text-white p-8 rounded-sm flex flex-col justify-between h-full min-h-[300px] shadow-lg">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 border border-brand-sandy/20 p-8 rounded-sm bg-surface-container-low shadow-sm">
+          <div className="col-span-1 md:col-span-4 bg-brand-deep-forest border-t-4 border-brand-red text-white p-8 rounded-sm flex flex-col justify-between h-full min-h-[300px] shadow-lg">
             <div className="flex justify-between items-start mb-12">
               <h3 className="font-headline-md text-2xl text-white uppercase tracking-wide">Thermal Tempering</h3>
               <span className="material-symbols-outlined text-brand-red" style={{ fontVariationSettings: "'FILL' 1" }}>
@@ -61,42 +61,42 @@ export default function ExperiencePage() {
               </span>
             </div>
             <div>
-              <div className="text-5xl font-display text-brand-light-gold mb-4">
+              <div className="text-5xl font-display text-brand-warm-cream mb-4">
                 30k<span className="text-xl font-sans tracking-widest ml-2 opacity-50">SHU</span>
               </div>
-              <p className="font-light text-sm text-brand-light-gold/70 border-t border-white/10 pt-4 leading-relaxed">
+              <p className="font-light text-sm text-brand-warm-cream/70 border-t border-white/10 pt-4 leading-relaxed">
                 Balancing the fierce heat of Guntur chilies with the deep warmth of slow-roasted coriander and cumin.
               </p>
             </div>
           </div>
-          <div className="col-span-1 md:col-span-8 bg-surface-container-lowest border border-brand-tan/30 text-brand-dark-green p-8 md:p-12 rounded-sm flex flex-col justify-between relative overflow-hidden h-full min-h-[300px] shadow-sm">
+          <div className="col-span-1 md:col-span-8 bg-surface-container-lowest border border-brand-sandy/30 text-brand-deep-forest p-8 md:p-12 rounded-sm flex flex-col justify-between relative overflow-hidden h-full min-h-[300px] shadow-sm">
             <div className="relative z-10 flex justify-between items-start mb-16">
-              <h3 className="font-headline-md text-3xl text-brand-dark-green uppercase tracking-wide">Flavor Topography</h3>
-              <span className="text-[9px] uppercase tracking-[0.25em] font-bold text-brand-green border border-brand-green/30 px-4 py-2 rounded-sm bg-brand-green/5">
+              <h3 className="font-headline-md text-3xl text-brand-deep-forest uppercase tracking-wide">Flavor Topography</h3>
+              <span className="text-[9px] uppercase tracking-[0.25em] font-bold text-brand-accent-green border border-brand-accent-green/30 px-4 py-2 rounded-sm bg-brand-accent-green/5">
                 Palate Monitor
               </span>
             </div>
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-brand-tan/20 pt-8">
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-brand-sandy/20 pt-8">
               <div>
-                <span className="block text-[10px] uppercase tracking-widest font-bold text-brand-tan mb-3">Peak</span>
-                <span className="font-headline-md text-2xl text-brand-dark-green">Heat (Chili)</span>
+                <span className="block text-[10px] uppercase tracking-widest font-bold text-brand-sandy mb-3">Peak</span>
+                <span className="font-headline-md text-2xl text-brand-deep-forest">Heat (Chili)</span>
               </div>
               <div>
-                <span className="block text-[10px] uppercase tracking-widest font-bold text-brand-tan mb-3">Trough</span>
-                <span className="font-headline-md text-2xl text-brand-dark-green">Acidity (Tamarind)</span>
+                <span className="block text-[10px] uppercase tracking-widest font-bold text-brand-sandy mb-3">Trough</span>
+                <span className="font-headline-md text-2xl text-brand-deep-forest">Acidity (Tamarind)</span>
               </div>
               <div>
-                <span className="block text-[10px] uppercase tracking-widest font-bold text-brand-tan mb-3">Target EQ</span>
-                <span className="font-headline-md text-2xl text-brand-green">Harmony</span>
+                <span className="block text-[10px] uppercase tracking-widest font-bold text-brand-sandy mb-3">Target EQ</span>
+                <span className="font-headline-md text-2xl text-brand-accent-green">Harmony</span>
               </div>
             </div>
           </div>
-          <div className="col-span-1 md:col-span-12 bg-surface-container-lowest border-t-4 border-brand-gold p-8 md:p-16 mt-4 rounded-sm shadow-md">
+          <div className="col-span-1 md:col-span-12 bg-surface-container-lowest border-t-4 border-brand-golden p-8 md:p-16 mt-4 rounded-sm shadow-md">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="text-[10px] font-bold text-brand-gold tracking-[0.3em] uppercase block mb-6">
+              <span className="text-[10px] font-bold text-brand-golden tracking-[0.3em] uppercase block mb-6">
                 Spice Equilibrium
               </span>
-              <p className="font-light text-xl md:text-2xl text-brand-dark-green leading-relaxed">
+              <p className="font-light text-xl md:text-2xl text-brand-deep-forest leading-relaxed">
                 The flavor matrix relies on passive tempering techniques inherited from traditional generational kitchens, integrated seamlessly into modern gastronomy. The result is an invisible but profound culinary consistency.
               </p>
             </div>

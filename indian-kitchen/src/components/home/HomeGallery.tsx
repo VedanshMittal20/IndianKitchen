@@ -94,7 +94,7 @@ export default function HomeGallery() {
             
             {/* Play hover prompt */}
             <div className="absolute inset-0 bg-surface-container-lowest/30 opacity-100 group-hover:opacity-0 transition-opacity duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-saffron-gold bg-surface-container-low/50">
+              <div className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-brand-golden bg-surface-container-low/50">
                 <Play className="w-4 h-4 fill-current ml-0.5" />
               </div>
             </div>
@@ -156,13 +156,13 @@ export default function HomeGallery() {
               {/* Title & Mute toggle overlay */}
               <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center z-20 pointer-events-auto bg-surface-container-lowest p-4 rounded-sm border border-outline-variant/30">
                 <div>
-                  <span className="text-[8px] tracking-[0.2em] uppercase text-saffron-gold font-bold block mb-0.5">Indian Kitchen Reel</span>
+                  <span className="text-[8px] tracking-[0.2em] uppercase text-brand-golden font-bold block mb-0.5">Indian Kitchen Reel</span>
                   <h4 className="font-headline-md text-lg md:text-xl text-on-surface uppercase tracking-wide">{activeTitle}</h4>
                 </div>
                 
                 <button 
                   onClick={() => setIsMuted(!isMuted)}
-                  className="p-2 border border-outline-variant/30 hover:border-saffron-gold rounded-full text-saffron-gold hover:text-on-surface transition-colors"
+                  className="p-2 border border-outline-variant/30 hover:border-saffron-gold rounded-full text-brand-golden hover:text-on-surface transition-colors"
                 >
                   {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
                 </button>

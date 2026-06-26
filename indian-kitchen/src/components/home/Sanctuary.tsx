@@ -18,12 +18,12 @@ export default function Sanctuary() {
               />
             </div>
             <div className="absolute top-10 -right-4 md:-right-12 glass-card p-4 rounded w-48 shadow-sm">
-              <span className="font-annotation text-annotation text-primary block mb-1">Capacity</span>
+              <span className="font-label-sm text-label-sm text-primary block mb-1">Capacity</span>
               <p className="font-body-md text-on-surface font-semibold">Max. 8 Guests</p>
             </div>
           </div>
           <div className="order-1 md:order-2 reveal" style={{ transitionDelay: '200ms' }}>
-            <span className="font-annotation text-annotation text-primary block mb-6 uppercase">Fig. 02 — The Space</span>
+            <span className="font-label-sm text-label-sm text-primary block mb-6 uppercase">Fig. 02 — The Space</span>
             <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-8">
               A Sanctuary<br/>of Quietude.
             </h2>
@@ -32,15 +32,15 @@ export default function Sanctuary() {
             </p>
             <ul className="space-y-4 mb-10">
               <li className="flex items-center gap-4">
-                <span className="font-annotation text-annotation text-primary-container">01</span>
+                <span className="font-label-sm text-label-sm text-primary-container">01</span>
                 <span className="font-body-md text-on-surface">Curated Tasting Menu</span>
               </li>
               <li className="flex items-center gap-4">
-                <span className="font-annotation text-annotation text-primary-container">02</span>
+                <span className="font-label-sm text-label-sm text-primary-container">02</span>
                 <span className="font-body-md text-on-surface">Dedicated Sommelier</span>
               </li>
               <li className="flex items-center gap-4">
-                <span className="font-annotation text-annotation text-primary-container">03</span>
+                <span className="font-label-sm text-label-sm text-primary-container">03</span>
                 <span className="font-body-md text-on-surface">Acoustically Isolated</span>
               </li>
             </ul>

@@ -9,12 +9,12 @@ export default function GeometryOfFlavor() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
           <div>
-            <span className="font-annotation text-annotation text-brand-dark-green font-bold block mb-4 uppercase tracking-widest">Fig. 01 — Technique</span>
+            <span className="font-label-sm text-label-sm text-brand-deep-forest font-bold block mb-4 uppercase tracking-widest">Fig. 01 — Technique</span>
             <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
               Geometry of Flavor
             </h2>
           </div>
-          <div className="h-px bg-gradient-to-r from-brand-tan via-brand-red/50 to-brand-green/50 w-full md:w-1/3 mt-8 md:mt-0"></div>
+          <div className="h-px bg-gradient-to-r from-brand-sandy via-brand-red/50 to-brand-accent-green/50 w-full md:w-1/3 mt-8 md:mt-0"></div>
         </div>
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
@@ -28,13 +28,13 @@ export default function GeometryOfFlavor() {
               unoptimized
             />
             <div className="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent flex flex-col justify-end p-8">
-              <span className="font-annotation text-annotation text-primary-fixed block mb-2">Spice Architecture</span>
+              <span className="font-label-sm text-label-sm text-primary-fixed block mb-2">Spice Architecture</span>
               <h3 className="font-headline-md text-headline-md text-surface-bright">The Foundation</h3>
             </div>
           </div>
           {/* Small Stat/Text Block */}
           <div className="md:col-span-4 md:row-span-1 glass-card p-8 flex flex-col justify-center reveal" style={{ transitionDelay: '100ms' }}>
-            <span className="font-display-lg text-display-lg text-brand-dark-green mb-2 drop-shadow-sm">48h</span>
+            <span className="font-display-lg text-display-lg text-brand-deep-forest mb-2 drop-shadow-sm">48h</span>
             <p className="font-body-md text-on-surface-variant">
               Our signature marinades are aged structurally, allowing complex flavor compounds to synthesize over time.
             </p>

@@ -53,7 +53,7 @@ function StatCounter({ value, label, delay = 0 }: { value: string; label: string
       <div className="font-headline-md text-5xl md:text-6xl text-primary-container mb-2 select-none tracking-tight">
         {displayVal}
       </div>
-      <div className="text-[9px] tracking-[0.25em] uppercase text-on-surface-variant font-bold font-annotation">
+      <div className="text-[9px] tracking-[0.25em] uppercase text-on-surface-variant font-bold font-label-sm">
         {label}
       </div>
     </div>

@@ -11,13 +11,13 @@ export default function ThemesCinematicPage() {
   const [isPlayingSound, setIsPlayingSound] = useState(false);
 
   return (
-    <main className="w-full bg-obsidian-accent text-white relative">
+    <main className="w-full bg-surface-dark text-white relative">
       
       {/* Floating Audio Controller & Back Button */}
       <div className="fixed top-8 left-8 z-50 pointer-events-auto">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold uppercase text-white/70 hover:text-saffron-gold transition-colors bg-obsidian-accent/90 px-4 py-2 border border-white/10 rounded-full shadow-lg"
+          className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold uppercase text-white/70 hover:text-brand-golden transition-colors bg-surface-dark/90 px-4 py-2 border border-white/10 rounded-full shadow-lg"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           Back to Home
@@ -44,12 +44,12 @@ export default function ThemesCinematicPage() {
         )}
         <button
           onClick={() => setIsPlayingSound(!isPlayingSound)}
-          className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold uppercase text-white/70 hover:text-saffron-gold transition-colors bg-obsidian-accent/90 px-4 py-2 border border-white/10 rounded-full shadow-lg"
+          className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold uppercase text-white/70 hover:text-brand-golden transition-colors bg-surface-dark/90 px-4 py-2 border border-white/10 rounded-full shadow-lg"
           aria-label="Toggle ambient soundtrack"
         >
           {isPlayingSound ? (
             <>
-              <Volume2 className="w-3.5 h-3.5 text-saffron-gold" />
+              <Volume2 className="w-3.5 h-3.5 text-brand-golden" />
               <span>Ambient On</span>
             </>
           ) : (
@@ -62,7 +62,7 @@ export default function ThemesCinematicPage() {
       </div>
 
       {/* SECTION 1: THE WELCOME */}
-      <section className="min-h-[100dvh] w-full relative flex items-center justify-center overflow-hidden bg-obsidian-accent">
+      <section className="min-h-[100dvh] w-full relative flex items-center justify-center overflow-hidden bg-surface-dark">
         <video 
           autoPlay 
           muted 
@@ -82,7 +82,7 @@ export default function ThemesCinematicPage() {
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="text-saffron-gold text-[9px] tracking-[0.35em] uppercase font-bold mb-4 block">
+            <span className="text-brand-golden text-[9px] tracking-[0.35em] uppercase font-bold mb-4 block">
               Cinematic Dining
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-headline-md text-white tracking-tight mb-6 uppercase leading-none text-shadow-xl drop-shadow-2xl">
@@ -97,7 +97,7 @@ export default function ThemesCinematicPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 0.7, 0] }}
             transition={{ duration: 2.5, repeat: Infinity, delay: 1.5 }}
-            className="absolute bottom-12 text-saffron-gold flex flex-col items-center pointer-events-none"
+            className="absolute bottom-12 text-brand-golden flex flex-col items-center pointer-events-none"
           >
             <span className="text-[8px] tracking-[0.3em] uppercase font-bold mb-1">Scroll to Travel</span>
             <ArrowDown className="w-5 h-5 animate-bounce" />
@@ -106,7 +106,7 @@ export default function ThemesCinematicPage() {
       </section>
 
       {/* SECTION 2: PONDICHERRY STREET */}
-      <section className="min-h-[100dvh] w-full relative flex items-center overflow-hidden bg-obsidian-accent">
+      <section className="min-h-[100dvh] w-full relative flex items-center overflow-hidden bg-surface-dark">
         <Image 
           src="/images/real/gallery_3.jpg" 
           alt="Pondicherry Street Theme" 
@@ -124,7 +124,7 @@ export default function ThemesCinematicPage() {
             viewport={{ once: false }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="text-saffron-gold text-[9px] tracking-[0.25em] uppercase font-bold mb-3 block border-l border-saffron-gold pl-3">
+            <span className="text-brand-golden text-[9px] tracking-[0.25em] uppercase font-bold mb-3 block border-l border-saffron-gold pl-3">
               Sanctuary 01 / Colombo
             </span>
             <h2 className="text-5xl md:text-7xl font-headline-md text-white mb-6 uppercase tracking-wide leading-none drop-shadow-lg">
@@ -141,7 +141,7 @@ export default function ThemesCinematicPage() {
       </section>
 
       {/* SECTION 3: KERALA HOUSEBOAT */}
-      <section className="min-h-[100dvh] w-full relative flex items-center overflow-hidden bg-obsidian-accent">
+      <section className="min-h-[100dvh] w-full relative flex items-center overflow-hidden bg-surface-dark">
         <video 
           autoPlay 
           muted 
@@ -162,7 +162,7 @@ export default function ThemesCinematicPage() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-2xl text-right"
           >
-            <span className="text-saffron-gold text-[9px] tracking-[0.25em] uppercase font-bold mb-3 block border-r border-saffron-gold pr-3">
+            <span className="text-brand-golden text-[9px] tracking-[0.25em] uppercase font-bold mb-3 block border-r border-saffron-gold pr-3">
               Sanctuary 02 / Kandy
             </span>
             <h2 className="text-5xl md:text-7xl font-headline-md text-white mb-6 uppercase tracking-wide leading-none drop-shadow-lg">
@@ -179,7 +179,7 @@ export default function ThemesCinematicPage() {
       </section>
 
       {/* SECTION 4: THE SHERLOCK */}
-      <section className="min-h-[100dvh] w-full relative flex items-center justify-center overflow-hidden bg-obsidian-accent">
+      <section className="min-h-[100dvh] w-full relative flex items-center justify-center overflow-hidden bg-surface-dark">
         <Image 
           src="/images/private_dining.png" 
           alt="The Sherlock Mystery Dining Theme" 
@@ -187,7 +187,7 @@ export default function ThemesCinematicPage() {
           className="object-cover img-warm opacity-40 scale-100"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-obsidian-accent/60" />
+        <div className="absolute inset-0 bg-surface-dark/60" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(11,12,16,0.95)_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian-accent to-transparent opacity-90" />
         
@@ -199,7 +199,7 @@ export default function ThemesCinematicPage() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-center"
           >
-            <span className="text-saffron-gold text-[9px] tracking-[0.25em] uppercase font-bold mb-4 block">
+            <span className="text-brand-golden text-[9px] tracking-[0.25em] uppercase font-bold mb-4 block">
               Sanctuary 03 / Colombo
             </span>
             <h2 className="text-5xl md:text-7xl lg:text-8xl font-headline-md text-white mb-6 uppercase tracking-wide leading-none drop-shadow-lg">
@@ -217,10 +217,10 @@ export default function ThemesCinematicPage() {
       </section>
 
       {/* SECTION 5: FINAL CTA */}
-      <section className="min-h-[100dvh] w-full relative flex flex-col justify-center bg-obsidian-accent">
+      <section className="min-h-[100dvh] w-full relative flex flex-col justify-center bg-surface-dark">
         <HomeCTA />
         {/* Decorative footer filler */}
-        <div className="flex-1 max-h-[15vh] bg-obsidian-accent border-t border-white/10" />
+        <div className="flex-1 max-h-[15vh] bg-surface-dark border-t border-white/10" />
       </section>
 
       {/* Ambient Audio simulation element (silent mock if no file, but updates UI status) */}

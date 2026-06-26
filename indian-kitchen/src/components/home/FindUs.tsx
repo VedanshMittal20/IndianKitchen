@@ -41,13 +41,13 @@ export default function FindUs() {
     >
       <SectionHeader 
         label="Sanctuary Directions" 
-        title={<>Visit Our <span className="italic text-saffron-gold">Outlets</span></>}
+        title={<>Visit Our <span className="italic text-brand-golden">Outlets</span></>}
         lightMode
       />
 
       <div className="space-y-8 mt-2">
         <div className="flex gap-5 items-start group">
-          <div className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center shrink-0 group-hover:bg-saffron-gold group-hover:text-on-surface transition-all duration-300 text-saffron-gold bg-surface-container-low shadow-md">
+          <div className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center shrink-0 group-hover:bg-saffron-gold group-hover:text-on-surface transition-all duration-300 text-brand-golden bg-surface-container-low shadow-md">
             <MapPin className="w-4 h-4" />
           </div>
           <div className="flex flex-col gap-6">
@@ -71,7 +71,7 @@ export default function FindUs() {
         </div>
 
         <div className="flex gap-5 items-start group">
-          <div className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center shrink-0 group-hover:bg-saffron-gold group-hover:text-on-surface transition-all duration-300 text-saffron-gold bg-surface-container-low shadow-md">
+          <div className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center shrink-0 group-hover:bg-saffron-gold group-hover:text-on-surface transition-all duration-300 text-brand-golden bg-surface-container-low shadow-md">
             <Phone className="w-4 h-4" />
           </div>
           <div>
@@ -81,13 +81,13 @@ export default function FindUs() {
             <div className="flex flex-col gap-1.5">
               <a
                 href="tel:+94117112334"
-                className="font-headline-md text-xl text-on-surface hover:text-saffron-gold transition-colors font-medium"
+                className="font-headline-md text-xl text-on-surface hover:text-brand-golden transition-colors font-medium"
               >
                 +94 117 112 334
               </a>
               <a
                 href="mailto:kitchenindian1@gmail.com"
-                className="font-light text-sm text-on-surface/60 hover:text-saffron-gold transition-colors font-body-md"
+                className="font-light text-sm text-on-surface/60 hover:text-brand-golden transition-colors font-body-md"
               >
                 kitchenindian1@gmail.com
               </a>
@@ -96,7 +96,7 @@ export default function FindUs() {
         </div>
 
         <div className="flex gap-5 items-start group">
-          <div className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center shrink-0 group-hover:bg-saffron-gold group-hover:text-on-surface transition-all duration-300 text-saffron-gold bg-surface-container-low shadow-md">
+          <div className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center shrink-0 group-hover:bg-saffron-gold group-hover:text-on-surface transition-all duration-300 text-brand-golden bg-surface-container-low shadow-md">
             <Clock className="w-4 h-4" />
           </div>
           <div>

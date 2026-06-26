@@ -47,7 +47,7 @@ export default function HomeThemesStrip() {
         <div className="absolute top-20 md:top-32 left-6 md:left-margin-desktop z-20 pointer-events-none">
           <div className="flex items-center gap-4 mb-4">
             <span className="h-px w-12 bg-gradient-to-r from-transparent via-secondary to-transparent"></span>
-            <span className="font-label-sm text-[12px] text-saffron-gold tracking-[0.3em] uppercase drop-shadow-md">Fig. 02 — Sanctuaries</span>
+            <span className="font-label-sm text-[12px] text-brand-golden tracking-[0.3em] uppercase drop-shadow-md">Fig. 02 — Sanctuaries</span>
           </div>
           <h2 className="font-headline-lg text-[40px] md:text-[64px] text-on-surface leading-tight max-w-lg drop-shadow-2xl">
             The Geometry <br/> of Space.
@@ -87,7 +87,7 @@ export default function HomeThemesStrip() {
                 <p className="text-on-surface-variant text-body-lg font-light leading-relaxed mb-8 max-w-sm">
                   {theme.desc}
                 </p>
-                <Link href={theme.href} className="group flex items-center gap-4 text-tertiary-fixed-dim hover:text-saffron-gold transition-colors w-fit">
+                <Link href={theme.href} className="group flex items-center gap-4 text-tertiary-fixed-dim hover:text-brand-golden transition-colors w-fit">
                   <span className="font-label-lg text-[14px] tracking-widest uppercase">Explore Sanctum</span>
                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
                 </Link>

@@ -16,7 +16,7 @@ export default function WhatsAppWidget() {
         <div className="absolute inset-0 bg-saffron-gold/30 rounded-full opacity-50 animate-[pulse-ring_2.5s_ease-out_infinite]" />
         
         {/* Main Button */}
-        <div className="relative z-10 w-12 h-12 bg-surface-container-lowest border border-outline-variant/30 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:border-saffron-gold group-hover:bg-saffron-gold group-hover:text-on-surface transition-all duration-300 text-saffron-gold">
+        <div className="relative z-10 w-12 h-12 bg-surface-container-lowest border border-outline-variant/30 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:border-saffron-gold group-hover:bg-saffron-gold group-hover:text-on-surface transition-all duration-300 text-brand-golden">
           <MessageCircle className="w-5 h-5 fill-current text-current" />
         </div>
         

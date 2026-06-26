@@ -84,7 +84,7 @@ export default async function BlogPostPage({
         <div className="max-w-4xl mx-auto mb-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-[9px] font-body-md font-bold tracking-[0.25em] uppercase text-saffron-gold hover:text-on-surface transition-colors link-underline pb-1"
+            className="inline-flex items-center gap-2 text-[9px] font-body-md font-bold tracking-[0.25em] uppercase text-brand-golden hover:text-on-surface transition-colors link-underline pb-1"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Chronicles
           </Link>
@@ -100,7 +100,7 @@ export default async function BlogPostPage({
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://indiankitchen.lk/blog/${slug}`)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-saffron-gold hover:bg-saffron-gold hover:text-on-surface hover:border-saffron-gold transition-all duration-300 shadow-md"
+                className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-brand-golden hover:bg-saffron-gold hover:text-on-surface hover:border-saffron-gold transition-all duration-300 shadow-md"
                 aria-label="Share on Facebook"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -111,7 +111,7 @@ export default async function BlogPostPage({
                 href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-saffron-gold hover:bg-saffron-gold hover:text-on-surface hover:border-saffron-gold transition-all duration-300 shadow-md"
+                className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-brand-golden hover:bg-saffron-gold hover:text-on-surface hover:border-saffron-gold transition-all duration-300 shadow-md"
                 aria-label="Share on Twitter"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -142,10 +142,10 @@ export default async function BlogPostPage({
                     />
                   </div>
                   <div className="p-6">
-                    <span className="text-[8px] text-saffron-gold uppercase tracking-[0.2em] font-body-md font-bold block mb-2">
+                    <span className="text-[8px] text-brand-golden uppercase tracking-[0.2em] font-body-md font-bold block mb-2">
                       {related.tag}
                     </span>
-                    <h3 className="font-headline-md text-xl text-on-surface group-hover:text-saffron-gold transition-colors duration-300 uppercase leading-snug line-clamp-2">
+                    <h3 className="font-headline-md text-xl text-on-surface group-hover:text-brand-golden transition-colors duration-300 uppercase leading-snug line-clamp-2">
                       {related.title}
                     </h3>
                   </div>

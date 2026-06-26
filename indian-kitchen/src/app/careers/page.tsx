@@ -138,11 +138,11 @@ ${data.whyUs}`;
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-surface-container-low p-8 md:p-10 border border-outline-variant/30 hover:border-saffron-gold transition-all duration-300 shadow-xl rounded-sm"
               >
-                <span className="text-[9px] tracking-[0.2em] uppercase text-saffron-gold font-bold mb-3 block">
+                <span className="text-[9px] tracking-[0.2em] uppercase text-brand-golden font-bold mb-3 block">
                   {job.location}
                 </span>
                 <h3 className="font-headline-md text-2xl text-on-surface mb-3 uppercase tracking-wide">{job.title}</h3>
-                <span className="flex items-center gap-1.5 font-bold uppercase tracking-[0.1em] text-[9px] text-saffron-gold mb-4 font-body-md">
+                <span className="flex items-center gap-1.5 font-bold uppercase tracking-[0.1em] text-[9px] text-brand-golden mb-4 font-body-md">
                   <Clock className="w-3.5 h-3.5" />
                   {job.type}
                 </span>
@@ -176,7 +176,7 @@ ${data.whyUs}`;
             {isSubmitted ? (
               <div className="text-center py-12">
                 <div className="w-16 h-16 rounded-full bg-saffron-gold/10 flex items-center justify-center mx-auto mb-5 border border-outline-variant/30">
-                  <CheckCircle2 className="w-8 h-8 text-saffron-gold" />
+                  <CheckCircle2 className="w-8 h-8 text-brand-golden" />
                 </div>
                 <h3 className="font-headline-md text-2xl text-on-surface mb-3 uppercase tracking-wide">Application Sent</h3>
                 <p className="text-on-surface-variant mb-6 max-w-md mx-auto font-body-md font-light">
@@ -193,7 +193,7 @@ ${data.whyUs}`;
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-saffron-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
                       Full Name *
                     </label>
                     <input
@@ -206,7 +206,7 @@ ${data.whyUs}`;
                     )}
                   </div>
                   <div>
-                    <label className="block text-saffron-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
                       Email *
                     </label>
                     <input
@@ -222,7 +222,7 @@ ${data.whyUs}`;
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-saffron-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
                       Phone *
                     </label>
                     <input
@@ -235,7 +235,7 @@ ${data.whyUs}`;
                     )}
                   </div>
                   <div>
-                    <label className="block text-saffron-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
                       Role Applying For *
                     </label>
                     <select
@@ -258,7 +258,7 @@ ${data.whyUs}`;
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-saffron-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
                       Current Location *
                     </label>
                     <input
@@ -271,7 +271,7 @@ ${data.whyUs}`;
                     )}
                   </div>
                   <div>
-                    <label className="block text-saffron-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
                       Years of Experience *
                     </label>
                     <select
@@ -293,7 +293,7 @@ ${data.whyUs}`;
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-saffron-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
                       LinkedIn Profile
                     </label>
                     <input
@@ -307,7 +307,7 @@ ${data.whyUs}`;
                     )}
                   </div>
                   <div>
-                    <label className="block text-saffron-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
                       Portfolio / Website
                     </label>
                     <input
@@ -323,7 +323,7 @@ ${data.whyUs}`;
                 </div>
 
                 <div>
-                  <label className="block text-saffron-gold text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                  <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
                     Why do you want to work at Indian Kitchen? *
                   </label>
                   <textarea

@@ -73,13 +73,13 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
               />
               <div className="space-y-6">
                 <div>
-                  <span className="text-[9px] tracking-[0.2em] uppercase text-saffron-gold mb-1.5 font-bold block">
+                  <span className="text-[9px] tracking-[0.2em] uppercase text-brand-golden mb-1.5 font-bold block">
                     Direct Booking Hotline
                   </span>
                   <p className="font-body-md text-base text-on-surface font-medium">+94 117 112 334</p>
                 </div>
                 <div>
-                  <span className="text-[9px] tracking-[0.2em] uppercase text-saffron-gold mb-1.5 font-bold block">
+                  <span className="text-[9px] tracking-[0.2em] uppercase text-brand-golden mb-1.5 font-bold block">
                     Colombo Address
                   </span>
                   <p className="font-body-md text-base text-on-surface/70 font-light leading-relaxed">
@@ -89,7 +89,7 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
                   </p>
                 </div>
                 <div>
-                  <span className="text-[9px] tracking-[0.2em] uppercase text-saffron-gold mb-1.5 font-bold block">
+                  <span className="text-[9px] tracking-[0.2em] uppercase text-brand-golden mb-1.5 font-bold block">
                     Sanctuary Kitchen Hours
                   </span>
                   <p className="font-body-md text-base text-on-surface/70 font-light leading-relaxed">
@@ -128,7 +128,7 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                     Name
                   </label>
                   <input
@@ -141,7 +141,7 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
                   )}
                 </div>
                 <div>
-                  <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                     Phone
                   </label>
                   <input
@@ -157,7 +157,7 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                     Date
                   </label>
                   <input
@@ -170,7 +170,7 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
                   )}
                 </div>
                 <div>
-                  <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                     Time
                   </label>
                   <input
@@ -183,7 +183,7 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
                   )}
                 </div>
                 <div>
-                  <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                     Guests
                   </label>
                   <select
@@ -204,7 +204,7 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
               </div>
 
               <div>
-                <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                   Theme Preference
                 </label>
                 <select
@@ -223,7 +223,7 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
               </div>
 
               <div>
-                <label className="block text-saffron-gold text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
                   Special Requests (Optional)
                 </label>
                 <textarea

@@ -28,7 +28,7 @@ export default function QRWidget() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 sm:bottom-6 left-6 z-50 bg-surface-container-lowest text-saffron-gold border border-outline-variant/30 w-12 h-12 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:border-saffron-gold hover:bg-saffron-gold hover:text-on-surface transition-all duration-300 group"
+        className="fixed bottom-24 sm:bottom-6 left-6 z-50 bg-surface-container-lowest text-brand-golden border border-outline-variant/30 w-12 h-12 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:border-saffron-gold hover:bg-saffron-gold hover:text-on-surface transition-all duration-300 group"
         aria-label="Scan Table QR Code"
       >
         <QrCode className="w-5 h-5" />
@@ -48,7 +48,7 @@ export default function QRWidget() {
           >
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-6 right-6 text-on-surface hover:text-saffron-gold transition-colors p-2 z-50"
+              className="absolute top-6 right-6 text-on-surface hover:text-brand-golden transition-colors p-2 z-50"
             >
               <X className="w-8 h-8" strokeWidth={1.5} />
             </button>
@@ -60,7 +60,7 @@ export default function QRWidget() {
               className="max-w-md w-full bg-surface-container-low p-8 rounded-sm shadow-2xl border border-outline-variant/30 text-center relative overflow-hidden"
             >
               <div className="mb-8">
-                <span className="text-[9px] tracking-[0.25em] uppercase text-saffron-gold font-bold block mb-2">
+                <span className="text-[9px] tracking-[0.25em] uppercase text-brand-golden font-bold block mb-2">
                   Dine In Order
                 </span>
                 <h3 className="font-headline-md text-3xl text-on-surface mb-3 uppercase tracking-wide">Scan Your Table</h3>
@@ -86,11 +86,11 @@ export default function QRWidget() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="w-full aspect-square flex flex-col items-center justify-center bg-saffron-gold/10 border border-saffron-gold text-saffron-gold rounded-sm"
+                  className="w-full aspect-square flex flex-col items-center justify-center bg-saffron-gold/10 border border-saffron-gold text-brand-golden rounded-sm"
                 >
                   <Utensils className="w-12 h-12 mb-4 animate-bounce" strokeWidth={1.5} />
                   <h4 className="font-headline-md text-2xl mb-1 uppercase tracking-wide text-on-surface">Table Recognized</h4>
-                  <p className="text-saffron-gold/80 text-[10px] tracking-widest uppercase font-body-md font-semibold">Retrieving Culinary Passport...</p>
+                  <p className="text-brand-golden/80 text-[10px] tracking-widest uppercase font-body-md font-semibold">Retrieving Culinary Passport...</p>
                 </motion.div>
               )}
             </motion.div>

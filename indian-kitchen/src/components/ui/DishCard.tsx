@@ -31,7 +31,7 @@ export default function DishCard({ name, price, image, tag }: DishCardProps) {
       </div>
       <div className="pt-5 px-2 bg-transparent">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="font-headline-md text-xl text-on-surface font-medium leading-tight group-hover:text-saffron-gold transition-colors">
+          <h3 className="font-headline-md text-xl text-on-surface font-medium leading-tight group-hover:text-brand-golden transition-colors">
             {name}
           </h3>
           <span className="text-[10px] tracking-widest text-on-surface-variant shrink-0 pt-1">

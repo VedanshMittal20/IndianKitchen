@@ -4,11 +4,11 @@ import Image from "next/image";
 
 export default function ArchitectureOfShadows() {
   return (
-    <section className="bg-brand-dark-green w-full py-32 px-6 md:px-16">
+    <section className="bg-brand-deep-forest w-full py-32 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
           <div className="w-full md:w-1/2">
-            <h2 className="font-headline-md text-5xl md:text-6xl lg:text-7xl text-brand-light-gold mb-8 leading-tight">
+            <h2 className="font-headline-md text-5xl md:text-6xl lg:text-7xl text-brand-warm-cream mb-8 leading-tight">
               The Atmosphere<br />of The Sanctuary
             </h2>
             <p className="font-light text-lg text-white/80 mb-12 max-w-lg leading-relaxed">
@@ -16,13 +16,13 @@ export default function ArchitectureOfShadows() {
             </p>
             <ul className="space-y-6 text-sm tracking-widest uppercase font-bold text-white/70">
               <li className="flex items-center gap-6 border-b border-white/10 pb-4">
-                <span className="text-brand-green">01.</span> Intimate Dining Sanctuaries
+                <span className="text-brand-accent-green">01.</span> Intimate Dining Sanctuaries
               </li>
               <li className="flex items-center gap-6 border-b border-white/10 pb-4">
-                <span className="text-brand-green">02.</span> Focus Directed Entirely to the Tablescape
+                <span className="text-brand-accent-green">02.</span> Focus Directed Entirely to the Tablescape
               </li>
               <li className="flex items-center gap-6 border-b border-white/10 pb-4">
-                <span className="text-brand-green">03.</span> Noise Dampening for Uninterrupted Conversation
+                <span className="text-brand-accent-green">03.</span> Noise Dampening for Uninterrupted Conversation
               </li>
             </ul>
           </div>
@@ -36,7 +36,7 @@ export default function ArchitectureOfShadows() {
                 unoptimized
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-brand-gold text-brand-dark-green text-[10px] tracking-[0.2em] uppercase p-6 rounded-sm z-10 font-bold shadow-xl border-2 border-brand-dark-green">
+            <div className="absolute -bottom-6 -left-6 bg-brand-golden text-brand-deep-forest text-[10px] tracking-[0.2em] uppercase p-6 rounded-sm z-10 font-bold shadow-xl border-2 border-brand-deep-forest">
               Fig. 02 <br /> The Sanctuary Experience
             </div>
           </div>

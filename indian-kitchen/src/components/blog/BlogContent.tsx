@@ -31,7 +31,7 @@ export default function BlogContent({ content }: BlogContentProps) {
               key={index}
               className="text-on-surface/85 font-light leading-[1.9] text-base md:text-lg"
             >
-              <span className="float-left text-5xl md:text-6xl font-headline-md text-saffron-gold pr-3 pt-1 font-bold leading-[0.8] select-none">
+              <span className="float-left text-5xl md:text-6xl font-headline-md text-brand-golden pr-3 pt-1 font-bold leading-[0.8] select-none">
                 {firstChar}
               </span>
               {restText}

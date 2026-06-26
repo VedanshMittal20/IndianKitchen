@@ -11,7 +11,7 @@ export default function MobileStickyBar() {
         {/* Call Trigger */}
         <a
           href="tel:+94117112334"
-          className="flex-1 flex justify-center items-center h-full border-r border-outline-variant/30 text-saffron-gold hover:bg-saffron-gold/5 transition-colors"
+          className="flex-1 flex justify-center items-center h-full border-r border-outline-variant/30 text-brand-golden hover:bg-saffron-gold/5 transition-colors"
           aria-label="Call Us"
         >
           <Phone className="w-4 h-4" />
@@ -22,7 +22,7 @@ export default function MobileStickyBar() {
           href="https://wa.me/94117112334"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex justify-center items-center h-full border-r border-outline-variant/30 text-saffron-gold hover:bg-saffron-gold/5 transition-colors"
+          className="flex-1 flex justify-center items-center h-full border-r border-outline-variant/30 text-brand-golden hover:bg-saffron-gold/5 transition-colors"
           aria-label="WhatsApp"
         >
           <FaWhatsapp className="w-5 h-5" />

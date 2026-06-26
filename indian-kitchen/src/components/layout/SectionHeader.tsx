@@ -22,7 +22,7 @@ export default function SectionHeader({
   return (
     <div className={`mb-10 md:mb-14 ${alignClass} ${className}`}>
       {label && (
-        <p className={`text-[10px] tracking-[0.2em] uppercase font-semibold mb-3 text-saffron-gold`}>
+        <p className={`text-[10px] tracking-[0.2em] uppercase font-semibold mb-3 text-brand-golden`}>
           {label}
         </p>
       )}
