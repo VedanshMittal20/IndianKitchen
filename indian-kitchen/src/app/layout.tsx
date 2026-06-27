@@ -5,6 +5,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollProvider from "@/components/ScrollProvider";
 import CursorGlow from "@/components/ui/CursorGlow";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import QRWidget from "@/components/QRWidget";
 
 // const bebasNeue = Bebas_Neue({
 //   variable: "--font-bebas",
@@ -42,6 +44,8 @@ export default function RootLayout({
         <ScrollProvider>
           <CursorGlow />
           <Navigation />
+          <FloatingWhatsApp />
+          <QRWidget />
           <main className="flex-grow z-10">{children}</main>
           <Footer />
         </ScrollProvider>

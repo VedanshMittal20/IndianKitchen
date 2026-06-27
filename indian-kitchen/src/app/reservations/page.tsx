@@ -2,11 +2,64 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import PrivateDining from "@/components/home/PrivateDining";
 import ReservationsFAQ from "@/components/home/ReservationsFAQ";
 
+const reservationSchema = z.object({
+  date: z.string().min(1, "Date is required"),
+  time: z.string().min(1, "Time is required"),
+  partySize: z.string().min(1, "Party size is required"),
+  occasion: z.string().optional(),
+  firstName: z.string().min(2, "First name is required"),
+  lastName: z.string().min(2, "Last name is required"),
+  email: z.string().email("Valid email is required"),
+  requests: z.string().optional(),
+});
+
+type ReservationData = z.infer<typeof reservationSchema>;
+
 export default function ReservationsPage() {
   const [selectedEnvironment, setSelectedEnvironment] = useState("pondicherry");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<ReservationData>({
+    resolver: zodResolver(reservationSchema),
+    defaultValues: {
+      date: "2024-11-15",
+      time: "19:00",
+      partySize: "2 Guests"
+    }
+  });
+
+  const onSubmit = (data: ReservationData) => {
+    const environmentName = selectedEnvironment === "pondicherry" ? "Pondicherry Street" : selectedEnvironment === "kerala" ? "Kerala Houseboat" : "Sherlock Mystery";
+    const message = `✨ *New Table Reservation*
+ 
+*Environment:* ${environmentName}
+*Date:* ${data.date}
+*Time:* ${data.time}
+*Party Size:* ${data.partySize}
+*Occasion:* ${data.occasion || "None"}
+ 
+*Guest Details*
+*Name:* ${data.firstName} ${data.lastName}
+*Email:* ${data.email}
+*Special Requests:* ${data.requests || "None"}`;
+
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/94117112334?text=${encoded}`, "_blank");
+    setIsSubmitted(true);
+    
+    // Reset visual state after a few seconds
+    setTimeout(() => setIsSubmitted(false), 3000);
+  };
 
   return (
     <>
@@ -160,7 +213,7 @@ export default function ReservationsPage() {
                 Form .01
               </span>
             </div>
-            <form className="space-y-10">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
               {/* Date & Time Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2 relative group">
@@ -172,11 +225,12 @@ export default function ReservationsPage() {
                       calendar_today
                     </span>
                     <input
+                      {...register("date")}
                       className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0 cursor-pointer"
                       type="date"
-                      defaultValue="2024-11-15"
                     />
                   </div>
+                  {errors.date && <p className="text-crimson text-xs mt-1 absolute -bottom-5">{errors.date.message}</p>}
                 </div>
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2 relative group">
                   <label className="font-label-sm text-label-sm-sm text-tertiary">
@@ -186,7 +240,7 @@ export default function ReservationsPage() {
                     <span className="material-symbols-outlined text-outline mr-3" style={{ fontVariationSettings: "'FILL' 0" }}>
                       schedule
                     </span>
-                    <select className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0 cursor-pointer appearance-none">
+                    <select {...register("time")} className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0 cursor-pointer appearance-none">
                       <option>19:00</option>
                       <option>19:30</option>
                       <option>20:00</option>
@@ -197,7 +251,7 @@ export default function ReservationsPage() {
               </div>
               {/* Party Size & Occasion */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
+                <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2 relative group">
                   <label className="font-label-sm text-label-sm-sm text-tertiary">
                     Party Size
                   </label>
@@ -205,7 +259,7 @@ export default function ReservationsPage() {
                     <span className="material-symbols-outlined text-outline mr-3" style={{ fontVariationSettings: "'FILL' 0" }}>
                       group
                     </span>
-                    <select className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0 cursor-pointer appearance-none">
+                    <select {...register("partySize")} className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0 cursor-pointer appearance-none">
                       <option>2 Guests</option>
                       <option>3 Guests</option>
                       <option>4 Guests</option>
@@ -218,6 +272,7 @@ export default function ReservationsPage() {
                     Occasion (Optional)
                   </label>
                   <input
+                    {...register("occasion")}
                     className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0 placeholder:text-outline-variant"
                     placeholder="Anniversary, Business..."
                     type="text"
@@ -230,39 +285,46 @@ export default function ReservationsPage() {
                   Guest Details
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
+                  <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2 relative group">
                     <label className="font-label-sm text-label-sm-sm text-tertiary">
                       First Name
                     </label>
                     <input
+                      {...register("firstName")}
                       className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0"
                       type="text"
                     />
+                    {errors.firstName && <p className="text-crimson text-xs mt-1 absolute -bottom-5">{errors.firstName.message}</p>}
                   </div>
-                  <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
+                  <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2 relative group">
                     <label className="font-label-sm text-label-sm-sm text-tertiary">
                       Last Name
                     </label>
                     <input
+                      {...register("lastName")}
                       className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0"
                       type="text"
                     />
+                    {errors.lastName && <p className="text-crimson text-xs mt-1 absolute -bottom-5">{errors.lastName.message}</p>}
                   </div>
                 </div>
-                <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
+                <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2 relative group">
                   <label className="font-label-sm text-label-sm-sm text-tertiary">
                     Email Address
                   </label>
                   <input
+                    {...register("email")}
                     className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0"
                     type="email"
                   />
+                  {errors.email && <p className="text-crimson text-xs mt-1 absolute -bottom-5">{errors.email.message}</p>}
                 </div>
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
                   <label className="font-label-sm text-label-sm-sm text-tertiary">
                     Special Requests
                   </label>
                   <textarea
+                    {...register("requests")}
                     className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0 resize-none placeholder:text-outline-variant"
                     placeholder="Dietary restrictions, seating preferences..."
                     rows={2}
@@ -279,29 +341,33 @@ export default function ReservationsPage() {
                   .
                 </p>
                 <button
-                  className="w-full sm:w-auto px-10 py-4 bg-primary-container text-on-primary font-label-sm text-label-sm-sm hover:bg-primary transition-all duration-300 relative overflow-hidden group"
+                  className={`w-full sm:w-auto px-10 py-4 font-label-sm text-label-sm-sm transition-all duration-300 relative overflow-hidden group ${
+                    isSubmitted 
+                      ? "bg-brand-deep-forest/10 border border-emerald-header text-[#047857]" 
+                      : "bg-primary-container text-on-primary hover:bg-primary"
+                  }`}
                   id="submit-btn"
-                  type="button"
-                  onClick={(e) => {
-                    const btn = e.currentTarget;
-                    const originalContent = btn.innerHTML;
-                    btn.innerHTML = `<span class="relative z-10 flex items-center justify-center gap-2 text-[#047857]">Confirmed <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check</span></span>`;
-                    btn.classList.remove("bg-primary-container", "text-on-primary", "hover:bg-primary");
-                    btn.classList.add("bg-brand-deep-forest/10", "border", "border-emerald-header");
-                    setTimeout(() => {
-                      btn.innerHTML = originalContent;
-                      btn.classList.add("bg-primary-container", "text-on-primary", "hover:bg-primary");
-                      btn.classList.remove("bg-brand-deep-forest/10", "border", "border-emerald-header");
-                    }, 3000);
-                  }}
+                  type="submit"
+                  disabled={isSubmitting || isSubmitted}
                 >
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    Confirm Passage
-                    <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 0" }}>
-                      arrow_forward
+                  {isSubmitted ? (
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      Confirmed 
+                      <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
+                        check
+                      </span>
                     </span>
-                  </span>
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+                  ) : (
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      {isSubmitting ? "Processing..." : "Confirm Passage"}
+                      {!isSubmitting && (
+                        <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 0" }}>
+                          arrow_forward
+                        </span>
+                      )}
+                    </span>
+                  )}
+                  {!isSubmitted && <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>}
                 </button>
               </div>
             </form>

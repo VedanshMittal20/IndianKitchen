@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -80,8 +80,8 @@ export default function Footer() {
             <a href="https://www.facebook.com/indiankitchenrestaurant" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-sandy flex items-center justify-center text-brand-warm-cream hover:border-brand-accent-green hover:text-brand-accent-green hover:bg-brand-accent-green/10 transition-all">
               <FaFacebook className="w-4 h-4" />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full border border-brand-sandy flex items-center justify-center text-brand-warm-cream hover:border-brand-accent-green hover:text-brand-accent-green hover:bg-brand-accent-green/10 transition-all">
-              <FaTwitter className="w-4 h-4" />
+            <a href="https://wa.me/94117112334" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-sandy flex items-center justify-center text-brand-warm-cream hover:border-brand-accent-green hover:text-brand-accent-green hover:bg-brand-accent-green/10 transition-all">
+              <FaWhatsapp className="w-4 h-4" />
             </a>
           </div>
         </div>
