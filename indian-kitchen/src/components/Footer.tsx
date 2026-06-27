@@ -3,7 +3,6 @@ import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   return (
-<<<<<<< Updated upstream
     <footer className="bg-brand-deep-forest text-brand-warm-cream py-16 border-t border-brand-sandy/20 relative z-10 overflow-hidden">
       {/* Background styling for consistency */}
       <div className="absolute inset-0 noise-overlay"></div>
@@ -93,24 +92,6 @@ export default function Footer() {
         <p className="font-label-sm text-brand-sandy/60 uppercase tracking-widest text-xs">
           &copy; {new Date().getFullYear()} INDIAN KITCHEN – THEME DINING. ALL RIGHTS RESERVED.
         </p>
-=======
-    <footer className="w-full py-section-gap bg-brand-deep-forest relative z-10 border-t border-brand-sandy/10">
-      <div className="flex flex-col items-start px-gutter gap-unit max-w-container-max mx-auto py-16">
-        <div className="font-display-lg text-display-lg-lg-mobile md:text-display-lg leading-none text-brand-warm-cream mb-12 drop-shadow-md">
-          INDIAN KITCHEN
-        </div>
-        <div className="flex flex-wrap gap-8 mb-16 w-full justify-between items-end border-b border-brand-sandy/20 pb-8">
-          <div className="flex gap-6">
-            <Link className="font-label-sm text-label-sm-sm text-brand-sandy hover:text-brand-accent-green transition-all" href="#">Provenance</Link>
-            <Link className="font-label-sm text-label-sm-sm text-brand-sandy hover:text-brand-accent-green transition-all" href="#">Terms</Link>
-            <Link className="font-label-sm text-label-sm-sm text-brand-sandy hover:text-brand-accent-green transition-all" href="#">Privacy</Link>
-            <Link className="font-label-sm text-label-sm-sm text-brand-sandy hover:text-brand-accent-green transition-all" href="#">Press</Link>
-          </div>
-        </div>
-        <div className="font-label-sm text-label-sm-sm text-brand-warm-cream/60 w-full text-left">
-          © {new Date().getFullYear()} INDIAN KITCHEN. ARCHITECTURAL PERMANENCE.
-        </div>
->>>>>>> Stashed changes
       </div>
     </footer>
   );
