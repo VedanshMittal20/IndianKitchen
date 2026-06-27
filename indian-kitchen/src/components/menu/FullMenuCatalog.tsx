@@ -7,51 +7,51 @@ const menuData = [
   {
     category: "Starters / Tandoor",
     items: [
-      { name: "Chicken Tikka", price: "₹1,800", desc: "Classic yogurt and spice marinated chicken chunks.", tags: ["NON-VEG"] },
-      { name: "Seekh Kebab", price: "₹1,900", desc: "Spiced minced meat skewers roasted in the tandoor.", tags: ["NON-VEG", "SPICY"] },
+      { name: "Chicken Tikka", price: "LKR 1,800", desc: "Classic yogurt and spice marinated chicken chunks.", tags: ["NON-VEG"] },
+      { name: "Seekh Kebab", price: "LKR 1,900", desc: "Spiced minced meat skewers roasted in the tandoor.", tags: ["NON-VEG", "SPICY"] },
     ]
   },
   {
     category: "Biryani",
     items: [
-      { name: "Bamboo Biryani (Chicken)", price: "₹1,950", desc: "Our signature biryani slow-cooked inside bamboo over charcoal.", tags: ["NON-VEG", "SPICY"] },
-      { name: "Bamboo Biryani (Veg)", price: "₹1,600", desc: "Aromatic basmati and vegetables steamed in bamboo.", tags: ["VEG", "SPICY"] },
-      { name: "Chicken Dum Biryani", price: "from ₹1,200", desc: "Classic dum-cooked biryani with tender chicken pieces.", tags: ["NON-VEG"] },
-      { name: "Pot Biryani", price: "₹2,200", desc: "Served in a traditional clay pot to seal in the aromas.", tags: ["NON-VEG"] },
+      { name: "Bamboo Biryani (Chicken)", price: "LKR 1,950", desc: "Our signature biryani slow-cooked inside bamboo over charcoal.", tags: ["NON-VEG", "SPICY"] },
+      { name: "Bamboo Biryani (Veg)", price: "LKR 1,600", desc: "Aromatic basmati and vegetables steamed in bamboo.", tags: ["VEG", "SPICY"] },
+      { name: "Chicken Dum Biryani", price: "from LKR 1,200", desc: "Classic dum-cooked biryani with tender chicken pieces.", tags: ["NON-VEG"] },
+      { name: "Pot Biryani", price: "LKR 2,200", desc: "Served in a traditional clay pot to seal in the aromas.", tags: ["NON-VEG"] },
     ]
   },
   {
     category: "Curries — Chicken",
     items: [
-      { name: "Butter Chicken", price: "from ₹1,450", desc: "Tender tikkas simmered in a rich, velvety tomato gravy.", tags: ["NON-VEG"] },
-      { name: "Chicken Tikka Masala", price: "from ₹1,400", desc: "Smoky chicken cooked in a robust, spiced masala.", tags: ["NON-VEG", "SPICY"] },
-      { name: "Pineapple Butter Chicken", price: "₹2,100", desc: "A tropical twist on our classic butter chicken.", tags: ["NON-VEG"] },
-      { name: "Tender Coconut Prawn Curry", price: "₹2,500", desc: "Malabar coastal flavours infused with fresh coconut.", tags: ["NON-VEG", "SPICY"] },
+      { name: "Butter Chicken", price: "from LKR 1,450", desc: "Tender tikkas simmered in a rich, velvety tomato gravy.", tags: ["NON-VEG"] },
+      { name: "Chicken Tikka Masala", price: "from LKR 1,400", desc: "Smoky chicken cooked in a robust, spiced masala.", tags: ["NON-VEG", "SPICY"] },
+      { name: "Pineapple Butter Chicken", price: "LKR 2,100", desc: "A tropical twist on our classic butter chicken.", tags: ["NON-VEG"] },
+      { name: "Tender Coconut Prawn Curry", price: "LKR 2,500", desc: "Malabar coastal flavours infused with fresh coconut.", tags: ["NON-VEG", "SPICY"] },
     ]
   },
   {
     category: "Curries — Veg & Paneer",
     items: [
-      { name: "Kadai Paneer", price: "₹1,976", desc: "Cottage cheese cooked with bell peppers and whole spices.", tags: ["VEG", "SPICY"] },
-      { name: "Dhal Fry", price: "from ₹800", desc: "Yellow lentils tempered with cumin, garlic, and ghee.", tags: ["VEG"] },
-      { name: "Kadai Veg Curry", price: "₹1,450", desc: "Mixed seasonal vegetables tossed in a dry spice mix.", tags: ["VEGAN"] },
+      { name: "Kadai Paneer", price: "LKR 1,976", desc: "Cottage cheese cooked with bell peppers and whole spices.", tags: ["VEG", "SPICY"] },
+      { name: "Dhal Fry", price: "from LKR 800", desc: "Yellow lentils tempered with cumin, garlic, and ghee.", tags: ["VEG"] },
+      { name: "Kadai Veg Curry", price: "LKR 1,450", desc: "Mixed seasonal vegetables tossed in a dry spice mix.", tags: ["VEGAN"] },
     ]
   },
   {
     category: "Breads & Staples",
     items: [
-      { name: "Tandoori Roti", price: "₹320", desc: "Whole wheat bread baked in our traditional clay oven.", tags: ["VEGAN"] },
-      { name: "Puff Parotta", price: "₹290", desc: "Flaky, multi-layered flatbread from Tamil Nadu.", tags: ["VEG"] },
-      { name: "Naan Roti Basket", price: "₹2,431", desc: "A selection of 6 assorted traditional breads.", tags: ["VEG"] },
+      { name: "Tandoori Roti", price: "LKR 320", desc: "Whole wheat bread baked in our traditional clay oven.", tags: ["VEGAN"] },
+      { name: "Puff Parotta", price: "LKR 290", desc: "Flaky, multi-layered flatbread from Tamil Nadu.", tags: ["VEG"] },
+      { name: "Naan Roti Basket", price: "LKR 2,431", desc: "A selection of 6 assorted traditional breads.", tags: ["VEG"] },
     ]
   },
   {
     category: "Desserts & Drinks",
     items: [
-      { name: "Jigarthanda", price: "₹650", desc: "The famous coolant of Madurai, rich and refreshing.", tags: ["VEG"] },
-      { name: "Ilaneer Cake", price: "₹850", desc: "Tender coconut reimagined as a delicate dessert.", tags: ["VEG"] },
-      { name: "Mango Lassi", price: "₹550", desc: "Sweet, creamy yogurt blended with ripe mangoes.", tags: ["VEG"] },
-      { name: "Hot Gulab Jamun", price: "₹420", desc: "Deep-fried milk dumplings soaked in rose syrup.", tags: ["VEG"] },
+      { name: "Jigarthanda", price: "LKR 650", desc: "The famous coolant of Madurai, rich and refreshing.", tags: ["VEG"] },
+      { name: "Ilaneer Cake", price: "LKR 850", desc: "Tender coconut reimagined as a delicate dessert.", tags: ["VEG"] },
+      { name: "Mango Lassi", price: "LKR 550", desc: "Sweet, creamy yogurt blended with ripe mangoes.", tags: ["VEG"] },
+      { name: "Hot Gulab Jamun", price: "LKR 420", desc: "Deep-fried milk dumplings soaked in rose syrup.", tags: ["VEG"] },
     ]
   }
 ];

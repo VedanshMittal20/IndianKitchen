@@ -26,7 +26,7 @@ export default function AquaticSection() {
           <article className="glass-panel p-8 md:p-10 w-full md:w-[400px] hover:bg-white/60 transition-colors duration-500">
             <div className="flex justify-between items-baseline mb-4 border-b border-outline-variant pb-4">
               <h4 className="font-headline-md text-headline-md-md text-on-surface">Kokum Cured Scallops</h4>
-              <span className="font-label-sm text-label-sm-sm text-on-surface-variant">₹2,200</span>
+              <span className="font-label-sm text-label-sm-sm text-on-surface-variant">LKR 2,200</span>
             </div>
             <p className="font-body-md text-body-md-md text-on-surface-variant mb-6">Hokkaido scallops lightly cured in a sun-dried kokum broth, garnished with puffed amaranth and sea purslane.</p>
             <span className="font-label-sm text-label-sm-sm text-primary block text-[10px]">Technique: Cold Cure</span>
@@ -34,7 +34,7 @@ export default function AquaticSection() {
           <article className="glass-panel p-8 md:p-10 w-full md:w-[400px] md:mb-32 hover:bg-white/60 transition-colors duration-500">
             <div className="flex justify-between items-baseline mb-4 border-b border-outline-variant pb-4">
               <h4 className="font-headline-md text-headline-md-md text-on-surface">Malabar Crab Curry</h4>
-              <span className="font-label-sm text-label-sm-sm text-on-surface-variant">₹3,800</span>
+              <span className="font-label-sm text-label-sm-sm text-on-surface-variant">LKR 3,800</span>
             </div>
             <p className="font-body-md text-body-md-md text-on-surface-variant mb-6">Mud crab slowly simmered in a rich coconut, black pepper, and kokum gravy. A coastal classic elevated.</p>
             <span className="font-label-sm text-label-sm-sm text-primary block text-[10px]">Technique: Slow Simmer</span>
@@ -42,7 +42,7 @@ export default function AquaticSection() {
           <article className="glass-panel p-8 md:p-10 w-full md:w-[400px] hover:bg-white/60 transition-colors duration-500">
             <div className="flex justify-between items-baseline mb-4 border-b border-outline-variant pb-4">
               <h4 className="font-headline-md text-headline-md-md text-on-surface">Malabar Lobster</h4>
-              <span className="font-label-sm text-label-sm-sm text-on-surface-variant">₹4,500</span>
+              <span className="font-label-sm text-label-sm-sm text-on-surface-variant">LKR 4,500</span>
             </div>
             <p className="font-body-md text-body-md-md text-on-surface-variant mb-6">Butter-poached rock lobster tail, coconut-tamarind reduction, served atop black rice idiyappam.</p>
             <span className="font-label-sm text-label-sm-sm text-primary block text-[10px]">Technique: Butter Poach</span>

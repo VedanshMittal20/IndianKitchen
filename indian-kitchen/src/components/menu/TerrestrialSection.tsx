@@ -29,7 +29,7 @@ export default function TerrestrialSection() {
           </div>
           <div className="flex justify-between items-end mb-4">
             <h3 className="font-headline-md text-headline-md-md">Sikandari Raan</h3>
-            <span className="font-label-sm text-label-sm-sm text-brand-golden">₹3,400</span>
+            <span className="font-label-sm text-label-sm-sm text-brand-golden">LKR 3,400</span>
           </div>
           <p className="font-body-md text-body-md-md text-surface-variant/80 mb-6 border-l border-saffron-gold/30 pl-4">
             Slow-roasted leg of spring lamb, marinated for 48 hours in dark spices and malt vinegar. Finished with a smoked ghee emulsion.
@@ -54,7 +54,7 @@ export default function TerrestrialSection() {
             </div>
             <div className="flex justify-between items-baseline mb-2">
               <h4 className="font-headline-md text-headline-md-md text-on-surface">Smoked Aubergine Mille-Feuille</h4>
-              <span className="font-label-sm text-label-sm-sm text-on-surface-variant">₹1,200</span>
+              <span className="font-label-sm text-label-sm-sm text-on-surface-variant">LKR 1,200</span>
             </div>
             <p className="font-body-md text-body-md-md text-on-surface-variant mb-3">Charcoal-roasted baby aubergine layered with hung curd, burnt garlic dust, and a tamarind glaze.</p>
             <span className="inline-block px-3 py-1 bg-surface-container-highest rounded-full font-label-sm text-label-sm-sm text-on-surface">V / DF</span>
@@ -65,7 +65,7 @@ export default function TerrestrialSection() {
             </div>
             <div className="flex justify-between items-baseline mb-2">
               <h4 className="font-headline-md text-headline-md-md text-on-surface">Signature Bamboo Biryani</h4>
-              <span className="font-label-sm text-label-sm-sm text-on-surface-variant">₹2,400</span>
+              <span className="font-label-sm text-label-sm-sm text-on-surface-variant">LKR 2,400</span>
             </div>
             <p className="font-body-md text-body-md-md text-on-surface-variant mb-3">Aromatic Jeerakasala rice and spiced meat sealed inside a hollow bamboo log, cooked slowly over a wood fire for a deeply earthy infusion.</p>
             <span className="font-label-sm text-label-sm-sm text-brand-golden block mt-2 text-[10px]">Technique: Bamboo Steam</span>
@@ -76,7 +76,7 @@ export default function TerrestrialSection() {
             </div>
             <div className="flex justify-between items-baseline mb-2">
               <h4 className="font-headline-md text-headline-md-md text-on-surface">Morel Musallam</h4>
-              <span className="font-label-sm text-label-sm-sm text-on-surface-variant">₹2,800</span>
+              <span className="font-label-sm text-label-sm-sm text-on-surface-variant">LKR 2,800</span>
             </div>
             <p className="font-body-md text-body-md-md text-on-surface-variant mb-3">Himalayan Gucchi mushrooms stuffed with reduced milk and pine nuts, resting on a saffron-infused cashew veil.</p>
             <span className="font-label-sm text-label-sm-sm text-brand-golden block mt-2 text-[10px]">Foraged Weekly</span>
