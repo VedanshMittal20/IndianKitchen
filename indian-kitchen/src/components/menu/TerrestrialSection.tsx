@@ -6,9 +6,9 @@ export default function TerrestrialSection() {
   return (
     <section aria-labelledby="terrestrial-heading" className="relative">
       {/* Emerald Header Block */}
-      <div className="bg-brand-deep-forest text-on-primary p-12 md:w-2/3 mb-12 relative z-10 -ml-margin-mobile md:-ml-margin-desktop pl-margin-mobile md:pl-margin-desktop">
-        <span className="font-label-sm text-label-sm-sm opacity-70 block mb-4">Fig. 01</span>
-        <h2 className="font-display-lg text-display-lg-lg-mobile md:text-display-lg" id="terrestrial-heading">Terrestrial</h2>
+      <div className="bg-brand-deep-forest text-brand-warm-cream p-12 md:w-2/3 mb-12 relative z-10 -ml-margin-mobile md:-ml-margin-desktop pl-margin-mobile md:pl-margin-desktop shadow-xl">
+        <span className="font-label-sm text-label-sm-sm block mb-4 text-brand-golden">Fig. 01</span>
+        <h2 className="font-display-lg text-display-lg-lg-mobile md:text-display-lg text-brand-golden" id="terrestrial-heading">Terrestrial</h2>
         <p className="font-body-md text-body-md-md mt-4 max-w-md opacity-90">Rooted in the soil. Heritage techniques applied to earth-bound ingredients, focusing on slow braises and subterranean heat.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">

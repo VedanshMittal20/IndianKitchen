@@ -40,7 +40,7 @@ export default function MenuQRSection() {
         >
           <div className="relative w-full max-w-[400px] aspect-square rounded-sm overflow-hidden bg-white shadow-2xl p-4">
             <Image
-              src="/images/extracted/page8_img2.png"
+              src="/images/menu-qr.png"
               alt="Menu QR Code"
               fill
               className="object-contain p-4"

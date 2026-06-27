@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const menuData = [
   {
@@ -147,7 +148,15 @@ export default function FullMenuCatalog() {
         </AnimatePresence>
       </div>
 
-      <div className="mt-20 pt-8 border-t border-outline-variant/30 text-center">
+      <div className="mt-20 pt-8 border-t border-outline-variant/30 text-center flex flex-col items-center gap-6">
+        <div className="relative w-48 h-48 bg-white p-2 rounded-xl shadow-2xl border-4 border-surface-container-highest">
+          <Image
+            src="/images/menu-qr.png"
+            alt="Scan for Menu"
+            fill
+            className="object-contain p-2"
+          />
+        </div>
         <p className="font-label-sm text-label-sm-sm text-on-surface-variant italic">
           Full menu is updated regularly. Prices may vary by outlet. For the most current menu, scan the QR code or visit us in-store.
         </p>
