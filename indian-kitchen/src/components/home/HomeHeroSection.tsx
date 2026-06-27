@@ -44,19 +44,19 @@ export default function HomeHeroSection() {
 
         {/* Main Headlines */}
         <motion.h1 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display-lg text-6xl md:text-8xl lg:text-[120px] text-brand-warm-cream tracking-wider uppercase mb-2 leading-none"
+          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="font-display-lg text-5xl sm:text-7xl md:text-8xl lg:text-[120px] text-brand-warm-cream tracking-wider uppercase mb-2 leading-none"
         >
           INDIAN KITCHEN
         </motion.h1>
         
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="font-headline-md text-2xl md:text-4xl text-brand-golden tracking-[0.3em] uppercase mb-16"
+          initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="font-headline-md text-xl sm:text-2xl md:text-4xl text-brand-golden tracking-[0.3em] uppercase mb-12 sm:mb-16"
         >
           THEME DINING
         </motion.h2>
@@ -65,13 +65,13 @@ export default function HomeHeroSection() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center gap-6 w-full max-w-md mx-auto sm:max-w-none justify-center"
+          transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-[280px] sm:max-w-none mx-auto justify-center"
         >
-          <Link href="/reservations" className="btn-primary w-full sm:w-auto">
+          <Link href="/reservations" className="btn-primary w-full sm:w-auto py-3 sm:py-4">
             RESERVE A TABLE
           </Link>
-          <Link href="/menu" className="btn-outline w-full sm:w-auto">
+          <Link href="/menu" className="btn-outline w-full sm:w-auto py-3 sm:py-4">
             VIEW MENU
           </Link>
         </motion.div>

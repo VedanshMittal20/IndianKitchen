@@ -1,91 +1,53 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { QRCodeSVG } from "qrcode.react";
-import { useInView } from "react-intersection-observer";
-import Link from "next/link";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 import SectionShell from "@/components/layout/SectionShell";
 import SectionHeader from "@/components/layout/SectionHeader";
-import SplitSection from "@/components/layout/SplitSection";
 
 export default function MenuQRSection() {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
-
-  const content = (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8 }}
-    >
-      <SectionHeader 
-        label="Digital Menu" 
-        title={<>Scan &amp;<br/>Explore</>}
-        subtitle="A culinary passport through India — from Madurai street food to Punjab tandoor, one scan away."
-        className="mb-8"
-        lightMode
-      />
-      <div className="flex flex-wrap gap-3">
-        <Link href="/menu" className="btn-primary">
-          View Full Menu
-        </Link>
-        <Link href="/reservations" className="btn-outline">
-          Dine In
-        </Link>
-      </div>
-    </motion.div>
-  );
-
-  const qrGraphic = (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={inView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      className="flex justify-center lg:justify-end relative"
-    >
-      <div className="relative">
-        <div
-          className="absolute -right-6 top-1/2 -translate-y-1/2 hidden lg:flex items-center"
-          style={{ writingMode: "vertical-rl" }}
-        >
-          <span className="stencil-text text-[10px] text-on-surface tracking-[0.45em]">Scan Me</span>
-        </div>
-        <div className="relative p-4 border-[3px] border-outline-variant/30 rounded-sm bg-surface-container-lowest shadow-2xl gold-frame">
-          <div className="absolute -top-3 -left-3 bg-saffron-gold text-on-surface text-[8px] tracking-[0.2em] px-2 py-1 font-bold">
-            Menu
-          </div>
-          <QRCodeSVG
-            value="https://indiankitchen.lk/menu"
-            size={160}
-            bgColor="#FAF5E9"
-            fgColor="#0F0805"
-            level="Q"
-            includeMargin={true}
-          />
-        </div>
-        {/* Decorative food thumb */}
-        <div className="absolute -bottom-4 -right-4 w-20 h-20 overflow-hidden gold-frame shadow-lg hidden md:block rounded-sm z-10">
-          <Image
-            src="/images/bamboo_biryani.png"
-            alt="Bamboo Biryani"
-            fill
-            className="object-cover img-warm"
-            sizes="80px"
-          />
-        </div>
-      </div>
-    </motion.div>
-  );
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <SectionShell variant="void" className="relative overflow-hidden border-t border-cream/10">
-      <div className="max-w-4xl mx-auto">
-        <SplitSection 
-          variant="void" 
-          content={content} 
-          media={qrGraphic} 
-        />
+    <SectionShell variant="light" id="menu">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        
+        {/* Left - Heading */}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, x: -30 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex justify-center md:justify-start"
+        >
+          <div>
+            <p className="font-label-sm tracking-widest text-brand-golden font-bold uppercase mb-4 text-center md:text-left">
+              INDIAN KITCHEN<br/>THEME DINING
+            </p>
+            <h2 className="font-display-lg text-6xl md:text-8xl lg:text-[120px] text-brand-golden uppercase m-0 leading-none">
+              MENU
+            </h2>
+          </div>
+        </motion.div>
+
+        {/* Right - QR Code */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="flex justify-center md:justify-end"
+        >
+          <div className="relative w-full max-w-[400px] aspect-square rounded-sm overflow-hidden bg-white shadow-2xl p-4">
+            <Image
+              src="/images/extracted/page8_img2.png"
+              alt="Menu QR Code"
+              fill
+              className="object-contain p-4"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+        </motion.div>
       </div>
     </SectionShell>
   );
