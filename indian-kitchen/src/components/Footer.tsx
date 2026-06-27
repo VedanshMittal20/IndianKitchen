@@ -77,7 +77,7 @@ export default function Footer() {
             <a href="https://www.instagram.com/indian.kitchen_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-sandy flex items-center justify-center text-brand-warm-cream hover:border-brand-accent-green hover:text-brand-accent-green hover:bg-brand-accent-green/10 transition-all">
               <FaInstagram className="w-4 h-4" />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full border border-brand-sandy flex items-center justify-center text-brand-warm-cream hover:border-brand-accent-green hover:text-brand-accent-green hover:bg-brand-accent-green/10 transition-all">
+            <a href="https://www.facebook.com/indiankitchenrestaurant" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-sandy flex items-center justify-center text-brand-warm-cream hover:border-brand-accent-green hover:text-brand-accent-green hover:bg-brand-accent-green/10 transition-all">
               <FaFacebook className="w-4 h-4" />
             </a>
             <a href="#" className="w-10 h-10 rounded-full border border-brand-sandy flex items-center justify-center text-brand-warm-cream hover:border-brand-accent-green hover:text-brand-accent-green hover:bg-brand-accent-green/10 transition-all">
