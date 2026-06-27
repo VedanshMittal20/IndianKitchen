@@ -1,6 +1,6 @@
 import React from "react";
 
-type Variant = "void" | "sage" | "parchment" | "cream" | "cream-dark" | "gold" | "crimson";
+type Variant = "void" | "sage" | "parchment" | "cream" | "cream-dark" | "gold" | "crimson" | "light" | "dark";
 
 interface SectionShellProps {
   children: React.ReactNode;
@@ -25,6 +25,8 @@ export default function SectionShell({
     "cream-dark": "bg-cream-dark text-text-dark",
     gold: "bg-saffron-gold text-on-surface",
     crimson: "bg-gradient-to-r from-crimson to-terracotta text-on-surface",
+    light: "bg-surface-container-low text-on-surface",
+    dark: "bg-surface-container-lowest text-on-surface",
   };
 
   return (
