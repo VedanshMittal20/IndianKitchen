@@ -3,11 +3,27 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+
+
 export default function HomeHeroSection() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center bg-surface overflow-hidden pt-24">
+      {/* Local Video Background */}
+      <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-35 mix-blend-luminosity pointer-events-none"
+        >
+          <source src="/hero-bg.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className="absolute inset-0 bg-surface/70 z-0 pointer-events-none"></div>
+
       {/* Background Texture & Noise */}
-      <div className="absolute inset-0 noise-overlay"></div>
+      <div className="absolute inset-0 noise-overlay z-0 mix-blend-overlay opacity-30"></div>
       
       <div className="relative z-10 w-full max-w-container-max mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center">
         

@@ -44,66 +44,74 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 h-20 shadow-lg" 
-          : "bg-transparent h-24"
+      <div className={`fixed w-full z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center ${
+        isScrolled ? "top-6 px-4" : "top-0 px-0"
       }`}>
-        <div className="flex justify-between items-center px-6 md:px-12 max-w-7xl mx-auto h-full">
-          {/* Logo */}
-          <Link href="/" className="flex flex-col relative z-50 group">
-            <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-brand-warm-cream flex items-center justify-center font-display-lg text-surface text-xl font-bold">
-                    IK
-                </div>
-                <div className="flex flex-col leading-none">
-                    <span className="font-headline-sm text-brand-warm-cream tracking-widest uppercase transition-colors group-hover:text-brand-golden">
-                        INDIAN
-                    </span>
-                    <span className="font-headline-sm text-brand-warm-cream tracking-widest uppercase transition-colors group-hover:text-brand-golden">
-                        KITCHEN
-                    </span>
-                </div>
-            </div>
-          </Link>
-
-          {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`font-label-lg tracking-[0.1em] text-sm uppercase hover:text-brand-golden transition-colors ${
-                  pathname === link.href ? "text-brand-golden" : "text-brand-warm-cream"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* Right Controls */}
-          <div className="flex items-center gap-6 relative z-50">
-            <Link
-              href="/reservations"
-              className="hidden sm:inline-flex bg-brand-accent-green text-on-primary font-label-lg uppercase tracking-[0.1em] px-8 py-3 rounded-sm hover:bg-brand-golden transition-colors hover-glow hover:-translate-y-0.5"
-            >
-              BOOK TABLE
+        <nav className={`transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isScrolled 
+            ? "w-full max-w-5xl bg-surface/85 backdrop-blur-xl border border-brand-sandy/20 shadow-[0_10px_40px_rgba(0,0,0,0.5)] rounded-full h-16" 
+            : "w-full bg-transparent border-transparent h-24"
+        }`}>
+          <div className={`flex justify-between items-center h-full mx-auto transition-all duration-500 ${
+            isScrolled ? "px-6 md:px-10" : "px-6 md:px-12 max-w-7xl"
+          }`}>
+            {/* Logo */}
+            <Link href="/" className="flex flex-col relative z-50 group">
+              <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-brand-warm-cream flex items-center justify-center font-display-lg text-surface text-xl font-bold rounded-sm">
+                      IK
+                  </div>
+                  <div className="flex flex-col leading-none">
+                      <span className="font-headline-sm text-brand-warm-cream tracking-widest uppercase transition-colors group-hover:text-brand-golden">
+                          INDIAN
+                      </span>
+                      <span className="font-headline-sm text-brand-warm-cream tracking-widest uppercase transition-colors group-hover:text-brand-golden">
+                          KITCHEN
+                      </span>
+                  </div>
+              </div>
             </Link>
 
-            {/* Mobile Menu Trigger */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden flex flex-col justify-center gap-1.5 p-2"
-              aria-label={isOpen ? "Close menu" : "Open menu"}
-            >
-              <span className={`h-0.5 bg-brand-warm-cream transition-all ${isOpen ? "w-6 rotate-45 translate-y-2" : "w-6"}`} />
-              <span className={`h-0.5 bg-brand-warm-cream transition-all ${isOpen ? "w-0 opacity-0" : "w-6"}`} />
-              <span className={`h-0.5 bg-brand-warm-cream transition-all ${isOpen ? "w-6 -rotate-45 -translate-y-2" : "w-6"}`} />
-            </button>
+            {/* Desktop Nav Links */}
+            <div className="hidden md:flex items-center gap-10">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`font-label-lg tracking-[0.1em] text-sm uppercase hover:text-brand-golden transition-colors ${
+                    pathname === link.href ? "text-brand-golden" : "text-brand-warm-cream"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+
+            {/* Right Controls */}
+            <div className="flex items-center gap-6 relative z-50">
+              <Link
+                href="/reservations"
+                className={`hidden sm:inline-flex bg-brand-accent-green text-on-primary font-label-lg uppercase tracking-[0.1em] rounded-sm hover:bg-brand-golden transition-all hover-glow hover:-translate-y-0.5 ${
+                  isScrolled ? "px-6 py-2 text-xs" : "px-8 py-3"
+                }`}
+              >
+                BOOK TABLE
+              </Link>
+
+              {/* Mobile Menu Trigger */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="md:hidden flex flex-col justify-center gap-1.5 p-2"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+              >
+                <span className={`h-0.5 bg-brand-warm-cream transition-all ${isOpen ? "w-6 rotate-45 translate-y-2" : "w-6"}`} />
+                <span className={`h-0.5 bg-brand-warm-cream transition-all ${isOpen ? "w-0 opacity-0" : "w-6"}`} />
+                <span className={`h-0.5 bg-brand-warm-cream transition-all ${isOpen ? "w-6 -rotate-45 -translate-y-2" : "w-6"}`} />
+              </button>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>

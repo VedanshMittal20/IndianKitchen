@@ -24,7 +24,7 @@ const socialLinks = [
         <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
       </svg>
     ),
-    url: "https://www.instagram.com/indian.kitchen_/",
+    url: "https://www.instagram.com/indian.kitchen_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     handle: "@indian.kitchen_",
   },
   {
@@ -109,7 +109,7 @@ export default function SocialMedia() {
         {instagramGrid.map((src, index) => (
           <motion.a
             key={index}
-            href="https://www.instagram.com/indian.kitchen_/"
+            href="https://www.instagram.com/indian.kitchen_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noreferrer"
             initial={{ opacity: 0, scale: 0.96 }}
