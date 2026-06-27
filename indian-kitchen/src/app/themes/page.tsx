@@ -17,7 +17,7 @@ export default function ThemesCinematicPage() {
       <div className="fixed top-8 left-8 z-50 pointer-events-auto">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold uppercase text-white/70 hover:text-brand-golden transition-colors bg-surface-dark/90 px-4 py-2 border border-white/10 rounded-full shadow-lg"
+          className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold text-white/70 hover:text-brand-golden transition-colors bg-surface-dark/90 px-4 py-2 border border-white/10 rounded-full shadow-lg"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           Back to Home
@@ -44,7 +44,7 @@ export default function ThemesCinematicPage() {
         )}
         <button
           onClick={() => setIsPlayingSound(!isPlayingSound)}
-          className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold uppercase text-white/70 hover:text-brand-golden transition-colors bg-surface-dark/90 px-4 py-2 border border-white/10 rounded-full shadow-lg"
+          className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold text-white/70 hover:text-brand-golden transition-colors bg-surface-dark/90 px-4 py-2 border border-white/10 rounded-full shadow-lg"
           aria-label="Toggle ambient soundtrack"
         >
           {isPlayingSound ? (
@@ -82,10 +82,10 @@ export default function ThemesCinematicPage() {
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="text-brand-golden text-[9px] tracking-[0.35em] uppercase font-bold mb-4 block">
+            <span className="text-brand-golden text-[9px] tracking-[0.35em] font-bold mb-4 block">
               Cinematic Dining
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-headline-md text-white tracking-tight mb-6 uppercase leading-none text-shadow-xl drop-shadow-2xl">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-headline-md text-headline-md tracking-tight mb-6 leading-none text-shadow-xl drop-shadow-2xl">
               Immersive<br />Sanctuaries
             </h1>
             <p className="text-white/90 text-base md:text-lg font-light tracking-wide max-w-2xl mx-auto font-body-md leading-relaxed drop-shadow-md">
@@ -99,7 +99,7 @@ export default function ThemesCinematicPage() {
             transition={{ duration: 2.5, repeat: Infinity, delay: 1.5 }}
             className="absolute bottom-12 text-brand-golden flex flex-col items-center pointer-events-none"
           >
-            <span className="text-[8px] tracking-[0.3em] uppercase font-bold mb-1">Scroll to Travel</span>
+            <span className="text-[8px] tracking-[0.3em] font-bold mb-1">Scroll to Travel</span>
             <ArrowDown className="w-5 h-5 animate-bounce" />
           </motion.div>
         </div>
@@ -124,10 +124,10 @@ export default function ThemesCinematicPage() {
             viewport={{ once: false }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="text-brand-golden text-[9px] tracking-[0.25em] uppercase font-bold mb-3 block border-l border-saffron-gold pl-3">
+            <span className="text-brand-golden text-[9px] tracking-[0.25em] font-bold mb-3 block border-l border-saffron-gold pl-3">
               Sanctuary 01 / Colombo
             </span>
-            <h2 className="text-5xl md:text-7xl font-headline-md text-white mb-6 uppercase tracking-wide leading-none drop-shadow-lg">
+            <h2 className="text-5xl md:text-7xl font-headline-md text-headline-md mb-6 tracking-wide leading-none drop-shadow-lg">
               Pondicherry<br />Street
             </h2>
             <p className="text-white/80 font-body-md font-light text-base leading-relaxed mb-8 max-w-xl drop-shadow-md">
@@ -162,10 +162,10 @@ export default function ThemesCinematicPage() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-2xl text-right"
           >
-            <span className="text-brand-golden text-[9px] tracking-[0.25em] uppercase font-bold mb-3 block border-r border-saffron-gold pr-3">
+            <span className="text-brand-golden text-[9px] tracking-[0.25em] font-bold mb-3 block border-r border-saffron-gold pr-3">
               Sanctuary 02 / Kandy
             </span>
-            <h2 className="text-5xl md:text-7xl font-headline-md text-white mb-6 uppercase tracking-wide leading-none drop-shadow-lg">
+            <h2 className="text-5xl md:text-7xl font-headline-md text-headline-md mb-6 tracking-wide leading-none drop-shadow-lg">
               Kerala<br />Houseboat
             </h2>
             <p className="text-white/80 font-body-md font-light text-base leading-relaxed mb-8 max-w-xl ml-auto drop-shadow-md">
@@ -199,10 +199,10 @@ export default function ThemesCinematicPage() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-center"
           >
-            <span className="text-brand-golden text-[9px] tracking-[0.25em] uppercase font-bold mb-4 block">
+            <span className="text-brand-golden text-[9px] tracking-[0.25em] font-bold mb-4 block">
               Sanctuary 03 / Colombo
             </span>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-headline-md text-white mb-6 uppercase tracking-wide leading-none drop-shadow-lg">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-headline-md text-headline-md mb-6 tracking-wide leading-none drop-shadow-lg">
               The Sherlock
             </h2>
             <div className="h-[1px] w-16 bg-saffron-gold/40 mb-8" />

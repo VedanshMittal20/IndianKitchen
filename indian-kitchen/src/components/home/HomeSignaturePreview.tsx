@@ -99,7 +99,7 @@ export default function HomeSignaturePreview() {
               ref={(el) => { if (el) leftElementsRef.current[idx] = el; }}
               className="bg-surface-container-low border border-outline-variant/30 p-6 rounded-sm shadow-sm hover:shadow-md transition-shadow"
             >
-              <span className="text-[10px] tracking-widest uppercase text-brand-golden font-bold mb-2 block">
+              <span className="text-[10px] text-brand-golden font-bold mb-2 block">
                 {ann.title}
               </span>
               <p className="text-sm font-body-md font-light leading-relaxed text-on-surface-variant">
@@ -132,7 +132,7 @@ export default function HomeSignaturePreview() {
               ref={(el) => { if (el) rightElementsRef.current[idx] = el; }}
               className="bg-surface-container-low border border-outline-variant/30 p-6 rounded-sm shadow-sm hover:shadow-md transition-shadow"
             >
-              <span className="text-[10px] tracking-widest uppercase text-brand-golden font-bold mb-2 block">
+              <span className="text-[10px] text-brand-golden font-bold mb-2 block">
                 {ann.title}
               </span>
               <p className="text-sm font-body-md font-light leading-relaxed text-on-surface-variant">

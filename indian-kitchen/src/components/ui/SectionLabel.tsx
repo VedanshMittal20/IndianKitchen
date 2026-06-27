@@ -10,7 +10,7 @@ export default function SectionLabel({ children, className, light = false }: Sec
   return (
     <div className={cn("flex items-center gap-3", className)}>
       <div className="w-px h-8 bg-saffron-gold" />
-      <span className="font-body-md text-[9px] md:text-[10px] tracking-[0.28em] uppercase font-medium text-brand-golden">
+      <span className="font-body-md text-[9px] md:text-[10px] tracking-[0.28em] font-medium text-brand-golden">
         {children}
       </span>
     </div>

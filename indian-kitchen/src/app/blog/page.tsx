@@ -43,22 +43,22 @@ export default function BlogPage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
-                <span className="absolute top-4 left-4 bg-saffron-gold text-on-surface px-3 py-1 text-[8px] font-bold uppercase tracking-widest">
+                <span className="absolute top-4 left-4 bg-saffron-gold text-on-surface px-3 py-1 text-[8px] font-bold">
                   Featured Article
                 </span>
               </div>
               
               <div className="p-8 md:p-12 flex flex-col justify-center">
-                <span className="text-[9px] tracking-[0.25em] uppercase text-brand-golden mb-3 font-bold">
+                <span className="text-[9px] tracking-[0.25em] text-brand-golden mb-3 font-bold">
                   {featured.tag}
                 </span>
-                <h2 className="font-headline-md text-3xl md:text-4xl text-on-surface mb-4 group-hover:text-brand-golden transition-colors duration-300 uppercase leading-tight">
+                <h2 className="font-headline-md text-headline-md text-on-surface mb-4 group-hover:text-brand-golden transition-colors duration-300">
                   {featured.title}
                 </h2>
                 <p className="text-on-surface/60 font-body-md font-light text-sm leading-relaxed mb-6 line-clamp-3">
                   {featured.excerpt}
                 </p>
-                <div className="flex items-center justify-between text-[9px] text-on-surface-variant uppercase tracking-[0.2em] font-bold pt-4 border-t border-outline-variant/30">
+                <div className="flex items-center justify-between text-[9px] text-on-surface-variant tracking-[0.2em] font-bold pt-4 border-t border-outline-variant/30">
                   <span>{featured.date}</span>
                   <span>{featured.readTime}</span>
                 </div>
@@ -97,19 +97,19 @@ export default function BlogPage() {
                     className="object-cover img-warm group-hover:scale-105 transition-transform duration-700 will-change-transform"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <span className="absolute top-3 right-3 bg-surface-container-low border border-outline-variant/30 text-brand-golden px-2.5 py-1 text-[8px] font-bold uppercase tracking-widest shadow-lg">
+                  <span className="absolute top-3 right-3 bg-surface-container-low border border-outline-variant/30 text-brand-golden px-2.5 py-1 text-[8px] font-bold shadow-lg">
                     {post.tag}
                   </span>
                 </div>
 
                 <div className="p-6 flex flex-col flex-1">
-                  <h2 className="font-headline-md text-xl md:text-2xl text-on-surface mb-3 group-hover:text-brand-golden transition-colors duration-300 uppercase leading-snug line-clamp-2">
+                  <h2 className="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-brand-golden transition-colors duration-300 leading-snug line-clamp-2">
                     {post.title}
                   </h2>
                   <p className="text-on-surface/60 font-body-md font-light text-sm leading-relaxed mb-6 line-clamp-2 flex-1">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-[9px] text-on-surface-variant uppercase tracking-[0.2em] font-bold pt-4 border-t border-outline-variant/30">
+                  <div className="flex items-center justify-between text-[9px] text-on-surface-variant tracking-[0.2em] font-bold pt-4 border-t border-outline-variant/30">
                     <span>{post.date}</span>
                     <span className="text-brand-golden group-hover:text-on-surface transition-colors duration-300">
                       Read Entry →

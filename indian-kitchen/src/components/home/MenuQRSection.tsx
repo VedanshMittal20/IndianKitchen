@@ -52,7 +52,7 @@ export default function MenuQRSection() {
           <span className="stencil-text text-[10px] text-on-surface tracking-[0.45em]">Scan Me</span>
         </div>
         <div className="relative p-4 border-[3px] border-outline-variant/30 rounded-sm bg-surface-container-lowest shadow-2xl gold-frame">
-          <div className="absolute -top-3 -left-3 bg-saffron-gold text-on-surface text-[8px] tracking-[0.2em] uppercase px-2 py-1 font-bold">
+          <div className="absolute -top-3 -left-3 bg-saffron-gold text-on-surface text-[8px] tracking-[0.2em] px-2 py-1 font-bold">
             Menu
           </div>
           <QRCodeSVG

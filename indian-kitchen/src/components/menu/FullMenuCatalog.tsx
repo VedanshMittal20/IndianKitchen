@@ -62,9 +62,9 @@ export default function FullMenuCatalog() {
   return (
     <section aria-labelledby="full-catalog-heading" className="relative mt-24 md:mt-40 border-t border-outline-variant pt-16">
       <div className="mb-12">
-        <span className="font-label-sm text-label-sm uppercase text-primary-container block mb-4">Fig. 03</span>
-        <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface" id="full-catalog-heading">Full Catalog</h2>
-        <p className="font-body-md text-body-md mt-4 text-on-surface-variant max-w-xl">
+        <span className="font-label-sm text-label-sm-sm text-primary-container block mb-4">Fig. 03</span>
+        <h2 className="font-display-lg text-display-lg-lg-mobile md:text-display-lg text-on-surface" id="full-catalog-heading">Full Catalog</h2>
+        <p className="font-body-md text-body-md-md mt-4 text-on-surface-variant max-w-xl">
           The complete compendium of our culinary heritage. A passport through regional specialties, street food favorites, and reimagined classics.
         </p>
       </div>
@@ -76,7 +76,7 @@ export default function FullMenuCatalog() {
             <button
               key={cat.category}
               onClick={() => setActiveCategory(cat.category)}
-              className={`whitespace-nowrap px-6 py-2 rounded-full font-label-sm text-label-sm uppercase tracking-wider transition-all duration-300 ${
+              className={`whitespace-nowrap px-6 py-2 rounded-full font-label-sm text-label-sm-sm tracking-wider transition-all duration-300 ${
                 activeCategory === cat.category
                   ? "bg-surface-dark text-brand-golden shadow-lg"
                   : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"
@@ -104,14 +104,14 @@ export default function FullMenuCatalog() {
               >
                 <div className="flex-1 pr-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <h3 className="font-headline-md text-headline-md text-on-surface group-hover:text-primary-container transition-colors">
+                    <h3 className="font-headline-md text-headline-md-md text-on-surface group-hover:text-primary-container transition-colors">
                       {item.name}
                     </h3>
                     <div className="flex gap-2">
                       {item.tags.map(tag => (
                         <span
                           key={tag}
-                          className={`font-label-sm text-[9px] uppercase tracking-widest px-2 py-0.5 rounded border ${
+                          className={`font-label-sm text-[9px] px-2 py-0.5 rounded border ${
                             tag === "VEG" ? "border-emerald-600/30 text-emerald-700" :
                             tag === "NON-VEG" ? "border-red-800/30 text-red-800" :
                             tag === "VEGAN" ? "border-emerald-800/30 text-emerald-800" :
@@ -123,13 +123,13 @@ export default function FullMenuCatalog() {
                       ))}
                     </div>
                   </div>
-                  <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  <p className="font-body-md text-body-md-md text-on-surface-variant leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
                 
                 <div className="flex flex-col items-end gap-4 shrink-0">
-                  <span className="font-label-sm text-label-sm text-on-surface">
+                  <span className="font-label-sm text-label-sm-sm text-on-surface">
                     {item.price}
                   </span>
                   <a
@@ -148,7 +148,7 @@ export default function FullMenuCatalog() {
       </div>
 
       <div className="mt-20 pt-8 border-t border-outline-variant/30 text-center">
-        <p className="font-label-sm text-label-sm text-on-surface-variant italic">
+        <p className="font-label-sm text-label-sm-sm text-on-surface-variant italic">
           Full menu is updated regularly. Prices may vary by outlet. For the most current menu, scan the QR code or visit us in-store.
         </p>
       </div>

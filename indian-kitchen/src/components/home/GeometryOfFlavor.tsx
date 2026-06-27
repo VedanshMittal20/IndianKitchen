@@ -9,8 +9,8 @@ export default function GeometryOfFlavor() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
           <div>
-            <span className="font-label-sm text-label-sm text-brand-deep-forest font-bold block mb-4 uppercase tracking-widest">Fig. 01 — Technique</span>
-            <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
+            <span className="font-label-sm text-label-sm-sm text-brand-deep-forest font-bold block mb-4">Fig. 01 — Technique</span>
+            <h2 className="font-display-lg text-display-lg-lg-mobile md:text-display-lg text-on-surface">
               Geometry of Flavor
             </h2>
           </div>
@@ -28,14 +28,14 @@ export default function GeometryOfFlavor() {
               unoptimized
             />
             <div className="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent flex flex-col justify-end p-8">
-              <span className="font-label-sm text-label-sm text-primary-fixed block mb-2">Spice Architecture</span>
-              <h3 className="font-headline-md text-headline-md text-surface-bright">The Foundation</h3>
+              <span className="font-label-sm text-label-sm-sm text-primary-fixed block mb-2">Spice Architecture</span>
+              <h3 className="font-headline-md text-headline-md-md text-surface-bright">The Foundation</h3>
             </div>
           </div>
           {/* Small Stat/Text Block */}
           <div className="md:col-span-4 md:row-span-1 glass-card p-8 flex flex-col justify-center reveal" style={{ transitionDelay: '100ms' }}>
-            <span className="font-display-lg text-display-lg text-brand-deep-forest mb-2 drop-shadow-sm">48h</span>
-            <p className="font-body-md text-on-surface-variant">
+            <span className="font-display-lg text-display-lg-lg text-brand-deep-forest mb-2 drop-shadow-sm">48h</span>
+            <p className="font-body-md text-body-md-surface-variant">
               Our signature marinades are aged structurally, allowing complex flavor compounds to synthesize over time.
             </p>
           </div>

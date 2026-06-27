@@ -62,13 +62,13 @@ export default async function BlogPostPage({
 
         <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 lg:px-16 pb-12 md:pb-16 z-10">
           <div className="container mx-auto max-w-4xl">
-            <span className="bg-saffron-gold text-on-surface text-[8px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-4 shadow-lg">
+            <span className="bg-saffron-gold text-on-surface text-[8px] font-bold px-3 py-1.5 inline-block mb-4 shadow-lg">
               {post.tag}
             </span>
-            <h1 className="font-headline-md text-4xl md:text-5xl lg:text-6xl text-on-surface leading-tight mb-6 uppercase tracking-wide">
+            <h1 className="font-headline-md text-headline-md text-on-surface mb-6 tracking-wide">
               {post.title}
             </h1>
-            <div className="flex items-center gap-4 text-on-surface/70 text-[9px] font-body-md uppercase tracking-[0.15em] font-bold">
+            <div className="flex items-center gap-4 text-on-surface/70 text-[9px] font-body-md tracking-[0.15em] font-bold">
               <span>{post.date}</span>
               <span className="w-1.5 h-1.5 rounded-full bg-saffron-gold" />
               <span>{post.readTime}</span>
@@ -84,7 +84,7 @@ export default async function BlogPostPage({
         <div className="max-w-4xl mx-auto mb-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-[9px] font-body-md font-bold tracking-[0.25em] uppercase text-brand-golden hover:text-on-surface transition-colors link-underline pb-1"
+            className="inline-flex items-center gap-2 text-[9px] font-body-md font-bold tracking-[0.25em] text-brand-golden hover:text-on-surface transition-colors link-underline pb-1"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Chronicles
           </Link>
@@ -94,7 +94,7 @@ export default async function BlogPostPage({
           <BlogContent content={post.content} />
 
           <div className="mt-16 pt-8 border-t border-outline-variant/30 flex flex-col sm:flex-row justify-between items-center gap-6">
-            <h3 className="font-headline-md text-xl text-on-surface uppercase tracking-wide">Share this story</h3>
+            <h3 className="font-headline-md text-headline-md-surface tracking-wide">Share this story</h3>
             <div className="flex gap-4">
               <a
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://indiankitchen.lk/blog/${slug}`)}`}
@@ -142,10 +142,10 @@ export default async function BlogPostPage({
                     />
                   </div>
                   <div className="p-6">
-                    <span className="text-[8px] text-brand-golden uppercase tracking-[0.2em] font-body-md font-bold block mb-2">
+                    <span className="text-[8px] text-brand-golden tracking-[0.2em] font-body-md font-bold block mb-2">
                       {related.tag}
                     </span>
-                    <h3 className="font-headline-md text-xl text-on-surface group-hover:text-brand-golden transition-colors duration-300 uppercase leading-snug line-clamp-2">
+                    <h3 className="font-headline-md text-headline-md-surface group-hover:text-brand-golden transition-colors duration-300 leading-snug line-clamp-2">
                       {related.title}
                     </h3>
                   </div>

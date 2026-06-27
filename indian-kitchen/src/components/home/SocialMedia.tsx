@@ -97,8 +97,8 @@ export default function SocialMedia() {
             <div className="text-on-surface mb-3 group-hover:text-brand-golden transition-colors duration-400">
               {social.icon}
             </div>
-            <h3 className="font-headline-md text-xl text-on-surface mb-1">{social.name}</h3>
-            <p className="font-body-md text-[9px] tracking-[0.2em] uppercase text-brand-golden group-hover:text-on-surface transition-colors font-bold">
+            <h3 className="font-headline-md text-headline-md-surface mb-1">{social.name}</h3>
+            <p className="font-body-md text-[9px] tracking-[0.2em] text-brand-golden group-hover:text-on-surface transition-colors font-bold">
               {social.handle}
             </p>
           </motion.a>
@@ -125,7 +125,7 @@ export default function SocialMedia() {
               sizes="(max-width: 768px) 33vw, 16vw"
             />
             <div className="absolute inset-0 bg-surface-container-lowest/70 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
-              <span className="text-on-surface text-[9px] tracking-[0.2em] uppercase font-bold">View</span>
+              <span className="text-on-surface text-[9px] tracking-[0.2em] font-bold">View</span>
             </div>
           </motion.a>
         ))}

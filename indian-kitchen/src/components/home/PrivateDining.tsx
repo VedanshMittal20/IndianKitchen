@@ -40,10 +40,10 @@ export default function PrivateDining() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative z-10 bg-surface-container-lowest p-10 md:p-16 max-w-2xl text-center shadow-[0_20px_60px_rgba(6,73,53,0.15)] mx-4 rounded-sm border-t-4 border-brand-accent-green"
         >
-          <span className="text-[10px] tracking-[0.3em] uppercase text-brand-accent-green font-bold block mb-4">
+          <span className="text-[10px] tracking-[0.3em] text-brand-accent-green font-bold block mb-4">
             Private Events
           </span>
-          <h2 className="font-headline-md text-4xl md:text-5xl text-brand-deep-forest mb-6 leading-tight">Your Event, Our Stage</h2>
+          <h2 className="font-headline-md text-headline-md text-brand-deep-forest mb-6">Your Event, Our Stage</h2>
           <div className="w-12 h-1 bg-brand-sandy/40 mx-auto mb-6 rounded-full" />
           <p className="text-on-surface-variant font-light leading-relaxed mb-10 text-base md:text-lg">
             From intimate celebrations to corporate gatherings — reserve private spaces across all our theme

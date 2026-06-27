@@ -52,18 +52,18 @@ export default function FindUs() {
           </div>
           <div className="flex flex-col gap-6">
             <div>
-              <h4 className="font-body-md text-[8px] tracking-[0.25em] uppercase text-on-surface-variant mb-1.5 font-bold">
+              <h4 className="font-body-md text-[8px] tracking-[0.25em] text-on-surface-variant mb-1.5 font-bold">
                 Colombo Outlet
               </h4>
-              <p className="font-headline-md text-xl text-on-surface leading-snug">
+              <p className="font-headline-md text-headline-md-surface leading-snug">
                 357 R.A. De Mel Mawatha,<br />Kollupitiya, Colombo 00300
               </p>
             </div>
             <div>
-              <h4 className="font-body-md text-[8px] tracking-[0.25em] uppercase text-on-surface-variant mb-1.5 font-bold">
+              <h4 className="font-body-md text-[8px] tracking-[0.25em] text-on-surface-variant mb-1.5 font-bold">
                 Kandy Outlet
               </h4>
-              <p className="font-headline-md text-xl text-on-surface leading-snug">
+              <p className="font-headline-md text-headline-md-surface leading-snug">
                 25/8 Sangaraja Mawatha,<br />Hillwood College Rd, Kandy 20000
               </p>
             </div>
@@ -75,13 +75,13 @@ export default function FindUs() {
             <Phone className="w-4 h-4" />
           </div>
           <div>
-            <h4 className="font-body-md text-[8px] tracking-[0.25em] uppercase text-on-surface-variant mb-1.5 font-bold">
+            <h4 className="font-body-md text-[8px] tracking-[0.25em] text-on-surface-variant mb-1.5 font-bold">
               Reservations & Inquiries
             </h4>
             <div className="flex flex-col gap-1.5">
               <a
                 href="tel:+94117112334"
-                className="font-headline-md text-xl text-on-surface hover:text-brand-golden transition-colors font-medium"
+                className="font-headline-md text-headline-md-surface hover:text-brand-golden transition-colors font-medium"
               >
                 +94 117 112 334
               </a>
@@ -100,7 +100,7 @@ export default function FindUs() {
             <Clock className="w-4 h-4" />
           </div>
           <div>
-            <h4 className="font-body-md text-[8px] tracking-[0.25em] uppercase text-on-surface-variant mb-1.5 font-bold">
+            <h4 className="font-body-md text-[8px] tracking-[0.25em] text-on-surface-variant mb-1.5 font-bold">
               Kitchen Hours
             </h4>
             <div className="text-on-surface/70 space-y-1.5 font-body-md font-light text-sm">

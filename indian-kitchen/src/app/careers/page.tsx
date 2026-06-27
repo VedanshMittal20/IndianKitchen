@@ -138,11 +138,11 @@ ${data.whyUs}`;
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-surface-container-low p-8 md:p-10 border border-outline-variant/30 hover:border-saffron-gold transition-all duration-300 shadow-xl rounded-sm"
               >
-                <span className="text-[9px] tracking-[0.2em] uppercase text-brand-golden font-bold mb-3 block">
+                <span className="text-[9px] tracking-[0.2em] text-brand-golden font-bold mb-3 block">
                   {job.location}
                 </span>
-                <h3 className="font-headline-md text-2xl text-on-surface mb-3 uppercase tracking-wide">{job.title}</h3>
-                <span className="flex items-center gap-1.5 font-bold uppercase tracking-[0.1em] text-[9px] text-brand-golden mb-4 font-body-md">
+                <h3 className="font-headline-md text-headline-md-surface mb-3 tracking-wide">{job.title}</h3>
+                <span className="flex items-center gap-1.5 font-bold tracking-[0.1em] text-[9px] text-brand-golden mb-4 font-body-md">
                   <Clock className="w-3.5 h-3.5" />
                   {job.type}
                 </span>
@@ -167,7 +167,7 @@ ${data.whyUs}`;
             className="max-w-4xl mx-auto bg-surface-container-low p-8 md:p-14 shadow-xl border border-outline-variant/30 rounded-sm"
           >
             <div className="text-center mb-10 border-b border-outline-variant/30 pb-6">
-              <h4 className="font-headline-md text-3xl text-on-surface mb-3 uppercase tracking-wide">
+              <h4 className="font-headline-md text-headline-md-surface mb-3 tracking-wide">
                 Don't see your role?
               </h4>
               <p className="text-on-surface-variant text-sm font-body-md font-light">Apply below and we'll reach out to schedule an interview.</p>
@@ -178,7 +178,7 @@ ${data.whyUs}`;
                 <div className="w-16 h-16 rounded-full bg-saffron-gold/10 flex items-center justify-center mx-auto mb-5 border border-outline-variant/30">
                   <CheckCircle2 className="w-8 h-8 text-brand-golden" />
                 </div>
-                <h3 className="font-headline-md text-2xl text-on-surface mb-3 uppercase tracking-wide">Application Sent</h3>
+                <h3 className="font-headline-md text-headline-md-surface mb-3 tracking-wide">Application Sent</h3>
                 <p className="text-on-surface-variant mb-6 max-w-md mx-auto font-body-md font-light">
                   Your application has been submitted via WhatsApp. Our talent team will review your details and get back to you shortly.
                 </p>
@@ -193,26 +193,26 @@ ${data.whyUs}`;
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
                       Full Name *
                     </label>
                     <input
                       {...register("fullName")}
                       type="text"
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-sm"
+                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md"
                     />
                     {errors.fullName && (
                       <p className="text-crimson text-xs mt-1">{errors.fullName.message}</p>
                     )}
                   </div>
                   <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
                       Email *
                     </label>
                     <input
                       {...register("email")}
                       type="email"
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-sm"
+                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md"
                     />
                     {errors.email && (
                       <p className="text-crimson text-xs mt-1">{errors.email.message}</p>
@@ -222,25 +222,25 @@ ${data.whyUs}`;
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
                       Phone *
                     </label>
                     <input
                       {...register("phone")}
                       type="tel"
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-sm"
+                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md"
                     />
                     {errors.phone && (
                       <p className="text-crimson text-xs mt-1">{errors.phone.message}</p>
                     )}
                   </div>
                   <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
                       Role Applying For *
                     </label>
                     <select
                       {...register("role")}
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-sm"
+                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md"
                     >
                       <option value="" className="bg-surface-container-low text-on-surface">Select Role</option>
                       {jobListings.map((j) => (
@@ -258,25 +258,25 @@ ${data.whyUs}`;
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
                       Current Location *
                     </label>
                     <input
                       {...register("currentLocation")}
                       type="text"
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-sm"
+                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md"
                     />
                     {errors.currentLocation && (
                       <p className="text-crimson text-xs mt-1">{errors.currentLocation.message}</p>
                     )}
                   </div>
                   <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
                       Years of Experience *
                     </label>
                     <select
                       {...register("experience")}
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-sm"
+                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md"
                     >
                       <option value="" className="bg-surface-container-low text-on-surface">Select</option>
                       {experienceOptions.map((e) => (
@@ -293,28 +293,28 @@ ${data.whyUs}`;
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
                       LinkedIn Profile
                     </label>
                     <input
                       {...register("linkedin")}
                       type="url"
                       placeholder="https://linkedin.com/in/..."
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-sm placeholder:text-on-secondary/25"
+                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md placeholder:text-on-secondary/25"
                     />
                     {errors.linkedin && (
                       <p className="text-crimson text-xs mt-1">{errors.linkedin.message}</p>
                     )}
                   </div>
                   <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
                       Portfolio / Website
                     </label>
                     <input
                       {...register("portfolio")}
                       type="url"
                       placeholder="https://..."
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-sm placeholder:text-on-secondary/25"
+                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md placeholder:text-on-secondary/25"
                     />
                     {errors.portfolio && (
                       <p className="text-crimson text-xs mt-1">{errors.portfolio.message}</p>
@@ -323,13 +323,13 @@ ${data.whyUs}`;
                 </div>
 
                 <div>
-                  <label className="block text-brand-golden text-[9px] font-bold mb-1.5 uppercase tracking-[0.2em] font-body-md">
+                  <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
                     Why do you want to work at Indian Kitchen? *
                   </label>
                   <textarea
                     {...register("whyUs")}
                     rows={4}
-                    className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors resize-none font-body-md text-sm"
+                    className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors resize-none font-body-md text-body-md"
                   />
                   {errors.whyUs && (
                     <p className="text-crimson text-xs mt-1">{errors.whyUs.message}</p>

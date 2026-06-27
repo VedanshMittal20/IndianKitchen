@@ -20,7 +20,7 @@ export default function MenuCategoryPills({ categories, activeCategory, onSelect
             onClick={() => onSelect(cat)}
             className="relative pb-4 shrink-0 transition-colors"
           >
-            <span className={`text-[10px] tracking-[0.2em] uppercase font-semibold ${isActive ? "text-brand-golden" : "text-on-surface-variant hover:text-on-surface"}`}>
+            <span className={`text-[10px] tracking-[0.2em] font-semibold ${isActive ? "text-brand-golden" : "text-on-surface-variant hover:text-on-surface"}`}>
               {cat}
             </span>
             {isActive && (

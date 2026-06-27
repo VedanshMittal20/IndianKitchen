@@ -47,9 +47,9 @@ export default function HomeThemesStrip() {
         <div className="absolute top-20 md:top-32 left-6 md:left-margin-desktop z-20 pointer-events-none">
           <div className="flex items-center gap-4 mb-4">
             <span className="h-px w-12 bg-gradient-to-r from-transparent via-secondary to-transparent"></span>
-            <span className="font-label-sm text-[12px] text-brand-golden tracking-[0.3em] uppercase drop-shadow-md">Fig. 02 — Sanctuaries</span>
+            <span className="font-label-sm text-[12px] text-brand-golden tracking-[0.3em] drop-shadow-md">Fig. 02 — Sanctuaries</span>
           </div>
-          <h2 className="font-headline-lg text-[40px] md:text-[64px] text-on-surface leading-tight max-w-lg drop-shadow-2xl">
+          <h2 className="font-headline-lg text-[40px] md:text-[64px] text-on-surface max-w-lg drop-shadow-2xl">
             The Geometry <br/> of Space.
           </h2>
         </div>
@@ -72,7 +72,7 @@ export default function HomeThemesStrip() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                   <div className="absolute bottom-10 left-10 right-10 flex justify-between items-end opacity-100 z-10 pointer-events-none">
-                    <span className="font-label-sm text-[12px] text-on-surface bg-saffron-gold px-4 py-2 rounded-full uppercase tracking-widest shadow-[0_0_20px_rgba(255,186,9,0.5)]">
+                    <span className="font-label-sm text-[12px] text-on-surface bg-saffron-gold px-4 py-2 rounded-full shadow-[0_0_20px_rgba(255,186,9,0.5)]">
                       {theme.tag}
                     </span>
                   </div>
@@ -81,14 +81,14 @@ export default function HomeThemesStrip() {
 
               {/* Text Content */}
               <div className="w-full md:w-[45%] flex flex-col justify-center">
-                <h3 className="font-headline-md text-4xl lg:text-6xl uppercase tracking-wide text-on-surface mb-6 leading-[0.9]">
+                <h3 className="font-headline-md text-headline-md tracking-wide text-on-surface mb-6 leading-[0.9]">
                   {theme.name}
                 </h3>
                 <p className="text-on-surface-variant text-body-lg font-light leading-relaxed mb-8 max-w-sm">
                   {theme.desc}
                 </p>
                 <Link href={theme.href} className="group flex items-center gap-4 text-tertiary-fixed-dim hover:text-brand-golden transition-colors w-fit">
-                  <span className="font-label-lg text-[14px] tracking-widest uppercase">Explore Sanctum</span>
+                  <span className="font-label-lg text-[14px]">Explore Sanctum</span>
                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
                 </Link>
               </div>
