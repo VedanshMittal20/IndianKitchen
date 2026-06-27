@@ -8,13 +8,13 @@ export default function ArchitectureOfShadows() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
           <div className="w-full md:w-1/2">
-            <h2 className="font-headline-md text-5xl md:text-6xl lg:text-7xl text-brand-warm-cream mb-8 leading-tight">
+            <h2 className="font-headline-md text-headline-md text-brand-warm-cream mb-8">
               The Atmosphere<br />of The Sanctuary
             </h2>
             <p className="font-light text-lg text-white/80 mb-12 max-w-lg leading-relaxed">
               By stepping away from the bustling streets, our space cultivates a deep, intentional calm. This shadowed approach frames the dining experience, drawing focus entirely to the vibrant colors and complex aromas of our regional Indian dishes, while leaving the periphery in quiet obscurity.
             </p>
-            <ul className="space-y-6 text-sm tracking-widest uppercase font-bold text-white/70">
+            <ul className="space-y-6 text-sm font-bold text-white/70">
               <li className="flex items-center gap-6 border-b border-white/10 pb-4">
                 <span className="text-brand-accent-green">01.</span> Intimate Dining Sanctuaries
               </li>
@@ -36,7 +36,7 @@ export default function ArchitectureOfShadows() {
                 unoptimized
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-brand-golden text-brand-deep-forest text-[10px] tracking-[0.2em] uppercase p-6 rounded-sm z-10 font-bold shadow-xl border-2 border-brand-deep-forest">
+            <div className="absolute -bottom-6 -left-6 bg-brand-golden text-brand-deep-forest text-[10px] tracking-[0.2em] p-6 rounded-sm z-10 font-bold shadow-xl border-2 border-brand-deep-forest">
               Fig. 02 <br /> The Sanctuary Experience
             </div>
           </div>

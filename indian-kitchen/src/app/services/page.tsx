@@ -95,7 +95,7 @@ function EditorialBlock({ service, index }: { service: any; index: number }) {
               transition={{ duration: 0.8, delay: 0.4 }}
               className={`absolute -bottom-8 ${service.reverse ? "-left-4 md:-left-12" : "-right-4 md:-right-12"} hidden md:block z-10`}
             >
-              <span className={`font-display text-8xl md:text-[180px] leading-none ${service.accentColor} opacity-20 select-none`}>
+              <span className={`font-display-lg text-display-lg md:text-[180px] leading-none ${service.accentColor} opacity-20 select-none`}>
                 {service.num}
               </span>
             </motion.div>
@@ -108,10 +108,10 @@ function EditorialBlock({ service, index }: { service: any; index: number }) {
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             >
-              <span className={`font-body-md text-xs tracking-[0.3em] uppercase font-bold ${service.accentColor} mb-6 block`}>
+              <span className={`font-body-md text-body-md tracking-[0.3em] font-bold ${service.accentColor} mb-6 block`}>
                 Service / {service.num}
               </span>
-              <h2 className={`font-headline-md text-4xl md:text-5xl lg:text-6xl ${service.textColor} mb-8 leading-tight`}>
+              <h2 className={`font-headline-md text-headline-md ${service.textColor} mb-8`}>
                 {service.title}
               </h2>
               <div className={`w-12 h-1 ${service.accentColor} mb-8 rounded-full`} style={{ backgroundColor: "currentColor" }} />
@@ -127,7 +127,7 @@ function EditorialBlock({ service, index }: { service: any; index: number }) {
                     initial={{ opacity: 0, y: 10 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.6 + (idx * 0.1) }}
-                    className={`text-[10px] font-bold tracking-[0.2em] uppercase px-4 py-2 border ${
+                    className={`text-[10px] font-bold tracking-[0.2em] px-4 py-2 border ${
                       service.bgColor === "bg-brand-deep-forest" 
                         ? "border-brand-accent-green/30 text-brand-warm-cream bg-brand-accent-green/10" 
                         : "border-brand-deep-forest/20 text-brand-deep-forest bg-white/50"
@@ -159,10 +159,10 @@ export default function ServicesPage() {
 
       {/* Prologue Section */}
       <section className="py-24 md:py-32 px-6 md:px-12 lg:px-16 max-w-5xl mx-auto text-center">
-        <span className="text-[10px] tracking-[0.3em] uppercase text-brand-accent-green font-bold block mb-8">
+        <span className="text-[10px] tracking-[0.3em] text-brand-accent-green font-bold block mb-8">
           The Philosophy
         </span>
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-brand-deep-forest leading-tight mb-8">
+        <h2 className="font-display-lg text-display-lg text-brand-deep-forest mb-8">
           "Whether you are hosting an intimate gathering or a grand corporate milestone, our sanctuaries adapt to tell your story."
         </h2>
         <p className="font-light text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">

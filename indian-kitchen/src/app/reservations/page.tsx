@@ -14,24 +14,24 @@ export default function ReservationsPage() {
         {/* Heritage Header */}
       <header className="w-full max-w-4xl mb-16 text-center md:text-left relative">
         <div className="flex items-end justify-between border-b border-primary-container/30 pb-4 mb-8">
-          <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface relative">
-            <span className="absolute -top-6 -left-4 font-label-sm text-label-sm text-primary-container/60">
+          <h1 className="font-display-lg text-display-lg-lg-mobile md:text-display-lg text-on-surface relative">
+            <span className="absolute -top-6 -left-4 font-label-sm text-label-sm-sm text-primary-container/60">
               Fig. 01
             </span>
             Sanctuary Portal
           </h1>
-          <span className="font-label-sm text-label-sm text-tertiary hidden md:block">
+          <span className="font-label-sm text-label-sm-sm text-tertiary hidden md:block">
             Est. 2024
           </span>
         </div>
-        <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+        <p className="font-body-lg text-body-lg-lg text-on-surface-variant max-w-2xl">
           Secure your passage into our culinary sanctuary. Choose your environment—whether seeking the warm embrace of the Hearth or the secluded depths of the Vault.
         </p>
       </header>
       <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
         {/* Environment Selection (Left Column) */}
         <div className="lg:col-span-5 flex flex-col gap-6">
-          <h2 className="font-headline-md text-headline-md text-on-surface mb-2">
+          <h2 className="font-headline-md text-headline-md-md text-on-surface mb-2">
             The Environments
           </h2>
           {/* Pondicherry Street Card */}
@@ -57,10 +57,10 @@ export default function ReservationsPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/50 to-transparent z-10"></div>
               <div className="relative z-20 flex justify-between items-end w-full">
                 <div>
-                  <h3 className="font-headline-md text-headline-md text-on-surface leading-none mb-2">
+                  <h3 className="font-headline-md text-headline-md-md text-on-surface leading-none mb-2">
                     Pondicherry Street
                   </h3>
-                  <p className="font-body-md text-body-md text-on-surface-variant">
+                  <p className="font-body-md text-body-md-md text-on-surface-variant">
                     Vibrant, colonial-era courtyards.
                   </p>
                 </div>
@@ -98,10 +98,10 @@ export default function ReservationsPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-header via-emerald-header/70 to-transparent z-10"></div>
               <div className="relative z-20 flex justify-between items-end w-full text-white">
                 <div>
-                  <h3 className="font-headline-md text-headline-md leading-none mb-2">
+                  <h3 className="font-headline-md text-headline-md-md leading-none mb-2">
                     Kerala Houseboat
                   </h3>
-                  <p className="font-body-md text-body-md text-gray-300">
+                  <p className="font-body-md text-body-md-md text-gray-300">
                     Tranquil, backwater serenity.
                   </p>
                 </div>
@@ -136,10 +136,10 @@ export default function ReservationsPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian-accent via-obsidian-accent/70 to-transparent z-10"></div>
               <div className="relative z-20 flex justify-between items-end w-full text-white">
                 <div>
-                  <h3 className="font-headline-md text-headline-md leading-none mb-2">
+                  <h3 className="font-headline-md text-headline-md-md leading-none mb-2">
                     Sherlock Mystery
                   </h3>
-                  <p className="font-body-md text-body-md text-gray-400">
+                  <p className="font-body-md text-body-md-md text-gray-400">
                     Interactive, shadowed, exclusive.
                   </p>
                 </div>
@@ -156,7 +156,7 @@ export default function ReservationsPage() {
         <div className="lg:col-span-7 w-full mt-8 lg:mt-0">
           <div className="glass-panel p-8 md:p-12 rounded-xl relative">
             <div className="absolute top-0 right-0 p-6">
-              <span className="font-label-sm text-label-sm text-outline">
+              <span className="font-label-sm text-label-sm-sm text-outline">
                 Form .01
               </span>
             </div>
@@ -164,7 +164,7 @@ export default function ReservationsPage() {
               {/* Date & Time Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2 relative group">
-                  <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
+                  <label className="font-label-sm text-label-sm-sm text-tertiary">
                     Date of Arrival
                   </label>
                   <div className="flex items-center">
@@ -172,21 +172,21 @@ export default function ReservationsPage() {
                       calendar_today
                     </span>
                     <input
-                      className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg focus:ring-0 p-0 cursor-pointer"
+                      className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0 cursor-pointer"
                       type="date"
                       defaultValue="2024-11-15"
                     />
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2 relative group">
-                  <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
+                  <label className="font-label-sm text-label-sm-sm text-tertiary">
                     Time
                   </label>
                   <div className="flex items-center">
                     <span className="material-symbols-outlined text-outline mr-3" style={{ fontVariationSettings: "'FILL' 0" }}>
                       schedule
                     </span>
-                    <select className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg focus:ring-0 p-0 cursor-pointer appearance-none">
+                    <select className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0 cursor-pointer appearance-none">
                       <option>19:00</option>
                       <option>19:30</option>
                       <option>20:00</option>
@@ -198,14 +198,14 @@ export default function ReservationsPage() {
               {/* Party Size & Occasion */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
-                  <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
+                  <label className="font-label-sm text-label-sm-sm text-tertiary">
                     Party Size
                   </label>
                   <div className="flex items-center">
                     <span className="material-symbols-outlined text-outline mr-3" style={{ fontVariationSettings: "'FILL' 0" }}>
                       group
                     </span>
-                    <select className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg focus:ring-0 p-0 cursor-pointer appearance-none">
+                    <select className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0 cursor-pointer appearance-none">
                       <option>2 Guests</option>
                       <option>3 Guests</option>
                       <option>4 Guests</option>
@@ -214,11 +214,11 @@ export default function ReservationsPage() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
-                  <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
+                  <label className="font-label-sm text-label-sm-sm text-tertiary">
                     Occasion (Optional)
                   </label>
                   <input
-                    className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg focus:ring-0 p-0 placeholder:text-outline-variant"
+                    className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0 placeholder:text-outline-variant"
                     placeholder="Anniversary, Business..."
                     type="text"
                   />
@@ -226,44 +226,44 @@ export default function ReservationsPage() {
               </div>
               {/* Guest Details */}
               <div className="space-y-8 pt-4">
-                <h3 className="font-headline-md text-headline-md text-on-surface/80 border-b border-outline-variant/30 pb-2">
+                <h3 className="font-headline-md text-headline-md-md text-on-surface/80 border-b border-outline-variant/30 pb-2">
                   Guest Details
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
-                    <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
+                    <label className="font-label-sm text-label-sm-sm text-tertiary">
                       First Name
                     </label>
                     <input
-                      className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg focus:ring-0 p-0"
+                      className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0"
                       type="text"
                     />
                   </div>
                   <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
-                    <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
+                    <label className="font-label-sm text-label-sm-sm text-tertiary">
                       Last Name
                     </label>
                     <input
-                      className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg focus:ring-0 p-0"
+                      className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0"
                       type="text"
                     />
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
-                  <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
+                  <label className="font-label-sm text-label-sm-sm text-tertiary">
                     Email Address
                   </label>
                   <input
-                    className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg focus:ring-0 p-0"
+                    className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0"
                     type="email"
                   />
                 </div>
                 <div className="flex flex-col gap-2 gold-glow border-b border-outline-variant pb-2">
-                  <label className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
+                  <label className="font-label-sm text-label-sm-sm text-tertiary">
                     Special Requests
                   </label>
                   <textarea
-                    className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg focus:ring-0 p-0 resize-none placeholder:text-outline-variant"
+                    className="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg-lg focus:ring-0 p-0 resize-none placeholder:text-outline-variant"
                     placeholder="Dietary restrictions, seating preferences..."
                     rows={2}
                   ></textarea>
@@ -271,7 +271,7 @@ export default function ReservationsPage() {
               </div>
               {/* Submit Area */}
               <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-outline-variant/50">
-                <p className="font-label-sm text-label-sm text-tertiary max-w-xs text-center sm:text-left">
+                <p className="font-label-sm text-label-sm-sm text-tertiary max-w-xs text-center sm:text-left">
                   By proceeding, you agree to our{" "}
                   <a className="underline hover:text-primary-container transition-colors" href="#">
                     cancellation policy
@@ -279,7 +279,7 @@ export default function ReservationsPage() {
                   .
                 </p>
                 <button
-                  className="w-full sm:w-auto px-10 py-4 bg-primary-container text-on-primary font-label-sm text-label-sm tracking-widest uppercase hover:bg-primary transition-all duration-300 relative overflow-hidden group"
+                  className="w-full sm:w-auto px-10 py-4 bg-primary-container text-on-primary font-label-sm text-label-sm-sm hover:bg-primary transition-all duration-300 relative overflow-hidden group"
                   id="submit-btn"
                   type="button"
                   onClick={(e) => {

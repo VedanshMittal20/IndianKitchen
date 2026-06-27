@@ -33,7 +33,7 @@ export default function QRWidget() {
       >
         <QrCode className="w-5 h-5" />
         {/* Tooltip */}
-        <span className="absolute left-full ml-4 px-3 py-1.5 bg-surface-container-low border border-outline-variant/30 text-on-surface text-[10px] uppercase font-body-md tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-sm shadow-2xl">
+        <span className="absolute left-full ml-4 px-3 py-1.5 bg-surface-container-low border border-outline-variant/30 text-on-surface text-[10px] font-body-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-sm shadow-2xl">
           Scan Table QR
         </span>
       </button>
@@ -60,10 +60,10 @@ export default function QRWidget() {
               className="max-w-md w-full bg-surface-container-low p-8 rounded-sm shadow-2xl border border-outline-variant/30 text-center relative overflow-hidden"
             >
               <div className="mb-8">
-                <span className="text-[9px] tracking-[0.25em] uppercase text-brand-golden font-bold block mb-2">
+                <span className="text-[9px] tracking-[0.25em] text-brand-golden font-bold block mb-2">
                   Dine In Order
                 </span>
-                <h3 className="font-headline-md text-3xl text-on-surface mb-3 uppercase tracking-wide">Scan Your Table</h3>
+                <h3 className="font-headline-md text-headline-md-surface mb-3 tracking-wide">Scan Your Table</h3>
                 <p className="text-on-surface-variant text-sm font-body-md font-light leading-relaxed">
                   Focus your camera on the QR code on your table to automatically open our digital menu.
                 </p>
@@ -89,8 +89,8 @@ export default function QRWidget() {
                   className="w-full aspect-square flex flex-col items-center justify-center bg-saffron-gold/10 border border-saffron-gold text-brand-golden rounded-sm"
                 >
                   <Utensils className="w-12 h-12 mb-4 animate-bounce" strokeWidth={1.5} />
-                  <h4 className="font-headline-md text-2xl mb-1 uppercase tracking-wide text-on-surface">Table Recognized</h4>
-                  <p className="text-brand-golden/80 text-[10px] tracking-widest uppercase font-body-md font-semibold">Retrieving Culinary Passport...</p>
+                  <h4 className="font-headline-md text-headline-md mb-1 tracking-wide text-on-surface">Table Recognized</h4>
+                  <p className="text-brand-golden/80 text-[10px] font-body-md font-semibold">Retrieving Culinary Passport...</p>
                 </motion.div>
               )}
             </motion.div>

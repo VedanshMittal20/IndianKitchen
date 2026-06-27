@@ -24,17 +24,17 @@ export default function DishCard({ name, price, image, tag }: DishCardProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60" />
         {tag && (
-          <div className="absolute top-4 left-4 bg-saffron-gold text-on-surface font-label-sm text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full font-bold">
+          <div className="absolute top-4 left-4 bg-saffron-gold text-on-surface font-label-sm text-[10px] tracking-[0.2em] px-3 py-1.5 rounded-full font-bold">
             {tag}
           </div>
         )}
       </div>
       <div className="pt-5 px-2 bg-transparent">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="font-headline-md text-xl text-on-surface font-medium leading-tight group-hover:text-brand-golden transition-colors">
+          <h3 className="font-headline-md text-headline-md-surface font-medium group-hover:text-brand-golden transition-colors">
             {name}
           </h3>
-          <span className="text-[10px] tracking-widest text-on-surface-variant shrink-0 pt-1">
+          <span className="text-[10px] text-on-surface-variant shrink-0 pt-1">
             {price}
           </span>
         </div>

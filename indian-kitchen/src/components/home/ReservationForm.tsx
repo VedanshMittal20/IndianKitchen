@@ -73,26 +73,26 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
               />
               <div className="space-y-6">
                 <div>
-                  <span className="text-[9px] tracking-[0.2em] uppercase text-brand-golden mb-1.5 font-bold block">
+                  <span className="text-[9px] tracking-[0.2em] text-brand-golden mb-1.5 font-bold block">
                     Direct Booking Hotline
                   </span>
-                  <p className="font-body-md text-base text-on-surface font-medium">+94 117 112 334</p>
+                  <p className="font-body-md text-body-md-surface font-medium">+94 117 112 334</p>
                 </div>
                 <div>
-                  <span className="text-[9px] tracking-[0.2em] uppercase text-brand-golden mb-1.5 font-bold block">
+                  <span className="text-[9px] tracking-[0.2em] text-brand-golden mb-1.5 font-bold block">
                     Colombo Address
                   </span>
-                  <p className="font-body-md text-base text-on-surface/70 font-light leading-relaxed">
+                  <p className="font-body-md text-body-md-surface/70 font-light leading-relaxed">
                     357 R.A. De Mel Mawatha,
                     <br />
                     Colombo 03
                   </p>
                 </div>
                 <div>
-                  <span className="text-[9px] tracking-[0.2em] uppercase text-brand-golden mb-1.5 font-bold block">
+                  <span className="text-[9px] tracking-[0.2em] text-brand-golden mb-1.5 font-bold block">
                     Sanctuary Kitchen Hours
                   </span>
-                  <p className="font-body-md text-base text-on-surface/70 font-light leading-relaxed">
+                  <p className="font-body-md text-body-md-surface/70 font-light leading-relaxed">
                     Everyday: 12:30 PM - 3:00 AM
                   </p>
                 </div>
@@ -110,13 +110,13 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
         >
           {isSubmitted ? (
             <div className="flex flex-col items-center justify-center py-16 text-center glass-card border border-secondary/15 p-8 shadow-2xl rounded-[3rem]">
-              <span className="font-headline-md text-3xl text-on-surface mb-4 uppercase tracking-wide">Reservation Sent</span>
+              <span className="font-headline-md text-headline-md-surface mb-4 tracking-wide">Reservation Sent</span>
               <p className="text-on-surface/65 font-body-md font-light mb-6 max-w-sm text-sm">
                 Your request has been forwarded via WhatsApp. Our hosts will confirm your table shortly.
               </p>
               <button
                 onClick={() => setIsSubmitted(false)}
-                className="btn-outline font-body-md text-[10px] tracking-[0.2em] uppercase font-bold"
+                className="btn-outline font-body-md text-[10px] tracking-[0.2em] font-bold"
               >
                 Make Another Booking
               </button>
@@ -128,26 +128,26 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] mb-1.5 font-bold font-body-md">
                     Name
                   </label>
                   <input
                     {...register("name")}
                     type="text"
-                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-sm"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-body-md"
                   />
                   {errors.name && (
                     <p className="text-crimson text-xs mt-1 font-body-md">{errors.name.message}</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] mb-1.5 font-bold font-body-md">
                     Phone
                   </label>
                   <input
                     {...register("phone")}
                     type="tel"
-                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-sm"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-body-md"
                   />
                   {errors.phone && (
                     <p className="text-crimson text-xs mt-1 font-body-md">{errors.phone.message}</p>
@@ -157,38 +157,38 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] mb-1.5 font-bold font-body-md">
                     Date
                   </label>
                   <input
                     {...register("date")}
                     type="date"
-                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-sm appearance-none"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-body-md appearance-none"
                   />
                   {errors.date && (
                     <p className="text-crimson text-xs mt-1 font-body-md">{errors.date.message}</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] mb-1.5 font-bold font-body-md">
                     Time
                   </label>
                   <input
                     {...register("time")}
                     type="time"
-                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-sm appearance-none"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-body-md appearance-none"
                   />
                   {errors.time && (
                     <p className="text-crimson text-xs mt-1 font-body-md">{errors.time.message}</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                  <label className="block text-brand-golden text-[9px] tracking-[0.2em] mb-1.5 font-bold font-body-md">
                     Guests
                   </label>
                   <select
                     {...register("guests")}
-                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-sm appearance-none"
+                    className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-body-md appearance-none"
                   >
                     <option value="" className="bg-surface-container-lowest text-on-surface">Select</option>
                     {[1, 2, 3, 4, 5, 6, 7, 8, "9+"].map((n) => (
@@ -204,12 +204,12 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
               </div>
 
               <div>
-                <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                <label className="block text-brand-golden text-[9px] tracking-[0.2em] mb-1.5 font-bold font-body-md">
                   Theme Preference
                 </label>
                 <select
                   {...register("theme")}
-                  className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-sm appearance-none"
+                  className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all font-body-md text-body-md appearance-none"
                 >
                   <option value="" className="bg-surface-container-lowest text-on-surface">Select Theme</option>
                   <option value="Pondicherry Street" className="bg-surface-container-lowest text-on-surface">Pondicherry Street (Colombo)</option>
@@ -223,20 +223,20 @@ export default function ReservationForm({ showHeader = true }: ReservationFormPr
               </div>
 
               <div>
-                <label className="block text-brand-golden text-[9px] tracking-[0.2em] uppercase mb-1.5 font-bold font-body-md">
+                <label className="block text-brand-golden text-[9px] tracking-[0.2em] mb-1.5 font-bold font-body-md">
                   Special Requests (Optional)
                 </label>
                 <textarea
                   {...register("specialRequests")}
                   rows={2}
-                  className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all resize-none font-body-md text-sm"
+                  className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-0 py-3 focus:outline-none focus:border-secondary focus:shadow-[0_4px_20px_rgba(255,186,9,0.1)] transition-all resize-none font-body-md text-body-md"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-primary w-full py-4 text-sm rounded-full font-label-lg tracking-widest uppercase mt-4"
+                className="btn-primary w-full py-4 text-sm rounded-full font-label-lg mt-4"
               >
                 {isSubmitting ? "Processing..." : "Submit Reservation via WhatsApp"}
               </button>

@@ -68,7 +68,7 @@ export default function Testimonials() {
         />
         <div className="flex items-center gap-2 bg-surface-container-low border border-outline-variant/30 px-4 py-2.5 rounded-sm w-fit self-start md:self-auto mb-2 shadow-lg">
           <Star className="w-3.5 h-3.5 text-brand-golden fill-gold" />
-          <span className="text-[9px] tracking-[0.2em] uppercase text-on-surface font-bold font-body-md">
+          <span className="text-[9px] tracking-[0.2em] text-on-surface font-bold font-body-md">
             4.8★ on Google · 1200+ Reviews
           </span>
         </div>
@@ -112,12 +112,12 @@ export default function Testimonials() {
 
               <div className="border-t border-cream/10 pt-4 flex justify-between items-center">
                 <div>
-                  <h4 className="text-[9px] tracking-[0.2em] uppercase text-brand-golden font-bold mb-0.5">
+                  <h4 className="text-[9px] tracking-[0.2em] text-brand-golden font-bold mb-0.5">
                     {t.author}
                   </h4>
-                  <p className="text-[8px] tracking-[0.2em] uppercase text-on-surface/40 font-body-md">{t.location}</p>
+                  <p className="text-[8px] tracking-[0.2em] text-on-surface/40 font-body-md">{t.location}</p>
                 </div>
-                <span className="text-[8px] tracking-widest text-brand-golden/30 uppercase font-body-md">Verified guest</span>
+                <span className="text-[8px] text-brand-golden/30 font-body-md">Verified guest</span>
               </div>
             </div>
           ))}
@@ -125,7 +125,7 @@ export default function Testimonials() {
       </div>
 
       <div className="w-full text-center mt-6">
-        <span className="text-[8px] tracking-[0.25em] text-on-surface/35 uppercase font-body-md">
+        <span className="text-[8px] tracking-[0.25em] text-on-surface/35 font-body-md">
           ← Drag horizontally to swipe reviews →
         </span>
       </div>

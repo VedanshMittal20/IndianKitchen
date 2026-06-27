@@ -55,7 +55,7 @@ export default function HomeMenuCategories() {
         />
         <Link
           href="/menu"
-          className="text-[10px] tracking-[0.2em] uppercase text-brand-golden hover:text-on-surface transition-colors inline-flex items-center gap-2 mb-2 group"
+          className="text-[10px] tracking-[0.2em] text-brand-golden hover:text-on-surface transition-colors inline-flex items-center gap-2 mb-2 group"
         >
           View Full Menu
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

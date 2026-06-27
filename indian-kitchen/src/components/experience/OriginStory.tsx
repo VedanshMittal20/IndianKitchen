@@ -50,10 +50,10 @@ function StatCounter({ value, label, delay = 0 }: { value: string; label: string
 
   return (
     <div ref={ref} className="text-center">
-      <div className="font-headline-md text-5xl md:text-6xl text-primary-container mb-2 select-none tracking-tight">
+      <div className="font-headline-md text-headline-md text-primary-container mb-2 select-none tracking-tight">
         {displayVal}
       </div>
-      <div className="text-[9px] tracking-[0.25em] uppercase text-on-surface-variant font-bold font-label-sm">
+      <div className="text-[9px] tracking-[0.25em] text-on-surface-variant font-bold font-label-sm">
         {label}
       </div>
     </div>
@@ -144,7 +144,7 @@ export default function OriginStory() {
           <div className="glass-panel p-10 rounded-[3rem] shadow-sm flex flex-col justify-between">
             <div>
               <SectionHeader label="Our Vision" title={<></>} className="mb-4" lightMode />
-              <h3 className="text-2xl md:text-3xl font-headline-md text-on-surface uppercase tracking-wide leading-tight mb-6">
+              <h3 className="text-2xl md:text-3xl font-headline-md text-headline-md-surface tracking-wide mb-6">
                 Redefining the boundaries of global theme dining.
               </h3>
               <div className="h-[1px] w-12 bg-primary-container mb-6" />
@@ -159,7 +159,7 @@ export default function OriginStory() {
           <div className="glass-panel p-10 rounded-[3rem] shadow-sm flex flex-col justify-between">
             <div>
               <SectionHeader label="Our Mission" title={<></>} className="mb-4" lightMode />
-              <h3 className="text-2xl md:text-3xl font-headline-md text-on-surface uppercase tracking-wide leading-tight mb-6">
+              <h3 className="text-2xl md:text-3xl font-headline-md text-headline-md-surface tracking-wide mb-6">
                 Immersive taste, authentic execution.
               </h3>
               <div className="h-[1px] w-12 bg-primary-container mb-6" />
@@ -199,7 +199,7 @@ export default function OriginStory() {
 
           <div className="lg:col-span-7">
             <p className="text-on-surface font-body-md font-light text-base md:text-lg leading-relaxed mb-6">
-              <strong className="text-primary-container font-semibold uppercase tracking-wider text-sm block mb-2">Vincent Renold, Founder</strong>
+              <strong className="text-primary-container font-semibold tracking-wider text-sm block mb-2">Vincent Renold, Founder</strong>
               Vincent Renold brings over two decades of elite hospitality excellence. His career is defined by prestigious leadership roles across the luxury tourism sectors of Sri Lanka and India, having worked closely with luxury brands like Radisson, ITC, Banyan Tree, and the renowned Zuri Kumarakom Kerala Resort & Spa.
             </p>
             <p className="text-on-surface-variant font-body-md font-light text-base leading-relaxed mb-8">
@@ -210,7 +210,7 @@ export default function OriginStory() {
               <p className="font-headline-md italic text-2xl text-on-surface/90 mb-4 leading-relaxed">
                 "Two decades shaping hospitality excellence across global brands has led to this: creating a complete ecosystem beyond restaurants. We aren't just serving food; we are curating memories rooted in heritage."
               </p>
-              <footer className="text-[10px] uppercase tracking-[0.2em] text-primary-container font-bold font-body-md">
+              <footer className="text-[10px] tracking-[0.2em] text-primary-container font-bold font-body-md">
                 — Vincent Renold, Founder
               </footer>
             </blockquote>

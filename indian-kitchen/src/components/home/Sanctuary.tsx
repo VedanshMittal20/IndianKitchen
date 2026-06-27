@@ -18,33 +18,33 @@ export default function Sanctuary() {
               />
             </div>
             <div className="absolute top-10 -right-4 md:-right-12 glass-card p-4 rounded w-48 shadow-sm">
-              <span className="font-label-sm text-label-sm text-primary block mb-1">Capacity</span>
-              <p className="font-body-md text-on-surface font-semibold">Max. 8 Guests</p>
+              <span className="font-label-sm text-label-sm-sm text-primary block mb-1">Capacity</span>
+              <p className="font-body-md text-body-md-surface font-semibold">Max. 8 Guests</p>
             </div>
           </div>
           <div className="order-1 md:order-2 reveal" style={{ transitionDelay: '200ms' }}>
-            <span className="font-label-sm text-label-sm text-primary block mb-6 uppercase">Fig. 02 — The Space</span>
-            <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-8">
+            <span className="font-label-sm text-label-sm-sm text-primary block mb-6">Fig. 02 — The Space</span>
+            <h2 className="font-display-lg text-display-lg-lg-mobile md:text-display-lg text-on-surface mb-8">
               A Sanctuary<br/>of Quietude.
             </h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant mb-8">
+            <p className="font-body-lg text-body-lg-lg text-on-surface-variant mb-8">
               Away from the kinetic energy of the main dining room lies our private enclave. Designed to strip away sensory noise, it allows the food to command complete attention.
             </p>
             <ul className="space-y-4 mb-10">
               <li className="flex items-center gap-4">
-                <span className="font-label-sm text-label-sm text-primary-container">01</span>
-                <span className="font-body-md text-on-surface">Curated Tasting Menu</span>
+                <span className="font-label-sm text-label-sm-sm text-primary-container">01</span>
+                <span className="font-body-md text-body-md-surface">Curated Tasting Menu</span>
               </li>
               <li className="flex items-center gap-4">
-                <span className="font-label-sm text-label-sm text-primary-container">02</span>
-                <span className="font-body-md text-on-surface">Dedicated Sommelier</span>
+                <span className="font-label-sm text-label-sm-sm text-primary-container">02</span>
+                <span className="font-body-md text-body-md-surface">Dedicated Sommelier</span>
               </li>
               <li className="flex items-center gap-4">
-                <span className="font-label-sm text-label-sm text-primary-container">03</span>
-                <span className="font-body-md text-on-surface">Acoustically Isolated</span>
+                <span className="font-label-sm text-label-sm-sm text-primary-container">03</span>
+                <span className="font-body-md text-body-md-surface">Acoustically Isolated</span>
               </li>
             </ul>
-            <button className="border border-primary-container text-on-surface font-label-sm px-8 py-4 rounded hover:bg-primary-container hover:text-on-primary-container transition-colors uppercase tracking-wider">
+            <button className="border border-primary-container text-on-surface font-label-sm px-8 py-4 rounded hover:bg-primary-container hover:text-on-primary-container transition-colors tracking-wider">
               Request Availability
             </button>
           </div>

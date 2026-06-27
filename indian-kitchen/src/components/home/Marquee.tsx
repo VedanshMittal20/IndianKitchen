@@ -27,7 +27,7 @@ export default function Marquee() {
         {[0, 1, 2, 3].map((i) => (
           <span
             key={i}
-            className="text-brand-golden font-body-md font-medium text-[9px] tracking-[0.3em] uppercase px-3"
+            className="text-brand-golden font-body-md font-medium text-[9px] tracking-[0.3em] px-3"
           >
             {text}
           </span>

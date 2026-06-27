@@ -7,11 +7,11 @@ export default function HeroSection() {
     <section className="min-h-screen flex flex-col justify-center px-gutter md:px-lg max-w-container-max mx-auto relative mb-xl">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         <div className="md:col-span-5 z-10 reveal">
-          <span className="font-label-lg text-label-lg text-brand-sandy block mb-6 uppercase tracking-widest">Est. 2024 / New Delhi</span>
-          <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight mb-8">
+          <span className="font-label-lg text-label-lg text-brand-sandy block mb-6">Est. 2024 / New Delhi</span>
+          <h1 className="font-display-lg text-display-lg-lg text-on-surface mb-8">
             The Architecture<br/>of Flavor.
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md">
+          <p className="font-body-lg text-body-lg-lg text-on-surface-variant mb-12 max-w-md">
             A curation of regional Indian heritage, distilled through a lens of modern minimalism. Every dish a study in intention.
           </p>
           <button className="btn-primary">
@@ -35,9 +35,9 @@ export default function HeroSection() {
           <div className="absolute -bottom-10 -left-10 md:bottom-20 md:-left-20 glass-card p-6 z-20 w-64 shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full bg-brand-accent-green animate-pulse"></span>
-              <span className="font-label-sm text-label-sm text-brand-golden uppercase tracking-[0.1em]">Coordinates</span>
+              <span className="font-label-sm text-label-sm-sm text-brand-golden tracking-[0.1em]">Coordinates</span>
             </div>
-            <p className="font-title-lg text-brand-warm-cream">28.6139° N, 77.2090° E</p>
+            <p className="font-title-lg text-title-lg text-brand-warm-cream">28.6139° N, 77.2090° E</p>
           </div>
         </div>
       </div>

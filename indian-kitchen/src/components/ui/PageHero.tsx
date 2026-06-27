@@ -55,7 +55,7 @@ export default function PageHero({
             transition={{ type: "spring", stiffness: 200, damping: 30, delay: 0.1 }}
           >
             <SectionLabel className="mb-5">{label}</SectionLabel>
-            <h1 className={`font-headline-md text-4xl md:text-5xl lg:text-6xl uppercase tracking-wide leading-tight mb-4 text-on-surface`}>{title}</h1>
+            <h1 className={`font-headline-md text-headline-md tracking-wide mb-4 text-on-surface`}>{title}</h1>
             {subtitle && (
               <p className={`font-light text-base md:text-lg max-w-2xl leading-relaxed text-on-surface/70`}>
                 {subtitle}

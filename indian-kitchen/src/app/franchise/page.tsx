@@ -129,7 +129,7 @@ export default function FranchisePage() {
               <div className="w-16 h-16 mx-auto bg-surface-container-low rounded-[1.5rem] flex items-center justify-center mb-6 border border-outline-variant/30 group-hover:bg-saffron-gold transition-colors duration-500">
                 <b.icon className="w-8 h-8 text-brand-golden group-hover:text-on-surface transition-colors duration-500" />
               </div>
-              <h4 className="font-headline-md text-xl text-on-surface mb-4">{b.title}</h4>
+              <h4 className="font-headline-md text-headline-md-surface mb-4">{b.title}</h4>
               <p className="text-sm text-on-surface-variant leading-relaxed">{b.desc}</p>
             </motion.div>
           ))}
@@ -174,13 +174,13 @@ export default function FranchisePage() {
               <div className="w-20 h-20 rounded-full bg-saffron-gold/10 flex items-center justify-center mx-auto mb-6 border border-outline-variant/30">
                 <CheckCircle2 className="w-10 h-10 text-brand-golden" />
               </div>
-              <h3 className="font-headline-md text-3xl text-on-surface mb-4 uppercase tracking-wide">Enquiry Received</h3>
+              <h3 className="font-headline-md text-headline-md-surface mb-4 tracking-wide">Enquiry Received</h3>
               <p className="text-on-surface-variant text-lg mb-8 max-w-md mx-auto">
                 Your application has been submitted via WhatsApp. Our franchise team will review your details and get back to you shortly.
               </p>
               <button 
                 onClick={() => setIsSubmitted(false)}
-                className="btn-outline font-body-md text-xs tracking-widest uppercase font-bold"
+                className="btn-outline font-body-md text-body-md font-bold"
               >
                 Submit Another Enquiry
               </button>
@@ -189,7 +189,7 @@ export default function FranchisePage() {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Full Name *</label>
+                  <label className="block text-on-surface-variant text-xs font-bold mb-2 font-body-md">Full Name *</label>
                   <input
                     {...register("fullName")}
                     type="text"
@@ -198,7 +198,7 @@ export default function FranchisePage() {
                   {errors.fullName && <p className="text-crimson text-xs mt-1">{errors.fullName.message}</p>}
                 </div>
                 <div>
-                  <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Email Address *</label>
+                  <label className="block text-on-surface-variant text-xs font-bold mb-2 font-body-md">Email Address *</label>
                   <input
                     {...register("email")}
                     type="email"
@@ -210,7 +210,7 @@ export default function FranchisePage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Phone Number *</label>
+                  <label className="block text-on-surface-variant text-xs font-bold mb-2 font-body-md">Phone Number *</label>
                   <input
                     {...register("phone")}
                     type="tel"
@@ -220,7 +220,7 @@ export default function FranchisePage() {
                   {errors.phone && <p className="text-crimson text-xs mt-1">{errors.phone.message}</p>}
                 </div>
                 <div>
-                  <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Proposed Country / City *</label>
+                  <label className="block text-on-surface-variant text-xs font-bold mb-2 font-body-md">Proposed Country / City *</label>
                   <input
                     {...register("location")}
                     type="text"
@@ -232,7 +232,7 @@ export default function FranchisePage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Investment Range *</label>
+                  <label className="block text-on-surface-variant text-xs font-bold mb-2 font-body-md">Investment Range *</label>
                   <select
                     {...register("investment")}
                     className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-4 py-3 focus:outline-none focus:border-saffron-gold transition-all font-body-md appearance-none"
@@ -243,7 +243,7 @@ export default function FranchisePage() {
                   {errors.investment && <p className="text-crimson text-xs mt-1">{errors.investment.message}</p>}
                 </div>
                 <div>
-                  <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">How did you hear about us? *</label>
+                  <label className="block text-on-surface-variant text-xs font-bold mb-2 font-body-md">How did you hear about us? *</label>
                   <select
                     {...register("source")}
                     className="w-full bg-transparent border-b border-tertiary-fixed-dim/30 rounded-none text-on-surface px-4 py-3 focus:outline-none focus:border-saffron-gold transition-all font-body-md appearance-none"
@@ -256,7 +256,7 @@ export default function FranchisePage() {
               </div>
 
               <div>
-                <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Current Business Background *</label>
+                <label className="block text-on-surface-variant text-xs font-bold mb-2 font-body-md">Current Business Background *</label>
                 <textarea
                   {...register("background")}
                   rows={3}
@@ -266,7 +266,7 @@ export default function FranchisePage() {
               </div>
 
               <div>
-                <label className="block text-on-surface-variant text-xs font-bold mb-2 uppercase tracking-widest font-body-md">Why Indian Kitchen? *</label>
+                <label className="block text-on-surface-variant text-xs font-bold mb-2 font-body-md">Why Indian Kitchen? *</label>
                 <textarea
                   {...register("whyUs")}
                   rows={3}
@@ -279,7 +279,7 @@ export default function FranchisePage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-primary w-full py-4 text-sm rounded-full font-label-lg tracking-widest uppercase"
+                  className="btn-primary w-full py-4 text-sm rounded-full font-label-lg"
                 >
                   {isSubmitting ? "Processing..." : "Submit Enquiry via WhatsApp"}
                 </button>

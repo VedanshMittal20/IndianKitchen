@@ -102,10 +102,10 @@ export default function HomeGallery() {
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30 pointer-events-none rounded-[3rem]" />
             
             <div className="absolute bottom-10 left-10 right-10 z-10 transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
-              <span className="font-label-sm text-[12px] bg-saffron-gold text-on-surface px-3 py-1.5 rounded-full uppercase tracking-widest block mb-2 w-fit font-bold">
+              <span className="font-label-sm text-[12px] bg-saffron-gold text-on-surface px-3 py-1.5 rounded-full block mb-2 w-fit font-bold">
                 {frame.title}
               </span>
-              <h3 className="font-headline-md text-xl md:text-2xl text-on-surface uppercase tracking-wide">
+              <h3 className="font-headline-md text-headline-md text-on-surface tracking-wide">
                 {frame.subtitle}
               </h3>
             </div>
@@ -156,8 +156,8 @@ export default function HomeGallery() {
               {/* Title & Mute toggle overlay */}
               <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center z-20 pointer-events-auto bg-surface-container-lowest p-4 rounded-sm border border-outline-variant/30">
                 <div>
-                  <span className="text-[8px] tracking-[0.2em] uppercase text-brand-golden font-bold block mb-0.5">Indian Kitchen Reel</span>
-                  <h4 className="font-headline-md text-lg md:text-xl text-on-surface uppercase tracking-wide">{activeTitle}</h4>
+                  <span className="text-[8px] tracking-[0.2em] text-brand-golden font-bold block mb-0.5">Indian Kitchen Reel</span>
+                  <h4 className="font-headline-md text-headline-md text-on-surface tracking-wide">{activeTitle}</h4>
                 </div>
                 
                 <button 

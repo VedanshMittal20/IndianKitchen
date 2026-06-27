@@ -31,7 +31,7 @@ export default function MobileStickyBar() {
         {/* Direct Booking Link */}
         <Link
           href="/reservations"
-          className="flex-[2] flex justify-center items-center h-full bg-saffron-gold text-on-surface font-bold text-[10px] tracking-[0.2em] uppercase hover:bg-saffron-gold/90 transition-colors"
+          className="flex-[2] flex justify-center items-center h-full bg-saffron-gold text-on-surface font-bold text-[10px] tracking-[0.2em] hover:bg-saffron-gold/90 transition-colors"
         >
           Book a Table
         </Link>
