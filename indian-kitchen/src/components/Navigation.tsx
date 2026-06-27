@@ -44,10 +44,10 @@ export default function Navigation() {
 
   return (
     <>
-      <div className={`fixed w-full z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center ${
+      <div className={`fixed w-full z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-none ${
         isScrolled ? "top-6 px-4" : "top-0 px-0"
       }`}>
-        <nav className={`transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        <nav className={`pointer-events-auto transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isScrolled 
             ? "w-full max-w-5xl bg-surface/85 backdrop-blur-xl border border-brand-sandy/20 shadow-[0_10px_40px_rgba(0,0,0,0.5)] rounded-full h-16" 
             : "w-full bg-transparent border-transparent h-24"

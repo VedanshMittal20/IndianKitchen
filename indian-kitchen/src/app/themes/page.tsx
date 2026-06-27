@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,12 +9,23 @@ import HomeCTA from "@/components/home/HomeCTA";
 
 export default function ThemesCinematicPage() {
   const [isPlayingSound, setIsPlayingSound] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlayingSound) {
+        audioRef.current.play().catch((err) => console.log("Audio play error:", err));
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isPlayingSound]);
 
   return (
     <main className="w-full bg-surface-dark text-white relative">
       
       {/* Floating Audio Controller & Back Button */}
-      <div className="fixed top-8 left-8 z-50 pointer-events-auto">
+      <div className="fixed top-32 left-8 z-[60] pointer-events-auto">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-[9px] tracking-[0.25em] font-bold text-white/70 hover:text-brand-golden transition-colors bg-surface-dark/90 px-4 py-2 border border-white/10 rounded-full shadow-lg"
@@ -24,7 +35,7 @@ export default function ThemesCinematicPage() {
         </Link>
       </div>
 
-      <div className="fixed top-8 right-8 z-50 pointer-events-auto flex items-center gap-3">
+      <div className="fixed top-32 right-8 z-[60] pointer-events-auto flex items-center gap-3">
         {/* Cinematic sound visualizer simulation */}
         {isPlayingSound && (
           <div className="flex gap-0.5 items-end h-3 w-5">
@@ -50,12 +61,12 @@ export default function ThemesCinematicPage() {
           {isPlayingSound ? (
             <>
               <Volume2 className="w-3.5 h-3.5 text-brand-golden" />
-              <span>Ambient On</span>
+              <span>Stop Ambient</span>
             </>
           ) : (
             <>
-              <VolumeX className="w-3.5 h-3.5 text-white/40" />
-              <span>Ambient Off</span>
+              <Volume2 className="w-3.5 h-3.5 text-white/60" />
+              <span>Start Ambient</span>
             </>
           )}
         </button>
@@ -224,7 +235,7 @@ export default function ThemesCinematicPage() {
       </section>
 
       {/* Ambient Audio simulation element (silent mock if no file, but updates UI status) */}
-      <audio id="ambient-audio" loop src="/audio/drone.mp3" className="hidden" />
+      <audio ref={audioRef} id="ambient-audio" loop src="/audio/ambient.mp3" className="hidden" />
 
       <style jsx global>{`
         #ambient-audio {
