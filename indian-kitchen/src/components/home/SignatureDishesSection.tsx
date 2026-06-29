@@ -71,7 +71,7 @@ export default function SignatureDishesSection() {
           className="relative aspect-square w-full rounded-sm overflow-hidden border-4 border-surface"
         >
           <Image
-            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page7_img2"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real_bamboo_biryani"
             alt="Bamboo Biryani"
             fill
             className="object-cover"
@@ -82,13 +82,13 @@ export default function SignatureDishesSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative aspect-square w-full rounded-sm overflow-hidden border-4 border-surface"
+          className="relative aspect-square w-full rounded-sm overflow-hidden border-4 border-surface bg-white"
         >
           <Image
             src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page7_img3"
-            alt="Banana Leaf Dish"
+            alt="Theme Graphic"
             fill
-            className="object-cover"
+            className="object-contain"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
         </motion.div>
@@ -99,7 +99,7 @@ export default function SignatureDishesSection() {
           className="relative aspect-square w-full rounded-sm overflow-hidden border-4 border-surface"
         >
           <Image
-            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page7_img4"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real_banana_leaf"
             alt="Signature Dish"
             fill
             className="object-cover"

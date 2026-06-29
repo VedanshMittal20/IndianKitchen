@@ -35,14 +35,17 @@ export default function LocationsSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col"
         >
-          <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden mb-6 shadow-lg border-2 border-brand-accent-green">
-            <Image
-              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page14_img2"
-              alt="Colombo Location Map"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+          <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden mb-6 shadow-lg border-2 border-brand-accent-green bg-surface">
+            <iframe
+              src="https://www.google.com/maps?q=357,+R.A.+De+Mel+Mawatha,+Kollupitiya,+Colombo+03&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0"
+            ></iframe>
           </div>
           <p className="font-headline-sm text-2xl md:text-3xl text-brand-warm-cream underline underline-offset-8">
             357, R.A. De Mel Mawatha, Kollupitiya,<br/>Colombo 03
@@ -56,14 +59,17 @@ export default function LocationsSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col"
         >
-          <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden mb-6 shadow-lg border-2 border-brand-accent-green">
-            <Image
-              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page14_img3"
-              alt="Kandy Location Map"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+          <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden mb-6 shadow-lg border-2 border-brand-accent-green bg-surface">
+            <iframe
+              src="https://www.google.com/maps?q=25/8+Sangaraja+Mawatha,+Hillwood+College+Road,+Kandy&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0"
+            ></iframe>
           </div>
           <p className="font-headline-sm text-2xl md:text-3xl text-brand-warm-cream underline underline-offset-8">
             25/8 Sangaraja Mawatha, Hillwood College Road,<br/>Kandy

@@ -58,21 +58,19 @@ export default function Navigation() {
             isScrolled ? "px-6 md:px-10" : "px-6 md:px-12 max-w-7xl"
           }`}>
             {/* Logo */}
-            <a href="/" className="flex flex-col relative z-50 group">
-              <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-brand-warm-cream flex items-center justify-center font-display-lg text-surface text-xl font-bold rounded-sm">
-                      IK
-                  </div>
-                  <div className="flex flex-col leading-none">
-                      <span className="font-headline-sm text-brand-warm-cream tracking-widest uppercase transition-colors group-hover:text-brand-golden">
-                          INDIAN
-                      </span>
-                      <span className="font-headline-sm text-brand-warm-cream tracking-widest uppercase transition-colors group-hover:text-brand-golden">
-                          KITCHEN
-                      </span>
-                  </div>
+            <Link href="/" className="flex flex-col relative z-50 group">
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center" 
+                   style={{ 
+                     mixBlendMode: "screen",
+                     opacity: 0.95
+                   }}>
+                  <img 
+                    src="/logo_perfect.png" 
+                    alt="Indian Kitchen Logo" 
+                    className="object-contain w-full h-full" 
+                  />
               </div>
-            </a>
+            </Link>
 
             {/* Desktop Nav Links */}
             <div className="hidden md:flex items-center gap-10">

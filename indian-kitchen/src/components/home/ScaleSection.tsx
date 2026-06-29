@@ -66,10 +66,10 @@ export default function ScaleSection() {
               className="relative w-full h-full rounded-sm overflow-hidden"
             >
               <Image
-                src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page10_img2"
+                src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real_storefront"
                 alt="Outlet view"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 50vw, 25vw"
               />
             </motion.div>
@@ -80,10 +80,10 @@ export default function ScaleSection() {
               className="relative w-full h-full rounded-sm overflow-hidden"
             >
               <Image
-                src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page10_img3"
-                alt="Theme interior view"
+                src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/hero_main"
+                alt="Theme exterior view"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 50vw, 25vw"
               />
             </motion.div>
@@ -98,7 +98,7 @@ export default function ScaleSection() {
               src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page10_img4"
               alt="Exterior signage"
               fill
-              className="object-cover"
+              className="object-cover scale-[1.15] object-[80%_center]"
               sizes="(max-width: 1024px) 50vw, 25vw"
             />
           </motion.div>
