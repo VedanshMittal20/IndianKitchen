@@ -60,7 +60,7 @@ export default function Navigation() {
             {/* Logo */}
             <Link href="/" className="flex flex-col relative z-50 group shrink-0">
               <div className={`relative flex items-center justify-start transition-all duration-500 ${
-                isScrolled ? "w-32 sm:w-48 md:w-56 h-8 sm:h-10" : "w-40 sm:w-56 md:w-64 h-10 sm:h-12"
+                isScrolled ? "w-28 sm:w-40 md:w-48 h-6 sm:h-8" : "w-32 sm:w-48 md:w-56 h-8 sm:h-10"
               }`} 
                    style={{ 
                      mixBlendMode: "screen",
