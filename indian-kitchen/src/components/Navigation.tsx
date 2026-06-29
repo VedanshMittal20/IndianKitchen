@@ -55,11 +55,13 @@ export default function Navigation() {
             : "w-full bg-transparent border-transparent h-24"
         }`}>
           <div className={`flex justify-between items-center h-full mx-auto transition-all duration-500 ${
-            isScrolled ? "px-6 md:px-10" : "px-6 md:px-12 max-w-7xl"
+            isScrolled ? "px-4 md:px-8" : "px-6 md:px-12 max-w-7xl"
           }`}>
             {/* Logo */}
-            <Link href="/" className="flex flex-col relative z-50 group">
-              <div className="relative w-48 sm:w-64 md:w-[280px] h-10 sm:h-12 flex items-center justify-start" 
+            <Link href="/" className="flex flex-col relative z-50 group shrink-0">
+              <div className={`relative flex items-center justify-start transition-all duration-500 ${
+                isScrolled ? "w-32 sm:w-48 md:w-56 h-8 sm:h-10" : "w-40 sm:w-56 md:w-64 h-10 sm:h-12"
+              }`} 
                    style={{ 
                      mixBlendMode: "screen",
                      opacity: 0.95
@@ -73,12 +75,14 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Nav Links */}
-            <div className="hidden md:flex items-center gap-10">
+            <div className={`hidden md:flex items-center transition-all duration-500 ${
+              isScrolled ? "gap-6 lg:gap-8" : "gap-8 lg:gap-12"
+            }`}>
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`font-label-lg tracking-[0.1em] text-sm uppercase hover:text-brand-golden transition-colors ${
+                  className={`font-label-lg tracking-[0.1em] text-xs lg:text-sm uppercase hover:text-brand-golden transition-colors whitespace-nowrap ${
                     pathname === link.href ? "text-brand-golden" : "text-brand-warm-cream"
                   }`}
                 >
@@ -88,11 +92,11 @@ export default function Navigation() {
             </div>
 
             {/* Right Controls */}
-            <div className="flex items-center gap-6 relative z-50">
+            <div className="flex items-center gap-4 relative z-50 shrink-0">
               <Link
                 href="/reservations"
-                className={`hidden sm:inline-flex bg-brand-accent-green text-on-primary font-label-lg uppercase tracking-[0.1em] rounded-sm hover:bg-brand-golden transition-all hover-glow hover:-translate-y-0.5 ${
-                  isScrolled ? "px-6 py-2 text-xs" : "px-8 py-3"
+                className={`hidden sm:inline-flex bg-brand-accent-green text-on-primary font-label-lg uppercase tracking-[0.1em] rounded-sm hover:bg-brand-golden transition-all hover-glow hover:-translate-y-0.5 whitespace-nowrap ${
+                  isScrolled ? "px-4 lg:px-6 py-2 text-[10px] lg:text-xs" : "px-6 lg:px-8 py-2.5 lg:py-3 text-xs lg:text-sm"
                 }`}
               >
                 BOOK TABLE
