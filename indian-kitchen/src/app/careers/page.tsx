@@ -9,7 +9,6 @@ import { useSearchParams } from "next/navigation";
 import * as z from "zod";
 import PageHero from "@/components/ui/PageHero";
 import SectionShell from "@/components/layout/SectionShell";
-import SectionHeader from "@/components/layout/SectionHeader";
 
 const jobListings = [
   {
@@ -114,242 +113,253 @@ ${data.whyUs}`;
   };
 
   return (
-    <main className="min-h-screen bg-surface-container-lowest text-on-surface">
-      <PageHero
-        label="Join Our Village"
-        title={<>Join the<br />World-Builders</>}
-        subtitle="We don't hire waitstaff. We hire storytellers. Every person — from kitchen to floor — plays a character in an immersive world."
-        image="/images/real_waiter.jpeg"
-        light
-      />
+    <main className="min-h-screen bg-surface-dark text-brand-warm-cream relative overflow-hidden">
+      {/* Background styling for consistency */}
+      <div className="absolute inset-0 noise-overlay pointer-events-none z-0"></div>
 
-      <SectionShell variant="void" className="py-24">
-        {/* Job Listings */}
-        <div className="max-w-5xl mx-auto mb-24">
-          <SectionHeader label="Careers" title="Current Openings" align="center" className="mb-12" />
+      <div className="relative z-10">
+        <PageHero
+          label="Join Our Village"
+          title={<span className="heading-presentation text-gradient-primary">Join the<br />World-Builders</span>}
+          subtitle="We don't hire waitstaff. We hire storytellers. Every person — from kitchen to floor — plays a character in an immersive world."
+          image="/images/real_waiter.jpeg"
+          light={false}
+        />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {jobListings.map((job, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-surface-container-low p-8 md:p-10 border border-outline-variant/30 hover:border-saffron-gold transition-all duration-300 shadow-xl rounded-sm"
-              >
-                <span className="text-[9px] tracking-[0.2em] text-brand-golden font-bold mb-3 block">
-                  {job.location}
-                </span>
-                <h3 className="font-headline-md text-headline-md-surface mb-3 tracking-wide">{job.title}</h3>
-                <span className="flex items-center gap-1.5 font-bold tracking-[0.1em] text-[9px] text-brand-golden mb-4 font-body-md">
-                  <Clock className="w-3.5 h-3.5" />
-                  {job.type}
-                </span>
-                <p className="text-on-surface-variant font-body-md font-light text-sm leading-relaxed mb-6">{job.desc}</p>
-                <a
-                  href={`/careers?role=${encodeURIComponent(job.title)}#application-form`}
-                  className="btn-outline w-full text-center"
-                >
-                  Apply for Role
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Application Form */}
-        <div id="application-form" className="scroll-mt-28">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto bg-surface-container-low p-8 md:p-14 shadow-xl border border-outline-variant/30 rounded-sm"
-          >
-            <div className="text-center mb-10 border-b border-outline-variant/30 pb-6">
-              <h4 className="font-headline-md text-headline-md-surface mb-3 tracking-wide">
-                Don't see your role?
-              </h4>
-              <p className="text-on-surface-variant text-sm font-body-md font-light">Apply below and we'll reach out to schedule an interview.</p>
+        <SectionShell variant="void" className="py-24">
+          {/* Job Listings */}
+          <div className="max-w-5xl mx-auto mb-24 relative z-10">
+            <div className="text-center mb-12">
+              <span className="font-label-sm uppercase tracking-[0.2em] text-brand-saffron mb-4 block">Careers</span>
+              <h2 className="heading-presentation text-gradient-primary text-4xl md:text-5xl">Current Openings</h2>
             </div>
 
-            {isSubmitted ? (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 rounded-full bg-saffron-gold/10 flex items-center justify-center mx-auto mb-5 border border-outline-variant/30">
-                  <CheckCircle2 className="w-8 h-8 text-brand-golden" />
-                </div>
-                <h3 className="font-headline-md text-headline-md-surface mb-3 tracking-wide">Application Sent</h3>
-                <p className="text-on-surface-variant mb-6 max-w-md mx-auto font-body-md font-light">
-                  Your application has been submitted via WhatsApp. Our talent team will review your details and get back to you shortly.
-                </p>
-                <button
-                  onClick={() => setIsSubmitted(false)}
-                  className="btn-outline"
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {jobListings.map((job, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "50px" }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  className="glass-card hover-lift p-8 md:p-10 flex flex-col h-full border-brand-saffron/30"
                 >
-                  Make Another Application
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
-                      Full Name *
-                    </label>
-                    <input
-                      {...register("fullName")}
-                      type="text"
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md"
-                    />
-                    {errors.fullName && (
-                      <p className="text-crimson text-xs mt-1">{errors.fullName.message}</p>
-                    )}
-                  </div>
-                  <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
-                      Email *
-                    </label>
-                    <input
-                      {...register("email")}
-                      type="email"
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md"
-                    />
-                    {errors.email && (
-                      <p className="text-crimson text-xs mt-1">{errors.email.message}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
-                      Phone *
-                    </label>
-                    <input
-                      {...register("phone")}
-                      type="tel"
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md"
-                    />
-                    {errors.phone && (
-                      <p className="text-crimson text-xs mt-1">{errors.phone.message}</p>
-                    )}
-                  </div>
-                  <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
-                      Role Applying For *
-                    </label>
-                    <select
-                      {...register("role")}
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md"
-                    >
-                      <option value="" className="bg-surface-container-low text-on-surface">Select Role</option>
-                      {jobListings.map((j) => (
-                        <option key={j.title} value={j.title} className="bg-surface-container-low text-on-surface">
-                          {j.title}
-                        </option>
-                      ))}
-                      <option value="General Application" className="bg-surface-container-low text-on-surface">General Application</option>
-                    </select>
-                    {errors.role && (
-                      <p className="text-crimson text-xs mt-1">{errors.role.message}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
-                      Current Location *
-                    </label>
-                    <input
-                      {...register("currentLocation")}
-                      type="text"
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md"
-                    />
-                    {errors.currentLocation && (
-                      <p className="text-crimson text-xs mt-1">{errors.currentLocation.message}</p>
-                    )}
-                  </div>
-                  <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
-                      Years of Experience *
-                    </label>
-                    <select
-                      {...register("experience")}
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md"
-                    >
-                      <option value="" className="bg-surface-container-low text-on-surface">Select</option>
-                      {experienceOptions.map((e) => (
-                        <option key={e} value={e} className="bg-surface-container-low text-on-surface">
-                          {e}
-                        </option>
-                      ))}
-                    </select>
-                    {errors.experience && (
-                      <p className="text-crimson text-xs mt-1">{errors.experience.message}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
-                      LinkedIn Profile
-                    </label>
-                    <input
-                      {...register("linkedin")}
-                      type="url"
-                      placeholder="https://linkedin.com/in/..."
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md placeholder:text-on-secondary/25"
-                    />
-                    {errors.linkedin && (
-                      <p className="text-crimson text-xs mt-1">{errors.linkedin.message}</p>
-                    )}
-                  </div>
-                  <div>
-                    <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
-                      Portfolio / Website
-                    </label>
-                    <input
-                      {...register("portfolio")}
-                      type="url"
-                      placeholder="https://..."
-                      className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors font-body-md text-body-md placeholder:text-on-secondary/25"
-                    />
-                    {errors.portfolio && (
-                      <p className="text-crimson text-xs mt-1">{errors.portfolio.message}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-brand-golden text-[9px] font-bold mb-1.5 tracking-[0.2em] font-body-md">
-                    Why do you want to work at Indian Kitchen? *
-                  </label>
-                  <textarea
-                    {...register("whyUs")}
-                    rows={4}
-                    className="w-full bg-transparent border-b border-saffron-gold/30 text-on-surface py-2 focus:outline-none focus:border-saffron-gold transition-colors resize-none font-body-md text-body-md"
-                  />
-                  {errors.whyUs && (
-                    <p className="text-crimson text-xs mt-1">{errors.whyUs.message}</p>
-                  )}
-                </div>
-
-                <div className="pt-6">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn-primary w-full"
+                  <span className="text-xs tracking-[0.2em] text-brand-saffron font-bold mb-3 block uppercase">
+                    {job.location}
+                  </span>
+                  <h3 className="font-headline-md text-white mb-3 tracking-wider text-3xl">{job.title}</h3>
+                  <span className="flex items-center gap-1.5 font-bold tracking-[0.1em] text-[10px] text-brand-golden mb-5 font-body-md uppercase">
+                    <Clock className="w-3.5 h-3.5" />
+                    {job.type}
+                  </span>
+                  <p className="text-brand-warm-cream/90 font-body-lg font-light text-base leading-relaxed mb-8 flex-grow">{job.desc}</p>
+                  <a
+                    href={`/careers?role=${encodeURIComponent(job.title)}#application-form`}
+                    className="btn-outline w-full text-center mt-auto border-brand-saffron text-brand-saffron hover:bg-brand-saffron hover:text-surface-dark font-bold"
                   >
-                    {isSubmitting ? "Processing..." : "Submit Application via WhatsApp"}
+                    Apply for Role
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Application Form */}
+          <div id="application-form" className="scroll-mt-28 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="max-w-4xl mx-auto glass-card p-8 md:p-14"
+            >
+              <div className="text-center mb-10 border-b border-brand-saffron/20 pb-8">
+                <h4 className="heading-presentation text-gradient-primary text-3xl md:text-4xl mb-4 tracking-wide">
+                  General Application
+                </h4>
+                <p className="text-brand-sandy/80 text-sm font-body-md font-light">Don't see your role above? Apply below and we'll reach out to schedule an interview.</p>
+              </div>
+
+              {isSubmitted ? (
+                <div className="text-center py-12">
+                  <div className="w-16 h-16 rounded-full bg-brand-saffron/10 flex items-center justify-center mx-auto mb-6 border border-brand-saffron/30 shadow-[0_0_15px_rgba(255,153,51,0.2)]">
+                    <CheckCircle2 className="w-8 h-8 text-brand-saffron" />
+                  </div>
+                  <h3 className="heading-presentation text-brand-warm-cream text-2xl mb-3 tracking-wide">Application Sent</h3>
+                  <p className="text-brand-sandy/80 mb-8 max-w-md mx-auto font-body-md font-light">
+                    Your application has been submitted via WhatsApp. Our talent team will review your details and get back to you shortly.
+                  </p>
+                  <button
+                    onClick={() => setIsSubmitted(false)}
+                    className="btn-outline"
+                  >
+                    Make Another Application
                   </button>
                 </div>
-              </form>
-            )}
-          </motion.div>
-        </div>
-      </SectionShell>
+              ) : (
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <label className="block text-brand-saffron text-[10px] font-bold mb-2 tracking-[0.2em] font-body-md uppercase">
+                        Full Name *
+                      </label>
+                      <input
+                        {...register("fullName")}
+                        type="text"
+                        className="w-full bg-transparent border-b border-brand-saffron/30 text-brand-warm-cream py-2 focus:outline-none focus:border-brand-saffron transition-all font-body-md text-base"
+                      />
+                      {errors.fullName && (
+                        <p className="text-[#FF4444] text-xs mt-1.5">{errors.fullName.message}</p>
+                      )}
+                    </div>
+                    <div>
+                      <label className="block text-brand-saffron text-[10px] font-bold mb-2 tracking-[0.2em] font-body-md uppercase">
+                        Email *
+                      </label>
+                      <input
+                        {...register("email")}
+                        type="email"
+                        className="w-full bg-transparent border-b border-brand-saffron/30 text-brand-warm-cream py-2 focus:outline-none focus:border-brand-saffron transition-all font-body-md text-base"
+                      />
+                      {errors.email && (
+                        <p className="text-[#FF4444] text-xs mt-1.5">{errors.email.message}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <label className="block text-brand-saffron text-[10px] font-bold mb-2 tracking-[0.2em] font-body-md uppercase">
+                        Phone *
+                      </label>
+                      <input
+                        {...register("phone")}
+                        type="tel"
+                        className="w-full bg-transparent border-b border-brand-saffron/30 text-brand-warm-cream py-2 focus:outline-none focus:border-brand-saffron transition-all font-body-md text-base"
+                      />
+                      {errors.phone && (
+                        <p className="text-[#FF4444] text-xs mt-1.5">{errors.phone.message}</p>
+                      )}
+                    </div>
+                    <div>
+                      <label className="block text-brand-saffron text-[10px] font-bold mb-2 tracking-[0.2em] font-body-md uppercase">
+                        Role Applying For *
+                      </label>
+                      <select
+                        {...register("role")}
+                        className="w-full bg-transparent border-b border-brand-saffron/30 text-brand-warm-cream py-2 focus:outline-none focus:border-brand-saffron transition-all font-body-md text-base cursor-pointer"
+                      >
+                        <option value="" className="bg-surface-dark text-brand-warm-cream">Select Role</option>
+                        {jobListings.map((j) => (
+                          <option key={j.title} value={j.title} className="bg-surface-dark text-brand-warm-cream">
+                            {j.title}
+                          </option>
+                        ))}
+                        <option value="General Application" className="bg-surface-dark text-brand-saffron font-bold">
+                          General Application
+                        </option>
+                      </select>
+                      {errors.role && (
+                        <p className="text-[#FF4444] text-xs mt-1.5">{errors.role.message}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <label className="block text-brand-saffron text-[10px] font-bold mb-2 tracking-[0.2em] font-body-md uppercase">
+                        Current Location *
+                      </label>
+                      <input
+                        {...register("currentLocation")}
+                        type="text"
+                        className="w-full bg-transparent border-b border-brand-saffron/30 text-brand-warm-cream py-2 focus:outline-none focus:border-brand-saffron transition-all font-body-md text-base"
+                      />
+                      {errors.currentLocation && (
+                        <p className="text-[#FF4444] text-xs mt-1.5">{errors.currentLocation.message}</p>
+                      )}
+                    </div>
+                    <div>
+                      <label className="block text-brand-saffron text-[10px] font-bold mb-2 tracking-[0.2em] font-body-md uppercase">
+                        Years of Experience *
+                      </label>
+                      <select
+                        {...register("experience")}
+                        className="w-full bg-transparent border-b border-brand-saffron/30 text-brand-warm-cream py-2 focus:outline-none focus:border-brand-saffron transition-all font-body-md text-base cursor-pointer"
+                      >
+                        <option value="" className="bg-surface-dark text-brand-warm-cream">Select</option>
+                        {experienceOptions.map((e) => (
+                          <option key={e} value={e} className="bg-surface-dark text-brand-warm-cream">
+                            {e}
+                          </option>
+                        ))}
+                      </select>
+                      {errors.experience && (
+                        <p className="text-[#FF4444] text-xs mt-1.5">{errors.experience.message}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <label className="block text-brand-saffron text-[10px] font-bold mb-2 tracking-[0.2em] font-body-md uppercase">
+                        LinkedIn Profile
+                      </label>
+                      <input
+                        {...register("linkedin")}
+                        type="url"
+                        placeholder="https://linkedin.com/in/..."
+                        className="w-full bg-transparent border-b border-brand-saffron/30 text-brand-warm-cream py-2 focus:outline-none focus:border-brand-saffron transition-all font-body-md text-base placeholder:text-brand-sandy/30"
+                      />
+                      {errors.linkedin && (
+                        <p className="text-[#FF4444] text-xs mt-1.5">{errors.linkedin.message}</p>
+                      )}
+                    </div>
+                    <div>
+                      <label className="block text-brand-saffron text-[10px] font-bold mb-2 tracking-[0.2em] font-body-md uppercase">
+                        Portfolio / Website
+                      </label>
+                      <input
+                        {...register("portfolio")}
+                        type="url"
+                        placeholder="https://..."
+                        className="w-full bg-transparent border-b border-brand-saffron/30 text-brand-warm-cream py-2 focus:outline-none focus:border-brand-saffron transition-all font-body-md text-base placeholder:text-brand-sandy/30"
+                      />
+                        {errors.portfolio && (
+                        <p className="text-[#FF4444] text-xs mt-1.5">{errors.portfolio.message}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-brand-saffron text-[10px] font-bold mb-2 tracking-[0.2em] font-body-md uppercase">
+                      Why do you want to work at Indian Kitchen? *
+                    </label>
+                    <textarea
+                      {...register("whyUs")}
+                      rows={4}
+                      className="w-full bg-transparent border-b border-brand-saffron/30 text-brand-warm-cream py-2 focus:outline-none focus:border-brand-saffron transition-all resize-none font-body-md text-base"
+                    />
+                    {errors.whyUs && (
+                      <p className="text-[#FF4444] text-xs mt-1.5">{errors.whyUs.message}</p>
+                    )}
+                  </div>
+
+                  <div className="pt-8">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="btn-primary w-full"
+                    >
+                      {isSubmitting ? "Processing..." : "Submit Application via WhatsApp"}
+                    </button>
+                  </div>
+                </form>
+              )}
+            </motion.div>
+          </div>
+        </SectionShell>
+      </div>
     </main>
   );
 }

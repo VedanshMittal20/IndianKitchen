@@ -10,6 +10,7 @@ const navLinks = [
   { name: "MENU", href: "/menu" },
   { name: "AMBIENCE", href: "/themes" },
   { name: "RESERVATIONS", href: "/reservations" },
+  { name: "CAREERS", href: "/careers" },
 ];
 
 export default function Navigation() {
