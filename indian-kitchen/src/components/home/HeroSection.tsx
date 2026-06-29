@@ -32,12 +32,12 @@ export default function HeroSection() {
             <div className="absolute inset-0 border border-outline-variant m-4 pointer-events-none rounded-sm"></div>
           </div>
           {/* Annotation Floating Element */}
-          <div className="absolute -bottom-10 -left-10 md:bottom-20 md:-left-20 glass-card p-6 z-20 w-64 shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
+          <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:w-64 md:bottom-20 md:-left-16 lg:-left-20 glass-card p-4 sm:p-6 z-20 shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full bg-brand-accent-green animate-pulse"></span>
-              <span className="font-label-sm text-label-sm-sm text-brand-golden tracking-[0.1em]">Coordinates</span>
+              <span className="font-label-sm text-xs sm:text-sm text-brand-golden tracking-[0.1em]">Coordinates</span>
             </div>
-            <p className="font-title-lg text-title-lg text-brand-warm-cream">28.6139° N, 77.2090° E</p>
+            <p className="font-title-lg text-sm sm:text-base md:text-lg text-brand-warm-cream">28.6139° N, 77.2090° E</p>
           </div>
         </div>
       </div>

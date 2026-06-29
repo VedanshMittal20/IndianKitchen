@@ -57,7 +57,7 @@ export default function ScaleSection() {
         </motion.div>
 
         {/* Right Images */}
-        <div className="order-1 lg:order-2 grid grid-cols-2 gap-4 h-[500px]">
+        <div className="order-1 lg:order-2 grid grid-cols-2 gap-2 sm:gap-4 h-[300px] sm:h-[400px] md:h-[500px]">
           <div className="col-span-1 grid grid-rows-2 gap-4">
             <motion.div
               initial={{ opacity: 0, y: -30 }}
