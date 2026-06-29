@@ -56,7 +56,7 @@ export default function HomeCommitmentStrip() {
           className="lg:col-span-6 xl:col-span-3 relative h-64 lg:h-72 overflow-hidden border border-outline-variant/30 shadow-lg rounded-[2px]"
         >
           <Image
-            src="/images/real_copper_pot.jpeg"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real_copper_pot"
             alt="Authentic copper pot cooking"
             fill
             className="object-cover"

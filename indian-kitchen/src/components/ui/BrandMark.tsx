@@ -19,7 +19,7 @@ export default function BrandMark({ variant = "green", size = "md", className }:
   return (
     <div className={cn("relative flex items-center justify-start", s, className)}>
       <Image
-        src="/images/logo.png"
+        src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/logo"
         alt="Indian Kitchen Logo"
         width={300}
         height={100}

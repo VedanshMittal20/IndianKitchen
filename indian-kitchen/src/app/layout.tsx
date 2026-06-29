@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-// import { Bebas_Neue, Outfit } from "next/font/google";
+import { Bebas_Neue, Outfit } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -8,20 +8,19 @@ import CursorGlow from "@/components/ui/CursorGlow";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import QRWidget from "@/components/QRWidget";
 
-// const bebasNeue = Bebas_Neue({
-//   variable: "--font-bebas",
-//   subsets: ["latin"],
-//   weight: ["400"],
-// });
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
 
-// const outfit = Outfit({
-//   variable: "--font-outfit",
-//   subsets: ["latin"],
-//   weight: ["300", "400", "500", "600", "700"],
-// });
-
-const bebasNeue = { variable: "font-bebas" };
-const outfit = { variable: "font-outfit" };
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Indian Kitchen - Architectural Permanence",
@@ -36,6 +35,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebasNeue.variable} ${outfit.variable} h-full antialiased`}>
       <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
       </head>
       <body className="font-body-md text-body-md-md bg-surface-container-lowest text-on-surface min-h-full flex flex-col">

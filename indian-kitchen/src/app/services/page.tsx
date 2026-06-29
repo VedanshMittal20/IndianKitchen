@@ -17,7 +17,7 @@ const services = [
     title: "Corporate Dining",
     desc: "Tailored culinary solutions for executive lunches, team building retreats, and corporate milestones. We transform business gatherings into highly memorable cultural experiences.",
     features: ["Custom Branding", "A/V Setup Available", "Menu Tasters"],
-    image: "/images/real/kandy_hero_day.jpg",
+    image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/kandy_hero_day",
     bgColor: "bg-surface-container-lowest",
     textColor: "text-brand-deep-forest",
     subtextColor: "text-on-surface-variant",
@@ -29,7 +29,7 @@ const services = [
     title: "Private Celebrations",
     desc: "Intimate, highly art-directed spaces dedicated entirely to birthday galas, anniversaries, and reunions. Every detail, from the floral stagecraft to the personalized menu, is meticulously curated.",
     features: ["Personal Butler", "Theme Customization", "Floral Stagecraft"],
-    image: "/images/real/gallery_2.jpg",
+    image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_2",
     bgColor: "bg-brand-deep-forest",
     textColor: "text-brand-warm-cream",
     subtextColor: "text-white/70",
@@ -41,7 +41,7 @@ const services = [
     title: "Travel & Tour Groups",
     desc: "Curated cultural dining itineraries designed for inbound tourist groups looking for an authentic taste of Indian heritage, seamlessly managed by multi-lingual hosts.",
     features: ["Multi-lingual Hosts", "Interactive Demos", "Set Menus"],
-    image: "/images/real/colombo_ceremony.jpg",
+    image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/colombo_ceremony",
     bgColor: "bg-[#F5F2EA]",
     textColor: "text-brand-deep-forest",
     subtextColor: "text-on-surface-variant",
@@ -53,7 +53,7 @@ const services = [
     title: "Bespoke Chef Menus",
     desc: "Collaborate directly with our master chefs to curate personalized multi-course tasting menus for your guests. Experience live tandoor stations and expert wine pairings.",
     features: ["Wine Pairings", "Live Tandoor Station", "Off-site Catering"],
-    image: "/images/bamboo_biryani.png",
+    image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/bamboo_biryani",
     bgColor: "bg-surface-container-lowest",
     textColor: "text-brand-deep-forest",
     subtextColor: "text-on-surface-variant",
@@ -153,7 +153,7 @@ export default function ServicesPage() {
         label="Event Stagecraft"
         title={<>Beyond<br />the Plate</>}
         subtitle="Choreographed hospitality experiences tailored for your special occasions."
-        image="/images/real_interior.jpeg"
+        image="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real_interior"
         light
       />
 

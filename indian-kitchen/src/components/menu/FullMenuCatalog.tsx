@@ -151,7 +151,7 @@ export default function FullMenuCatalog() {
       <div className="mt-20 pt-8 border-t border-outline-variant/30 text-center flex flex-col items-center gap-6">
         <div className="relative w-48 h-48 bg-white p-2 rounded-xl shadow-2xl border-4 border-surface-container-highest">
           <Image
-            src="/images/menu-qr.png"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/menu-qr"
             alt="Scan for Menu"
             fill
             className="object-contain p-2"

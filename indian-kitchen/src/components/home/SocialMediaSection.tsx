@@ -59,7 +59,7 @@ export default function SocialMediaSection() {
             className="relative w-full aspect-[4/7] shadow-xl rounded-xl overflow-hidden border border-gray-200"
           >
             <Image
-              src="/images/extracted/page9_img2.jpeg"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page9_img3"
               alt="Instagram Profile"
               fill
               className="object-cover"
@@ -73,7 +73,7 @@ export default function SocialMediaSection() {
             className="relative w-full aspect-[4/7] shadow-xl rounded-xl overflow-hidden border border-gray-200"
           >
             <Image
-              src="/images/extracted/page9_img3.jpeg"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page9_img2"
               alt="TikTok Profile"
               fill
               className="object-cover"
@@ -87,7 +87,7 @@ export default function SocialMediaSection() {
             className="relative w-full aspect-[4/7] shadow-xl rounded-xl overflow-hidden border border-gray-200"
           >
             <Image
-              src="/images/extracted/page9_img4.jpeg"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page9_img4"
               alt="Facebook Profile"
               fill
               className="object-cover"

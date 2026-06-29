@@ -15,24 +15,26 @@ import USPSection from "@/components/home/USPSection";
 import VisionMissionSection from "@/components/home/VisionMissionSection";
 import LocationsSection from "@/components/home/LocationsSection";
 import FounderNoteSection from "@/components/home/FounderNoteSection";
+import HomeJoinUsSection from "@/components/home/HomeJoinUsSection";
+import HomeFranchiseSection from "@/components/home/HomeFranchiseSection";
 
 export default function Home() {
-  // Simple scroll reveal logic
+  // Optimized scroll reveal logic using IntersectionObserver
   useEffect(() => {
-    const reveals = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-        for (let i = 0; i < reveals.length; i++) {
-            const windowHeight = window.innerHeight;
-            const elementTop = reveals[i].getBoundingClientRect().top;
-            const elementVisible = 100;
-            if (elementTop < windowHeight - elementVisible) {
-                reveals[i].classList.add('active');
-            }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          // Optional: stop observing once revealed for better performance
+          // observer.unobserve(entry.target);
         }
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Trigger once on load
-    return () => window.removeEventListener('scroll', revealOnScroll);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -50,6 +52,8 @@ export default function Home() {
       <USPSection />
       <VisionMissionSection />
       <LocationsSection />
+      <HomeFranchiseSection />
+      <HomeJoinUsSection />
       <FounderNoteSection />
     </div>
   );

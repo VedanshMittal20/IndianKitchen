@@ -66,7 +66,7 @@ export default function ScaleSection() {
               className="relative w-full h-full rounded-sm overflow-hidden"
             >
               <Image
-                src="/images/extracted/page10_img2.jpeg"
+                src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page10_img2"
                 alt="Outlet view"
                 fill
                 className="object-cover"
@@ -80,7 +80,7 @@ export default function ScaleSection() {
               className="relative w-full h-full rounded-sm overflow-hidden"
             >
               <Image
-                src="/images/extracted/page10_img3.jpeg"
+                src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page10_img3"
                 alt="Theme interior view"
                 fill
                 className="object-cover"
@@ -95,7 +95,7 @@ export default function ScaleSection() {
             className="col-span-1 relative h-full rounded-sm overflow-hidden"
           >
             <Image
-              src="/images/extracted/page10_img4.jpeg"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page10_img4"
               alt="Exterior signage"
               fill
               className="object-cover"

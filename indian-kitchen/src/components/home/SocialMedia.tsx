@@ -54,12 +54,12 @@ const socialLinks = [
 ];
 
 const instagramGrid = [
-  "/images/slide_2.png",
-  "/images/slide_11.png",
-  "/images/bamboo_biryani.png",
-  "/images/private_dining.png",
-  "/images/real/kandy_hero_day.jpg",
-  "/images/real/colombo_ceremony.jpg",
+  "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/slide_2",
+  "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/slide_11",
+  "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/bamboo_biryani",
+  "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/private_dining",
+  "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/kandy_hero_day",
+  "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/colombo_ceremony",
 ];
 
 export default function SocialMedia() {

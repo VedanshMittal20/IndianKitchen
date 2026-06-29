@@ -18,7 +18,7 @@ export default function BlogPage() {
         label="From the Spice Trail"
         title={<>Tales from<br />the Kitchen</>}
         subtitle="Stories, recipes, and behind-the-scenes insights from the world of Indian Kitchen."
-        image="/images/real_interior.jpeg"
+        image="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real_interior"
       />
 
       <SectionShell variant="void" className="py-20">

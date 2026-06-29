@@ -141,7 +141,7 @@ export default function ReservationsPage() {
             <div className="bg-brand-deep-forest border border-white/10 p-8 rounded-lg relative overflow-hidden transition-all duration-500 peer-checked:border-saffron-gold peer-checked:shadow-[0_0_30px_rgba(244,196,48,0.2)] h-64 flex flex-col justify-end">
               <div className="absolute inset-0 z-0">
                 <Image
-                  src="/images/real/kandy_hero_night.jpg"
+                  src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/kandy_hero_night"
                   alt="Tranquil backwaters dining."
                   fill
                   className="object-cover opacity-40 mix-blend-luminosity transition-opacity group-hover:opacity-60 duration-500"

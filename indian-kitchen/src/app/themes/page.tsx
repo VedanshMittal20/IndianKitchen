@@ -119,7 +119,7 @@ export default function ThemesCinematicPage() {
       {/* SECTION 2: PONDICHERRY STREET */}
       <section className="min-h-[100dvh] w-full relative flex items-center overflow-hidden bg-surface-dark">
         <Image 
-          src="/images/real/gallery_3.jpg" 
+          src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_3" 
           alt="Pondicherry Street Theme" 
           fill 
           className="object-cover img-warm opacity-40 scale-100"
@@ -192,7 +192,7 @@ export default function ThemesCinematicPage() {
       {/* SECTION 4: THE SHERLOCK */}
       <section className="min-h-[100dvh] w-full relative flex items-center justify-center overflow-hidden bg-surface-dark">
         <Image 
-          src="/images/private_dining.png" 
+          src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/private_dining" 
           alt="The Sherlock Mystery Dining Theme" 
           fill 
           className="object-cover img-warm opacity-40 scale-100"

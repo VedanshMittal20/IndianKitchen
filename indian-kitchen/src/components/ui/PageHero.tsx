@@ -17,7 +17,7 @@ export default function PageHero({
   label,
   title,
   subtitle,
-  image = "/images/real_interior.jpeg",
+  image = "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real_interior",
   light = false,
 }: PageHeroProps) {
   const ref = useRef(null);

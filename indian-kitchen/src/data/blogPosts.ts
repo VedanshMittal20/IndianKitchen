@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "The origin story of Indian Kitchen's signature Bamboo Biryani — how an ancient tribal method became Colombo's most photographed dish.",
     tag: "Behind the Kitchen",
     readTime: "6 min read",
-    image: "/images/bamboo_biryani.png",
+    image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/bamboo_biryani",
     date: "March 12, 2026",
     author: "Indian Kitchen Team",
     content: `There's a moment in every kitchen when something ordinary becomes extraordinary. For us, that moment came with bamboo.
@@ -42,7 +42,7 @@ Every bamboo tube we use is sustainably sourced and single-use. Every batch is c
     excerpt: "Behind the creation of our first theme — and why the magic of Pondicherry's streets became the soul of Indian Kitchen.",
     tag: "Culture",
     readTime: "5 min read",
-    image: "/images/real/colombo_ceremony.jpg",
+    image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/colombo_ceremony",
     date: "February 28, 2026",
     author: "Indian Kitchen Team",
     content: `Every great restaurant has an origin story. Ours begins on a quiet street in Pondicherry's French Quarter, where bougainvillea spills over mustard-coloured walls and the scent of filter coffee mingles with sea salt.
@@ -65,7 +65,7 @@ Today, Pondicherry Street remains our flagship theme. It's where every Indian Ki
     excerpt: "The Indian Kitchen philosophy on authenticity, no artificial ingredients, and why every spice tells a story.",
     tag: "Recipe",
     readTime: "4 min read",
-    image: "/images/banana_leaf.png",
+    image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/banana_leaf",
     date: "February 10, 2026",
     author: "Indian Kitchen Team",
     content: `In the modern food industry, shortcuts are everywhere. Pre-mixed spice blends. Artificial food colouring. Frozen bases. They save time and money. We use none of them.
@@ -90,7 +90,7 @@ Cooking without shortcuts is harder. It's slower. It's more expensive. But it's 
     excerpt: "The expansion story — taking immersive theme dining from the capital to Sri Lanka's cultural heart.",
     tag: "Culture",
     readTime: "5 min read",
-    image: "/images/real/kandy_hero_night.jpg",
+    image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/kandy_hero_night",
     date: "January 20, 2026",
     author: "Indian Kitchen Team",
     content: `Colombo was always the starting point. But Kandy was always the dream.
@@ -117,7 +117,7 @@ Building a second outlet taught us something crucial: Indian Kitchen isn't a for
     excerpt: "A deep dive into our most theatrical theme — where Victorian mystery meets Indian masala.",
     tag: "Behind the Kitchen",
     readTime: "7 min read",
-    image: "/images/private_dining.png",
+    image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/private_dining",
     date: "January 5, 2026",
     author: "Indian Kitchen Team",
     content: `What happens when you combine Arthur Conan Doyle with a tandoor? You get The Sherlock — Indian Kitchen's most audacious theme.

@@ -43,7 +43,7 @@ export default function FounderNoteSection() {
             style={{ WebkitMaskImage: "radial-gradient(circle, black 50%, transparent 100%)", maskImage: "radial-gradient(circle, black 50%, transparent 100%)" }}
           >
             <Image
-              src="/images/extracted/page15_img2.png"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page15_img2"
               alt="Vincent Renold - Founder"
               fill
               className="object-cover"

@@ -64,7 +64,7 @@ export default function VisionMissionSection() {
           className="relative w-full h-full border-t-4 border-l-4 border-black"
         >
           <Image
-            src="/images/extracted/page13_img2.jpeg"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page13_img2"
             alt="Mission Dish 1"
             fill
             className="object-cover"
@@ -78,7 +78,7 @@ export default function VisionMissionSection() {
           className="relative w-full h-full border-t-4 border-black"
         >
           <Image
-            src="/images/extracted/page13_img3.jpeg"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page13_img3"
             alt="Mission Dish 2"
             fill
             className="object-cover"
@@ -92,7 +92,7 @@ export default function VisionMissionSection() {
           className="relative w-full h-full border-t-4 border-r-4 border-black"
         >
           <Image
-            src="/images/extracted/page13_img4.jpeg"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page13_img4"
             alt="Mission Dish 3"
             fill
             className="object-cover"

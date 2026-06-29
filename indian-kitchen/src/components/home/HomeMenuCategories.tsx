@@ -12,22 +12,22 @@ import { ArrowRight } from "lucide-react";
 
 const menuData = {
   Biryani: [
-    { name: "Bamboo Chicken Biryani", price: "LKR 3,400", image: "/images/real/gallery_1.jpg", tag: "Signature" },
-    { name: "Mutton Dum Biryani", price: "LKR 4,200", image: "/images/real/gallery_3.jpg" },
-    { name: "Prawns Biryani", price: "LKR 3,800", image: "/images/real/gallery_4.jpg" },
-    { name: "Vegetable Biryani", price: "LKR 2,400", image: "/images/real/gallery_6.jpg", tag: "Veg" },
+    { name: "Bamboo Chicken Biryani", price: "LKR 3,400", image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_1", tag: "Signature" },
+    { name: "Mutton Dum Biryani", price: "LKR 4,200", image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_3" },
+    { name: "Prawns Biryani", price: "LKR 3,800", image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_4" },
+    { name: "Vegetable Biryani", price: "LKR 2,400", image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_6", tag: "Veg" },
   ],
   Curries: [
-    { name: "Butter Chicken Masala", price: "LKR 2,800", image: "/images/real/gallery_7.jpg", tag: "Popular" },
-    { name: "Kadai Paneer", price: "LKR 2,200", image: "/images/real/gallery_1.jpg", tag: "Veg" },
-    { name: "Mutton Rogan Josh", price: "LKR 3,600", image: "/images/real/gallery_2.jpg" },
-    { name: "Goan Fish Curry", price: "LKR 3,200", image: "/images/real/gallery_3.jpg" },
+    { name: "Butter Chicken Masala", price: "LKR 2,800", image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_7", tag: "Popular" },
+    { name: "Kadai Paneer", price: "LKR 2,200", image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_1", tag: "Veg" },
+    { name: "Mutton Rogan Josh", price: "LKR 3,600", image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_2" },
+    { name: "Goan Fish Curry", price: "LKR 3,200", image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_3" },
   ],
   Tandoor: [
-    { name: "Tandoori Chicken", price: "LKR 3,000", image: "/images/real/gallery_4.jpg" },
-    { name: "Paneer Tikka", price: "LKR 2,400", image: "/images/real/gallery_5.jpg", tag: "Veg" },
-    { name: "Seekh Kebab", price: "LKR 3,400", image: "/images/real/gallery_6.jpg" },
-    { name: "Malai Tikka", price: "LKR 2,900", image: "/images/real/gallery_7.jpg" },
+    { name: "Tandoori Chicken", price: "LKR 3,000", image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_4" },
+    { name: "Paneer Tikka", price: "LKR 2,400", image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_5", tag: "Veg" },
+    { name: "Seekh Kebab", price: "LKR 3,400", image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_6" },
+    { name: "Malai Tikka", price: "LKR 2,900", image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_7" },
   ],
 };
 

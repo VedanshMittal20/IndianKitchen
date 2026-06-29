@@ -69,7 +69,7 @@ export default function ServicesSection() {
             className="absolute top-0 right-0 w-2/3 h-2/3 rounded-sm overflow-hidden shadow-2xl z-10"
           >
             <Image
-              src="/images/extracted/page6_img1.jpeg"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page6_img1"
               alt="Waitress Serving"
               fill
               className="object-cover"
@@ -83,7 +83,7 @@ export default function ServicesSection() {
             className="absolute bottom-0 left-0 w-2/3 h-2/3 rounded-sm overflow-hidden shadow-2xl z-20 border-8 border-surface"
           >
             <Image
-              src="/images/extracted/page6_img2.jpeg"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page6_img2"
               alt="Chef Cooking"
               fill
               className="object-cover"

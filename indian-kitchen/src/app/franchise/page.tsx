@@ -101,7 +101,7 @@ export default function FranchisePage() {
         label="Franchise Opportunities"
         title={<>Own a World.<br />Build a Legacy.</>}
         subtitle="Bring the ultimate theme dining experience to your city."
-        image="/images/real/colombo_ceremony.jpg"
+        image="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/colombo_ceremony"
       />
 
       <SectionShell variant="void" className="py-24">

@@ -122,7 +122,7 @@ ${data.whyUs}`;
           label="Join Our Village"
           title={<span className="heading-presentation text-gradient-primary">Join the<br />World-Builders</span>}
           subtitle="We don't hire waitstaff. We hire storytellers. Every person — from kitchen to floor — plays a character in an immersive world."
-          image="/images/real_waiter.jpeg"
+          image="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real_waiter"
           light={false}
         />
 

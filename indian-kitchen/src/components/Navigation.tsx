@@ -11,6 +11,7 @@ const navLinks = [
   { name: "AMBIENCE", href: "/themes" },
   { name: "RESERVATIONS", href: "/reservations" },
   { name: "CAREERS", href: "/careers" },
+  { name: "FRANCHISE", href: "/franchise" },
 ];
 
 export default function Navigation() {
@@ -57,7 +58,7 @@ export default function Navigation() {
             isScrolled ? "px-6 md:px-10" : "px-6 md:px-12 max-w-7xl"
           }`}>
             {/* Logo */}
-            <Link href="/" className="flex flex-col relative z-50 group">
+            <a href="/" className="flex flex-col relative z-50 group">
               <div className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-brand-warm-cream flex items-center justify-center font-display-lg text-surface text-xl font-bold rounded-sm">
                       IK
@@ -71,7 +72,7 @@ export default function Navigation() {
                       </span>
                   </div>
               </div>
-            </Link>
+            </a>
 
             {/* Desktop Nav Links */}
             <div className="hidden md:flex items-center gap-10">

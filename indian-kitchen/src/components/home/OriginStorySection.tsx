@@ -41,7 +41,7 @@ export default function OriginStorySection() {
         className="w-full relative h-[40vh] md:h-[60vh] max-h-[600px] border-y-4 border-brand-accent-green"
       >
         <Image
-          src="/images/extracted/page3_img2.jpeg"
+          src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page3_img2"
           alt="Indian Kitchen Interior"
           fill
           className="object-cover img-warm"

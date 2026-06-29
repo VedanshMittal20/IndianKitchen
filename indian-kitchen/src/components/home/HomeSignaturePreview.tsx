@@ -113,7 +113,7 @@ export default function HomeSignaturePreview() {
         <div className="flex items-center justify-center relative order-1 lg:order-2">
           <div ref={dishRef} className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[380px] lg:h-[380px] rounded-full overflow-hidden shadow-xl bg-surface-container-low border-4 border-surface-container-lowest">
             <Image
-              src="/images/bamboo_biryani.png"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/bamboo_biryani"
               alt="Bamboo Biryani"
               fill
               className="object-cover"

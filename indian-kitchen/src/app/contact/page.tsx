@@ -16,7 +16,7 @@ export default function ContactPage() {
         label="Visit Us"
         title="Find the Experience"
         subtitle="357 R.A. De Mel Mawatha, Colombo 00300 — open daily from 12:30 PM. Late nights on Fridays and Saturdays."
-        image="/images/real/colombo_ceremony.jpg"
+        image="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/colombo_ceremony"
       />
       <FindUs />
       <SocialMedia />

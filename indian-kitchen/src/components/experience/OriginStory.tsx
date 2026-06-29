@@ -89,7 +89,7 @@ export default function OriginStory() {
             <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden">
               <motion.div style={{ y: yParallax }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
                 <Image
-                  src="/images/real/colombo_ceremony.jpg"
+                  src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/colombo_ceremony"
                   alt="Colombo Ceremony"
                   fill
                   className="object-cover transition-all duration-1000 group-hover:scale-105"
@@ -187,7 +187,7 @@ export default function OriginStory() {
           <div className="lg:col-span-5 relative aspect-[4/5] rounded-[3rem] overflow-hidden glass-panel p-2 shadow-sm hover:scale-[1.01] transition-all duration-500 group">
             <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden">
               <Image 
-                src="/images/real/gallery_7.jpg" 
+                src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_7" 
                 alt="Vincent Renold" 
                 fill 
                 className="object-cover transition-all duration-1000 group-hover:scale-105"

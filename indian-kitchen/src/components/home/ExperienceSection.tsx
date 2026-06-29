@@ -68,7 +68,7 @@ export default function ExperienceSection() {
             className="relative h-[400px] lg:h-full w-full col-span-1 rounded-sm overflow-hidden"
           >
             <Image
-              src="/images/extracted/page4_img2.jpeg"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page4_img2"
               alt="Theme Dining Interior"
               fill
               className="object-cover"
@@ -83,7 +83,7 @@ export default function ExperienceSection() {
               className="relative w-full h-full min-h-[200px] rounded-sm overflow-hidden"
             >
               <Image
-                src="/images/extracted/page4_img3.jpeg"
+                src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page4_img3"
                 alt="Colorful Theme Interior"
                 fill
                 className="object-cover"
@@ -97,7 +97,7 @@ export default function ExperienceSection() {
               className="relative w-full h-full min-h-[200px] rounded-sm overflow-hidden"
             >
               <Image
-                src="/images/extracted/page4_img4.jpeg"
+                src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page4_img4"
                 alt="Sherlock Theme Interior"
                 fill
                 className="object-cover"

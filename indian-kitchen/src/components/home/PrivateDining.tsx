@@ -23,7 +23,7 @@ export default function PrivateDining() {
           className="absolute inset-0 w-full h-full"
         >
           <Image
-            src="/images/real/gallery_2.jpg"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_2"
             alt="Private Dining at Indian Kitchen"
             fill
             className="object-cover"

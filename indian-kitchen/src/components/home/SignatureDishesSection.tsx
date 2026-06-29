@@ -71,7 +71,7 @@ export default function SignatureDishesSection() {
           className="relative aspect-square w-full rounded-sm overflow-hidden border-4 border-surface"
         >
           <Image
-            src="/images/extracted/page7_img2.jpeg"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page7_img2"
             alt="Bamboo Biryani"
             fill
             className="object-cover"
@@ -85,7 +85,7 @@ export default function SignatureDishesSection() {
           className="relative aspect-square w-full rounded-sm overflow-hidden border-4 border-surface"
         >
           <Image
-            src="/images/extracted/page7_img3.jpeg"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page7_img3"
             alt="Banana Leaf Dish"
             fill
             className="object-cover"
@@ -99,7 +99,7 @@ export default function SignatureDishesSection() {
           className="relative aspect-square w-full rounded-sm overflow-hidden border-4 border-surface"
         >
           <Image
-            src="/images/extracted/page7_img4.jpeg"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page7_img4"
             alt="Signature Dish"
             fill
             className="object-cover"

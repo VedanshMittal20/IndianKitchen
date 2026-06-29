@@ -12,21 +12,21 @@ const themes = [
     tag: "Study 01",
     desc: "Colonial arches, mustard walls, and coastal spice \u2014 our flagship sanctuary of cultural cross-pollination since 2020.",
     href: "/themes",
-    image: "/images/real/gallery_2.jpg",
+    image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_2",
   },
   {
     name: "Kerala Houseboat",
     tag: "Study 02",
     desc: "Bamboo panels, lantern light, and fiery Malabar flavours aboard our traditional kettuvallam dining chamber.",
     href: "/themes",
-    image: "/images/real/kandy_hero_day.jpg",
+    image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/kandy_hero_day",
   },
   {
     name: "The Sherlock",
     tag: "Study 03",
     desc: "Victorian study meets Indian masala \u2014 puzzles, clues, and multi-course menus that tell a suspenseful story.",
     href: "/themes",
-    image: "/images/real/gallery_5.jpg",
+    image: "https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/real/gallery_5",
   },
 ];
 

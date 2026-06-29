@@ -37,7 +37,7 @@ export default function LocationsSection() {
         >
           <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden mb-6 shadow-lg border-2 border-brand-accent-green">
             <Image
-              src="/images/extracted/page14_img2.png"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page14_img2"
               alt="Colombo Location Map"
               fill
               className="object-cover"
@@ -58,7 +58,7 @@ export default function LocationsSection() {
         >
           <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden mb-6 shadow-lg border-2 border-brand-accent-green">
             <Image
-              src="/images/extracted/page14_img3.png"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page14_img3"
               alt="Kandy Location Map"
               fill
               className="object-cover"

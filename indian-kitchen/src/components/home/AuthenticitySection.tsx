@@ -64,7 +64,7 @@ export default function AuthenticitySection() {
           className="order-1 lg:order-2 relative w-full aspect-square md:aspect-[4/5] rounded-sm overflow-hidden shadow-2xl border-4 border-surface"
         >
           <Image
-            src="/images/extracted/page5_img3.jpeg"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page5_img3"
             alt="Culinary Authenticity Copper Pot"
             fill
             className="object-cover img-warm"

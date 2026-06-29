@@ -60,7 +60,7 @@ export default function AboutSection() {
           className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-2xl hover-lift"
         >
           <Image
-            src="/images/extracted/page2_img2.jpeg"
+            src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page2_img2"
             alt="Indian Kitchen Storefront"
             fill
             className="object-cover img-warm"

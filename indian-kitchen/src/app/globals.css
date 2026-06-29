@@ -78,11 +78,16 @@
       @apply bg-surface-dark border border-brand-sandy text-brand-warm-cream focus:border-brand-accent-green outline-none w-full px-4 py-3 rounded-sm font-body-md;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-surface-container-lowest);
   color: var(--color-on-surface);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-outfit);
 }
 
 h1, h2, h3, h4, h5, h6, .font-display-lg, .font-headline-lg, .font-headline-md, .font-headline-sm {

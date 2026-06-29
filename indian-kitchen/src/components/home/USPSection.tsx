@@ -52,7 +52,7 @@ export default function USPSection() {
         >
           <div className="relative w-full aspect-square mb-6 border-4 border-surface shadow-lg">
             <Image
-              src="/images/extracted/page11_img2.jpeg"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page11_img2"
               alt="Theme Based Dining"
               fill
               className="object-cover"
@@ -76,7 +76,7 @@ export default function USPSection() {
         >
           <div className="relative w-full aspect-square mb-6 border-4 border-surface shadow-lg">
             <Image
-              src="/images/extracted/page11_img3.jpeg"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page11_img3"
               alt="Tourism Integration"
               fill
               className="object-cover"
@@ -100,7 +100,7 @@ export default function USPSection() {
         >
           <div className="relative w-full aspect-square mb-6 border-4 border-surface shadow-lg">
             <Image
-              src="/images/extracted/page11_img4.jpeg"
+              src="https://res.cloudinary.com/duibfjsjh/image/upload/f_auto,q_auto/indian-kitchen/extracted/page11_img4"
               alt="Cultural Story Telling"
               fill
               className="object-cover"

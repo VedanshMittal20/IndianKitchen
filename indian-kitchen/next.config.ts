@@ -4,6 +4,12 @@ import path from "path";
 const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+    ],
   },
   turbopack: {
     // Pin Turbopack's workspace root to this project directory,
