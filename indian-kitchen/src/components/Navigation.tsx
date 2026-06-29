@@ -59,15 +59,15 @@ export default function Navigation() {
           }`}>
             {/* Logo */}
             <Link href="/" className="flex flex-col relative z-50 group">
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center" 
+              <div className="relative w-48 sm:w-64 md:w-[280px] h-10 sm:h-12 flex items-center justify-start" 
                    style={{ 
                      mixBlendMode: "screen",
                      opacity: 0.95
                    }}>
                   <img 
-                    src="/logo_perfect.png" 
+                    src="/logo_horizontal.png" 
                     alt="Indian Kitchen Logo" 
-                    className="object-contain w-full h-full" 
+                    className="object-contain object-left w-full h-full" 
                   />
               </div>
             </Link>
