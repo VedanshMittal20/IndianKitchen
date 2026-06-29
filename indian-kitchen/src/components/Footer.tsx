@@ -12,18 +12,13 @@ export default function Footer() {
         {/* Brand Column */}
         <div className="col-span-1 md:col-span-1">
           <Link href="/" className="inline-block mb-6 group">
-            <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-brand-warm-cream flex items-center justify-center font-display-lg text-brand-deep-forest text-xl font-bold">
-                    IK
-                </div>
-                <div className="flex flex-col leading-none">
-                    <span className="font-headline-sm text-brand-warm-cream tracking-widest uppercase transition-colors group-hover:text-brand-golden">
-                        INDIAN
-                    </span>
-                    <span className="font-headline-sm text-brand-warm-cream tracking-widest uppercase transition-colors group-hover:text-brand-golden">
-                        KITCHEN
-                    </span>
-                </div>
+            <div className="relative w-48 h-10 flex items-center justify-start transition-opacity group-hover:opacity-80" 
+                 style={{ mixBlendMode: "screen" }}>
+              <img 
+                src="/logo_horizontal.png" 
+                alt="Indian Kitchen Logo" 
+                className="object-contain object-left w-full h-full" 
+              />
             </div>
           </Link>
           <p className="font-body-md text-brand-sandy/80 text-sm leading-relaxed max-w-xs">
