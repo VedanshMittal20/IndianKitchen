@@ -14,10 +14,11 @@
       transform: translateY(0);
   }
   .glass-card {
-      background: rgba(6, 73, 53, 0.15);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--color-brand-sandy);
+      background: rgba(6, 73, 53, 0.2);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 153, 51, 0.4);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
   .glass-panel {
       background: rgba(29, 17, 0, 0.4);
@@ -40,10 +41,12 @@
       color: var(--color-on-surface);
   }
   .hover-glow {
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   .hover-glow:hover {
-      box-shadow: 0 0 25px rgba(89, 189, 73, 0.3);
+      box-shadow: 0 10px 30px rgba(255, 153, 51, 0.25);
+      transform: translateY(-4px) scale(1.02);
+      border-color: rgba(255, 153, 51, 0.8);
   }
   .blueprint-grid {
       background-image: 
@@ -53,10 +56,18 @@
   }
 
   .btn-primary {
-      @apply inline-flex items-center justify-center gap-2 px-8 py-3 bg-brand-accent-green text-on-primary font-label-lg uppercase tracking-[0.1em] rounded-sm hover:bg-brand-golden hover:text-on-tertiary transition-all duration-300 shadow-none hover:shadow-[0_0_25px_rgba(89,189,73,0.3)] hover:-translate-y-0.5;
+      @apply inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-brand-accent-green to-brand-deep-forest text-on-primary font-label-lg uppercase tracking-[0.1em] rounded-sm hover:from-brand-saffron hover:to-brand-golden hover:text-on-tertiary transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(255,153,51,0.5)] hover:-translate-y-1 transform;
   }
   .btn-outline {
-      @apply inline-flex items-center justify-center gap-2 px-8 py-3 border border-brand-sandy text-brand-warm-cream font-label-lg uppercase tracking-[0.1em] rounded-sm hover:border-brand-accent-green hover:bg-brand-accent-green/5 transition-all duration-300 hover:-translate-y-0.5;
+      @apply inline-flex items-center justify-center gap-2 px-8 py-3 border border-brand-sandy text-brand-warm-cream font-label-lg uppercase tracking-[0.1em] rounded-sm hover:border-brand-saffron hover:bg-brand-saffron/10 transition-all duration-300 hover:-translate-y-0.5 shadow-[inset_0_0_0_0_rgba(255,153,51,0)] hover:shadow-[inset_0_0_20px_20px_rgba(255,153,51,0.1)];
+  }
+  
+  .text-gradient {
+      @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-warm-cream via-brand-saffron to-brand-golden;
+  }
+  
+  .hover-lift {
+      @apply transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl;
   }
 
   .section-padding {

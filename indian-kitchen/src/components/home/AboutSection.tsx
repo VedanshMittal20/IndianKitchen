@@ -57,7 +57,7 @@ export default function AboutSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-2xl"
+          className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-2xl hover-lift"
         >
           <Image
             src="/images/extracted/page2_img2.jpeg"

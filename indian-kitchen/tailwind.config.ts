@@ -65,6 +65,7 @@ const config: Config = {
         "brand-golden": "#FFBA09",
         "brand-red": "#9E0000",
         "brand-accent-green": "#59BD49",
+        "brand-saffron": "#FF9933",
         "surface-dark": "#1D1100"
       },
       borderRadius: {
@@ -109,6 +110,25 @@ const config: Config = {
         "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
         "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}],
         "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'slide-up-fade': 'slide-up-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { opacity: '1', filter: 'drop-shadow(0 0 15px rgba(255, 153, 51, 0.3))' },
+          '50%': { opacity: '.7', filter: 'drop-shadow(0 0 25px rgba(255, 153, 51, 0.6))' },
+        },
+        'slide-up-fade': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       }
     },
   },

@@ -27,7 +27,7 @@ export default function ScaleSection() {
             align="left"
             className="mb-8"
           />
-          <div className="space-y-6 text-brand-deep-forest/90 font-body-lg text-lg leading-relaxed mb-12">
+          <div className="space-y-6 text-brand-warm-cream/90 font-body-lg text-lg leading-relaxed mb-12">
             <p>
               Indian Kitchen has demonstrated remarkable growth since 2020, expanding across multiple themed outlets with consistent quality - from Pondicherry and Kerala inspired dining in Colombo to a Sherlock-themed experience in Kandy, creating a scalable model that drives strong customer connection across locations. Our model proves that experiential dining drives loyalty.
             </p>

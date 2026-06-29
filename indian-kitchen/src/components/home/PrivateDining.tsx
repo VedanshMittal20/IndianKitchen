@@ -43,7 +43,7 @@ export default function PrivateDining() {
           <span className="text-[10px] tracking-[0.3em] text-brand-accent-green font-bold block mb-4">
             Private Events
           </span>
-          <h2 className="font-headline-md text-headline-md text-brand-deep-forest mb-6">Your Event, Our Stage</h2>
+          <h2 className="font-headline-md text-headline-md text-brand-warm-cream mb-6">Your Event, Our Stage</h2>
           <div className="w-12 h-1 bg-brand-sandy/40 mx-auto mb-6 rounded-full" />
           <p className="text-on-surface-variant font-light leading-relaxed mb-10 text-base md:text-lg">
             From intimate celebrations to corporate gatherings — reserve private spaces across all our theme
