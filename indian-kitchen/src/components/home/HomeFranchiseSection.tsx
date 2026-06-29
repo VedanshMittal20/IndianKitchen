@@ -1,4 +1,4 @@
-import Link from "next/link";
+import FranchiseForm from "@/components/forms/FranchiseForm";
 import SectionShell from "@/components/layout/SectionShell";
 
 export default function HomeFranchiseSection() {
@@ -17,12 +17,7 @@ export default function HomeFranchiseSection() {
         </p>
 
         <div className="reveal">
-          <Link 
-            href="/franchise" 
-            className="btn-primary font-bold text-lg px-10 py-4 inline-flex shadow-[0_0_15px_rgba(255,153,51,0.2)]"
-          >
-            Franchise Opportunities
-          </Link>
+          <FranchiseForm />
         </div>
       </div>
     </SectionShell>
