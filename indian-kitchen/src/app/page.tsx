@@ -20,6 +20,7 @@ import LocationsSection from "@/components/home/LocationsSection";
 import FounderNoteSection from "@/components/home/FounderNoteSection";
 import HomeJoinUsSection from "@/components/home/HomeJoinUsSection";
 import HomeFranchiseSection from "@/components/home/HomeFranchiseSection";
+import ScrollJourney from "@/components/home/ScrollJourney";
 
 export default function Home() {
   // Optimized scroll reveal logic using IntersectionObserver
@@ -41,26 +42,31 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative z-10 w-full bg-surface">
+    <div className="relative z-10 w-full bg-brand-warm-cream">
       <HomeHeroSection />
-      <AboutSection />
-      <OriginStorySection />
-      <ExperienceSection />
-      <AuthenticitySection />
-      <ServicesSection />
-      <SignatureDishesSection />
-      <MenuQRSection />
-      <SocialMediaSection />
-      <ScaleSection />
-      <USPSection />
-      <BrandStorySection />
-      <VisionMissionSection />
-      <TimelineSection />
-      <TestimonialsSection />
-      <LocationsSection />
-      <HomeFranchiseSection />
-      <HomeJoinUsSection />
-      <FounderNoteSection />
+      
+      <ScrollJourney>
+        <div className="relative z-10 flex flex-col items-center">
+          <AboutSection />
+          <OriginStorySection />
+          <ExperienceSection />
+          <AuthenticitySection />
+          <ServicesSection />
+          <SignatureDishesSection />
+          <MenuQRSection />
+          <SocialMediaSection />
+          <ScaleSection />
+          <USPSection />
+          <BrandStorySection />
+          <VisionMissionSection />
+          <TimelineSection />
+          <TestimonialsSection />
+          <LocationsSection />
+          <HomeFranchiseSection />
+          <HomeJoinUsSection />
+          <FounderNoteSection />
+        </div>
+      </ScrollJourney>
     </div>
   );
 }

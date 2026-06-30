@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { Play, Pause } from "lucide-react";
 
 const navLinks = [
   { name: "HOME", href: "/" },
@@ -17,6 +18,8 @@ const navLinks = [
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -44,8 +47,26 @@ export default function Navigation() {
     };
   }, [isOpen]);
 
+  const toggleAudio = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
     <>
+      {/* Hidden Audio Player with a royalty-free classical Indian placeholder track */}
+      <audio 
+        ref={audioRef} 
+        src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_5b82142750.mp3" 
+        loop 
+        preload="auto"
+      />
       <div className={`fixed w-full z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-none ${
         isScrolled ? "top-6 px-4" : "top-0 px-0"
       }`}>
@@ -95,6 +116,21 @@ export default function Navigation() {
 
             {/* Right Controls */}
             <div className="flex items-center gap-4 relative z-50 shrink-0">
+              {/* Audio Toggle Button */}
+              <button
+                onClick={toggleAudio}
+                className={`hidden sm:flex items-center justify-center rounded-full border border-brand-golden/50 bg-brand-warm-cream/50 hover:bg-brand-golden/20 transition-all ${
+                  isScrolled ? "w-8 h-8" : "w-10 h-10"
+                }`}
+                title={isPlaying ? "Pause Music" : "Play Music"}
+              >
+                {isPlaying ? (
+                  <Pause size={isScrolled ? 14 : 16} className="text-brand-deep-forest" />
+                ) : (
+                  <Play size={isScrolled ? 14 : 16} className="text-brand-deep-forest" />
+                )}
+              </button>
+
               <Link
                 href="/reservations"
                 className={`hidden sm:inline-flex bg-brand-deep-forest text-brand-warm-cream border border-brand-golden font-label-lg uppercase tracking-[0.1em] rounded-sm hover:bg-brand-deep-forest/90 transition-all hover:-translate-y-0.5 whitespace-nowrap ${
