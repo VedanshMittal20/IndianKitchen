@@ -63,8 +63,7 @@ export default function Navigation() {
                 isScrolled ? "w-28 sm:w-40 md:w-48 h-6 sm:h-8" : "w-32 sm:w-48 md:w-56 h-8 sm:h-10"
               }`} 
                    style={{ 
-                     filter: "invert(0.8) sepia(0.2) hue-rotate(100deg)", // Makes it dark sage/grey
-                     opacity: 0.95
+                     filter: "brightness(0) opacity(0.85)", // Charcoal
                    }}>
                   <img 
                     src="/logo_horizontal.png" 

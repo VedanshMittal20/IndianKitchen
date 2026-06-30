@@ -87,8 +87,9 @@ const config: Config = {
         'headline-sm': ['var(--font-heading)', 'serif'],
         'body-lg': ['var(--font-body)', 'sans-serif'],
         'body-sm': ['var(--font-body)', 'sans-serif'],
-        'label-lg': ['var(--font-accent)', 'cursive'],
-        'label-sm': ['var(--font-accent)', 'cursive'],
+        'label-lg': ['var(--font-body)', 'sans-serif'],
+        'label-sm': ['var(--font-body)', 'sans-serif'],
+        'accent': ['var(--font-accent)', 'cursive'],
       },
       fontSize: {
         "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "0", "fontWeight": "400"}],

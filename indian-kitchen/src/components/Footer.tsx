@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="col-span-1 md:col-span-1">
           <Link href="/" className="inline-block mb-6 group">
             <div className="relative w-48 h-10 flex items-center justify-start transition-opacity group-hover:opacity-80" 
-                 style={{ filter: "brightness(0) invert(1)" }}>
+                 style={{ filter: "brightness(0) invert(1) opacity(0.9)" }}>
               <img 
                 src="/logo_horizontal.png" 
                 alt="Indian Kitchen Logo" 
