@@ -12,7 +12,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "surface": "#FDFBF7",
         "surface-dim": "#F3EFE6",
         "surface-bright": "#FFFFFF",
         "surface-container-lowest": "#FFFFFF",
@@ -20,8 +19,6 @@ const config: Config = {
         "surface-container": "#F9F6F0",
         "surface-container-high": "#F3EFE6",
         "surface-container-highest": "#EAE5D9",
-        "on-surface": "#2C3531",
-        "on-surface-variant": "#5A6660",
         "inverse-surface": "#2C3531",
         "inverse-on-surface": "#FDFBF7",
         "outline": "#8DA399",
@@ -44,17 +41,26 @@ const config: Config = {
         "on-error": "#FFFFFF",
         "error-container": "#FFDAD6",
         "on-error-container": "#410002",
-        "background": "#FDFBF7",
         "on-background": "#2C3531",
-        "surface-variant": "#EAE5D9",
         "brand-deep-forest": "#6B8E7B",
         "brand-warm-cream": "#FDFBF7",
         "brand-sandy": "#C5A059",
-        "brand-golden": "#C5A059",
-        "brand-red": "#9E0000",
-        "brand-accent-green": "#8DA399",
-        "brand-saffron": "#C5A059",
-        "surface-dark": "#F3EFE6"
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        surface: "var(--surface)",
+        'surface-variant': "var(--surface-variant)",
+        'on-surface': "var(--on-surface)",
+        'on-surface-variant': "var(--on-surface-variant)",
+        brand: {
+          'deep-forest': '#6B2737', /* Primary accent (heritage): Deep maroon */
+          'warm-cream': '#FBF7F0', /* Primary background: Ivory base */
+          'sandy': '#F0E6D3', /* Secondary background: Warm sand */
+          'golden': '#C9A227', /* Secondary accent: Antique gold */
+          'terracotta': '#C1672C', /* Tertiary accent: Terracotta */
+          'sage': '#7C8A5D', /* Supporting accent: Sage */
+          'charcoal': '#3A2E28', /* Primary text: Charcoal brown */
+          'taupe': '#8C7E70', /* Secondary text: Warm taupe */
+        }
       },
       borderRadius: {
         "sm": "0.125rem",
@@ -75,18 +81,14 @@ const config: Config = {
         "container-max": "1280px"
       },
       fontFamily: {
-        "display-lg": ["var(--font-playfair)", "serif"],
-        "headline-lg": ["var(--font-playfair)", "serif"],
-        "headline-lg-mobile": ["var(--font-playfair)", "serif"],
-        "headline-md": ["var(--font-playfair)", "serif"],
-        "headline-sm": ["var(--font-playfair)", "serif"],
-        "title-lg": ["var(--font-inter)", "sans-serif"],
-        "body-lg": ["var(--font-inter)", "sans-serif"],
-        "body-md": ["var(--font-inter)", "sans-serif"],
-        "label-lg": ["var(--font-inter)", "sans-serif"],
-        "label-sm": ["var(--font-inter)", "sans-serif"],
-        "sans": ["var(--font-inter)", "sans-serif"],
-        "serif": ["var(--font-playfair)", "serif"]
+        'display-lg': ['var(--font-heading)', 'serif'],
+        'display-sm': ['var(--font-heading)', 'serif'],
+        'headline-md': ['var(--font-heading)', 'serif'],
+        'headline-sm': ['var(--font-heading)', 'serif'],
+        'body-lg': ['var(--font-body)', 'sans-serif'],
+        'body-sm': ['var(--font-body)', 'sans-serif'],
+        'label-lg': ['var(--font-accent)', 'cursive'],
+        'label-sm': ['var(--font-accent)', 'cursive'],
       },
       fontSize: {
         "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "0", "fontWeight": "400"}],

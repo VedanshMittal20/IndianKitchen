@@ -47,7 +47,7 @@ export default function HomeHeroSection() {
           initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display-lg text-5xl sm:text-7xl md:text-8xl lg:text-[120px] tracking-wider uppercase mb-2 leading-none text-on-surface"
+          className="font-headline-lg text-6xl sm:text-7xl md:text-8xl lg:text-[110px] tracking-wide uppercase mb-4 leading-none text-brand-deep-forest"
         >
           INDIAN KITCHEN
         </motion.h1>
@@ -56,9 +56,9 @@ export default function HomeHeroSection() {
           initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="font-headline-md text-xl sm:text-2xl md:text-4xl text-brand-sandy tracking-[0.3em] uppercase mb-12 sm:mb-16"
+          className="font-accent text-3xl sm:text-4xl md:text-5xl text-brand-charcoal mb-12 sm:mb-16"
         >
-          THEME DINING
+          Theme Dining
         </motion.h2>
 
         {/* CTA Buttons */}

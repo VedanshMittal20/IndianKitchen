@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Eczar, Kalam, Poppins } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -8,15 +8,22 @@ import CursorGlow from "@/components/ui/CursorGlow";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import QRWidget from "@/components/QRWidget";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const eczar = Eczar({
+  variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const kalam = Kalam({
+  variable: "--font-accent",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
+
+const poppins = Poppins({
+  variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   display: "swap",
@@ -33,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${eczar.variable} ${kalam.variable} ${poppins.variable} h-full antialiased`}>
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -18,15 +18,15 @@ export default function SectionShell({
   id,
 }: SectionShellProps) {
   const bgClasses = {
-    void: "bg-surface-container-lowest text-on-surface",
-    sage: "bg-sage text-on-surface",
-    parchment: "bg-parchment text-text-dark",
-    cream: "bg-cream text-text-dark",
-    "cream-dark": "bg-cream-dark text-text-dark",
-    gold: "bg-saffron-gold text-on-surface",
-    crimson: "bg-gradient-to-r from-crimson to-terracotta text-on-surface",
-    light: "bg-surface-container-low text-on-surface",
-    dark: "bg-surface-container-lowest text-on-surface",
+    void: "bg-brand-warm-cream text-brand-charcoal",
+    sage: "bg-brand-warm-cream text-brand-charcoal",
+    parchment: "bg-brand-sandy text-brand-charcoal",
+    cream: "bg-brand-warm-cream text-brand-charcoal",
+    "cream-dark": "bg-brand-sandy text-brand-charcoal",
+    gold: "bg-brand-golden text-brand-warm-cream",
+    crimson: "bg-brand-deep-forest text-brand-warm-cream",
+    light: "bg-brand-warm-cream text-brand-charcoal",
+    dark: "bg-brand-deep-forest text-brand-warm-cream",
   };
 
   return (

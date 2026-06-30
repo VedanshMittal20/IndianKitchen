@@ -4,22 +4,29 @@ import { motion } from "framer-motion";
 
 export default function VisionMissionSection() {
   return (
-    <section className="py-24 bg-surface relative overflow-hidden">
-      <div className="max-w-container-max mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+    <section className="py-32 bg-brand-sandy relative overflow-hidden">
+      {/* Background Medallion */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none mix-blend-multiply opacity-5">
+        <img src="/footer_mandala_backdrop.jpg" alt="" className="w-[600px] h-[600px] object-contain" />
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10 text-center">
+        <div className="flex flex-col gap-24">
           {/* Vision */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="p-10 glass-container jodhpuri-border"
+            className="relative"
           >
-            <h3 className="font-headline-md text-brand-deep-forest mb-6">Our Vision</h3>
-            <p className="font-body-lg text-on-surface/80 leading-relaxed">
-              [PLACEHOLDER] To be the global benchmark for upscale Indian dining, where authenticity meets modern sophistication. We envision a world where the nuanced flavors of India are celebrated in spaces of unparalleled architectural beauty.
+            <h3 className="font-label-lg text-brand-golden tracking-widest uppercase mb-6">Our Vision</h3>
+            <p className="font-accent text-3xl md:text-5xl text-brand-deep-forest leading-relaxed">
+              "[PLACEHOLDER] To be the global benchmark for upscale Indian dining, where authenticity meets modern sophistication."
             </p>
           </motion.div>
+
+          <div className="w-24 h-px bg-brand-golden/30 mx-auto"></div>
 
           {/* Mission */}
           <motion.div
@@ -27,11 +34,11 @@ export default function VisionMissionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="p-10 glass-container jodhpuri-border"
+            className="relative"
           >
-            <h3 className="font-headline-md text-brand-deep-forest mb-6">Our Mission</h3>
-            <p className="font-body-lg text-on-surface/80 leading-relaxed">
-              [PLACEHOLDER] To curate unforgettable culinary experiences by reviving ancient recipes and presenting them with contemporary flair. We are dedicated to uncompromising quality, exceptional service, and creating an ambiance that resonates with heritage.
+            <h3 className="font-label-lg text-brand-golden tracking-widest uppercase mb-6">Our Mission</h3>
+            <p className="font-accent text-3xl md:text-5xl text-brand-deep-forest leading-relaxed">
+              "[PLACEHOLDER] To curate unforgettable culinary experiences by reviving ancient recipes and presenting them with contemporary flair."
             </p>
           </motion.div>
         </div>
