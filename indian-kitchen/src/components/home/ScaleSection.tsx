@@ -27,29 +27,29 @@ export default function ScaleSection() {
             align="left"
             className="mb-8"
           />
-          <div className="space-y-6 text-brand-warm-cream/90 font-body-lg text-lg leading-relaxed mb-12">
+          <div className="space-y-6 text-on-surface/90 font-body-lg text-lg leading-relaxed mb-12">
             <p>
               Indian Kitchen has demonstrated remarkable growth since 2020, expanding across multiple themed outlets with consistent quality - from Pondicherry and Kerala inspired dining in Colombo to a Sherlock-themed experience in Kandy, creating a scalable model that drives strong customer connection across locations. Our model proves that experiential dining drives loyalty.
             </p>
           </div>
 
-          <h3 className="font-display-sm text-3xl mb-6 text-brand-golden">OUR GROWTH STORY</h3>
+          <h3 className="font-display-sm text-3xl mb-6 text-brand-sandy">OUR GROWTH STORY</h3>
           <ul className="space-y-4">
             <li className="flex items-center gap-4">
-              <span className="text-brand-golden font-bold text-xl">|</span>
-              <p className="font-label-sm tracking-wider uppercase text-brand-golden font-bold">
+              <span className="text-brand-sandy font-bold text-xl">|</span>
+              <p className="font-label-sm tracking-wider uppercase text-brand-sandy font-bold">
                 STRONG REPEAT CLIENTELE
               </p>
             </li>
             <li className="flex items-center gap-4">
-              <span className="text-brand-golden font-bold text-xl">|</span>
-              <p className="font-label-sm tracking-wider uppercase text-brand-golden font-bold">
+              <span className="text-brand-sandy font-bold text-xl">|</span>
+              <p className="font-label-sm tracking-wider uppercase text-brand-sandy font-bold">
                 SCALABLE THEME FORMATS
               </p>
             </li>
             <li className="flex items-center gap-4">
-              <span className="text-brand-golden font-bold text-xl">|</span>
-              <p className="font-label-sm tracking-wider uppercase text-brand-golden font-bold">
+              <span className="text-brand-sandy font-bold text-xl">|</span>
+              <p className="font-label-sm tracking-wider uppercase text-brand-sandy font-bold">
                 EVENT-DRIVEN REVENUE
               </p>
             </li>

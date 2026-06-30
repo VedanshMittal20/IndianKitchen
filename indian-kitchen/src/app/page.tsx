@@ -12,7 +12,10 @@ import MenuQRSection from "@/components/home/MenuQRSection";
 import SocialMediaSection from "@/components/home/SocialMediaSection";
 import ScaleSection from "@/components/home/ScaleSection";
 import USPSection from "@/components/home/USPSection";
+import BrandStorySection from "@/components/home/BrandStorySection";
 import VisionMissionSection from "@/components/home/VisionMissionSection";
+import TimelineSection from "@/components/home/TimelineSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 import LocationsSection from "@/components/home/LocationsSection";
 import FounderNoteSection from "@/components/home/FounderNoteSection";
 import HomeJoinUsSection from "@/components/home/HomeJoinUsSection";
@@ -50,7 +53,10 @@ export default function Home() {
       <SocialMediaSection />
       <ScaleSection />
       <USPSection />
+      <BrandStorySection />
       <VisionMissionSection />
+      <TimelineSection />
+      <TestimonialsSection />
       <LocationsSection />
       <HomeFranchiseSection />
       <HomeJoinUsSection />

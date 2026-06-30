@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Outfit } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -8,17 +8,17 @@ import CursorGlow from "@/components/ui/CursorGlow";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import QRWidget from "@/components/QRWidget";
 
-const bebasNeue = Bebas_Neue({
-  variable: "--font-bebas",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${outfit.variable} h-full antialiased`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable} h-full antialiased`}>
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

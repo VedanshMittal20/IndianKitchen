@@ -38,23 +38,23 @@ export default function SignatureDishesSection() {
             OUR MENU CELEBRATES INDIA'S RICH CULINARY HERITAGE WITH AUTHENTIC RECIPES PASSED DOWN THROUGH GENERATIONS.
           </p>
 
-          <h3 className="font-display-sm text-2xl mb-6 text-brand-golden">MUST-TRY FAVORITES:</h3>
+          <h3 className="font-display-sm text-2xl mb-6 text-brand-sandy">MUST-TRY FAVORITES:</h3>
           <ul className="space-y-4">
             <li className="flex items-start gap-4">
               <span className="text-on-surface font-bold text-xl">|</span>
-              <p className="font-label-sm tracking-wider uppercase text-brand-golden font-bold pt-1">
+              <p className="font-label-sm tracking-wider uppercase text-brand-sandy font-bold pt-1">
                 PUFF PAROTTA, BAMBOO BIRYANI & TENDER COCONUT PRAWN CURRY
               </p>
             </li>
             <li className="flex items-start gap-4">
               <span className="text-on-surface font-bold text-xl">|</span>
-              <p className="font-label-sm tracking-wider uppercase text-brand-golden font-bold pt-1">
+              <p className="font-label-sm tracking-wider uppercase text-brand-sandy font-bold pt-1">
                 REFRESHING JIGARTHANDA & ILANEER CAKE DESSERTS
               </p>
             </li>
             <li className="flex items-start gap-4">
               <span className="text-on-surface font-bold text-xl">|</span>
-              <p className="font-label-sm tracking-wider uppercase text-brand-golden font-bold pt-1">
+              <p className="font-label-sm tracking-wider uppercase text-brand-sandy font-bold pt-1">
                 REGIONAL SPECIALTIES CRAFTED BY VILLAGE - TRAINED CHEFS
               </p>
             </li>

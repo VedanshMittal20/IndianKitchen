@@ -9,18 +9,18 @@ export default function HomeHeroSection() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center bg-surface overflow-hidden pt-24">
       {/* Local Video Background */}
-      <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+      <div className="absolute inset-0 z-0 overflow-hidden bg-white">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-35 mix-blend-luminosity pointer-events-none"
+          className="w-full h-full object-cover opacity-20 pointer-events-none"
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="absolute inset-0 bg-surface/70 z-0 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-surface/80 z-0 pointer-events-none"></div>
 
       {/* Background Texture & Noise */}
       <div className="absolute inset-0 noise-overlay z-0 mix-blend-overlay opacity-30"></div>
@@ -34,10 +34,10 @@ export default function HomeHeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8 flex flex-col items-center gap-2 animate-float"
         >
-          <div className="w-10 h-10 bg-brand-warm-cream flex items-center justify-center font-display-lg text-surface text-2xl font-bold rounded-sm shadow-[0_0_15px_rgba(255,186,9,0.5)]">
+          <div className="w-10 h-10 bg-brand-deep-forest flex items-center justify-center font-display-lg text-surface text-2xl font-bold rounded-sm shadow-sm">
               IK
           </div>
-          <span className="font-label-lg tracking-[0.2em] text-brand-warm-cream uppercase text-xs">
+          <span className="font-label-lg tracking-[0.2em] text-brand-deep-forest uppercase text-xs">
             Indian Kitchen
           </span>
         </motion.div>
@@ -47,7 +47,7 @@ export default function HomeHeroSection() {
           initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display-lg text-5xl sm:text-7xl md:text-8xl lg:text-[120px] tracking-wider uppercase mb-2 leading-none text-gradient animate-pulse-glow"
+          className="font-display-lg text-5xl sm:text-7xl md:text-8xl lg:text-[120px] tracking-wider uppercase mb-2 leading-none text-on-surface"
         >
           INDIAN KITCHEN
         </motion.h1>
@@ -56,7 +56,7 @@ export default function HomeHeroSection() {
           initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="font-headline-md text-xl sm:text-2xl md:text-4xl text-brand-saffron tracking-[0.3em] uppercase mb-12 sm:mb-16 drop-shadow-[0_0_10px_rgba(255,153,51,0.5)]"
+          className="font-headline-md text-xl sm:text-2xl md:text-4xl text-brand-sandy tracking-[0.3em] uppercase mb-12 sm:mb-16"
         >
           THEME DINING
         </motion.h2>

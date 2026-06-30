@@ -51,7 +51,7 @@ export default function Navigation() {
       }`}>
         <nav className={`pointer-events-auto transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isScrolled 
-            ? "w-full max-w-5xl bg-surface/85 backdrop-blur-xl border border-brand-sandy/20 shadow-[0_10px_40px_rgba(0,0,0,0.5)] rounded-full h-16" 
+            ? "w-full max-w-5xl bg-surface/85 backdrop-blur-xl border border-brand-accent-green/20 shadow-[0_10px_40px_rgba(0,0,0,0.05)] rounded-full h-16" 
             : "w-full bg-transparent border-transparent h-24"
         }`}>
           <div className={`flex justify-between items-center h-full mx-auto transition-all duration-500 ${
@@ -63,7 +63,7 @@ export default function Navigation() {
                 isScrolled ? "w-28 sm:w-40 md:w-48 h-6 sm:h-8" : "w-32 sm:w-48 md:w-56 h-8 sm:h-10"
               }`} 
                    style={{ 
-                     mixBlendMode: "screen",
+                     filter: "invert(0.8) sepia(0.2) hue-rotate(100deg)", // Makes it dark sage/grey
                      opacity: 0.95
                    }}>
                   <img 
@@ -82,8 +82,8 @@ export default function Navigation() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`font-label-lg tracking-[0.1em] text-xs lg:text-sm uppercase hover:text-brand-golden transition-colors whitespace-nowrap ${
-                    pathname === link.href ? "text-brand-golden" : "text-brand-warm-cream"
+                  className={`font-label-lg tracking-widest text-xs lg:text-sm uppercase hover:text-brand-accent-green transition-colors whitespace-nowrap ${
+                    pathname === link.href ? "text-brand-accent-green" : "text-on-surface/80"
                   }`}
                 >
                   {link.name}
@@ -95,7 +95,7 @@ export default function Navigation() {
             <div className="flex items-center gap-4 relative z-50 shrink-0">
               <Link
                 href="/reservations"
-                className={`hidden sm:inline-flex bg-brand-accent-green text-on-primary font-label-lg uppercase tracking-[0.1em] rounded-sm hover:bg-brand-golden transition-all hover-glow hover:-translate-y-0.5 whitespace-nowrap ${
+                className={`hidden sm:inline-flex bg-brand-deep-forest text-on-primary font-label-lg uppercase tracking-[0.1em] rounded-sm hover:bg-brand-accent-green transition-all hover:-translate-y-0.5 whitespace-nowrap ${
                   isScrolled ? "px-4 lg:px-6 py-2 text-[10px] lg:text-xs" : "px-6 lg:px-8 py-2.5 lg:py-3 text-xs lg:text-sm"
                 }`}
               >
@@ -108,9 +108,9 @@ export default function Navigation() {
                 className="md:hidden flex flex-col justify-center gap-1.5 p-2"
                 aria-label={isOpen ? "Close menu" : "Open menu"}
               >
-                <span className={`h-0.5 bg-brand-warm-cream transition-all ${isOpen ? "w-6 rotate-45 translate-y-2" : "w-6"}`} />
-                <span className={`h-0.5 bg-brand-warm-cream transition-all ${isOpen ? "w-0 opacity-0" : "w-6"}`} />
-                <span className={`h-0.5 bg-brand-warm-cream transition-all ${isOpen ? "w-6 -rotate-45 -translate-y-2" : "w-6"}`} />
+                <span className={`h-0.5 bg-on-surface transition-all ${isOpen ? "w-6 rotate-45 translate-y-2" : "w-6"}`} />
+                <span className={`h-0.5 bg-on-surface transition-all ${isOpen ? "w-0 opacity-0" : "w-6"}`} />
+                <span className={`h-0.5 bg-on-surface transition-all ${isOpen ? "w-6 -rotate-45 -translate-y-2" : "w-6"}`} />
               </button>
             </div>
           </div>
@@ -131,16 +131,16 @@ export default function Navigation() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="font-headline-lg text-brand-warm-cream hover:text-brand-golden transition-colors uppercase tracking-widest text-4xl"
+                  className="font-headline-lg text-on-surface/80 hover:text-brand-accent-green transition-colors uppercase tracking-widest text-4xl"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="w-full max-w-sm h-px bg-brand-sandy/20 my-4" />
+              <div className="w-full max-w-sm h-px bg-brand-sandy/30 my-4" />
               <Link
                 href="/reservations"
-                className="bg-brand-accent-green text-on-primary font-label-lg uppercase tracking-[0.1em] px-10 py-4 rounded-sm w-full max-w-sm text-center hover:bg-brand-golden transition-colors"
+                className="bg-brand-deep-forest text-on-primary font-label-lg uppercase tracking-[0.1em] px-10 py-4 rounded-sm w-full max-w-sm text-center hover:bg-brand-accent-green transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 BOOK TABLE
