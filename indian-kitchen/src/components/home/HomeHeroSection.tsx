@@ -47,7 +47,7 @@ export default function HomeHeroSection() {
           initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="font-headline-lg text-6xl sm:text-7xl md:text-8xl lg:text-[110px] tracking-wide uppercase mb-4 leading-none text-brand-deep-forest"
+          className="font-headline-lg text-[40px] leading-[44px] sm:text-6xl md:text-8xl lg:text-[110px] tracking-wide uppercase mb-4 text-brand-deep-forest"
         >
           INDIAN KITCHEN
         </motion.h1>

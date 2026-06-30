@@ -60,7 +60,7 @@ export default function Navigation() {
             {/* Logo */}
             <Link href="/" className="flex flex-col relative z-50 group shrink-0">
               <div className={`relative flex items-center justify-start transition-all duration-500 ${
-                isScrolled ? "w-28 sm:w-40 md:w-48 h-6 sm:h-8" : "w-32 sm:w-48 md:w-56 h-8 sm:h-10"
+                isScrolled ? "w-24 sm:w-32 md:w-36 h-5 sm:h-6" : "w-28 sm:w-36 md:w-44 h-6 sm:h-8"
               }`} 
                    style={{ 
                      filter: "brightness(0) opacity(0.85)", // Charcoal
@@ -75,7 +75,7 @@ export default function Navigation() {
 
             {/* Desktop Nav Links */}
             <div className={`hidden md:flex items-center transition-all duration-500 ${
-              isScrolled ? "gap-6 lg:gap-8" : "gap-8 lg:gap-12"
+              isScrolled ? "gap-4 lg:gap-6" : "gap-6 lg:gap-10"
             }`}>
               {navLinks.map((link) => (
                 <Link
@@ -98,7 +98,7 @@ export default function Navigation() {
               <Link
                 href="/reservations"
                 className={`hidden sm:inline-flex bg-brand-deep-forest text-brand-warm-cream border border-brand-golden font-label-lg uppercase tracking-[0.1em] rounded-sm hover:bg-brand-deep-forest/90 transition-all hover:-translate-y-0.5 whitespace-nowrap ${
-                  isScrolled ? "px-4 lg:px-6 py-2 text-[10px] lg:text-xs" : "px-6 lg:px-8 py-2.5 lg:py-3 text-xs lg:text-sm"
+                  isScrolled ? "px-3 lg:px-5 py-2 text-[10px] lg:text-xs" : "px-5 lg:px-7 py-2.5 lg:py-3 text-xs lg:text-sm"
                 }`}
               >
                 BOOK TABLE
